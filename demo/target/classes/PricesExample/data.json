@@ -1,0 +1,502 @@
+[
+  {
+    "idOfCoin": "BTC",
+    "nameOfCoin": "Bitcoin",
+    "currentPrice": "$65,989.00"
+  },
+  {
+    "idOfCoin": "ETH",
+    "nameOfCoin": "Ethereum",
+    "currentPrice": "$3,520.80"
+  },
+  {
+    "idOfCoin": "USDT",
+    "nameOfCoin": "Tether",
+    "currentPrice": "$1.00"
+  },
+  {
+    "idOfCoin": "BNB",
+    "nameOfCoin": "BNB",
+    "currentPrice": "$578.32"
+  },
+  {
+    "idOfCoin": "SOL",
+    "nameOfCoin": "Solana",
+    "currentPrice": "$178.82"
+  },
+  {
+    "idOfCoin": "XRP",
+    "nameOfCoin": "XRP",
+    "currentPrice": "$0.64"
+  },
+  {
+    "idOfCoin": "STETH",
+    "nameOfCoin": "Lido Staked Ether",
+    "currentPrice": "$3,518.31"
+  },
+  {
+    "idOfCoin": "USDC",
+    "nameOfCoin": "USDC",
+    "currentPrice": "$1.00"
+  },
+  {
+    "idOfCoin": "DOGE",
+    "nameOfCoin": "Dogecoin",
+    "currentPrice": "$0.16"
+  },
+  {
+    "idOfCoin": "ADA",
+    "nameOfCoin": "Cardano",
+    "currentPrice": "$0.63"
+  },
+  {
+    "idOfCoin": "AVAX",
+    "nameOfCoin": "Avalanche",
+    "currentPrice": "$55.27"
+  },
+  {
+    "idOfCoin": "SHIB",
+    "nameOfCoin": "Shiba Inu",
+    "currentPrice": "$0.00003"
+  },
+  {
+    "idOfCoin": "TON",
+    "nameOfCoin": "Toncoin",
+    "currentPrice": "$4.35"
+  },
+  {
+    "idOfCoin": "DOT",
+    "nameOfCoin": "Polkadot",
+    "currentPrice": "$9.24"
+  },
+  {
+    "idOfCoin": "LINK",
+    "nameOfCoin": "Chainlink",
+    "currentPrice": "$18.45"
+  },
+  {
+    "idOfCoin": "TRX",
+    "nameOfCoin": "TRON",
+    "currentPrice": "$0.12"
+  },
+  {
+    "idOfCoin": "WBTC",
+    "nameOfCoin": "Wrapped Bitcoin",
+    "currentPrice": "$66,010.00"
+  },
+  {
+    "idOfCoin": "MATIC",
+    "nameOfCoin": "Polygon",
+    "currentPrice": "$1.01"
+  },
+  {
+    "idOfCoin": "UNI",
+    "nameOfCoin": "Uniswap",
+    "currentPrice": "$12.13"
+  },
+  {
+    "idOfCoin": "BCH",
+    "nameOfCoin": "Bitcoin Cash",
+    "currentPrice": "$417.43"
+  },
+  {
+    "idOfCoin": "NEAR",
+    "nameOfCoin": "NEAR Protocol",
+    "currentPrice": "$6.48"
+  },
+  {
+    "idOfCoin": "LTC",
+    "nameOfCoin": "Litecoin",
+    "currentPrice": "$85.93"
+  },
+  {
+    "idOfCoin": "APT",
+    "nameOfCoin": "Aptos",
+    "currentPrice": "$15.68"
+  },
+  {
+    "idOfCoin": "ICP",
+    "nameOfCoin": "Internet Computer",
+    "currentPrice": "$13.04"
+  },
+  {
+    "idOfCoin": "LEO",
+    "nameOfCoin": "LEO Token",
+    "currentPrice": "$6.06"
+  },
+  {
+    "idOfCoin": "STX",
+    "nameOfCoin": "Stacks",
+    "currentPrice": "$3.45"
+  },
+  {
+    "idOfCoin": "FIL",
+    "nameOfCoin": "Filecoin",
+    "currentPrice": "$9.06"
+  },
+  {
+    "idOfCoin": "DAI",
+    "nameOfCoin": "Dai",
+    "currentPrice": "$1.00"
+  },
+  {
+    "idOfCoin": "ATOM",
+    "nameOfCoin": "Cosmos Hub",
+    "currentPrice": "$11.69"
+  },
+  {
+    "idOfCoin": "ETC",
+    "nameOfCoin": "Ethereum Classic",
+    "currentPrice": "$30.44"
+  },
+  {
+    "idOfCoin": "ARB",
+    "nameOfCoin": "Arbitrum",
+    "currentPrice": "$1.67"
+  },
+  {
+    "idOfCoin": "RNDR",
+    "nameOfCoin": "Render",
+    "currentPrice": "$10.97"
+  },
+  {
+    "idOfCoin": "IMX",
+    "nameOfCoin": "Immutable",
+    "currentPrice": "$2.86"
+  },
+  {
+    "idOfCoin": "TAO",
+    "nameOfCoin": "Bittensor",
+    "currentPrice": "$627.20"
+  },
+  {
+    "idOfCoin": "XLM",
+    "nameOfCoin": "Stellar",
+    "currentPrice": "$0.13"
+  },
+  {
+    "idOfCoin": "HBAR",
+    "nameOfCoin": "Hedera",
+    "currentPrice": "$0.11"
+  },
+  {
+    "idOfCoin": "CRO",
+    "nameOfCoin": "Cronos",
+    "currentPrice": "$0.14"
+  },
+  {
+    "idOfCoin": "GRT",
+    "nameOfCoin": "The Graph",
+    "currentPrice": "$0.38"
+  },
+  {
+    "idOfCoin": "OKB",
+    "nameOfCoin": "OKB",
+    "currentPrice": "$59.77"
+  },
+  {
+    "idOfCoin": "KAS",
+    "nameOfCoin": "Kaspa",
+    "currentPrice": "$0.16"
+  },
+  {
+    "idOfCoin": "OP",
+    "nameOfCoin": "Optimism",
+    "currentPrice": "$3.45"
+  },
+  {
+    "idOfCoin": "PEPE",
+    "nameOfCoin": "Pepe",
+    "currentPrice": "$0.000008"
+  },
+  {
+    "idOfCoin": "INJ",
+    "nameOfCoin": "Injective",
+    "currentPrice": "$37.36"
+  },
+  {
+    "idOfCoin": "FTM",
+    "nameOfCoin": "Fantom",
+    "currentPrice": "$1.16"
+  },
+  {
+    "idOfCoin": "VET",
+    "nameOfCoin": "VeChain",
+    "currentPrice": "$0.04"
+  },
+  {
+    "idOfCoin": "MKR",
+    "nameOfCoin": "Maker",
+    "currentPrice": "$3,300.57"
+  },
+  {
+    "idOfCoin": "THETA",
+    "nameOfCoin": "Theta Network",
+    "currentPrice": "$2.90"
+  },
+  {
+    "idOfCoin": "MNT",
+    "nameOfCoin": "Mantle",
+    "currentPrice": "$0.83"
+  },
+  {
+    "idOfCoin": "FDUSD",
+    "nameOfCoin": "First Digital USD",
+    "currentPrice": "$1.00"
+  },
+  {
+    "idOfCoin": "FET",
+    "nameOfCoin": "Fetch.ai",
+    "currentPrice": "$2.50"
+  },
+  {
+    "idOfCoin": "RUNE",
+    "nameOfCoin": "THORChain",
+    "currentPrice": "$8.63"
+  },
+  {
+    "idOfCoin": "XMR",
+    "nameOfCoin": "Monero",
+    "currentPrice": "$140.52"
+  },
+  {
+    "idOfCoin": "TIA",
+    "nameOfCoin": "Celestia",
+    "currentPrice": "$14.61"
+  },
+  {
+    "idOfCoin": "LDO",
+    "nameOfCoin": "Lido DAO",
+    "currentPrice": "$2.81"
+  },
+  {
+    "idOfCoin": "AR",
+    "nameOfCoin": "Arweave",
+    "currentPrice": "$35.57"
+  },
+  {
+    "idOfCoin": "WIF",
+    "nameOfCoin": "dogwifhat",
+    "currentPrice": "$2.32"
+  },
+  {
+    "idOfCoin": "SEI",
+    "nameOfCoin": "Sei",
+    "currentPrice": "$0.83"
+  },
+  {
+    "idOfCoin": "SUI",
+    "nameOfCoin": "Sui",
+    "currentPrice": "$1.81"
+  },
+  {
+    "idOfCoin": "GALA",
+    "nameOfCoin": "GALA",
+    "currentPrice": "$0.06"
+  },
+  {
+    "idOfCoin": "RETH",
+    "nameOfCoin": "Rocket Pool ETH",
+    "currentPrice": "$3,878.89"
+  },
+  {
+    "idOfCoin": "FLOKI",
+    "nameOfCoin": "FLOKI",
+    "currentPrice": "$0.0002"
+  },
+  {
+    "idOfCoin": "ALGO",
+    "nameOfCoin": "Algorand",
+    "currentPrice": "$0.25"
+  },
+  {
+    "idOfCoin": "FLOW",
+    "nameOfCoin": "Flow",
+    "currentPrice": "$1.30"
+  },
+  {
+    "idOfCoin": "METH",
+    "nameOfCoin": "Mantle Staked Ether",
+    "currentPrice": "$3,596.37"
+  },
+  {
+    "idOfCoin": "QNT",
+    "nameOfCoin": "Quant",
+    "currentPrice": "$126.48"
+  },
+  {
+    "idOfCoin": "AAVE",
+    "nameOfCoin": "Aave",
+    "currentPrice": "$123.70"
+  },
+  {
+    "idOfCoin": "BEAM",
+    "nameOfCoin": "Beam",
+    "currentPrice": "$0.03"
+  },
+  {
+    "idOfCoin": "JUP",
+    "nameOfCoin": "Jupiter",
+    "currentPrice": "$1.24"
+  },
+  {
+    "idOfCoin": "CFX",
+    "nameOfCoin": "Conflux",
+    "currentPrice": "$0.43"
+  },
+  {
+    "idOfCoin": "EGLD",
+    "nameOfCoin": "MultiversX",
+    "currentPrice": "$60.62"
+  },
+  {
+    "idOfCoin": "BSV",
+    "nameOfCoin": "Bitcoin SV",
+    "currentPrice": "$79.99"
+  },
+  {
+    "idOfCoin": "DYDX",
+    "nameOfCoin": "dYdX",
+    "currentPrice": "$3.37"
+  },
+  {
+    "idOfCoin": "STRK",
+    "nameOfCoin": "Starknet",
+    "currentPrice": "$2.11"
+  },
+  {
+    "idOfCoin": "BONK",
+    "nameOfCoin": "Bonk",
+    "currentPrice": "$0.00002"
+  },
+  {
+    "idOfCoin": "SAND",
+    "nameOfCoin": "The Sandbox",
+    "currentPrice": "$0.65"
+  },
+  {
+    "idOfCoin": "AXS",
+    "nameOfCoin": "Axie Infinity",
+    "currentPrice": "$10.22"
+  },
+  {
+    "idOfCoin": "SNX",
+    "nameOfCoin": "Synthetix Network",
+    "currentPrice": "$4.35"
+  },
+  {
+    "idOfCoin": "KCS",
+    "nameOfCoin": "KuCoin",
+    "currentPrice": "$14.73"
+  },
+  {
+    "idOfCoin": "PYTH",
+    "nameOfCoin": "Pyth Network",
+    "currentPrice": "$0.93"
+  },
+  {
+    "idOfCoin": "WEETH",
+    "nameOfCoin": "Wrapped eETH",
+    "currentPrice": "$3,612.72"
+  },
+  {
+    "idOfCoin": "EETH",
+    "nameOfCoin": "ether.fi Staked ETH",
+    "currentPrice": "$3,470.56"
+  },
+  {
+    "idOfCoin": "ORDI",
+    "nameOfCoin": "ORDI",
+    "currentPrice": "$64.16"
+  },
+  {
+    "idOfCoin": "AGIX",
+    "nameOfCoin": "SingularityNET",
+    "currentPrice": "$1.05"
+  },
+  {
+    "idOfCoin": "MINA",
+    "nameOfCoin": "Mina Protocol",
+    "currentPrice": "$1.24"
+  },
+  {
+    "idOfCoin": "BTT",
+    "nameOfCoin": "BitTorrent",
+    "currentPrice": "$0.000001"
+  },
+  {
+    "idOfCoin": "RBN",
+    "nameOfCoin": "Ribbon Finance",
+    "currentPrice": "$1.38"
+  },
+  {
+    "idOfCoin": "BGB",
+    "nameOfCoin": "Bitget Token",
+    "currentPrice": "$0.93"
+  },
+  {
+    "idOfCoin": "CHZ",
+    "nameOfCoin": "Chiliz",
+    "currentPrice": "$0.14"
+  },
+  {
+    "idOfCoin": "FLR",
+    "nameOfCoin": "Flare",
+    "currentPrice": "$0.03"
+  },
+  {
+    "idOfCoin": "TKX",
+    "nameOfCoin": "Tokenize Xchange",
+    "currentPrice": "$15.54"
+  },
+  {
+    "idOfCoin": "USDE",
+    "nameOfCoin": "Ethena USDe",
+    "currentPrice": "$1.00"
+  },
+  {
+    "idOfCoin": "AKT",
+    "nameOfCoin": "Akash Network",
+    "currentPrice": "$5.39"
+  },
+  {
+    "idOfCoin": "WLD",
+    "nameOfCoin": "Worldcoin",
+    "currentPrice": "$7.90"
+  },
+  {
+    "idOfCoin": "RON",
+    "nameOfCoin": "Ronin",
+    "currentPrice": "$4.03"
+  },
+  {
+    "idOfCoin": "XTZ",
+    "nameOfCoin": "Tezos",
+    "currentPrice": "$1.25"
+  },
+  {
+    "idOfCoin": "MANA",
+    "nameOfCoin": "Decentraland",
+    "currentPrice": "$0.64"
+  },
+  {
+    "idOfCoin": "AXL",
+    "nameOfCoin": "Axelar",
+    "currentPrice": "$1.96"
+  },
+  {
+    "idOfCoin": "APE",
+    "nameOfCoin": "ApeCoin",
+    "currentPrice": "$1.91"
+  },
+  {
+    "idOfCoin": "WBT",
+    "nameOfCoin": "WhiteBIT Coin",
+    "currentPrice": "$8.08"
+  },
+  {
+    "idOfCoin": "EOS",
+    "nameOfCoin": "EOS",
+    "currentPrice": "$1.01"
+  }
+]
