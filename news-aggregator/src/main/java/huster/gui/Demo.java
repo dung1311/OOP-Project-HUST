@@ -32,7 +32,7 @@ public class Demo extends JFrame {
         //jButton menu
         JButton jButton_menu = new JButton();  
         jButton_menu.setBounds(11,19,32,32);
-        URL icone_menu= Demo.class.getResource("/news-aggregator/resource/assets/MENU.png");
+        URL icone_menu= Demo.class.getResource("/resource/assets/MENU.png");
         ImageIcon icon_menu = new ImageIcon(icone_menu);
               
         jButton_menu.setPreferredSize( new Dimension(32,32));
@@ -82,7 +82,7 @@ public class Demo extends JFrame {
         //jButton settings
         JButton jButton_setting = new JButton();  
         jButton_setting.setBounds(308,19,32,32);
-        URL icone_setting= Demo.class.getResource("/news-aggregator/resource/assets/SETTING.png");
+        URL icone_setting= Demo.class.getResource("/resource/assets/SETTING.png");
         ImageIcon icon_setting = new ImageIcon(icone_setting);
               
         jButton_setting.setPreferredSize( new Dimension(32,32));
@@ -95,7 +95,7 @@ public class Demo extends JFrame {
         //jButton_search
         JButton jButton_search = new JButton();  
         jButton_search.setBounds(272,20,32,32);
-        URL icone_search= Demo.class.getResource("/news-aggregator/resource/assets/SEARCH.png");
+        URL icone_search= Demo.class.getResource("/resource/assets/SEARCH.png");
         ImageIcon icon_search = new ImageIcon(icone_search);
               
         jButton_search.setPreferredSize( new Dimension(32,32));
@@ -108,7 +108,7 @@ public class Demo extends JFrame {
         //jButton_favorite
         JButton jButton_favorite = new JButton();  
         jButton_favorite.setBounds(7,81,21,21);
-        URL icone_favorite= Demo.class.getResource("/news-aggregator/resource/assets/FAVORITES.png");
+        URL icone_favorite= Demo.class.getResource("/resource/assets/FAVORITES.png");
         ImageIcon icon_favorite = new ImageIcon(icone_favorite);
               
         jButton_favorite.setPreferredSize( new Dimension(20,20));
@@ -121,7 +121,7 @@ public class Demo extends JFrame {
         //jButton_restart
         JButton jButton_restart = new JButton();  
         jButton_restart.setBounds(0,565,32,32);
-        URL icone_restart= Demo.class.getResource("/news-aggregator/resource/assets/RESTART.png");
+        URL icone_restart= Demo.class.getResource("/resource/assets/RESTART.png");
         ImageIcon icon_restart = new ImageIcon(icone_restart);
               
         jButton_restart.setPreferredSize( new Dimension(32,32));
@@ -134,7 +134,7 @@ public class Demo extends JFrame {
         //jButton_home
         JButton jButton_home = new JButton();  
         jButton_home.setBounds(160,565,32,32);
-        URL icone_home= Demo.class.getResource("/news-aggregator/resource/assets/HOME.png");
+        URL icone_home= Demo.class.getResource("/resource/assets/HOME.png");
         ImageIcon icon_home = new ImageIcon(icone_home);
               
         jButton_home.setPreferredSize( new Dimension(32,32));
@@ -147,7 +147,7 @@ public class Demo extends JFrame {
         //jButton_signout
         JButton jButton_signout = new JButton();  
         jButton_signout.setBounds(310,565,32,32);
-        URL icone_signout= Demo.class.getResource("/news-aggregator/resource/assets/SIGN OUT.png");
+        URL icone_signout= Demo.class.getResource("/resource/assets/SIGN OUT.png");
         ImageIcon icon_signout = new ImageIcon(icone_signout);
               
         jButton_signout.setPreferredSize( new Dimension(32,32));
@@ -167,7 +167,7 @@ public class Demo extends JFrame {
         //jButton_BXM
         JButton jButton_BXM = new JButton();  
         // jButton_BXM.setBounds(37,139,292,65);
-        URL icone_BXM= Demo.class.getResource("/news-aggregator/resource/assets.png");
+        URL icone_BXM= Demo.class.getResource("/resource/assets.png");
         ImageIcon icon_BXM = new ImageIcon(icone_BXM);
               
         jButton_BXM.setIcon(icon_BXM);
@@ -221,7 +221,7 @@ public class Demo extends JFrame {
         //jButton_CEC
         JButton jButton_CEC = new JButton();  
         // jButton_CEC.setBounds(27,387,292,65);
-        URL icone= Demo.class.getResource("/news-aggregator/resource/assets/CEC.jpg");
+        URL icone= Demo.class.getResource("/resource/assets/CEC.jpg");
         ImageIcon icon = new ImageIcon(icone);
               
         jButton_CEC.setIcon(icon);
@@ -238,7 +238,7 @@ public class Demo extends JFrame {
          //jButton_BeVit
          JButton jButton_BeVit = new JButton();  
         //  jButton_BeVit.setBounds(38,263,292,65);
-         URL icone_BeVit= Demo.class.getResource("/news-aggregator/resource/assets/MCV.png");
+         URL icone_BeVit= Demo.class.getResource("/resource/assets/MCV.png");
          ImageIcon icon_BeVit = new ImageIcon(icone_BeVit);
                
          jButton_BeVit.setIcon(icon_BeVit);
@@ -255,7 +255,7 @@ public class Demo extends JFrame {
          //jButton trung`
          JButton jButton_CEC1 = new JButton();  
          // jButton_CEC.setBounds(27,387,292,65);
-         URL icone_CEC1= Demo.class.getResource("/news-aggregator/resource/assets/CEC.jpg");
+         URL icone_CEC1= Demo.class.getResource("/resource/assets/CEC.jpg");
          ImageIcon icon_CEC1 = new ImageIcon(icone_CEC1);
                
          jButton_CEC1.setIcon(icon_CEC1);
@@ -271,7 +271,7 @@ public class Demo extends JFrame {
          });
          JButton jButton_CEC2 = new JButton();  
          // jButton_CEC2.setBounds(27,387,292,65);
-         URL icone_CEC2= Demo.class.getResource("/news-aggregator/resource/assets/CEC.jpg");
+         URL icone_CEC2= Demo.class.getResource("/resource/assets/CEC.jpg");
          ImageIcon icon_CEC2 = new ImageIcon(icone_CEC2);
                
          jButton_CEC2.setIcon(icon_CEC2);
