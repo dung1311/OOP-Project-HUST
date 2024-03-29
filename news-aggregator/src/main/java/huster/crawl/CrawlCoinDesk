@@ -1,0 +1,31 @@
+package huster.crwal;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+public class CrawlLink {
+    private CrawlLink() {}
+    public static List<String> getLink(String url){
+        List<String> linkList = new ArrayList<>();
+        try {
+            Document doc = Jsoup.connect(url).get();
+            Elements Links = doc.select("a[card-imagestyles__CardImageWrapper-sc-1kbd3qh-0 WDSwd]");
+            for(int i = 0; i < Links.size(); i++){
+                linkList.add("https://www.coindesk.com" + Links.get(i).attr("href"));
+            }
+        } catch (Exception e) {
+           e.printStackTrace();
+        }
+        return linkList;
+    }
+
+    public static void main(String[] args) {
+        String url = "https://www.coindesk.com/";
+        
+    }
+
+}
