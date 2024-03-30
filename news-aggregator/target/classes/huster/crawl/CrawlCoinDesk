@@ -13,9 +13,9 @@ public class CrawlLink {
         List<String> linkList = new ArrayList<>();
         try {
             Document doc = Jsoup.connect(url).get();
-            Elements Links = doc.select("a[card-imagestyles__CardImageWrapper-sc-1kbd3qh-0 WDSwd]");
-            for(int i = 0; i < Links.size(); i++){
-                linkList.add("https://www.coindesk.com" + Links.get(i).attr("href"));
+            Elements links = doc.select("a.card-imagestyles__CardImageWrapper-sc-1kbd3qh-0.WDSwd");
+            for(int i = 0; i < links.size(); i++){
+                linkList.add("https://www.coindesk.com" + links.get(i).attr("href"));
             }
         } catch (Exception e) {
            e.printStackTrace();
@@ -25,7 +25,12 @@ public class CrawlLink {
 
     public static void main(String[] args) {
         String url = "https://www.coindesk.com/";
-        
+        List<String> test = new ArrayList<>();
+        test = CrawlLink.getLink(url);
+        for(int i=0; i<test.size(); i++){
+            System.out.println(test.get(i));
+        }
     }
 
 }
+
