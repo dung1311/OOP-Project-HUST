@@ -28,11 +28,10 @@ public class CrawlLink {
 
     public static void main(String[] args) {
         String url = "https://www.coindesk.com/";
-        List<String> test = new ArrayList<>();
+        List<String> linkList = CrawlLink.getLink(url);
         List<Items> itemList = new ArrayList<>();
-        test = CrawlLink.getLink(url);
-        for(int i=0; i<test.size(); i++){
-            Items temp = GetDataFormLink.getData(test.get(i));
+        for(int i = 0; i < linkList.size(); i++){
+            Items temp = GetDataFormLink.getData(linkList.get(i));
             itemList.add(temp);
         }
         Gson json = new Gson();
