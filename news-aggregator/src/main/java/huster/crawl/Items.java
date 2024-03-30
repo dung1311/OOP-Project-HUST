@@ -1,4 +1,4 @@
-package com.example;
+package huster.crawl;
 
 public class Items {
     private String link;

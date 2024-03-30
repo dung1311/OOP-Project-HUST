@@ -1,4 +1,4 @@
-package com.example;
+package huster.crawl;
 
 import java.util.ArrayList;
 import java.util.List;

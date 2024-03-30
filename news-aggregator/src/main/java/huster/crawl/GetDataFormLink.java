@@ -1,4 +1,4 @@
-package com.example;
+package huster.crawl;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
