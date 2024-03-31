@@ -66,8 +66,9 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
         System.setProperty("BLACK_menu", "0x222222");
         Color BLACK_menu = Color.getColor("BLACK_menu");
         
-        menu.setLayout(new FlowLayout(15));
+        menu.setLayout(new BorderLayout());
         menu.setSize(1440,101);
+    
         menu.setBackground(BLACK_menu);
 
         
@@ -92,7 +93,6 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
 
-        menu.add(menuButton);
 
         ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
         JButton homeButton = new JButton(homeIcon);
@@ -133,9 +133,9 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         menu.add(homeButton);
 
-        menu.add(userButton);
+        menu.add(userButton, BorderLayout.EAST);
 
-        menu.add(searchButton);
+        menu.add(searchButton, BorderLayout.EAST);
         
         contentPane.add(menu, BorderLayout.NORTH);
         
