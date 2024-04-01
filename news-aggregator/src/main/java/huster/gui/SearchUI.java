@@ -24,6 +24,10 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //set up cho gợi í của sưarchBar ***CÓ THỂ PHỈA THÊM PHƯƠNG THỨC NHẢY DỮ LIỆU TỪ FILE JSON?***
+        suggestionList = new JList<>();
+        listModel = new DefaultListModel<>();
+        suggestionList.setModel(listModel);
         
         //Thiết lập cho panel menu
         JPanel menu = new JPanel();
@@ -48,14 +52,41 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         JPanel menuAndSearchPanel = new JPanel();
         menuAndSearchPanel.setLayout(new BoxLayout(menuAndSearchPanel, BoxLayout.Y_AXIS));
     
-
         
-        Font font = new Font("Arial", Font.PLAIN, 50);
+        Font font = new Font("Arial", Font.PLAIN, 30);
         searchBar.setFont(font);
         searchBar.setPreferredSize(new Dimension(1440, 60));
         
-        //....................................................
         
+        // Sử dụng DocumentListener để lắng nghe sự kiện nhập liệu vào JTextField
+        searchBar.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateSuggestions();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateSuggestions();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateSuggestions();
+            }
+
+            private void updateSuggestions() {
+                String searchText = searchBar.getText();
+                // Thực hiện tìm kiếm trong dữ liệu và cập nhật danh sách gợi ý tìm kiếm
+                listModel.clear();
+                if (!searchText.isEmpty()) {
+                    String[] suggestions = searchSuggestions(searchText);
+                    for (String suggestion : suggestions) {
+                        listModel.addElement(suggestion);
+                    }
+                }
+            }
+        });
 
         // Thêm các nút vào menuLeft
         ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\menuIcon.png");
@@ -100,13 +131,42 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         menuAndSearchPanel.add(menu);
         menuAndSearchPanel.add(searchBar);
 
-        
+
+
+        // Thêm JList vào JPanel để hiển thị gợi ý tìm kiếm()
+        JPanel suggestionPanel = new JPanel();
+        suggestionPanel.setPreferredSize(new Dimension(1440,40));
+        suggestionPanel.setLayout(new BoxLayout(suggestionPanel, BoxLayout.Y_AXIS));
+        suggestionPanel.add(new JScrollPane(suggestionList), BorderLayout.CENTER);
+        menuAndSearchPanel.add(suggestionPanel);
+
+        searchBar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Ẩn Panel hiện tại (menuAndSearchPanel)
+                menuAndSearchPanel.setVisible(false);
+                
+                // Hiển thị Panel khác chứa kết quả tìm kiếm (ví dụ: searchResultPanel)
+                SearchUIResult searchResultPanel = new  SearchUIResult();
+                contentPane.add(searchResultPanel, BorderLayout.CENTER);
+                searchResultPanel.setVisible(true);
+                
+                // Yêu cầu Frame cập nhật lại layout để hiển thị Panel mới
+                revalidate();
+            }
+        });
 
         
-
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         setVisible(true);
     }    
+
+    // Phương thức tìm kiếm gợi ý tìm kiếm dựa trên từ khóa nhập vào
+    private String[] searchSuggestions(String searchText) {
+        // Thực hiện tìm kiếm trong dữ liệu và trả về các gợi ý tìm kiếm phù hợp
+        // Ở đây, chỉ là một ví dụ đơn giản ( Nhảy trên chat GPT)
+        return new String[]{"Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency"};
+    }
 
     @Override
     public void itemStateChanged(ItemEvent arg0) {
