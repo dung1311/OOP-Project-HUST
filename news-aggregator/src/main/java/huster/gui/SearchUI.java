@@ -1,6 +1,7 @@
 package huster.gui;
 
 import javax.swing.*;
+import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -10,6 +11,10 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
+    
+    private JTextField searchBar = new JTextField(10);
+    private JList<String> suggestionList;
+    private DefaultListModel<String> listModel;
 
     public SearchUI(){
         Container contentPane = getContentPane();
@@ -19,7 +24,8 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+        
+        //Thiết lập cho panel menu
         JPanel menu = new JPanel();
         System.setProperty("BLACK_menu", "0x222222");
         Color BLACK_menu = Color.getColor("BLACK_menu");
@@ -29,17 +35,27 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         
         JPanel menuLeft = new JPanel();
         menuLeft.setBackground(BLACK_menu);
+        menuLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
 
         JPanel menuRight = new JPanel();
         menuRight.setBackground(BLACK_menu);
+        menuRight.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
         JPanel menuCenter = new JPanel();
         menuCenter.setBackground(BLACK_menu);
+        menuCenter.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        // Thiết lập layout cho các panel con
-        menuLeft.setLayout(new FlowLayout());
-        menuRight.setLayout(new FlowLayout());
-        menuCenter.setLayout(new FlowLayout());
+        JPanel menuAndSearchPanel = new JPanel();
+        menuAndSearchPanel.setLayout(new BoxLayout(menuAndSearchPanel, BoxLayout.Y_AXIS));
+    
+
+        
+        Font font = new Font("Arial", Font.PLAIN, 50);
+        searchBar.setFont(font);
+        searchBar.setPreferredSize(new Dimension(1440, 60));
+        
+        //....................................................
+        
 
         // Thêm các nút vào menuLeft
         ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\menuIcon.png");
@@ -78,11 +94,17 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         
 
         // Thêm các panel con vào menu
-        menu.add(menuLeft);
-        menu.add(menuRight);
+        menu.add(menuLeft, BorderLayout.WEST);
+        menu.add(menuRight, BorderLayout.EAST);
+        menu.add(menuCenter, BorderLayout.CENTER);
+        menuAndSearchPanel.add(menu);
+        menuAndSearchPanel.add(searchBar);
+
         
 
-        contentPane.add(menu, BorderLayout.NORTH);
+        
+
+        contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         setVisible(true);
     }    
 

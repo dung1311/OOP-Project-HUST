@@ -1,10 +1,11 @@
 package huster;
 
+import huster.gui.Menu;
 import huster.gui.SearchUI;
 
 public class Main {
     public static void main(String[] args) {
-       SearchUI menuSearch = new SearchUI();
-       
+       //SearchUI menuSearch = new SearchUI();
+       Menu menu = new Menu();
     }
 }
