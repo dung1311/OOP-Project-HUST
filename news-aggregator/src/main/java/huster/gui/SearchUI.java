@@ -11,6 +11,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
+
     
     private JTextField searchBar = new JTextField(10);
     private JList<String> suggestionList;
@@ -51,6 +52,8 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         JPanel menuAndSearchPanel = new JPanel();
         menuAndSearchPanel.setLayout(new BoxLayout(menuAndSearchPanel, BoxLayout.Y_AXIS));
+
+        
     
         
         Font font = new Font("Arial", Font.PLAIN, 30);
@@ -140,22 +143,40 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         suggestionPanel.add(new JScrollPane(suggestionList), BorderLayout.CENTER);
         menuAndSearchPanel.add(suggestionPanel);
 
+        //------------------------------------------------
+        //Đây là phần thêm kết quả tìm kiếm
+       
+        JPanel searchResult = new JPanel();
+        JScrollPane scrollResult = new JScrollPane(searchResult);
+        scrollResult.setPreferredSize(new Dimension(1440, 2000));
+        scrollResult.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        searchResult.setLayout(null);
+        //Có thể phải code đưa thông tin vào JButton, chưa thấy cách nào hay
+        for(int i = 0; i < 2; i++){
+            for(int j = 0; j < 12; j++){
+                ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+                JButton button = new JButton(articleIcon);
+                button.setPreferredSize(new Dimension(465,132));
+                button.setBounds(40 + 800*i,72 + 180*j,465,132);
+                searchResult.add(button);
+            }
+        }
+
         searchBar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Ẩn Panel hiện tại (menuAndSearchPanel)
                 menuAndSearchPanel.setVisible(false);
-                
-                // Hiển thị Panel khác chứa kết quả tìm kiếm (ví dụ: searchResultPanel)
-                SearchUIResult searchResultPanel = new  SearchUIResult();
-                contentPane.add(searchResultPanel, BorderLayout.CENTER);
-                searchResultPanel.setVisible(true);
-                
-                // Yêu cầu Frame cập nhật lại layout để hiển thị Panel mới
+                contentPane.removeAll();
+                contentPane.add(menu, BorderLayout.NORTH);
+                contentPane.add(scrollResult, BorderLayout.CENTER);
                 revalidate();
+                repaint();
+        
             }
         });
 
+       
         
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         setVisible(true);
