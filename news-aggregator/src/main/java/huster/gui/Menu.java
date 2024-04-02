@@ -98,7 +98,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         menu.add(jPanel_right,BorderLayout.EAST);
 
-        Font font = new Font("ARIAL",Font.BOLD,40);
+        Font font = new Font("ARIAL",Font.BOLD,25);
 
         ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
@@ -107,8 +107,8 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
         jButton_article.setFont(font);
         jButton_article.setIcon(BigarticleIcon);
         jButton_article.setForeground(Color.BLUE);
-        jButton_article.setBounds(15,72,550,492);
-        jButton_article.setPreferredSize(new Dimension(550,492));
+        jButton_article.setBounds(15,72,600,492);
+        jButton_article.setPreferredSize(new Dimension(600,492));
         jButton_article.setBorderPainted(false);
         jButton_article.setFocusPainted(false);
         jButton_article.setContentAreaFilled(false);
