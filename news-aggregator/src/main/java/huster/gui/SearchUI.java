@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private static final long serialVersionUID = 1L;
@@ -11,13 +12,13 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
+    private boolean isSuggestionPanelVisible = false;
 
-    
-    private JTextField searchBar = new JTextField(10);
+    private SearchBar searchBar = new SearchBar(10);
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
 
-    public SearchUI(){
+    public SearchUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(true);
@@ -25,19 +26,21 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        //set up cho gợi í của sưarchBar ***CÓ THỂ PHỈA THÊM PHƯƠNG THỨC NHẢY DỮ LIỆU TỪ FILE JSON?***
+        // set up cho gợi í của sưarchBar ***CÓ THỂ PHỈA THÊM PHƯƠNG THỨC NHẢY DỮ LIỆU
+        // TỪ FILE JSON?***
+        JPanel suggestionPanel = new JPanel();
         suggestionList = new JList<>();
         listModel = new DefaultListModel<>();
         suggestionList.setModel(listModel);
-        
-        //Thiết lập cho panel menu
+
+        // Thiết lập cho panel menu
         JPanel menu = new JPanel();
         System.setProperty("BLACK_menu", "0x222222");
         Color BLACK_menu = Color.getColor("BLACK_menu");
         menu.setLayout(new BorderLayout());
-        menu.setSize(1440,101);
+        menu.setSize(1440, 101);
         menu.setBackground(BLACK_menu);
-        
+
         JPanel menuLeft = new JPanel();
         menuLeft.setBackground(BLACK_menu);
         menuLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -53,14 +56,6 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         JPanel menuAndSearchPanel = new JPanel();
         menuAndSearchPanel.setLayout(new BoxLayout(menuAndSearchPanel, BoxLayout.Y_AXIS));
 
-        JPanel suggestionPanel = new JPanel();
-    
-        
-        Font font = new Font("Arial", Font.PLAIN, 30);
-        searchBar.setFont(font);
-        searchBar.setPreferredSize(new Dimension(1440, 60));
-        
-        
         // Sử dụng DocumentListener để lắng nghe sự kiện nhập liệu vào JTextField
         searchBar.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -94,7 +89,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         // Thêm các nút vào menuLeft
         ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\menuIcon.png");
         JButton menuButton = new JButton(menuIcon);
-        menuButton.setPreferredSize(new Dimension(65,65));
+        menuButton.setPreferredSize(new Dimension(65, 65));
         menuButton.setBorderPainted(false);
         menuButton.setFocusPainted(false);
         menuButton.setContentAreaFilled(false);
@@ -102,7 +97,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
         JButton homeButton = new JButton(homeIcon);
-        homeButton.setPreferredSize(new Dimension(65,65));
+        homeButton.setPreferredSize(new Dimension(65, 65));
         homeButton.setBorderPainted(false);
         homeButton.setFocusPainted(false);
         homeButton.setContentAreaFilled(false);
@@ -111,7 +106,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         // Thêm các nút vào menuRight
         ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
         JButton searchButton = new JButton(searchIcon);
-        searchButton.setPreferredSize(new Dimension(65,65));
+        searchButton.setPreferredSize(new Dimension(65, 65));
         searchButton.setBorderPainted(false);
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
@@ -119,13 +114,11 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
         JButton userButton = new JButton(userIcon);
-        userButton.setPreferredSize(new Dimension(65,65));
+        userButton.setPreferredSize(new Dimension(65, 65));
         userButton.setBorderPainted(false);
         userButton.setFocusPainted(false);
         userButton.setContentAreaFilled(false);
         menuRight.add(userButton);
-
-        
 
         // Thêm các panel con vào menu
         menu.add(menuLeft, BorderLayout.WEST);
@@ -134,32 +127,46 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         menuAndSearchPanel.add(menu);
         menuAndSearchPanel.add(searchBar);
 
-
-
         // Thêm JList vào JPanel để hiển thị gợi ý tìm kiếm()
-        
-        suggestionPanel.setPreferredSize(new Dimension(1440,40));
+
+        suggestionPanel.setPreferredSize(new Dimension(1440, 40));
         suggestionPanel.setLayout(new BoxLayout(suggestionPanel, BoxLayout.Y_AXIS));
         suggestionPanel.add(new JScrollPane(suggestionList), BorderLayout.CENTER);
         menuAndSearchPanel.add(suggestionPanel);
         suggestionPanel.setVisible(false);
-        //------------------------------------------------
-        //Đây là phần thêm kết quả tìm kiếm
-       
+        // Thêm ListSelectionListener cho suggestionList
+        suggestionList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
+                if (!e.getValueIsAdjusting()) {
+                    // Lấy dòng được chọn từ suggestionList
+                    String selectedSuggestion = suggestionList.getSelectedValue();
+                    // Đặt nội dung của dòng được chọn vào searchBar
+                    searchBar.setText(selectedSuggestion);
+                    // Ẩn suggestionPanel sau khi chọn
+                    suggestionPanel.setVisible(false);
+                    // Đặt lại trạng thái của biến isSuggestionPanelVisible
+                    isSuggestionPanelVisible = false;
+                }
+            }
+        });
+        // ------------------------------------------------
+        // Đây là phần thêm kết quả tìm kiếm
+
         JPanel searchResult = new JPanel();
         searchResult.setPreferredSize(new Dimension(1440, 2000));
         JScrollPane scrollResult = new JScrollPane(searchResult);
         scrollResult.setPreferredSize(new Dimension(1440, 2000));
         scrollResult.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         searchResult.setLayout(null);
-        //Có thể phải code đưa thông tin vào JButton, chưa thấy cách nào hay
-        for(int i = 0; i < 2; i++){
-            for(int j = 0; j < 6; j++){
+        // Có thể phải code đưa thông tin vào JButton, chưa thấy cách nào hay
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 6; j++) {
                 ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
-                JButton button = new JButton(articleIcon);
-                button.setPreferredSize(new Dimension(465,132));
-                button.setBounds(100 + 715*i,72 + 180*j,465,132);
-                searchResult.add(button);
+                ArticlePanel articlePanel = new ArticlePanel(articleIcon);
+                articlePanel.setBounds(100 + 715 * i, 72 + 180 * j, 465, 132);
+                searchResult.add(articlePanel);
             }
         }
 
@@ -172,56 +179,49 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 contentPane.add(menu, BorderLayout.NORTH);
                 contentPane.add(scrollResult, BorderLayout.CENTER);
                 revalidate();
-                //repaint();
-        
+                // repaint();
+
             }
         });
-        searchBar.addMouseListener(new MouseListener() {
 
+        // Trong constructor của SearchUI, thêm sự kiện cho searchBar
+        searchBar.addMouseListener(new MouseAdapter() {
             @Override
-            public void mouseClicked(MouseEvent arg0) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'mouseClicked'");
+            public void mouseClicked(MouseEvent e) {
+                // Kiểm tra nếu suggestionPanel đang hiển thị thì ẩn nó đi, ngược lại thì hiển
+                // thị
+                if (isSuggestionPanelVisible) {
+                    suggestionPanel.setVisible(false);
+                    isSuggestionPanelVisible = false;
+                } else {
+                    suggestionPanel.setVisible(true);
+                    isSuggestionPanelVisible = true;
+                }
             }
-
-            @Override
-            public void mouseEntered(MouseEvent arg0) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'mouseEntered'");
-            }
-
-            @Override
-            public void mouseExited(MouseEvent arg0) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'mouseExited'");
-            }
-
-            @Override
-            public void mousePressed(MouseEvent arg0) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'mousePressed'");
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent arg0) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'mouseReleased'");
-            }
-            
-            
         });
 
-       
-        
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         setVisible(true);
-    }    
+    }
 
     // Phương thức tìm kiếm gợi ý tìm kiếm dựa trên từ khóa nhập vào
     private String[] searchSuggestions(String searchText) {
-        // Thực hiện tìm kiếm trong dữ liệu và trả về các gợi ý tìm kiếm phù hợp
-        // Ở đây, chỉ là một ví dụ đơn giản ( Nhảy trên chat GPT)
-        return new String[]{"Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency"};
+        // Dữ liệu gợi ý
+        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency" };
+        // Danh sách chứa các gợi ý phù hợp
+        ArrayList<String> relatedSuggestions = new ArrayList<>();
+
+        // Lặp qua từng gợi ý
+        for (String suggestion : suggestions) {
+            // Nếu từ khóa được nhập vào là một phần của gợi ý
+            if (suggestion.toLowerCase().startsWith(searchText.toLowerCase())) {
+                // Thêm gợi ý này vào danh sách các gợi ý phù hợp
+                relatedSuggestions.add(suggestion);
+            }
+        }
+
+        // Chuyển danh sách các gợi ý phù hợp thành một mảng và trả về
+        return relatedSuggestions.toArray(new String[0]);
     }
 
     @Override
