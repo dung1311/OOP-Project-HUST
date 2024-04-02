@@ -98,15 +98,22 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         menu.add(jPanel_right,BorderLayout.EAST);
 
+        Font font = new Font("ARIAL",Font.BOLD,40);
+
         ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
-        JButton jButton_article = new JButton(BigarticleIcon);
+        JButton jButton_article = new JButton("<html><div style='text-align: center;'>Bé Xuân Mai<br>lon ton</div></html>");
+        jButton_article.setFont(font);
+        jButton_article.setIcon(BigarticleIcon);
+        jButton_article.setForeground(Color.BLUE);
         jButton_article.setBounds(15,72,550,492);
         jButton_article.setPreferredSize(new Dimension(550,492));
         jButton_article.setBorderPainted(false);
         jButton_article.setFocusPainted(false);
         jButton_article.setContentAreaFilled(false);
+        jButton_article.setVerticalTextPosition(SwingConstants.CENTER);
+        jButton_article.setHorizontalTextPosition(SwingConstants.LEFT);
         jButton_article.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 
