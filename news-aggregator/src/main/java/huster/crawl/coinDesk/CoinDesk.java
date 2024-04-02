@@ -1,4 +1,4 @@
-package huster.crawl;
+package huster.crawl.coinDesk;
 
 import java.io.FileWriter;
 import java.util.ArrayList;

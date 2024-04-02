@@ -1,4 +1,4 @@
-package huster.crawl;
+package huster.crawl.coinDesk;
 
 public class ItemNews {
     private String link;
