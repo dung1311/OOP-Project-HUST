@@ -36,6 +36,7 @@ public class CrawlWeb {
             data.setSummary(doc.select(tempWeb.getSummaryTag()).text());
             data.setDate(doc.select(tempWeb.getDateTag()).text());
             data.setAuthor(doc.select(tempWeb.getAuthorTag()).text());
+            data.setHashTag(doc.select(tempWeb.getHashTag()).text());
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -8,6 +8,7 @@ public class ItemNews {
     private String summary;
     private String author;
     private String date;
+    private String hashTag;
 
     public String getTitle() {
         return title;
@@ -63,6 +64,14 @@ public class ItemNews {
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public String getHashTag() {
+        return hashTag;
+    }
+
+    public void setHashTag(String hashTag) {
+        this.hashTag = hashTag;
     }
 
 }

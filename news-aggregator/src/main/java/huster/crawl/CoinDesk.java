@@ -13,7 +13,7 @@ public class CoinDesk {
 
         coinDesk.setUrl("https://www.coindesk.com/");
         coinDesk.setDomain("https://www.coindesk.com");
-        coinDesk.setMainTag("div[class=\"containerstyles__StyledContainer-sc-292snj-0 KqMZq\"]");
+        coinDesk.setMainTag("div[class=\"defaultstyles__FeaturedContentWrapper-sc-1xxogbw-0 cNBGyv\"]");
         coinDesk.setLinkTag("a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link");
 
         List<String> linkList = CrawlWeb.getLink(coinDesk);
@@ -24,6 +24,7 @@ public class CoinDesk {
         coinDesk.setDateTag("div[class=at-created label-with-icon]");
         coinDesk.setTitleTag("div[class=at-headline]");
         coinDesk.setSummaryTag("div[class=at-subheadline]");
+        coinDesk.setHashTag("a[data-position=\"autolink\"]");
 
         for (int i = 0; i < linkList.size(); i++) {
             dataList.add(CrawlWeb.getDataFromLink(coinDesk, linkList.get(i)));
@@ -31,7 +32,7 @@ public class CoinDesk {
 
         Gson dataJson = new Gson();
         try {
-            FileWriter test = new FileWriter("news-aggregator\\recourse\\data\\data.json");
+            FileWriter test = new FileWriter("news-aggregator\\recourse\\data\\webData.json");
             test.write(dataJson.toJson(dataList));
             test.close();
         } catch (Exception e) {

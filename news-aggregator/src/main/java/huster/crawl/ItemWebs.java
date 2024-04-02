@@ -10,6 +10,7 @@ public class ItemWebs {
     private String summaryTag;
     private String mainTag;
     private String linkTag;
+    private String hashTag;
 
     public String getUrl() {
         return url;
@@ -81,6 +82,14 @@ public class ItemWebs {
 
     public void setLinkTag(String linkTag) {
         this.linkTag = linkTag;
+    }
+
+    public String getHashTag() {
+        return hashTag;
+    }
+
+    public void setHashTag(String hashTag) {
+        this.hashTag = hashTag;
     }
 
 }
