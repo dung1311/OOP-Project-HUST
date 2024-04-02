@@ -1,4 +1,4 @@
-package huster.gui;
+package huster.crawl;
 
 import java.io.FileWriter;
 import java.util.ArrayList;

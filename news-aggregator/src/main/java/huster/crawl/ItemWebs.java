@@ -1,4 +1,4 @@
-package huster.gui;
+package huster.crawl;
 
 public class ItemWebs {
     private String url;

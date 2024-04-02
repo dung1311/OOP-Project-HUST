@@ -1,4 +1,4 @@
-package huster.gui;
+package huster.crawl;
 
 public class ItemNews {
     private String link;

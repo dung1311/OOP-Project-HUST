@@ -1,4 +1,4 @@
-package huster.gui;
+package huster.crawl;
 
 import java.util.ArrayList;
 import java.util.List;
