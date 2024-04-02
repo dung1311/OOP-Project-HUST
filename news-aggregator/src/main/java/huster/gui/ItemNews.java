@@ -1,4 +1,4 @@
-package com.example;
+package huster.gui;
 
 public class ItemNews {
     private String link;
