@@ -119,11 +119,11 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
                 
         //     }
         // });
-        JButton jButton_article = new JButton("<html><div style='text-align: center;'>Bé Xuân Mai lon ton</div></html>");
+        JButton jButton_article = new JButton("<html><div style='text-align: center;'>Bé Xuân Mai lon ton vip pro no1</div></html>");
         jButton_article.setFont(font);
         jButton_article.setIcon(BigarticleIcon);
         jButton_article.setForeground(Color.BLUE);
-        jButton_article.setBounds(15, 72, 600, 540);
+        jButton_article.setBounds(-10, 72, 600, 535);
         // jButton_article.setPreferredSize(new Dimension(600, 492));
         jButton_article.setBorderPainted(false);
         jButton_article.setFocusPainted(false);
