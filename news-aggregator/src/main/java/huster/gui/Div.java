@@ -2,6 +2,7 @@ package huster.gui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Div {
 
@@ -37,4 +38,30 @@ class SearchBar extends JTextField {
         setFont(font);
         setPreferredSize(new Dimension(1440, 60));
     }
+}
+
+// Có thể thêm một đống JLabel vào để chọn chủ đề?
+class ListOfCate extends JPanel{
+    public ListOfCate(){
+        System.setProperty("BLACK_menu", "0x222222");
+        Color BLACK_menu = Color.getColor("BLACK_menu");
+        setPreferredSize(new Dimension(1440, 620));
+        setLayout(new FlowLayout());
+        setBackground(BLACK_menu);
+
+        for(int i = 0; i < 10; i++){
+            JLabel label1 = new JLabel("Blockchain" + i);
+            label1.setForeground(Color.WHITE);
+            add(label1);
+
+            // Gắn sự kiện cho các dòng chữ
+            label1.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Xử lý sự kiện khi dòng chữ được click
+                System.out.println("Bạn đã click vào Blockchain.");
+            }
+        });
+    }
+        }
 }

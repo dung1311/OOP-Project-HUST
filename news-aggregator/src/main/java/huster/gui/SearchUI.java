@@ -18,6 +18,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
 
+
     public SearchUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
@@ -26,6 +27,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
         // set up cho gợi í của sưarchBar ***CÓ THỂ PHỈA THÊM PHƯƠNG THỨC NHẢY DỮ LIỆU
         // TỪ FILE JSON?***
         JPanel suggestionPanel = new JPanel();
@@ -128,12 +130,12 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         menuAndSearchPanel.add(searchBar);
 
         // Thêm JList vào JPanel để hiển thị gợi ý tìm kiếm()
-
         suggestionPanel.setPreferredSize(new Dimension(1440, 40));
         suggestionPanel.setLayout(new BoxLayout(suggestionPanel, BoxLayout.Y_AXIS));
         suggestionPanel.add(new JScrollPane(suggestionList), BorderLayout.CENTER);
         menuAndSearchPanel.add(suggestionPanel);
         suggestionPanel.setVisible(false);
+
         // Thêm ListSelectionListener cho suggestionList
         suggestionList.addListSelectionListener(new ListSelectionListener() {
             @Override
@@ -153,29 +155,31 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         });
         // ------------------------------------------------
         // Đây là phần thêm kết quả tìm kiếm
-
         JPanel searchResult = new JPanel();
         searchResult.setPreferredSize(new Dimension(1440, 2000));
         JScrollPane scrollResult = new JScrollPane(searchResult);
         scrollResult.setPreferredSize(new Dimension(1440, 2000));
         scrollResult.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         searchResult.setLayout(null);
-        // Có thể phải code đưa thông tin vào JButton, chưa thấy cách nào hay
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 6; j++) {
-                ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
-                ArticlePanel articlePanel = new ArticlePanel(articleIcon);
-                articlePanel.setBounds(100 + 715 * i, 72 + 180 * j, 465, 132);
-                searchResult.add(articlePanel);
-            }
-        }
 
+        // Phần hiển thị gợi í cho searchBar
         searchBar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Ẩn Panel hiện tại (menuAndSearchPanel)
                 menuAndSearchPanel.setVisible(false);
                 contentPane.removeAll();
+                
+                // Có thể phải code đưa thông tin vào JPanel, chưa thấy cách nào hay
+                for (int i = 0; i < 2; i++) {
+                    for (int j = 0; j < 6; j++) {
+                        ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+                        ArticlePanel articlePanel = new ArticlePanel(articleIcon);
+                        articlePanel.setBounds(100 + 715 * i, 72 + 180 * j, 465, 132);
+                        searchResult.add(articlePanel);
+                    }
+                }
+                
                 contentPane.add(menu, BorderLayout.NORTH);
                 contentPane.add(scrollResult, BorderLayout.CENTER);
                 revalidate();
@@ -201,6 +205,8 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         });
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
+        ListOfCate catePanel = new ListOfCate();
+        contentPane.add(catePanel, BorderLayout.SOUTH);
         setVisible(true);
     }
 
