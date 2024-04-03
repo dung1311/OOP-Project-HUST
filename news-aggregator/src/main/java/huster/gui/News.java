@@ -7,6 +7,7 @@ import javax.swing.border.LineBorder;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Stack;
 
 public class News extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -21,16 +22,13 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_author;
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
+    private JLabel jLabel_image;
 
-
-    public News() {
-        // Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
-
+    public News(Stack<JFrame> screenHistory) {
         setSize(X, Y);
         setResizable(true);
         setLocationRelativeTo(null);
         setTitle("The MENU");
-        // contentPane.setLayout(new BorderLayout());
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -71,7 +69,8 @@ public class News extends JFrame {
         homeButton.setContentAreaFilled(false);
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                
+                new Menu(screenHistory).setVisible(true);;
+                dispose();
             }
         });
 
@@ -94,28 +93,32 @@ public class News extends JFrame {
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
         searchButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SearchUI searchUI = new SearchUI(screenHistory);
+                searchUI.setVisible(true);
+                setVisible(false);
+                screenHistory.push(new News(screenHistory));
             }
         });
 
         menu.setLayout(new BorderLayout());
 
-        JPanel jPanel_left = new JPanel();
-        jPanel_left.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 16));
+        JPanel jPanel_left=new JPanel();
+        jPanel_left.setLayout(new FlowLayout(2));
         jPanel_left.add(menuButton);
         jPanel_left.add(homeButton);
         jPanel_left.setBackground(BLACK_menu);
-        menu.add(jPanel_left, BorderLayout.WEST);
+        menu.add(jPanel_left,BorderLayout.WEST);
 
         JPanel jPanel_right=new JPanel();
-        jPanel_right.setLayout(new FlowLayout(FlowLayout.RIGHT, 15, 16));
+        jPanel_right.setLayout(new FlowLayout(2));
         jPanel_right.add(searchButton);
         jPanel_right.add(userButton);
         jPanel_right.setBackground(BLACK_menu);
 
-        menu.add(jPanel_right, BorderLayout.EAST);
-        menu.setBounds(0, 0, 1440, 101);
+        menu.add(jPanel_right,BorderLayout.EAST);
+
 
 
         
@@ -124,7 +127,7 @@ public class News extends JFrame {
         jPanel_news.setLayout(new BorderLayout());
 
         ImageIcon ngotUpBo = new ImageIcon("news-aggregator\\resource\\assets\\ngotUpBo350_180.jpg");
-        JLabel jLabel_image = new JLabel(ngotUpBo, JLabel.RIGHT);
+        jLabel_image = new JLabel(ngotUpBo, JLabel.RIGHT);
         jLabel_image.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
 
         jLabel_news_header = new JLabel("QUÁ VÔ ĐẠO BẤT LƯƠNG", JLabel.CENTER);
@@ -232,7 +235,7 @@ public class News extends JFrame {
                     + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n";
         
         jTextArea_news_center = new JTextArea();
-        // jTextArea_news_center.setText(text);
+        jTextArea_news_center.setText(text);
 
         // Đặt khoảng cách lề cho JTextArea
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
@@ -256,8 +259,7 @@ public class News extends JFrame {
         JScrollPane scrollPane_News = new JScrollPane(jPanel_news);
         scrollPane_News.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane_News.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane_News.getVerticalScrollBar().setPreferredSize(new Dimension(8, 0));
-        scrollPane_News.setBounds(0, 104, 1440, 916);
+        scrollPane_News.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
 
 
         // contentPane.add(scrollPane_News, BorderLayout.CENTER);
@@ -265,16 +267,33 @@ public class News extends JFrame {
 
 
         // add into this
-        this.setLayout(null);
-        this.add(menu);
-        this.add(scrollPane_News);
-        this.setVisible(true); 
+        this.setLayout(new BorderLayout());
+        this.add(menu, BorderLayout.NORTH);
+        this.add(scrollPane_News, BorderLayout.CENTER);
     }
 
+    public void setHeader(String s) {
+        jLabel_news_header.setText(s);
+    }
 
+    public void setImage(ImageIcon icon) {
+        jLabel_image.setIcon(icon);
+    }
 
-    public static void main(String[] args) {
-        new News();
+    public void setAuthor(String s) {
+        jTextArea_news_author.setText("Author: " + s);
+    }
+
+    public void setPostingDate(String s) {
+        jTextArea_news_postingDate.setText("Posting date: " + s);
+    }
+
+    public void setLink(String s) {
+        jTextArea_news_link.setText("More: " + s);
+    }
+
+    public void setNewsContent(String s) {
+        jTextArea_news_center.setText(s);
     }
 }
 
