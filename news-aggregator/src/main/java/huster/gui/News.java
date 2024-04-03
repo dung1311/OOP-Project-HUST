@@ -17,6 +17,10 @@ public class News extends JFrame {
     JPanel menu = new JPanel();
     private JLabel jLabel_news_header;
     // private JTextArea jTextArea_news_header;
+    private JTextArea jTextArea_news_center;
+    private JTextArea jTextArea_news_author;
+    private JTextArea jTextArea_news_postingDate;
+    private JTextArea jTextArea_news_link;
 
 
     public News() {
@@ -138,19 +142,19 @@ public class News extends JFrame {
 
         // jPanel_news_header.add(jTextArea_news_header, BorderLayout.CENTER);
 
-        JTextArea jTextArea_news_author = new JTextArea("Author: Author's name");
+        jTextArea_news_author = new JTextArea("Author: Author's name");
         jTextArea_news_author.setBackground(jLabel_image.getBackground());
         jTextArea_news_author.setFont(font15I);
         jTextArea_news_author.setEditable(false);
         jTextArea_news_author.setLineWrap(true);
         jTextArea_news_author.setWrapStyleWord(true);
-        JTextArea jTextArea_news_postingDate = new JTextArea("Posting date:");
+        jTextArea_news_postingDate = new JTextArea("Posting date:");
         jTextArea_news_postingDate.setBackground(jLabel_image.getBackground());
         jTextArea_news_postingDate.setFont(font15I);
         jTextArea_news_postingDate.setEditable(false);
         jTextArea_news_postingDate.setLineWrap(true);
         jTextArea_news_postingDate.setWrapStyleWord(true);
-        JTextArea jTextArea_news_link = new JTextArea("Chi tiết: link bài viết");
+        jTextArea_news_link = new JTextArea("Chi tiết: link bài viết");
         jTextArea_news_link.setBackground(jLabel_image.getBackground());
         jTextArea_news_link. setFont(font15I);
         jTextArea_news_link.setEditable(false);
@@ -159,7 +163,6 @@ public class News extends JFrame {
 
 
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
-
         JPanel jPanel_news_source = new JPanel();
         jPanel_news_source.setLayout(new GridLayout(1, 2));
         
@@ -169,7 +172,7 @@ public class News extends JFrame {
         jPanel_news_source_left.add(jTextArea_news_link);
 
         jPanel_news_source.add(jPanel_news_source_left);
-        jPanel_news_source.add(jLabel_image);
+        // jPanel_news_source.add(jLabel_image);
 
 
         String text = "Như đã thông báo lúc nào đó, team đã tạm hoãn nấu content láo nửa buổi để có thêm thời gian xem xét và xác định các dữ liệu bất thường phát sinh ở các bài post đã đăng. Từ đó, chúng tôi sẽ đối chiếu với những quy định nội bộ đã ban hành để đưa ra các quyết định nhằm đảm bảo tính minh bạch.\n"
@@ -228,7 +231,9 @@ public class News extends JFrame {
                     + "Những biện pháp này được thực hiện với sự nghiêm túc nhất để bảo đảm tính lót tích lành mạnh.\n"
                     + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n";
         
-        JTextArea jTextArea_news_center = new JTextArea(text);
+        jTextArea_news_center = new JTextArea();
+        // jTextArea_news_center.setText(text);
+
         // Đặt khoảng cách lề cho JTextArea
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
             new LineBorder(Color.BLACK), // Lề ngoài
@@ -265,6 +270,8 @@ public class News extends JFrame {
         this.add(scrollPane_News);
         this.setVisible(true); 
     }
+
+
 
     public static void main(String[] args) {
         new News();
