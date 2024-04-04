@@ -11,6 +11,7 @@ package huster;
 import huster.crawl.coinDesk.WriteOnJsonFile;
 public class Main {
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
         // Resources test1 = new Resources();
         // List<String> test =  test1.getLinks("https://www.coindesk.com/");
         // for(int i = 0; i < test.size(); i++)
@@ -39,7 +40,9 @@ public class Main {
         // } catch (Exception e) {
         //     e.printStackTrace();
         // }
-        
+        long endTime = System.currentTimeMillis();
+        long runTime = endTime - startTime;
+        System.out.println("Running Time: " + runTime); 
     }
 
         
