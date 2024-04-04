@@ -1,4 +1,4 @@
-package huster.crawl.fromCoinDesk;
+package huster.crawl.coinDesk;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -32,7 +32,7 @@ public class Resources {
     public List<String> getLinks(String url)
     {
         try{
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(url).ignoreHttpErrors(true).get();
             Elements linkElements = doc.select("a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link");
             Set<String> tempLinks = new HashSet<>();
 

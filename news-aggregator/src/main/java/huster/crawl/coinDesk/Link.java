@@ -1,4 +1,4 @@
-package huster.crawl.fromCoinDesk;
+package huster.crawl.coinDesk;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +43,7 @@ public class Link {
         String title = null;
         try {
             Element titleElement = doc.selectFirst("meta[property=og:title]");
+            if(titleElement == null) return null;
             title = titleElement.attr("content");
         } catch(Exception e) {
             e.printStackTrace();
@@ -56,6 +57,7 @@ public class Link {
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
             Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");
+            if(summaryTitle == null || summaryElements == null) return null;
             summary = summaryTitle.attr("content") + "\n";
             for(Element summaryElement : summaryElements)
             {
@@ -100,6 +102,7 @@ public class Link {
         String category = null;
         try {
             Element categoryElement = doc.selectFirst("meta[property=og:type]");
+            if(categoryElement == null) return null;
             category = categoryElement.attr("content");
         } catch(Exception e) {
             e.printStackTrace();
@@ -173,6 +176,7 @@ public class Link {
         String linkImage = "";
         try {
             Element linkImageElement = doc.selectFirst("meta[property=og:image]");
+            if(linkImageElement == null) return null;
             linkImage = linkImageElement.attr("content");
         } catch (Exception e) {
             e.printStackTrace();

@@ -1,4 +1,4 @@
-package huster.crawl.fromCoinDesk;
+package huster.crawl.coinDesk;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -18,19 +18,19 @@ public class WriteOnJsonFile {
         try {
             FileReader reader = new FileReader("news-aggregator/resource/data/data.json");
             Gson gson = new Gson();
-            HashMap<String,Data> dataList = gson.fromJson(reader, new TypeToken<HashMap<String, Data>>(){}.getType());
+            HashMap<String, Data> dataList = gson.fromJson(reader, new TypeToken<HashMap<String, Data>>(){}.getType());
             if(dataList == null)
             {
                 dataList = new HashMap<>();
             }
             Resources source = new Resources();
             List<String> linkList = source.getLinks(url);
-            for(int i = 0; i < 11; i++)
+            for(int i = 0; i < linkList.size(); i++)
             {
                 Data item = new Data();
                 Link itemLink = new Link();
                 itemLink.setLink(linkList.get(i));
-                Document doc = Jsoup.connect(itemLink.getLink()).get();
+                Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
                 item.setUrl(url);
                 //item.setLink(itemLink.getLink());
                 item.setTitle(itemLink.getTitle(doc));
@@ -56,7 +56,7 @@ public class WriteOnJsonFile {
             // String fileName = sc.next();
             // sc.close();
 
-            FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/data.json",true);
+            FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/data.json");
             fileWriter.write(json);
             fileWriter.close();
 
