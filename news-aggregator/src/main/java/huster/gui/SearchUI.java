@@ -97,7 +97,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         // Thêm các nút vào menuLeft
         ImageIcon closeIcon = new ImageIcon("news-aggregator\\resource\\assets\\closeIcon.png");
         JButton closeButton = new JButton(closeIcon);
-        closeButton.setPreferredSize(new Dimension(65, 65));
+        closeButton.setPreferredSize(new Dimension(50, 50));
         closeButton.setBorderPainted(false);
         closeButton.setFocusPainted(false);
         closeButton.setContentAreaFilled(false);
@@ -116,7 +116,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
         JButton homeButton = new JButton(homeIcon);
-        homeButton.setPreferredSize(new Dimension(65, 65));
+        homeButton.setPreferredSize(new Dimension(50, 50));
         homeButton.setBorderPainted(false);
         homeButton.setFocusPainted(false);
         homeButton.setContentAreaFilled(false);
@@ -131,7 +131,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         // Thêm các nút vào menuRight
         ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
         JButton searchButton = new JButton(searchIcon);
-        searchButton.setPreferredSize(new Dimension(65, 65));
+        searchButton.setPreferredSize(new Dimension(50, 50));
         searchButton.setBorderPainted(false);
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
@@ -139,7 +139,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
         JButton userButton = new JButton(userIcon);
-        userButton.setPreferredSize(new Dimension(65, 65));
+        userButton.setPreferredSize(new Dimension(50, 50));
         userButton.setBorderPainted(false);
         userButton.setFocusPainted(false);
         userButton.setContentAreaFilled(false);
@@ -208,6 +208,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                             @Override
                             public void actionPerformed(ActionEvent e) {
                                 News news = new News(screenHistory);
+                                news.setVisible(true);
                                 dispose();
                                 news.setHeader(articleButton.getText());
                             }
