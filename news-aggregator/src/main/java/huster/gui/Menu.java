@@ -164,7 +164,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article2 = new JButton(articleIcon);
-        jButton_article2.setBounds(825,252,465,132);
+        jButton_article2.setBounds(825,272,465,132);
 
         jButton_article2.setPreferredSize(new Dimension(465,132));
         jButton_article2.setBorderPainted(false);
@@ -176,7 +176,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article3 = new JButton(articleIcon);
-        jButton_article3.setBounds(825,432,465,132);
+        jButton_article3.setBounds(825,472,465,132);
 
         jButton_article3.setPreferredSize(new Dimension(465,132));
         jButton_article3.setBorderPainted(false);
@@ -188,7 +188,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article4 = new JButton(articleIcon);
-        jButton_article4.setBounds(825,612,465,132);
+        jButton_article4.setBounds(825,672,465,132);
 
         jButton_article4.setPreferredSize(new Dimension(465,132));
         jButton_article4.setBorderPainted(false);
@@ -200,7 +200,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article5 = new JButton(articleIcon);
-        jButton_article5.setBounds(825,792,465,132);
+        jButton_article5.setBounds(825,872,465,132);
 
         jButton_article5.setPreferredSize(new Dimension(465,132));
         jButton_article5.setBorderPainted(false);
@@ -212,7 +212,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article6 = new JButton(articleIcon);
-        jButton_article6.setBounds(825,972,465,132);
+        jButton_article6.setBounds(825,1072,465,132);
 
         jButton_article6.setPreferredSize(new Dimension(465,132));
         jButton_article6.setBorderPainted(false);
@@ -224,7 +224,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article7 = new JButton(articleIcon);
-        jButton_article7.setBounds(56,612,465,132);
+        jButton_article7.setBounds(56,672,465,132);
 
         jButton_article7.setPreferredSize(new Dimension(465,132));
         jButton_article7.setBorderPainted(false);
@@ -236,7 +236,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article8 = new JButton(articleIcon);
-        jButton_article8.setBounds(56,792,465,132);
+        jButton_article8.setBounds(56,872,465,132);
 
         jButton_article8.setPreferredSize(new Dimension(465,132));
         jButton_article8.setBorderPainted(false);
@@ -248,7 +248,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             }
         });
         JButton jButton_article9 = new JButton(articleIcon);
-        jButton_article9.setBounds(56,972,465,132);
+        jButton_article9.setBounds(56,1072,465,132);
 
         jButton_article9.setPreferredSize(new Dimension(465,132));
         jButton_article9.setBorderPainted(false);
@@ -262,7 +262,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
     
 
         JPanel articlePanel = new JPanel();
-        articlePanel.setPreferredSize(new Dimension(1440, 1200));
+        articlePanel.setPreferredSize(new Dimension(1440, 1440));
         articlePanel.setLayout(null);
 
         articlePanel.add(jButton_article);
