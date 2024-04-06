@@ -13,6 +13,9 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
+
+    public String tenDeTimTrongJSON;
+
     private boolean isSuggestionPanelVisible = false;
 
     private SearchBar searchBar = new SearchBar(10);
@@ -218,6 +221,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                     }
                 }
                 
+                tenDeTimTrongJSON = searchBar.getText();
                 contentPane.add(menu, BorderLayout.NORTH);
                 contentPane.add(scrollResult, BorderLayout.CENTER);
                 revalidate();
@@ -244,10 +248,11 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         ListOfCate catePanel = new ListOfCate();
-        contentPane.add(catePanel, BorderLayout.SOUTH);
+        contentPane.add(catePanel, BorderLayout.CENTER);
     }
 
     // Phương thức tìm kiếm gợi ý tìm kiếm dựa trên từ khóa nhập vào
+    // Muốn hiển thị gợi í cho người dùng thì Dũng nhét vào suggestion
     private String[] searchSuggestions(String searchText) {
         // Dữ liệu gợi ý
         String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency" };
@@ -281,5 +286,9 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
     public void setScreenHistory(JFrame frame) {
         screenHistory.push(frame);
+    }
+
+    public String getTenDeTimTrongJSON(){
+        return tenDeTimTrongJSON;
     }
 }
