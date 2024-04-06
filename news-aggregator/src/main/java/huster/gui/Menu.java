@@ -33,7 +33,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
         JButton menuButton = new JButton(menuIcon);
-        menuButton.setPreferredSize(new Dimension(65,65));
+        menuButton.setPreferredSize(new Dimension(50,50));
         menuButton.setBorderPainted(false);
         menuButton.setFocusPainted(false);
         menuButton.setContentAreaFilled(false);
@@ -47,7 +47,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
         JButton homeButton = new JButton(homeIcon);
-        homeButton.setPreferredSize(new Dimension(65,65));
+        homeButton.setPreferredSize(new Dimension(50,50));
         homeButton.setBorderPainted(false);
         homeButton.setFocusPainted(false);
         homeButton.setContentAreaFilled(false);
@@ -59,7 +59,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
         JButton userButton = new JButton(userIcon);
-        userButton.setPreferredSize(new Dimension(65,65));
+        userButton.setPreferredSize(new Dimension(50,50));
         userButton.setBorderPainted(false);
         userButton.setFocusPainted(false);
         userButton.setContentAreaFilled(false);
@@ -71,7 +71,7 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
         JButton searchButton = new JButton(searchIcon);
-        searchButton.setPreferredSize(new Dimension(65,65));
+        searchButton.setPreferredSize(new Dimension(50,50));
         searchButton.setBorderPainted(false);
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
