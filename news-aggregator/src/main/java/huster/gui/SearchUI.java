@@ -5,6 +5,7 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private static final long serialVersionUID = 1L;
@@ -18,12 +19,17 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
 
+    private Stack<JFrame> screenHistory;
 
-    public SearchUI() {
+
+    public SearchUI(Stack<JFrame> screenHistory) {
+        this.screenHistory = screenHistory;
+
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(true);
-        setLocation(ORIGIN_X, ORIGIN_Y);
+        setLocationRelativeTo(null);
+        // setLocation(ORIGIN_X, ORIGIN_Y);
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -89,26 +95,43 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         });
 
         // Thêm các nút vào menuLeft
-        ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\menuIcon.png");
-        JButton menuButton = new JButton(menuIcon);
-        menuButton.setPreferredSize(new Dimension(65, 65));
-        menuButton.setBorderPainted(false);
-        menuButton.setFocusPainted(false);
-        menuButton.setContentAreaFilled(false);
-        menuLeft.add(menuButton);
+        ImageIcon closeIcon = new ImageIcon("news-aggregator\\resource\\assets\\closeIcon.png");
+        JButton closeButton = new JButton(closeIcon);
+        closeButton.setPreferredSize(new Dimension(50, 50));
+        closeButton.setBorderPainted(false);
+        closeButton.setFocusPainted(false);
+        closeButton.setContentAreaFilled(false);
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!screenHistory.isEmpty()) {
+                    JFrame previousScreen = screenHistory.pop();
+                    previousScreen.setVisible(true);
+                    dispose();
+                }
+            }
+        });
+
+        menuLeft.add(closeButton);
 
         ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
         JButton homeButton = new JButton(homeIcon);
-        homeButton.setPreferredSize(new Dimension(65, 65));
+        homeButton.setPreferredSize(new Dimension(50, 50));
         homeButton.setBorderPainted(false);
         homeButton.setFocusPainted(false);
         homeButton.setContentAreaFilled(false);
+        homeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){
+                new Menu(screenHistory).setVisible(true);;
+                dispose();
+            }
+        });
         menuLeft.add(homeButton);
 
         // Thêm các nút vào menuRight
         ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
         JButton searchButton = new JButton(searchIcon);
-        searchButton.setPreferredSize(new Dimension(65, 65));
+        searchButton.setPreferredSize(new Dimension(50, 50));
         searchButton.setBorderPainted(false);
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
@@ -116,7 +139,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
         JButton userButton = new JButton(userIcon);
-        userButton.setPreferredSize(new Dimension(65, 65));
+        userButton.setPreferredSize(new Dimension(50, 50));
         userButton.setBorderPainted(false);
         userButton.setFocusPainted(false);
         userButton.setContentAreaFilled(false);
@@ -160,6 +183,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         JScrollPane scrollResult = new JScrollPane(searchResult);
         scrollResult.setPreferredSize(new Dimension(1440, 2000));
         scrollResult.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollResult.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
         searchResult.setLayout(null);
 
         // Phần hiển thị gợi í cho searchBar
@@ -174,9 +198,23 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 for (int i = 0; i < 2; i++) {
                     for (int j = 0; j < 6; j++) {
                         ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
-                        ArticlePanel articlePanel = new ArticlePanel(articleIcon);
-                        articlePanel.setBounds(100 + 715 * i, 72 + 180 * j, 465, 132);
-                        searchResult.add(articlePanel);
+                        JButton articleButton = new JButton(articleIcon);
+                        articleButton.setBackground(Color.WHITE);
+                        articleButton.setHorizontalTextPosition(SwingConstants.CENTER);
+                        articleButton.setVerticalTextPosition(SwingConstants.BOTTOM);
+                        articleButton.setBorderPainted(false);
+                        articleButton.setBounds(100 + 715 * i, 72 + 180 * j, 465, 135);
+                        articleButton.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                News news = new News(screenHistory);
+                                news.setVisible(true);
+                                dispose();
+                                news.setHeader(articleButton.getText());
+                            }
+                            
+                        });
+                        searchResult.add(articleButton);
                     }
                 }
                 
@@ -207,7 +245,6 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         ListOfCate catePanel = new ListOfCate();
         contentPane.add(catePanel, BorderLayout.SOUTH);
-        setVisible(true);
     }
 
     // Phương thức tìm kiếm gợi ý tìm kiếm dựa trên từ khóa nhập vào
@@ -240,5 +277,9 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     public void actionPerformed(ActionEvent arg0) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    }
+
+    public void setScreenHistory(JFrame frame) {
+        screenHistory.push(frame);
     }
 }
