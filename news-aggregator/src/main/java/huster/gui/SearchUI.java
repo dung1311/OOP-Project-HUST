@@ -17,16 +17,23 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     public String tenDeTimTrongJSON;
 
     private boolean isSuggestionPanelVisible = false;
+    private int seeMoreButtonClickedCount = 0;
 
     private SearchBar searchBar = new SearchBar(10);
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
 
     private Stack<JFrame> screenHistory;
+    private JPanel searchResult_center;
+    private ImageIcon articleIcon;
+    private AbstractButton articleButton;
+    private ArticlePanel panelTin;
 
 
     public SearchUI(Stack<JFrame> screenHistory) {
         this.screenHistory = screenHistory;
+
+        Font font50 = new Font("Arial", Font.PLAIN, 50);
 
         Container contentPane = getContentPane();
         setSize(X, Y);
@@ -181,13 +188,29 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         });
         // ------------------------------------------------
         // Đây là phần thêm kết quả tìm kiếm
-        JPanel searchResult = new JPanel();
+        JPanel searchResult = new JPanel(new BorderLayout());
         searchResult.setPreferredSize(new Dimension(1440, 2000));
+        searchResult_center = new JPanel();
+
+        // Thêm button See more
+        JButton seeMoreButton = new JButton("See more!");
+        seeMoreButton.setFont(font50);
+        seeMoreButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seeMoreButtonClickedCount++;
+                searchResult.setPreferredSize(new Dimension(1440, 2000 + 900 * seeMoreButtonClickedCount));
+                createSearchResultPanels(6 + 3 * seeMoreButtonClickedCount);
+            }
+        });
+        searchResult.add(searchResult_center, BorderLayout.CENTER);
+        searchResult.add(seeMoreButton, BorderLayout.SOUTH);
+
         JScrollPane scrollResult = new JScrollPane(searchResult);
         scrollResult.setPreferredSize(new Dimension(1440, 2000));
         scrollResult.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollResult.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-        searchResult.setLayout(null);
+        searchResult_center.setLayout(null);
 
         // Phần hiển thị gợi í cho searchBar
         ActionListener searchListener = new ActionListener() {
@@ -198,30 +221,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 contentPane.removeAll();
                 
                 // Có thể phải code đưa thông tin vào JPanel, chưa thấy cách nào hay
-                for (int i = 0; i < 2; i++) {
-                    for (int j = 0; j < 6; j++) {
-                        ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
-                        ArticleButton articleButton = new ArticleButton();
-                        articleButton.setIcon(articleIcon);
-                        
-                        
-
-                        ArticlePanel panelTin = new ArticlePanel("Ten bao", "10/2/2004");
-                        panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
-                        panelTin.add(articleButton, BorderLayout.NORTH);
-                        articleButton.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                News news = new News(screenHistory);
-                                news.setVisible(true);
-                                dispose();
-                                news.setHeader(articleButton.getText());
-                            }
-                            
-                        });
-                        searchResult.add(panelTin);
-                    }
-                }
+                createSearchResultPanels(6);
                 
                 tenDeTimTrongJSON = searchBar.getText();
                 contentPane.add(menu, BorderLayout.NORTH);
@@ -237,10 +237,6 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                         dispose();
                     }
                 });
-            }
-
-            public void seeMore() {
-
             }
         };        
         searchBar.addActionListener(searchListener);
@@ -263,6 +259,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 }
             }
         });
+
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         ListOfCate catePanel = new ListOfCate();
@@ -308,6 +305,33 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
     public String getTenDeTimTrongJSON(){
         return tenDeTimTrongJSON;
+    }
+
+    public void createSearchResultPanels(int numberOfRows) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = numberOfRows - 6; j < numberOfRows; j++) {
+                articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+                articleButton = new ArticleButton();
+                articleButton.setIcon(articleIcon);
+                
+                
+
+                panelTin = new ArticlePanel("Ten bao", "10/2/2004");
+                panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
+                panelTin.add(articleButton, BorderLayout.NORTH);
+                articleButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        News news = new News(screenHistory);
+                        news.setVisible(true);
+                        dispose();
+                        news.setHeader(articleButton.getText());
+                    }
+                    
+                });
+                searchResult_center.add(panelTin);
+            }
+        }
     }
 }
 
