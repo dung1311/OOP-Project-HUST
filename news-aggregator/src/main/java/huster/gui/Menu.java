@@ -1,6 +1,8 @@
 package huster.gui;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -160,51 +162,100 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
       
         JPanel toparticlePanel = new JPanel();
-        toparticlePanel.setPreferredSize(new Dimension(800,800));
+        toparticlePanel.setPreferredSize(new Dimension(1280,625));
         toparticlePanel.setLayout(new BorderLayout());
+
+        JPanel nothingPanel = new JPanel();
+        nothingPanel.setPreferredSize(new Dimension(1280,75));
 
         JButton BigarticleButton = new JButton(BigarticleIcon);
         BigarticleButton.setBackground(GREY_menu);
+        BigarticleButton.setOpaque(false);
         BigarticleButton.setContentAreaFilled(false);
         BigarticleButton.setBorderPainted(false);
         JLabel BigarticleLabel = new JLabel("Be Xuan Mai");
         BigarticleLabel.setHorizontalAlignment(JLabel.CENTER);
         BigarticleLabel.setVerticalAlignment(JLabel.CENTER);
-        toparticlePanel.add(BigarticleButton,BorderLayout.CENTER);
-        toparticlePanel.add(BigarticleLabel,BorderLayout.SOUTH);
+        toparticlePanel.add(BigarticleButton,BorderLayout.NORTH);
+        toparticlePanel.add(BigarticleLabel,BorderLayout.CENTER);
+        toparticlePanel.add(nothingPanel,BorderLayout.SOUTH);
+
 
         JPanel articlePanel = new JPanel();
-        articlePanel.setPreferredSize(new Dimension(1280, 1520));
-        articlePanel.setLayout(new GridLayout(6,2,75,50));
+        articlePanel.setPreferredSize(new Dimension(1280, 1500));
+        articlePanel.setLayout(new GridLayout(6,2,175,0));
 
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 6; j++) {
                 
-                JButton articleButton = new JButton(articleIcon);
-                articleButton.setBackground(GREY_menu);
-                        articleButton.setContentAreaFilled(false);
+                // JButton articleButton = new JButton(articleIcon);
+                // articleButton.setBackground(GREY_menu);
+                //         articleButton.setContentAreaFilled(false);
 
-                        articleButton.setBorderPainted(false);
-                JLabel articleLabel = new JLabel("Be Xuan Mai");
-                articleLabel.setHorizontalAlignment(JLabel.CENTER);
-                articleLabel.setVerticalAlignment(JLabel.CENTER);
-                JPanel small_articlePanel = new JPanel();
-                small_articlePanel.setLayout(new BorderLayout());
-                small_articlePanel.add(articleButton,BorderLayout.CENTER);
-                small_articlePanel.add(articleLabel,BorderLayout.SOUTH);
-                small_articlePanel.setPreferredSize(new Dimension(465,180));
-                articlePanel.add(small_articlePanel);
+                //         articleButton.setBorderPainted(false);
+                // JLabel articleLabel = new JLabel("Be Xuan Mai");
+                // articleLabel.setHorizontalAlignment(JLabel.CENTER);
+                // articleLabel.setVerticalAlignment(JLabel.CENTER);
+                // JPanel small_articlePanel = new JPanel();
+                // small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
+                // small_articlePanel.add(articleButton);
+                // small_articlePanel.add(articleLabel);
+                // small_articlePanel.setPreferredSize(new Dimension(465,180));
+                // articlePanel.add(small_articlePanel);
+//                 JButton articleButton = new JButton(articleIcon);
+// articleButton.setBackground(GREY_menu);
+// articleButton.setContentAreaFilled(false);
+// articleButton.setBorderPainted(false);
+
+// JLabel articleLabel = new JLabel("Be Xuan Mai");
+// articleLabel.setHorizontalAlignment(JLabel.CENTER);
+// articleLabel.setVerticalAlignment(JLabel.CENTER);
+
+// JPanel small_articlePanel = new JPanel();
+// small_articlePanel.setLayout(new BorderLayout());
+// small_articlePanel.add(articleButton, BorderLayout.CENTER);
+// small_articlePanel.add(articleLabel, BorderLayout.SOUTH);
+// small_articlePanel.setPreferredSize(new Dimension(465, 180));
+
+// articlePanel.add(small_articlePanel);
+        JButton articleButton = new JButton(articleIcon);
+            articleButton.setBackground(GREY_menu);
+            articleButton.setContentAreaFilled(false);
+            articleButton.setBorderPainted(false);
+
+        JLabel articleLabel = new JLabel("Be Xuan Mai");
+            articleLabel.setHorizontalAlignment(JLabel.CENTER);
+            articleLabel.setVerticalAlignment(JLabel.CENTER);
+
+        JPanel small_articlePanel = new JPanel();
+            small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
+            small_articlePanel.add(articleButton);
+
+        JPanel labelPanel = new JPanel();
+            labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+            labelPanel.add(articleLabel);
+            small_articlePanel.add(labelPanel);
+
+            small_articlePanel.setPreferredSize(new Dimension(465, 180));
+
+            articlePanel.add(small_articlePanel);
             }
         }
 
+        JPanel fullarticlePanel = new JPanel();
+        fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
+        fullarticlePanel.setLayout(new BorderLayout());
+        fullarticlePanel.add(toparticlePanel,BorderLayout.NORTH);
+        fullarticlePanel.add(articlePanel,BorderLayout.CENTER);
 
 
 
 
 
-        JScrollPane scrollPane_suggested = new JScrollPane(articlePanel);
-        scrollPane_suggested.setPreferredSize(new Dimension(1280, 1520));
+        JScrollPane scrollPane_suggested = new JScrollPane(fullarticlePanel);
+        scrollPane_suggested.setPreferredSize(new Dimension(1280, 800));
         scrollPane_suggested.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane_suggested.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
 
 
