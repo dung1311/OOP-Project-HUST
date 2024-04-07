@@ -193,7 +193,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         searchBar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Ẩn Panel hiện tại (menuAndSearchPanel)
+                // Xóa hết mấy cái Panel hiện tại
                 menuAndSearchPanel.setVisible(false);
                 contentPane.removeAll();
                 
@@ -201,12 +201,14 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 for (int i = 0; i < 2; i++) {
                     for (int j = 0; j < 6; j++) {
                         ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
-                        JButton articleButton = new JButton(articleIcon);
-                        articleButton.setBackground(Color.WHITE);
-                        articleButton.setHorizontalTextPosition(SwingConstants.CENTER);
-                        articleButton.setVerticalTextPosition(SwingConstants.BOTTOM);
-                        articleButton.setBorderPainted(false);
-                        articleButton.setBounds(100 + 715 * i, 72 + 180 * j, 465, 135);
+                        ArticleButton articleButton = new ArticleButton();
+                        articleButton.setIcon(articleIcon);
+                        
+                        
+
+                        ArticlePanel panelTin = new ArticlePanel("Ten bao", "10/2/2004");
+                        panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
+                        panelTin.add(articleButton, BorderLayout.NORTH);
                         articleButton.addActionListener(new ActionListener() {
                             @Override
                             public void actionPerformed(ActionEvent e) {
@@ -217,7 +219,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                             }
                             
                         });
-                        searchResult.add(articleButton);
+                        searchResult.add(panelTin);
                     }
                 }
                 
@@ -292,3 +294,14 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         return tenDeTimTrongJSON;
     }
 }
+
+class ArticlePanel extends JPanel {
+    public ArticlePanel(String a, String b) {
+        setPreferredSize(new Dimension(465, 170));
+        setLayout(new BorderLayout());
+        String content = "<html><body>" + a + "<br>" + b + "</body></html>";
+        JLabel articleName = new JLabel(content);
+        add(articleName, BorderLayout.SOUTH);
+    }
+}
+
