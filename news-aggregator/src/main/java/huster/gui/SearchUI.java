@@ -190,7 +190,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         searchResult.setLayout(null);
 
         // Phần hiển thị gợi í cho searchBar
-        searchBar.addActionListener(new ActionListener() {
+        ActionListener searchListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Xóa hết mấy cái Panel hiện tại
@@ -229,8 +229,24 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 revalidate();
                 // repaint();
 
+                // Thêm actionListener cho searchButton sau khi hiển thị kết quả tìm kiếm
+                searchButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new SearchUI(screenHistory).setVisible(true);
+                        dispose();
+                    }
+                });
             }
-        });
+
+            public void seeMore() {
+
+            }
+        };        
+        searchBar.addActionListener(searchListener);
+
+        // Thêm actionListener cho searchButton khi chưa hiển thị kết quả tìm kiếm
+        searchButton.addActionListener(searchListener);
 
         // Trong constructor của SearchUI, thêm sự kiện cho searchBar
         searchBar.addMouseListener(new MouseAdapter() {
