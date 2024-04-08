@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Stack;
 
+import huster.api.Push;
+
 public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
@@ -156,20 +158,23 @@ public class Menu extends JFrame {
           }
         });
         
-        JButton jButton_article1 = new JButton(articleIcon);
-        jButton_article1.setBounds(825,72,465,132);
+        // JButton jButton_article1 = new JButton(articleIcon);
+        // jButton_article1.setBounds(825,72,465,132);
 
-        jButton_article1.setPreferredSize(new Dimension(465,132));
-        jButton_article1.setBorderPainted(false);
-        jButton_article1.setFocusPainted(false);
-        jButton_article1.setContentAreaFilled(false);
-        jButton_article1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
+        // jButton_article1.setPreferredSize(new Dimension(465,132));
+        // jButton_article1.setBorderPainted(false);
+        // jButton_article1.setFocusPainted(false);
+        // jButton_article1.setContentAreaFilled(false);
+        // jButton_article1.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent e){
+        //         News news = new News(screenHistory);
+        //         news.setVisible(true);
+        //         dispose();
+        //     }
+        // });
+
+        JButton jButton_article1 = Push.setNews("https://scontent.fhan14-2.fna.fbcdn.net/v/t1.15752-9/436771011_2042312252889771_931004561630764026_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeE9tWbPG-kvXqJdOMymK_n1m1f53AYRUCObV_ncBhFQI1Wsh6bSDPNsvCl4L9_NmkaWQrZSo7pM2VUSkRaqkIzu&_nc_ohc=rpzDNpPOyaAAb4_1hsM&_nc_ht=scontent.fhan14-2.fna&oh=03_AdWHIQHJGJlhRdPxcvZorl5wyDeF9PzP2LCy_HcmddKGYA&oe=663B8CA6", 825,72,465,132);
+
         JButton jButton_article2 = new JButton(articleIcon);
         jButton_article2.setBounds(825,252,465,132);
 
@@ -184,20 +189,23 @@ public class Menu extends JFrame {
                 dispose();
             }
         });
-        JButton jButton_article3 = new JButton(articleIcon);
-        jButton_article3.setBounds(825,432,465,132);
+        // JButton jButton_article3 = new JButton(articleIcon);
+        // jButton_article3.setBounds(825,432,465,132);
 
-        jButton_article3.setPreferredSize(new Dimension(465,132));
-        jButton_article3.setBorderPainted(false);
-        jButton_article3.setFocusPainted(false);
-        jButton_article3.setContentAreaFilled(false);
-        jButton_article3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
+        // jButton_article3.setPreferredSize(new Dimension(465,132));
+        // jButton_article3.setBorderPainted(false);
+        // jButton_article3.setFocusPainted(false);
+        // jButton_article3.setContentAreaFilled(false);
+        // jButton_article3.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent e){
+        //         News news = new News(screenHistory);
+        //         news.setVisible(true);
+        //         dispose();
+        //     }
+        // });
+
+        JButton jButton_article3 = Push.setNews("news-aggregator\\resource\\assets\\test.jpeg", 825,432,465,132);
+
         JButton jButton_article4 = new JButton(articleIcon);
         jButton_article4.setBounds(825,612,465,132);
 
@@ -268,20 +276,22 @@ public class Menu extends JFrame {
                 dispose();
             }
         });
-        JButton jButton_article9 = new JButton(articleIcon);
-        jButton_article9.setBounds(56,972,465,132);
+        // JButton jButton_article9 = new JButton(articleIcon);
+        // jButton_article9.setBounds(56,972,465,132);
 
-        jButton_article9.setPreferredSize(new Dimension(465,132));
-        jButton_article9.setBorderPainted(false);
-        jButton_article9.setFocusPainted(false);
-        jButton_article9.setContentAreaFilled(false);
-        jButton_article9.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
+        // jButton_article9.setPreferredSize(new Dimension(465,132));
+        // jButton_article9.setBorderPainted(false);
+        // jButton_article9.setFocusPainted(false);
+        // jButton_article9.setContentAreaFilled(false);
+        // jButton_article9.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent e){
+        //         News news = new News(screenHistory);
+        //         news.setVisible(true);
+        //         dispose();
+        //     }
+        // });
+
+        JButton jButton_article9 = Push.setNews("news-aggregator\\resource\\assets\\test.jpeg", 56,972,465,132);
     
 
         JPanel articlePanel = new JPanel();

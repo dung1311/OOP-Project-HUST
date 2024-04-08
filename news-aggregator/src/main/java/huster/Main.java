@@ -9,7 +9,7 @@ import java.util.Stack;
 import javax.swing.JFrame;
 
 import huster.gui.Menu;
-import huster.action.VisulizeNews;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -48,8 +48,7 @@ public class Main {
 
         Menu menu = new Menu(screenHistory);
         menu.setVisible(true);
-        
-        VisulizeNews.display();
+
 
     }
 
