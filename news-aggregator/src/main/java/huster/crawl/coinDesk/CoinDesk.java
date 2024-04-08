@@ -32,7 +32,7 @@ public class CoinDesk {
 
         Gson dataJson = new Gson();
         try {
-            FileWriter test = new FileWriter("news-aggregator\\recourse\\data\\webData.json");
+            FileWriter test = new FileWriter("news-aggregator\\resource\\data\\webData.json");
             test.write(dataJson.toJson(dataList));
             test.close();
         } catch (Exception e) {

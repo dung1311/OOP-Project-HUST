@@ -9,6 +9,7 @@ import java.util.Stack;
 import javax.swing.JFrame;
 
 import huster.gui.Menu;
+import huster.action.VisulizeNews;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,10 +19,10 @@ public class Main {
         // {
         // System.out.println(test.get(i));
         // }
-        String url = "https://www.coindesk.com/";
+        // String url = "https://www.coindesk.com/";
 
-        WriteOnJsonFile file = new WriteOnJsonFile();
-        file.writeOnJsonFile(url);
+        // WriteOnJsonFile file = new WriteOnJsonFile();
+        // file.writeOnJsonFile(url);
         // try {
         // FileReader reader = new FileReader("output.json");
         // Gson gson = new Gson();
@@ -47,6 +48,9 @@ public class Main {
 
         Menu menu = new Menu(screenHistory);
         menu.setVisible(true);
+        
+        VisulizeNews.display();
+
     }
 
 }
