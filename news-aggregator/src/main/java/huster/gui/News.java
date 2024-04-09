@@ -22,10 +22,11 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
     private JLabel jLabel_image;
-    private ScreenHistoryManager screenHistoryManager;
+    private ScreenHistory historyStack;
 
     public News() {
-        screenHistoryManager.pushFrame(this);
+        historyStack = ScreenHistory.getInstance();
+        ScreenHistory.getInstance().pushScreen(this);
 
         setSize(X, Y);
         setResizable(false);
@@ -47,15 +48,20 @@ public class News extends JFrame {
         Font font15I = new Font("Arial", Font.ITALIC, 15);
 
 
-        ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
-        JButton menuButton = new JButton(menuIcon);
-        menuButton.setPreferredSize(new Dimension(50, 50));
-        menuButton.setBorderPainted(false);
-        menuButton.setFocusPainted(false);
-        menuButton.setContentAreaFilled(false);
-        menuButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-
+        ImageIcon backIcon = new ImageIcon("news-aggregator\\resource\\assets\\\\backButton.png" );
+        JButton backButton = new JButton(backIcon);
+        backButton.setPreferredSize(new Dimension(50, 50));
+        backButton.setBorderPainted(false);
+        backButton.setFocusPainted(false);
+        backButton.setContentAreaFilled(false);
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // if (!ScreenHistory.getInstance().isEmpty()) {
+                //     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
+                //     previousScreen.setVisible(true);
+                //     dispose();
+                // }
             }
         });
 
@@ -96,9 +102,9 @@ public class News extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SearchUI searchUI = new SearchUI();
+                // ScreenHistory.getInstance().pushScreen(new News());
                 searchUI.setVisible(true);
-                setVisible(false);
-                screenHistoryManager.pushFrame(searchUI);
+                dispose();
             }
         });
 
@@ -106,7 +112,7 @@ public class News extends JFrame {
 
         JPanel jPanel_left=new JPanel();
         jPanel_left.setLayout(new FlowLayout(2));
-        jPanel_left.add(menuButton);
+        jPanel_left.add(backButton);
         jPanel_left.add(homeButton);
         jPanel_left.setBackground(BLACK_menu);
         menu.add(jPanel_left,BorderLayout.WEST);

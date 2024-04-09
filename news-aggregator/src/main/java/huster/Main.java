@@ -1,13 +1,12 @@
 package huster;
 
 import huster.gui.Menu;
-// import huster.gui.ScreenHistoryManager;
+import huster.gui.ScreenHistory;
 
 public class Main {
     public static void main(String[] args) {
-        // ScreenHistoryManager screenHistoryManager = new ScreenHistoryManager();
-
         Menu menu = new Menu();
+        ScreenHistory.getInstance().pushScreen(menu);
         menu.setVisible(true);
     }
 }
