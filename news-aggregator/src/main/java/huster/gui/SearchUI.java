@@ -33,9 +33,11 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private String titlePanelTin;
     private String postingDatePanelTin;
 
+    private ScreenHistoryManager screenHistoryManager;
 
-    public SearchUI(Stack<JFrame> screenHistory) {
-        this.screenHistory = screenHistory;
+
+    public SearchUI() {
+        screenHistoryManager.pushFrame(this);
 
         Font font40 = new Font("Arial", Font.PLAIN, 40);
 
@@ -136,7 +138,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         homeButton.setContentAreaFilled(false);
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                new Menu(screenHistory).setVisible(true);;
+                new Menu().setVisible(true);;
                 dispose();
             }
         });
@@ -238,7 +240,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 searchButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new SearchUI(screenHistory).setVisible(true);
+                        new SearchUI().setVisible(true);
                         dispose();
                     }
                 });
@@ -351,7 +353,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 articleButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        News news = new News(screenHistory);
+                        News news = new News();
                         news.setVisible(true);
                         dispose();
                         news.setHeader(articleButton.getText());
