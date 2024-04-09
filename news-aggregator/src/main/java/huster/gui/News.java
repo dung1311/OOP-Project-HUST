@@ -22,10 +22,10 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
     private JLabel jLabel_image;
-    private ScreenHistory historyStack;
+    // private ScreenHistory historyStack;
 
     public News() {
-        historyStack = ScreenHistory.getInstance();
+        ScreenHistory.getInstance();
         ScreenHistory.getInstance().pushScreen(this);
 
         setSize(X, Y);
@@ -57,11 +57,12 @@ public class News extends JFrame {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // if (!ScreenHistory.getInstance().isEmpty()) {
-                //     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
-                //     previousScreen.setVisible(true);
-                //     dispose();
-                // }
+                if (!ScreenHistory.getInstance().isEmpty()) {
+                    ScreenHistory.getInstance().popScreen();
+                    JFrame previousScreen = ScreenHistory.getInstance().popScreen();
+                    dispose();
+                    previousScreen.setVisible(true);
+                }
             }
         });
 

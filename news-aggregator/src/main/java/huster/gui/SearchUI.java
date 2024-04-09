@@ -31,11 +31,11 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private String titlePanelTin;
     private String postingDatePanelTin;
 
-    private ScreenHistory historyStack;
+    // private ScreenHistory historyStack;
 
 
     public SearchUI() {
-        historyStack = ScreenHistory.getInstance();
+        ScreenHistory.getInstance();
         // ScreenHistory.getInstance().pushScreen(this);
         Font font40 = new Font("Arial", Font.PLAIN, 40);
 

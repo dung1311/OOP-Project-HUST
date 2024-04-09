@@ -20,10 +20,10 @@ public class Menu extends JFrame {
     private JPanel labelPanel;
     private JPanel articlePanel;
     private ImageIcon articleIcon;
-    private ScreenHistory historyStack;
+    // private ScreenHistory historyStack;
 
     public Menu() {
-        historyStack = ScreenHistory.getInstance();
+        ScreenHistory.getInstance();
         ScreenHistory.getInstance().pushScreen(this);
         Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
 
