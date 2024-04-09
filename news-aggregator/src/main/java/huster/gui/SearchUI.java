@@ -26,18 +26,22 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private Stack<JFrame> screenHistory;
     private JPanel searchResult_center;
     private ImageIcon articleIcon;
+
     private AbstractButton articleButton;
     private ArticlePanel panelTin;
+
+    private String titlePanelTin;
+    private String postingDatePanelTin;
 
 
     public SearchUI(Stack<JFrame> screenHistory) {
         this.screenHistory = screenHistory;
 
-        Font font50 = new Font("Arial", Font.PLAIN, 50);
+        Font font40 = new Font("Arial", Font.PLAIN, 40);
 
         Container contentPane = getContentPane();
         setSize(X, Y);
-        setResizable(true);
+        setResizable(false);
         setLocationRelativeTo(null);
         // setLocation(ORIGIN_X, ORIGIN_Y);
         setTitle("UI_TIM_KIEM");
@@ -194,7 +198,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
         // Thêm button See more
         JButton seeMoreButton = new JButton("See more!");
-        seeMoreButton.setFont(font50);
+        seeMoreButton.setFont(font40);
         seeMoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -305,6 +309,30 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
 
     public String getTenDeTimTrongJSON(){
         return tenDeTimTrongJSON;
+    }
+
+    public String getTitlePanelTin() {
+        return titlePanelTin;
+    }
+
+    public void setTitlePanelTin(String s) {
+        this.titlePanelTin = s;
+    }
+
+    public String getPostingDatePanelTin() {
+        return postingDatePanelTin;
+    }
+
+    public void setPostingDatePanelTin(String s) {
+        this.postingDatePanelTin = s;
+    }
+
+    public ImageIcon getArticleIcon() {
+        return articleIcon;
+    }
+
+    public void setArticleIcon(ImageIcon articleIcon) {
+        this.articleIcon = articleIcon;
     }
 
     public void createSearchResultPanels(int numberOfRows) {
