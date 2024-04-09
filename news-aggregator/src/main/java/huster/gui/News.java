@@ -28,7 +28,7 @@ public class News extends JFrame {
         screenHistoryManager.pushFrame(this);
 
         setSize(X, Y);
-        setResizable(true);
+        setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
 
@@ -58,8 +58,6 @@ public class News extends JFrame {
 
             }
         });
-
-        menu.add(menuButton);
 
 
         // add buttons into menu
@@ -136,8 +134,8 @@ public class News extends JFrame {
         jLabel_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jLabel_news_header.setFont(font30B);
 
-        // JPanel jPanel_news_header = new JPanel();
-        // jPanel_news_header.setLayout(new BorderLayout());
+        JPanel jPanel_news_header = new JPanel();
+        jPanel_news_header.setLayout(new BorderLayout());
 
         // jTextArea_news_header = new JTextArea("QUÁ VÔ ĐẠO BẤT LƯƠNG");
         // jTextArea_news_header.setFont(font30B);
@@ -145,7 +143,7 @@ public class News extends JFrame {
         // jTextArea_news_header.setLineWrap(true);
         // jTextArea_news_header.setWrapStyleWord(true);
 
-        // jPanel_news_header.add(jTextArea_news_header, BorderLayout.CENTER);
+        jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
 
         jTextArea_news_author = new JTextArea("Author: Author's name");
         jTextArea_news_author.setBackground(jLabel_image.getBackground());
@@ -153,12 +151,14 @@ public class News extends JFrame {
         jTextArea_news_author.setEditable(false);
         jTextArea_news_author.setLineWrap(true);
         jTextArea_news_author.setWrapStyleWord(true);
+
         jTextArea_news_postingDate = new JTextArea("Posting date:");
         jTextArea_news_postingDate.setBackground(jLabel_image.getBackground());
         jTextArea_news_postingDate.setFont(font15I);
         jTextArea_news_postingDate.setEditable(false);
         jTextArea_news_postingDate.setLineWrap(true);
         jTextArea_news_postingDate.setWrapStyleWord(true);
+
         jTextArea_news_link = new JTextArea("Chi tiết: link bài viết");
         jTextArea_news_link.setBackground(jLabel_image.getBackground());
         jTextArea_news_link. setFont(font15I);
@@ -262,9 +262,6 @@ public class News extends JFrame {
         scrollPane_News.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane_News.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane_News.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-
-
-        // contentPane.add(scrollPane_News, BorderLayout.CENTER);
 
 
 
