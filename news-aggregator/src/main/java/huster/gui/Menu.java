@@ -3,7 +3,6 @@ package huster.gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Stack;
 
 public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -13,8 +12,23 @@ public class Menu extends JFrame {
     public static final int ORIGIN_Y = 100;
     JPanel menu = new JPanel();
 
+<<<<<<< Updated upstream
     public Menu(Stack<JFrame> screenHistory) {
+=======
+    private int seeMoreButtonClickedCount = 0;
+    private JButton articleButton;
+    private JLabel articleLabel;
+    private JPanel small_articlePanel;
+    private JPanel labelPanel;
+    private JPanel articlePanel;
+    private ImageIcon articleIcon;
+    private ScreenHistoryManager screenHistoryManager;
+
+    public Menu() {
+>>>>>>> Stashed changes
         Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
+
+        screenHistoryManager.pushFrame(this);
 
         setSize(X, Y);
         setResizable(true);
@@ -78,10 +92,14 @@ public class Menu extends JFrame {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchUI searchUI = new SearchUI(screenHistory);
+                SearchUI searchUI = new SearchUI();
                 searchUI.setVisible(true);
+<<<<<<< Updated upstream
                 setVisible(false);
                 screenHistory.push(new Menu(screenHistory));
+=======
+                dispose();
+>>>>>>> Stashed changes
             }
         });
         
@@ -143,6 +161,7 @@ public class Menu extends JFrame {
                 // hotFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 
+<<<<<<< Updated upstream
 
 
                 hotFrame.setVisible(true);
@@ -166,6 +185,17 @@ public class Menu extends JFrame {
         jButton_article1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 News news = new News(screenHistory);
+=======
+        JButton BigarticleButton = new JButton(BigarticleIcon);
+        BigarticleButton.setBackground(GREY_menu);
+        BigarticleButton.setOpaque(false);
+        BigarticleButton.setContentAreaFilled(false);
+        BigarticleButton.setBorderPainted(false);
+        BigarticleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                News news = new News();
+>>>>>>> Stashed changes
                 news.setVisible(true);
                 dispose();
             }
@@ -316,5 +346,23 @@ public class Menu extends JFrame {
         
     }
 
+<<<<<<< Updated upstream
 }
+=======
+    public void createSmall_articlePanel(int numberOfRows) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < numberOfRows; j++) {
+                articleButton = new JButton(articleIcon);
+                // articleButton.setBackground(GREY_menu);
+                articleButton.setContentAreaFilled(false);
+                articleButton.setBorderPainted(false);
+                articleButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        News news = new News();
+                        news.setVisible(true);
+                        dispose();
+                    }
+                });
+>>>>>>> Stashed changes
 

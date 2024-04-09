@@ -7,7 +7,6 @@ import javax.swing.border.LineBorder;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Stack;
 
 public class News extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -23,8 +22,11 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
     private JLabel jLabel_image;
+    private ScreenHistoryManager screenHistoryManager;
 
-    public News(Stack<JFrame> screenHistory) {
+    public News() {
+        screenHistoryManager.pushFrame(this);
+
         setSize(X, Y);
         setResizable(true);
         setLocationRelativeTo(null);
@@ -69,7 +71,7 @@ public class News extends JFrame {
         homeButton.setContentAreaFilled(false);
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                new Menu(screenHistory).setVisible(true);;
+                new Menu().setVisible(true);;
                 dispose();
             }
         });
@@ -95,10 +97,10 @@ public class News extends JFrame {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchUI searchUI = new SearchUI(screenHistory);
+                SearchUI searchUI = new SearchUI();
                 searchUI.setVisible(true);
                 setVisible(false);
-                screenHistory.push(new News(screenHistory));
+                screenHistoryManager.pushFrame(searchUI);
             }
         });
 

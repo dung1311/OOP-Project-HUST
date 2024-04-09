@@ -1,16 +1,13 @@
 package huster;
 
-import java.util.Stack;
-
-import javax.swing.JFrame;
-
 import huster.gui.Menu;
+// import huster.gui.ScreenHistoryManager;
 
 public class Main {
     public static void main(String[] args) {
-        Stack<JFrame> screenHistory = new Stack<>();
+        // ScreenHistoryManager screenHistoryManager = new ScreenHistoryManager();
 
-        Menu menu = new Menu(screenHistory);
+        Menu menu = new Menu();
         menu.setVisible(true);
     }
 }

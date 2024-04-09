@@ -5,7 +5,6 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private static final long serialVersionUID = 1L;
@@ -22,11 +21,28 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
 
+<<<<<<< Updated upstream
     private Stack<JFrame> screenHistory;
 
 
     public SearchUI(Stack<JFrame> screenHistory) {
         this.screenHistory = screenHistory;
+=======
+    private JPanel searchResult_center;
+    private ImageIcon articleIcon;
+
+    private AbstractButton articleButton;
+    private ArticlePanel panelTin;
+
+    private String titlePanelTin;
+    private String postingDatePanelTin;
+    private ScreenHistoryManager screenHistoryManager;
+
+
+    public SearchUI() {
+        screenHistoryManager.pushFrame(this);
+        Font font40 = new Font("Arial", Font.PLAIN, 40);
+>>>>>>> Stashed changes
 
         Container contentPane = getContentPane();
         setSize(X, Y);
@@ -107,8 +123,8 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         closeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!screenHistory.isEmpty()) {
-                    JFrame previousScreen = screenHistory.pop();
+                if (!screenHistoryManager.isEmpty()) {
+                    JFrame previousScreen = screenHistoryManager.popFrame();
                     previousScreen.setVisible(true);
                     dispose();
                 }
@@ -125,7 +141,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         homeButton.setContentAreaFilled(false);
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                new Menu(screenHistory).setVisible(true);;
+                new Menu().setVisible(true);;
                 dispose();
             }
         });
@@ -229,6 +245,17 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 revalidate();
                 // repaint();
 
+<<<<<<< Updated upstream
+=======
+                // Thêm actionListener cho searchButton sau khi hiển thị kết quả tìm kiếm
+                searchButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        new SearchUI().setVisible(true);
+                        dispose();
+                    }
+                });
+>>>>>>> Stashed changes
             }
         });
 
@@ -287,12 +314,66 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     }
 
     public void setScreenHistory(JFrame frame) {
-        screenHistory.push(frame);
+        screenHistoryManager.pushFrame(frame);
     }
 
     public String getTenDeTimTrongJSON(){
         return tenDeTimTrongJSON;
     }
+<<<<<<< Updated upstream
+=======
+
+    public String getTitlePanelTin() {
+        return titlePanelTin;
+    }
+
+    public void setTitlePanelTin(String s) {
+        this.titlePanelTin = s;
+    }
+
+    public String getPostingDatePanelTin() {
+        return postingDatePanelTin;
+    }
+
+    public void setPostingDatePanelTin(String s) {
+        this.postingDatePanelTin = s;
+    }
+
+    public ImageIcon getArticleIcon() {
+        return articleIcon;
+    }
+
+    public void setArticleIcon(ImageIcon articleIcon) {
+        this.articleIcon = articleIcon;
+    }
+
+    public void createSearchResultPanels(int numberOfRows) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = numberOfRows - 6; j < numberOfRows; j++) {
+                articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+                articleButton = new ArticleButton();
+                articleButton.setIcon(articleIcon);
+                
+                
+
+                panelTin = new ArticlePanel(getTitlePanelTin(), getPostingDatePanelTin());
+                panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
+                panelTin.add(articleButton, BorderLayout.NORTH);
+                articleButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        News news = new News();
+                        news.setVisible(true);
+                        dispose();
+                        news.setHeader(articleButton.getText());
+                    }
+                    
+                });
+                searchResult_center.add(panelTin);
+            }
+        }
+    }
+>>>>>>> Stashed changes
 }
 
 class ArticlePanel extends JPanel {
