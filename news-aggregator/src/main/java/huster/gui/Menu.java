@@ -171,6 +171,7 @@ public class Menu extends JFrame {
                 articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1200 * seeMoreButtonClickedCount));
                 articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
                 createSmall_articlePanel(3);
+                revalidate();
             }
         });
         fullarticlePanel.add(seeMoreButton, BorderLayout.SOUTH);

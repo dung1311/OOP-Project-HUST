@@ -205,6 +205,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 seeMoreButtonClickedCount++;
                 searchResult.setPreferredSize(new Dimension(1440, 2000 + 900 * seeMoreButtonClickedCount));
                 createSearchResultPanels(6 + 3 * seeMoreButtonClickedCount);
+                revalidate();
             }
         });
         searchResult.add(searchResult_center, BorderLayout.CENTER);
@@ -231,7 +232,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 contentPane.add(menu, BorderLayout.NORTH);
                 contentPane.add(scrollResult, BorderLayout.CENTER);
                 revalidate();
-                // repaint();
+                repaint();
 
                 // Thêm actionListener cho searchButton sau khi hiển thị kết quả tìm kiếm
                 searchButton.addActionListener(new ActionListener() {
