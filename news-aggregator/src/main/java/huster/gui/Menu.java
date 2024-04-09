@@ -1,6 +1,7 @@
 package huster.gui;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Stack;
@@ -13,11 +14,21 @@ public class Menu extends JFrame {
     public static final int ORIGIN_Y = 100;
     JPanel menu = new JPanel();
 
+    private int seeMoreButtonClickedCount = 0;
+    private JButton articleButton;
+    private JLabel articleLabel;
+    private JPanel small_articlePanel;
+    private JPanel labelPanel;
+    private JPanel articlePanel;
+    private ImageIcon articleIcon;
+    private Stack<JFrame> screenHistory;
+
     public Menu(Stack<JFrame> screenHistory) {
+        this.screenHistory = screenHistory;
         Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
 
         setSize(X, Y);
-        setResizable(true);
+        setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
         contentPane.setLayout(new BorderLayout());
@@ -26,14 +37,16 @@ public class Menu extends JFrame {
 
         System.setProperty("BLACK_menu", "0x222222");
         Color BLACK_menu = Color.getColor("BLACK_menu");
+        System.setProperty("GREY_menu", "0xFFFFFF");
+        Color GREY_menu = Color.getColor("GREY_menu");
         
         menu.setLayout(new FlowLayout(15));
         menu.setSize(1440,101);
         menu.setBackground(BLACK_menu);
 
-        ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\menuIcon.png" );
+        ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
         JButton menuButton = new JButton(menuIcon);
-        menuButton.setPreferredSize(new Dimension(50, 50));
+        menuButton.setPreferredSize(new Dimension(50,50));
         menuButton.setBorderPainted(false);
         menuButton.setFocusPainted(false);
         menuButton.setContentAreaFilled(false);
@@ -47,7 +60,7 @@ public class Menu extends JFrame {
 
         ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
         JButton homeButton = new JButton(homeIcon);
-        homeButton.setPreferredSize(new Dimension(50, 50));
+        homeButton.setPreferredSize(new Dimension(50,50));
         homeButton.setBorderPainted(false);
         homeButton.setFocusPainted(false);
         homeButton.setContentAreaFilled(false);
@@ -59,7 +72,7 @@ public class Menu extends JFrame {
 
         ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
         JButton userButton = new JButton(userIcon);
-        userButton.setPreferredSize(new Dimension(50, 50));
+        userButton.setPreferredSize(new Dimension(50,50));
         userButton.setBorderPainted(false);
         userButton.setFocusPainted(false);
         userButton.setContentAreaFilled(false);
@@ -71,7 +84,7 @@ public class Menu extends JFrame {
 
         ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
         JButton searchButton = new JButton(searchIcon);
-        searchButton.setPreferredSize(new Dimension(50, 50));
+        searchButton.setPreferredSize(new Dimension(50,50));
         searchButton.setBorderPainted(false);
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
@@ -80,11 +93,10 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 SearchUI searchUI = new SearchUI(screenHistory);
                 searchUI.setVisible(true);
-                setVisible(false);
+                dispose();
                 screenHistory.push(new Menu(screenHistory));
             }
         });
-        
 
         menu.setLayout(new BorderLayout());
 
@@ -103,218 +115,138 @@ public class Menu extends JFrame {
 
         menu.add(jPanel_right,BorderLayout.EAST);
 
-        Font font = new Font("ARIAL",Font.BOLD,25);
+        Font font40 = new Font("ARIAL",Font.PLAIN,40);
 
-        ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+        articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
-        // JButton jButton_article = new JButton("<html><div style='text-align: center;'>Bé Xuân Mai lon ton</div></html>");
-        // jButton_article.setFont(font);
-        // jButton_article.setIcon(BigarticleIcon);
-        // jButton_article.setForeground(Color.BLUE);
-        // jButton_article.setBounds(15,72,600,492);
-        // // jButton_article.setPreferredSize(new Dimension(600,492));
-        // jButton_article.setBorderPainted(false);
-        // jButton_article.setFocusPainted(false);
-        // jButton_article.setContentAreaFilled(false);
-        // jButton_article.setVerticalTextPosition(SwingConstants.CENTER);
-        // jButton_article.setHorizontalTextPosition(SwingConstants.LEFT);
-        // jButton_article.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e){
-                
-        //     }
-        // });
-        JButton jButton_article = new JButton("<html><div style='text-align: center;'>Bé Xuân Mai lon ton</div></html>");
-        jButton_article.setFont(font);
-        jButton_article.setIcon(BigarticleIcon);
-        jButton_article.setForeground(Color.BLUE);
-        jButton_article.setBounds(15, 72, 600, 540);
-        // jButton_article.setPreferredSize(new Dimension(600, 492));
-        jButton_article.setBorderPainted(false);
-        jButton_article.setFocusPainted(false);
-        jButton_article.setContentAreaFilled(false);
-        jButton_article.setVerticalTextPosition(SwingConstants.BOTTOM);
-        jButton_article.setHorizontalTextPosition(SwingConstants.CENTER);
-        jButton_article.addActionListener(new ActionListener() {
-        public void actionPerformed(ActionEvent e) {
-                JFrame hotFrame = new JFrame("Hot News");
-                hotFrame.setSize(800,800);
-                hotFrame.setLocationRelativeTo(null);
-                // hotFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+      
+        JPanel toparticlePanel = new JPanel();
+        toparticlePanel.setPreferredSize(new Dimension(1280,625));
+        toparticlePanel.setLayout(new BorderLayout());
 
+        JPanel nothingPanel = new JPanel();
+        nothingPanel.setPreferredSize(new Dimension(1280,75));
 
-
-
-                hotFrame.setVisible(true);
-                contentPane.setVisible(false);
-                hotFrame.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                        contentPane.setVisible(true);
-                    }
-                });
-          }
+        JButton BigarticleButton = new JButton(BigarticleIcon);
+        BigarticleButton.setBackground(GREY_menu);
+        BigarticleButton.setOpaque(false);
+        BigarticleButton.setContentAreaFilled(false);
+        BigarticleButton.setBorderPainted(false);
+        BigarticleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                News news = new News(screenHistory);
+                news.setVisible(true);
+                dispose();
+            }
         });
+        JLabel BigarticleLabel_title = new JLabel("Be Xuan Mai");
+        BigarticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
+        BigarticleLabel_title.setVerticalAlignment(JLabel.CENTER);
+        toparticlePanel.add(BigarticleButton,BorderLayout.NORTH);
+        toparticlePanel.add(BigarticleLabel_title,BorderLayout.CENTER);
+        toparticlePanel.add(nothingPanel,BorderLayout.SOUTH);
+
+        articlePanel = new JPanel();
+        articlePanel.setPreferredSize(new Dimension(1280, 1500));
+        articlePanel.setLayout(new GridLayout(6,2,175,0));
+        createSmall_articlePanel(6);
+
         
-        JButton jButton_article1 = new JButton(articleIcon);
-        jButton_article1.setBounds(825,72,465,132);
+        JPanel fullarticlePanel = new JPanel();
+        fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
+        fullarticlePanel.setLayout(new BorderLayout());
+        fullarticlePanel.add(toparticlePanel,BorderLayout.NORTH);
+        fullarticlePanel.add(articlePanel,BorderLayout.CENTER);
 
-        jButton_article1.setPreferredSize(new Dimension(465,132));
-        jButton_article1.setBorderPainted(false);
-        jButton_article1.setFocusPainted(false);
-        jButton_article1.setContentAreaFilled(false);
-        jButton_article1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
+
+        JButton seeMoreButton = new JButton("See more!");
+        seeMoreButton.setFont(font40);
+        seeMoreButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seeMoreButtonClickedCount++;
+                fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1200 * seeMoreButtonClickedCount));
+                articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1200 * seeMoreButtonClickedCount));
+                articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
+                createSmall_articlePanel(3);
             }
         });
-        JButton jButton_article2 = new JButton(articleIcon);
-        jButton_article2.setBounds(825,252,465,132);
-
-        jButton_article2.setPreferredSize(new Dimension(465,132));
-        jButton_article2.setBorderPainted(false);
-        jButton_article2.setFocusPainted(false);
-        jButton_article2.setContentAreaFilled(false);
-        jButton_article2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-        JButton jButton_article3 = new JButton(articleIcon);
-        jButton_article3.setBounds(825,432,465,132);
-
-        jButton_article3.setPreferredSize(new Dimension(465,132));
-        jButton_article3.setBorderPainted(false);
-        jButton_article3.setFocusPainted(false);
-        jButton_article3.setContentAreaFilled(false);
-        jButton_article3.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-        JButton jButton_article4 = new JButton(articleIcon);
-        jButton_article4.setBounds(825,612,465,132);
-
-        jButton_article4.setPreferredSize(new Dimension(465,132));
-        jButton_article4.setBorderPainted(false);
-        jButton_article4.setFocusPainted(false);
-        jButton_article4.setContentAreaFilled(false);
-        jButton_article4.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-        JButton jButton_article5 = new JButton(articleIcon);
-        jButton_article5.setBounds(825,792,465,132);
-
-        jButton_article5.setPreferredSize(new Dimension(465,132));
-        jButton_article5.setBorderPainted(false);
-        jButton_article5.setFocusPainted(false);
-        jButton_article5.setContentAreaFilled(false);
-        jButton_article5.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-        JButton jButton_article6 = new JButton(articleIcon);
-        jButton_article6.setBounds(825,972,465,132);
-
-        jButton_article6.setPreferredSize(new Dimension(465,132));
-        jButton_article6.setBorderPainted(false);
-        jButton_article6.setFocusPainted(false);
-        jButton_article6.setContentAreaFilled(false);
-        jButton_article6.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-        JButton jButton_article7 = new JButton(articleIcon);
-        jButton_article7.setBounds(56,612,465,132);
-
-        jButton_article7.setPreferredSize(new Dimension(465,132));
-        jButton_article7.setBorderPainted(false);
-        jButton_article7.setFocusPainted(false);
-        jButton_article7.setContentAreaFilled(false);
-        jButton_article7.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-        JButton jButton_article8 = new JButton(articleIcon);
-        jButton_article8.setBounds(56,792,465,132);
-
-        jButton_article8.setPreferredSize(new Dimension(465,132));
-        jButton_article8.setBorderPainted(false);
-        jButton_article8.setFocusPainted(false);
-        jButton_article8.setContentAreaFilled(false);
-        jButton_article8.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-        JButton jButton_article9 = new JButton(articleIcon);
-        jButton_article9.setBounds(56,972,465,132);
-
-        jButton_article9.setPreferredSize(new Dimension(465,132));
-        jButton_article9.setBorderPainted(false);
-        jButton_article9.setFocusPainted(false);
-        jButton_article9.setContentAreaFilled(false);
-        jButton_article9.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                News news = new News(screenHistory);
-                news.setVisible(true);
-                dispose();
-            }
-        });
-    
-
-        JPanel articlePanel = new JPanel();
-        articlePanel.setPreferredSize(new Dimension(1440, 1200));
-        articlePanel.setLayout(null);
-
-        articlePanel.add(jButton_article);
-        articlePanel.add(jButton_article1);
-        articlePanel.add(jButton_article2);
-        articlePanel.add(jButton_article3);
-        articlePanel.add(jButton_article4);
-        articlePanel.add(jButton_article5);
-        articlePanel.add(jButton_article6);
-        articlePanel.add(jButton_article7);
-        articlePanel.add(jButton_article8);
-        articlePanel.add(jButton_article9);
+        fullarticlePanel.add(seeMoreButton, BorderLayout.SOUTH);
 
 
 
-
-
-        JScrollPane scrollPane_suggested = new JScrollPane(articlePanel);
-        scrollPane_suggested.setPreferredSize(new Dimension(1440, 800));
+        JScrollPane scrollPane_suggested = new JScrollPane(fullarticlePanel);
+        scrollPane_suggested.setPreferredSize(new Dimension(1280, 800));
         scrollPane_suggested.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane_suggested.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollPane_suggested.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
 
 
 
-        
+
+        // contentPane.setBackground(GREY_menu);
+        this.setBackground(GREY_menu);
         contentPane.add(menu, BorderLayout.NORTH);
+        // contentPane.add(toparticlePanel, BorderLayout.CENTER);
+
         contentPane.add(scrollPane_suggested,BorderLayout.CENTER);  
-        this.pack();        
+    
+        // this.pack();        
         
     }
 
-}
+    // @Override
+    // public void actionPerformed(ActionEvent e) {
+        
+    // }
+    
 
+    // public void itemStateChanged(ItemEvent e) {
+    //     String state;
+    //     if (e.getStateChange() == ItemEvent.SELECTED) {
+    //         state = "is selected ";
+    //     } else {
+    //         state = "is deselected ";
+    //     }
+    //     JOptionPane.showMessageDialog(this, "JComboBox Item '" + e.getItem() + "' " + state);
+    // }
+
+    public void createSmall_articlePanel(int numberOfRows) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < numberOfRows; j++) {
+                articleButton = new JButton(articleIcon);
+                // articleButton.setBackground(GREY_menu);
+                articleButton.setContentAreaFilled(false);
+                articleButton.setBorderPainted(false);
+                articleButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        News news = new News(screenHistory);
+                        news.setVisible(true);
+                        dispose();
+                    }
+                });
+
+                articleLabel = new JLabel("Be Xuan Mai");
+                articleLabel.setHorizontalAlignment(JLabel.CENTER);
+                articleLabel.setVerticalAlignment(JLabel.CENTER);
+
+                small_articlePanel = new JPanel();
+                small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
+                small_articlePanel.add(articleButton);
+
+                labelPanel = new JPanel();
+                labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+                labelPanel.add(articleLabel);
+                small_articlePanel.add(labelPanel);
+
+                small_articlePanel.setPreferredSize(new Dimension(465, 180));
+
+                articlePanel.add(small_articlePanel);
+            }
+        }
+
+    }
+}
