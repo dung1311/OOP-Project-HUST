@@ -1,12 +1,12 @@
 package huster.gui;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Stack;
 
-public class Menu extends JFrame implements ActionListener, ItemListener {
+public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
@@ -14,17 +14,26 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
     public static final int ORIGIN_Y = 100;
     JPanel menu = new JPanel();
 
-    public Menu() {
+    private int seeMoreButtonClickedCount = 0;
+    private JButton articleButton;
+    private JLabel articleLabel;
+    private JPanel small_articlePanel;
+    private JPanel labelPanel;
+    private JPanel articlePanel;
+    private ImageIcon articleIcon;
+    private Stack<JFrame> screenHistory;
+
+    public Menu(Stack<JFrame> screenHistory) {
+        this.screenHistory = screenHistory;
         Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
 
         setSize(X, Y);
-        setResizable(true);
+        setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
         contentPane.setLayout(new BorderLayout());
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true); 
 
         System.setProperty("BLACK_menu", "0x222222");
         Color BLACK_menu = Color.getColor("BLACK_menu");
@@ -80,8 +89,12 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
         searchButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                SearchUI searchUI = new SearchUI(screenHistory);
+                searchUI.setVisible(true);
+                dispose();
+                screenHistory.push(new Menu(screenHistory));
             }
         });
 
@@ -102,63 +115,10 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
 
         menu.add(jPanel_right,BorderLayout.EAST);
 
-        Font font = new Font("ARIAL",Font.BOLD,25);
+        Font font40 = new Font("ARIAL",Font.PLAIN,40);
 
-        ImageIcon articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+        articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
-
-        
-
-                // articleButton.setBackground(Color.WHITE);
-                // articleButton.setHorizontalTextPosition(SwingConstants.CENTER);
-                // articleButton.setVerticalTextPosition(SwingConstants.BOTTOM);
-                // articleButton.setBorderPainted(false);
-                // articleButton.setBounds(100 + 715 * i, 72 + 180 * j, 465, 135);
-                
-        // JButton jButton_article = new JButton("<html><div style='text-align: center;'>Bé Xuân Mai lon ton vip pro no1</div></html>");
-        // jButton_article.setFont(font);
-        // jButton_article.setIcon(BigarticleIcon);
-        // jButton_article.setForeground(Color.BLUE);
-        // jButton_article.setBounds(-10, 72, 600, 535);
-        // // jButton_article.setPreferredSize(new Dimension(600, 492));
-        // jButton_article.setBorderPainted(false);
-        // jButton_article.setFocusPainted(false);
-        // jButton_article.setContentAreaFilled(false);
-        // jButton_article.setVerticalTextPosition(SwingConstants.BOTTOM);
-        // jButton_article.setHorizontalTextPosition(SwingConstants.CENTER);
-        // jButton_article.addActionListener(new ActionListener() {
-        // public void actionPerformed(ActionEvent e) {
-        //         JFrame hotFrame = new JFrame("Hot News");
-        //         hotFrame.setSize(800,800);
-        //         hotFrame.setLocationRelativeTo(null);
-        //         // hotFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-
-
-
-        //         hotFrame.setVisible(true);
-        //         contentPane.setVisible(false);
-        //         hotFrame.addWindowListener(new java.awt.event.WindowAdapter() {
-        //             @Override
-        //             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-        //                 contentPane.setVisible(true);
-        //             }
-        //         });
-        //   }
-        // });
-        
-        // JButton jButton_article1 = new JButton(articleIcon);
-        // jButton_article1.setBounds(825,72,465,132);
-
-        // jButton_article1.setPreferredSize(new Dimension(465,132));
-        // jButton_article1.setBorderPainted(false);
-        // jButton_article1.setFocusPainted(false);
-        // jButton_article1.setContentAreaFilled(false);
-        // jButton_article1.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e){
-                
-        //     }
-        // });
 
       
         JPanel toparticlePanel = new JPanel();
@@ -173,75 +133,27 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
         BigarticleButton.setOpaque(false);
         BigarticleButton.setContentAreaFilled(false);
         BigarticleButton.setBorderPainted(false);
-        JLabel BigarticleLabel = new JLabel("Be Xuan Mai");
-        BigarticleLabel.setHorizontalAlignment(JLabel.CENTER);
-        BigarticleLabel.setVerticalAlignment(JLabel.CENTER);
+        BigarticleButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                News news = new News(screenHistory);
+                news.setVisible(true);
+                dispose();
+            }
+        });
+        JLabel BigarticleLabel_title = new JLabel("Be Xuan Mai");
+        BigarticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
+        BigarticleLabel_title.setVerticalAlignment(JLabel.CENTER);
         toparticlePanel.add(BigarticleButton,BorderLayout.NORTH);
-        toparticlePanel.add(BigarticleLabel,BorderLayout.CENTER);
+        toparticlePanel.add(BigarticleLabel_title,BorderLayout.CENTER);
         toparticlePanel.add(nothingPanel,BorderLayout.SOUTH);
 
-
-        JPanel articlePanel = new JPanel();
+        articlePanel = new JPanel();
         articlePanel.setPreferredSize(new Dimension(1280, 1500));
         articlePanel.setLayout(new GridLayout(6,2,175,0));
+        createSmall_articlePanel(6);
 
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 6; j++) {
-                
-                // JButton articleButton = new JButton(articleIcon);
-                // articleButton.setBackground(GREY_menu);
-                //         articleButton.setContentAreaFilled(false);
-
-                //         articleButton.setBorderPainted(false);
-                // JLabel articleLabel = new JLabel("Be Xuan Mai");
-                // articleLabel.setHorizontalAlignment(JLabel.CENTER);
-                // articleLabel.setVerticalAlignment(JLabel.CENTER);
-                // JPanel small_articlePanel = new JPanel();
-                // small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
-                // small_articlePanel.add(articleButton);
-                // small_articlePanel.add(articleLabel);
-                // small_articlePanel.setPreferredSize(new Dimension(465,180));
-                // articlePanel.add(small_articlePanel);
-//                 JButton articleButton = new JButton(articleIcon);
-// articleButton.setBackground(GREY_menu);
-// articleButton.setContentAreaFilled(false);
-// articleButton.setBorderPainted(false);
-
-// JLabel articleLabel = new JLabel("Be Xuan Mai");
-// articleLabel.setHorizontalAlignment(JLabel.CENTER);
-// articleLabel.setVerticalAlignment(JLabel.CENTER);
-
-// JPanel small_articlePanel = new JPanel();
-// small_articlePanel.setLayout(new BorderLayout());
-// small_articlePanel.add(articleButton, BorderLayout.CENTER);
-// small_articlePanel.add(articleLabel, BorderLayout.SOUTH);
-// small_articlePanel.setPreferredSize(new Dimension(465, 180));
-
-// articlePanel.add(small_articlePanel);
-        JButton articleButton = new JButton(articleIcon);
-            articleButton.setBackground(GREY_menu);
-            articleButton.setContentAreaFilled(false);
-            articleButton.setBorderPainted(false);
-
-        JLabel articleLabel = new JLabel("Be Xuan Mai");
-            articleLabel.setHorizontalAlignment(JLabel.CENTER);
-            articleLabel.setVerticalAlignment(JLabel.CENTER);
-
-        JPanel small_articlePanel = new JPanel();
-            small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
-            small_articlePanel.add(articleButton);
-
-        JPanel labelPanel = new JPanel();
-            labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-            labelPanel.add(articleLabel);
-            small_articlePanel.add(labelPanel);
-
-            small_articlePanel.setPreferredSize(new Dimension(465, 180));
-
-            articlePanel.add(small_articlePanel);
-            }
-        }
-
+        
         JPanel fullarticlePanel = new JPanel();
         fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
         fullarticlePanel.setLayout(new BorderLayout());
@@ -249,6 +161,19 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
         fullarticlePanel.add(articlePanel,BorderLayout.CENTER);
 
 
+        JButton seeMoreButton = new JButton("See more!");
+        seeMoreButton.setFont(font40);
+        seeMoreButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                seeMoreButtonClickedCount++;
+                fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1200 * seeMoreButtonClickedCount));
+                articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1200 * seeMoreButtonClickedCount));
+                articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
+                createSmall_articlePanel(3);
+            }
+        });
+        fullarticlePanel.add(seeMoreButton, BorderLayout.SOUTH);
 
 
 
@@ -256,6 +181,8 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
         scrollPane_suggested.setPreferredSize(new Dimension(1280, 800));
         scrollPane_suggested.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane_suggested.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollPane_suggested.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
+
 
 
 
@@ -270,10 +197,10 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
         
     }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
+    // @Override
+    // public void actionPerformed(ActionEvent e) {
         
-        }
+    // }
     
 
     public void itemStateChanged(ItemEvent e) {
@@ -284,5 +211,42 @@ public class Menu extends JFrame implements ActionListener, ItemListener {
             state = "is deselected ";
         }
         JOptionPane.showMessageDialog(this, "JComboBox Item '" + e.getItem() + "' " + state);
+    }
+
+    public void createSmall_articlePanel(int numberOfRows) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < numberOfRows; j++) {
+                articleButton = new JButton(articleIcon);
+                // articleButton.setBackground(GREY_menu);
+                articleButton.setContentAreaFilled(false);
+                articleButton.setBorderPainted(false);
+                articleButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        News news = new News(screenHistory);
+                        news.setVisible(true);
+                        dispose();
+                    }
+                });
+
+                articleLabel = new JLabel("Be Xuan Mai");
+                articleLabel.setHorizontalAlignment(JLabel.CENTER);
+                articleLabel.setVerticalAlignment(JLabel.CENTER);
+
+                small_articlePanel = new JPanel();
+                small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
+                small_articlePanel.add(articleButton);
+
+                labelPanel = new JPanel();
+                labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+                labelPanel.add(articleLabel);
+                small_articlePanel.add(labelPanel);
+
+                small_articlePanel.setPreferredSize(new Dimension(465, 180));
+
+                articlePanel.add(small_articlePanel);
+            }
+        }
+
     }
 }
