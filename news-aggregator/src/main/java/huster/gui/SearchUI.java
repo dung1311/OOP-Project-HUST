@@ -344,7 +344,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 
                 
 
-                panelTin = new ArticlePanel("Ten bao", "10/2/2004");
+                panelTin = new ArticlePanel(getTitlePanelTin(), getPostingDatePanelTin());
                 panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
                 panelTin.add(articleButton, BorderLayout.NORTH);
                 articleButton.addActionListener(new ActionListener() {

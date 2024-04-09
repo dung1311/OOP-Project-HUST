@@ -197,22 +197,6 @@ public class Menu extends JFrame {
         
     }
 
-    // @Override
-    // public void actionPerformed(ActionEvent e) {
-        
-    // }
-    
-
-    // public void itemStateChanged(ItemEvent e) {
-    //     String state;
-    //     if (e.getStateChange() == ItemEvent.SELECTED) {
-    //         state = "is selected ";
-    //     } else {
-    //         state = "is deselected ";
-    //     }
-    //     JOptionPane.showMessageDialog(this, "JComboBox Item '" + e.getItem() + "' " + state);
-    // }
-
     public void createSmall_articlePanel(int numberOfRows) {
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < numberOfRows; j++) {
