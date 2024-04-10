@@ -1,50 +1,35 @@
 package huster;
 
-// import java.io.FileReader;
-// import java.util.HashMap;
-// import java.util.Map;
+import huster.crawl.coinDesk.DataFromCoinDesk;
+import huster.crawl.theBlock.DataFromTheBlock;
+import huster.crawl.theBlock.Link;
+import huster.crawl.theBlock.Source;
 
-// import com.google.gson.Gson;
-// import com.google.gson.reflect.TypeToken;
+import java.io.IOException;
+import java.util.List;
 
-// import huster.crawl.coinDesk.Data;
-import huster.crawl.coinDesk.WriteOnJsonFile;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         long startTime = System.currentTimeMillis();
-        // Resources test1 = new Resources();
-        // List<String> test =  test1.getLinks("https://www.coindesk.com/");
-        // for(int i = 0; i < test.size(); i++)
-        // {
-        //     System.out.println(test.get(i));
-        // }
-        String url = "https://www.coindesk.com/";
+        String url = "https://www.theblock.co/";
+        // Source test1 = new Source();
+        // List<String> test =  test1.getLinks(url);
+        // // for(String i : test) System.out.println(i);
+        // Link link = new Link();
+        // Document doc = Jsoup.connect(test.get(6)).get();
+        
+        // System.out.println(link.getLinkImage(doc));
+        // String url = "https://www.coindesk.com/";
 
-        WriteOnJsonFile file = new WriteOnJsonFile();
+        DataFromTheBlock file = new huster.crawl.theBlock.DataFromTheBlock();
         file.writeOnJsonFile(url);
-        // try {
-        //     FileReader reader = new FileReader("news-aggregator/resource/data/data.json");
-        //     Gson gson = new Gson();
-        //     HashMap<String, Data> dataList = gson.fromJson(reader, new TypeToken<HashMap<String, Data>>(){}.getType());
-        //     int sum = 0;
-        //     for(Map.Entry<String, Data> entry : dataList.entrySet())
-        //     {
-        //         String key = entry.getKey();
-        //         Data data = entry.getValue();
-        //         System.out.println(key);
-        //         System.out.println(data.getDatetimeCreation());
-        //         sum++;
-        //     }
-        //     reader.close();
-        //     System.out.println(sum);
-        // } catch (Exception e) {
-        //     e.printStackTrace();
-        // }
+        
         long endTime = System.currentTimeMillis();
         long runTime = endTime - startTime;
-        System.out.println("Running Time: " + runTime); 
-    }
-
+        System.out.println("Running Time: " + runTime);     
         
-        
+}
 }

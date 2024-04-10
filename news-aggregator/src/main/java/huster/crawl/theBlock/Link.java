@@ -1,6 +1,8 @@
-package huster.crawl.coinDesk;
+package huster.crawl.theBlock;
+
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.jsoup.Jsoup;
@@ -9,6 +11,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Link {
+
     private String link;
     
     public Link() {
@@ -37,7 +40,6 @@ public class Link {
             return null;
         }
     }
-
     public String getTitle(Document doc)
     {
         String title = null;
@@ -56,12 +58,13 @@ public class Link {
         String summary = null;
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
-            Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");
-            if(summaryTitle == null && summaryElements == null) return null;
+            Elements summaryElements = doc.select("li[data-v-f87c67ca]");
             summary = summaryTitle.attr("content") + "\n";
+            if(summaryElements == null) return summary;
             for(Element summaryElement : summaryElements)
             {
-                summary = summary + summaryElement.text() + "\n";
+                if(summaryElement.equals(summaryTitle)) continue;
+                else summary = summary + summaryElement.text() + "\n";
             }
         } catch(Exception e) {
             e.printStackTrace();
@@ -86,9 +89,10 @@ public class Link {
     {
         String content = "";
         try {
-            Elements contentElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal at-text");
+            Elements contentElements = doc.select("span[data-v-f87c67ca]");
             for(Element contentElement : contentElements) 
             {
+                if(contentElement.text().length() < 25) continue;
                 content = content + contentElement.text() + "\n";
             }
         } catch (Exception e) {
@@ -102,7 +106,7 @@ public class Link {
         String category = null;
         try {
             Element categoryElement = doc.selectFirst("meta[property=og:type]");
-            if(categoryElement == null) return "unknownCategory";
+            if(categoryElement == null) return null;
             category = categoryElement.attr("content");
         } catch(Exception e) {
             e.printStackTrace();
@@ -111,12 +115,26 @@ public class Link {
     }
 
     public String getDateTimeCreation(Document doc)
+
     {
-        String dateTimeCreation = null;
+        String dateTimeCreation = "";
         try {
-            Element dateTimeElement = doc.selectFirst("meta[property=article:published_time]");
+            Elements dateTimeElement = doc.getElementsByClass("timestamp tbcoTimestamp");
             if(dateTimeElement == null) return "unknownDateTimeCreation";
-            dateTimeCreation = dateTimeElement.attr("content");
+            String tempDateTime = dateTimeElement.get(0).text();
+            String[] parts = tempDateTime.split(" ");
+            List<String> month = Arrays.asList("January","February","March","April","May","June","July","August","September","October","November","December");
+            int i = -1;
+            boolean check = false;
+            while(!check)
+            {
+                i++;
+                check = month.contains(parts[i]);
+            }
+            for(; i < parts.length; i++) {
+                dateTimeCreation += parts[i] + " ";
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -128,12 +146,15 @@ public class Link {
         List<String> tag = new ArrayList<>();
         String tagString = "";
         try {
-            Element metaTag = doc.selectFirst("meta[property=article:tag]");
-            if(metaTag == null)
-            {
-                return tag;
+            Element metaKeywords = doc.selectFirst("meta[name=keywords]");
+            Elements metaTag = doc.select("meta[property=article:tag]");
+            if(metaKeywords == null && metaTag == null) return tag;
+            tagString = metaKeywords.attr("content") + ", ";
+    
+            for(int i = 0; i < metaTag.size(); i++) {
+                tagString += metaTag.get(i).attr("content") + ", ";
             }
-            tagString = metaTag.attr("content");
+
             String tagName = "#";
             for(int i = 0; i < tagString.length(); i++)
             {
@@ -151,20 +172,21 @@ public class Link {
                     tagName = tagName + tagString.charAt(i);
                 }
             }
-            tag.add(tagName);
+            if(tagName.equals("#") == false)
+                tag.add(tagName);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return tag;
     }
-    
+
     public String getAuthor(Document doc)
     {
         String author = "";
         try {
-            Element authorName = doc.selectFirst("meta[property=article:author]");
+            Element authorName = doc.selectFirst("a[data-v-f87c67ca]");
             if(authorName == null) return "unknownAuthor";
-            author = authorName.attr("content");
+            author = authorName.text();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -184,5 +206,4 @@ public class Link {
         return linkImage;
     }
 
-    
 }
