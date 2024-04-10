@@ -48,21 +48,15 @@ public class News extends JFrame {
         Font font15I = new Font("Arial", Font.ITALIC, 15);
 
 
-        ImageIcon backIcon = new ImageIcon("news-aggregator\\resource\\assets\\\\backButton.png" );
-        JButton backButton = new JButton(backIcon);
-        backButton.setPreferredSize(new Dimension(50, 50));
-        backButton.setBorderPainted(false);
-        backButton.setFocusPainted(false);
-        backButton.setContentAreaFilled(false);
-        backButton.addActionListener(new ActionListener() {
+        ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\\\menuButton.png" );
+        JButton menuButton = new JButton(menuIcon);
+        menuButton.setPreferredSize(new Dimension(50, 50));
+        menuButton.setBorderPainted(false);
+        menuButton.setFocusPainted(false);
+        menuButton.setContentAreaFilled(false);
+        menuButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!ScreenHistory.getInstance().isEmpty()) {
-                    ScreenHistory.getInstance().popScreen();
-                    JFrame previousScreen = ScreenHistory.getInstance().popScreen();
-                    dispose();
-                    previousScreen.setVisible(true);
-                }
             }
         });
 
@@ -113,7 +107,7 @@ public class News extends JFrame {
 
         JPanel jPanel_left=new JPanel();
         jPanel_left.setLayout(new FlowLayout(2));
-        jPanel_left.add(backButton);
+        jPanel_left.add(menuButton);
         jPanel_left.add(homeButton);
         jPanel_left.setBackground(BLACK_menu);
         menu.add(jPanel_left,BorderLayout.WEST);
