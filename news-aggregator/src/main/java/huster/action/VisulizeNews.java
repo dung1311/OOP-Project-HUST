@@ -23,7 +23,7 @@ public class VisulizeNews {
         }
 
         System.out.println(newsArray.size());
-        
+        // ham gi day
     }   
 
 }

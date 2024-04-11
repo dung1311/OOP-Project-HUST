@@ -6,7 +6,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Stack;
 
-import huster.api.Push;
 
 public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -54,11 +53,12 @@ public class Menu extends JFrame {
         menuButton.setContentAreaFilled(false);
         menuButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-
+                System.out.println("this is menu button");
             }
         });
 
         menu.add(menuButton);
+        //finish add menuButton
 
         ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
         JButton homeButton = new JButton(homeIcon);
@@ -68,7 +68,7 @@ public class Menu extends JFrame {
         homeButton.setContentAreaFilled(false);
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                
+                System.out.println("this is home button");
             }
         });
 
@@ -80,7 +80,7 @@ public class Menu extends JFrame {
         userButton.setContentAreaFilled(false);
         userButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                
+                System.out.println("this is user button");
             }
         });
 
@@ -101,14 +101,14 @@ public class Menu extends JFrame {
         });
 
         menu.setLayout(new BorderLayout());
-
+        // nên đổi tên thành header
         JPanel jPanel_left=new JPanel();
         jPanel_left.setLayout(new FlowLayout(2));
         jPanel_left.add(menuButton);
         jPanel_left.add(homeButton);
         jPanel_left.setBackground(BLACK_menu);
         menu.add(jPanel_left,BorderLayout.WEST);
-
+        // nên là một phần của header
         JPanel jPanel_right=new JPanel();
         jPanel_right.setLayout(new FlowLayout(2));
         jPanel_right.add(searchButton);
@@ -118,15 +118,15 @@ public class Menu extends JFrame {
         menu.add(jPanel_right,BorderLayout.EAST);
 
         Font font40 = new Font("ARIAL",Font.PLAIN,40);
-
+        // ảnh để hiện lên nút bấm bài báo
         articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
-      
+        // đặt tên kiểu chi z ???
         JPanel toparticlePanel = new JPanel();
         toparticlePanel.setPreferredSize(new Dimension(1280,625));
         toparticlePanel.setLayout(new BorderLayout());
-
+        
         JPanel nothingPanel = new JPanel();
         nothingPanel.setPreferredSize(new Dimension(1280,75));
 
