@@ -49,7 +49,7 @@ public class DataFromTheBlock {
             // sc.close();
 
             FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/data1.json");
-            fileWriter.write(json);
+            if(json != null) fileWriter.write(json);
             fileWriter.close();
 
             System.out.println("Write on JsonFile successful");
