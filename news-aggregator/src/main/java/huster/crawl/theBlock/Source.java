@@ -39,7 +39,7 @@ public class Source {
             {
                 String[] parts = linkElements.get(i).attr("href").split("/");
                 if(parts.length < 2) continue;
-                else if(parts[1].equals("post")) {
+                else if(parts[1].equals("post") || parts[1].equals("learn")) {
                     String linkNextPage = "https://www.theblock.co" + linkElements.get(i).attr("href");
                     tempLinks.add(linkNextPage);
                 }

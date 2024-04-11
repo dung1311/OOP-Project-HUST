@@ -3,18 +3,22 @@ package huster.crawl.coinDesk;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
-// import org.apache.commons.text.StringEscapeUtils;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import huster.crawl.DataFormat.Data;
+
 public class DataFromCoinDesk {
     public void writeOnJsonFile(String url)
     {
         try {
+            //Create dataList 
             List<Data> dataList = new ArrayList<>();
+            //Get all links from s
             Source source = new Source();
             List<String> linkList = source.getLinks(url);
             for(int i = 0; i < linkList.size(); i++)
@@ -39,14 +43,9 @@ public class DataFromCoinDesk {
                 item.setLinkImage(itemLink.getLinkImage(doc));   
                 dataList.add(item);                 
             }
-
+            if(dataList.isEmpty()) return;
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String json = gson.toJson(dataList);
-            // String unicodeJSON = StringEscapeUtils.unescapeJava(json);
-
-            // Scanner sc = new Scanner(System.in);
-            // String fileName = sc.next();
-            // sc.close();
 
             FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/data.json");
             if(json != null) fileWriter.write(json);

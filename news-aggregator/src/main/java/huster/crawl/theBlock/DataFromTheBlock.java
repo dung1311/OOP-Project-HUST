@@ -3,13 +3,14 @@ package huster.crawl.theBlock;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
-// import org.apache.commons.text.StringEscapeUtils;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import huster.crawl.DataFormat.Data;
 public class DataFromTheBlock {
     public void writeOnJsonFile(String url)
     {
@@ -42,12 +43,7 @@ public class DataFromTheBlock {
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             String json = gson.toJson(dataList);
-            // String unicodeJSON = StringEscapeUtils.unescapeJava(json);
-
-            // Scanner sc = new Scanner(System.in);
-            // String fileName = sc.next();
-            // sc.close();
-
+        
             FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/data1.json");
             if(json != null) fileWriter.write(json);
             fileWriter.close();
