@@ -2,11 +2,7 @@ package huster;
 
 //import java.io.FileWriter;
 
-import huster.crawl.fromCoinDesk.WriteOnJsonFile;
 
-import java.util.Stack;
-
-import javax.swing.JFrame;
 
 import huster.gui.Menu;
 import huster.gui.ScreenHistory;
@@ -39,7 +35,6 @@ class MyRunnable {
 
     public void crawl() {
         String url = "https://www.coindesk.com/";
-        WriteOnJsonFile file = new WriteOnJsonFile();
-        file.writeOnJsonFile(url);
+
     }
 }

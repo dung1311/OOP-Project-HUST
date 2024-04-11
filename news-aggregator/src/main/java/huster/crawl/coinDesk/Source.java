@@ -1,4 +1,4 @@
-package huster.crawl.fromCoinDesk;
+package huster.crawl.coinDesk;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -10,29 +10,20 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Resources {
+public class Source {
     private String url;
-    public static int capacity = 0;
 
-    public String getUrl() {
-        return url;
+    public Source() {
     }
 
-    public void setUrl(String url) {
+    public Source(String url) {
         this.url = url;
     }
 
-    public Resources() {
-    }
-
-    public Resources(String url) {
-        this.url = url;
-    }
-
-    public List<String> getLinks(String url)
+    public List<String> getLinks()
     {
         try{
-            Document doc = Jsoup.connect(url).get();
+            Document doc = Jsoup.connect(url).ignoreHttpErrors(true).get();
             Elements linkElements = doc.select("a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link");
             Set<String> tempLinks = new HashSet<>();
 
@@ -40,7 +31,6 @@ public class Resources {
             {
                 String linkNextPage = "https://www.coindesk.com" + link.attr("href");
                 tempLinks.add(linkNextPage);
-                Resources.capacity ++;
             }
             List<String> links = new ArrayList<>(tempLinks);
             return links;
@@ -49,5 +39,23 @@ public class Resources {
             return null;
         }
     }
-    
+    public List<String> getLinks(String url)
+    {
+        try{
+            Document doc = Jsoup.connect(url).ignoreHttpErrors(true).get();
+            Elements linkElements = doc.select("a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link");
+            Set<String> tempLinks = new HashSet<>();
+
+            for(Element link : linkElements)
+            {
+                String linkNextPage = "https://www.coindesk.com" + link.attr("href");
+                tempLinks.add(linkNextPage);
+            }
+            List<String> links = new ArrayList<>(tempLinks);
+            return links;
+        }catch(Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

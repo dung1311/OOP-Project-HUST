@@ -1,4 +1,4 @@
-package huster.crawl.fromCoinDesk;
+package huster.crawl.coinDesk;
 
 import java.util.List;
 
@@ -19,7 +19,8 @@ public class Data {
         return url;
     }
     public void setUrl(String url) {
-        this.url = url;
+        String[] parts = url.split("/");
+        this.url = parts[0] + "//" + parts[1] + parts[2] + "/";
     }
     public String getLink() {
         return link;
