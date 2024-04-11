@@ -5,7 +5,6 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private static final long serialVersionUID = 1L;
@@ -23,7 +22,6 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
 
-    private Stack<JFrame> screenHistory;
     private JPanel searchResult_center;
     private ImageIcon articleIcon;
 
@@ -33,10 +31,12 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private String titlePanelTin;
     private String postingDatePanelTin;
 
+    // private ScreenHistory historyStack;
 
-    public SearchUI(Stack<JFrame> screenHistory) {
-        this.screenHistory = screenHistory;
 
+    public SearchUI() {
+        ScreenHistory.getInstance();
+        // ScreenHistory.getInstance().pushScreen(this);
         Font font40 = new Font("Arial", Font.PLAIN, 40);
 
         Container contentPane = getContentPane();
@@ -91,8 +91,8 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         menuAndSearchPanel.addCloseButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!screenHistory.isEmpty()) {
-                    JFrame previousScreen = screenHistory.pop();
+                if (!ScreenHistory.getInstance().isEmpty()) {
+                    JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
                     dispose();
                 }
@@ -102,7 +102,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                new Menu(screenHistory).setVisible(true);;
+                new Menu().setVisible(true);;
                 dispose();
             }
         });
@@ -181,7 +181,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new SearchUI(screenHistory).setVisible(true);
+                        new SearchUI().setVisible(true);
                         dispose();
                     }
                 });
@@ -248,7 +248,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     }
 
     public void setScreenHistory(JFrame frame) {
-        screenHistory.push(frame);
+        // screenHistory.pushFrame(frame);
     }
 
     public String getTenDeTimTrongJSON(){
@@ -291,7 +291,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 articleButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        News news = new News(screenHistory);
+                        News news = new News();
                         news.setVisible(true);
                         dispose();
                         news.setHeader(articleButton.getText());

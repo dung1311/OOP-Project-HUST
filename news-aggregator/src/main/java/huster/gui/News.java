@@ -7,7 +7,6 @@ import javax.swing.border.LineBorder;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Stack;
 
 public class News extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -23,8 +22,12 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
     private JLabel jLabel_image;
+    // private ScreenHistory historyStack;
 
-    public News(Stack<JFrame> screenHistory) {
+    public News() {
+        ScreenHistory.getInstance();
+        ScreenHistory.getInstance().pushScreen(this);
+
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -45,15 +48,15 @@ public class News extends JFrame {
         Font font15I = new Font("Arial", Font.ITALIC, 15);
 
 
-        ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
+        ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\\\menuButton.png" );
         JButton menuButton = new JButton(menuIcon);
         menuButton.setPreferredSize(new Dimension(50, 50));
         menuButton.setBorderPainted(false);
         menuButton.setFocusPainted(false);
         menuButton.setContentAreaFilled(false);
         menuButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-
+            @Override
+            public void actionPerformed(ActionEvent e) {
             }
         });
 
@@ -67,7 +70,7 @@ public class News extends JFrame {
         homeButton.setContentAreaFilled(false);
         homeButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                new Menu(screenHistory).setVisible(true);;
+                new Menu().setVisible(true);;
                 dispose();
             }
         });
@@ -93,10 +96,10 @@ public class News extends JFrame {
         searchButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchUI searchUI = new SearchUI(screenHistory);
+                SearchUI searchUI = new SearchUI();
+                // ScreenHistory.getInstance().pushScreen(new News());
                 searchUI.setVisible(true);
-                setVisible(false);
-                screenHistory.push(new News(screenHistory));
+                dispose();
             }
         });
 
