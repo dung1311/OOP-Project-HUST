@@ -151,7 +151,8 @@ public class Link {
                     tagName = tagName + tagString.charAt(i);
                 }
             }
-            tag.add(tagName);
+            if(!tagName.equals("#"))
+                tag.add(tagName);
         } catch (Exception e) {
             e.printStackTrace();
         }

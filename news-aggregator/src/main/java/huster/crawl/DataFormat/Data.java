@@ -1,4 +1,4 @@
-package huster.crawl.coinDesk;
+package huster.crawl.DataFormat;
 
 import java.util.List;
 

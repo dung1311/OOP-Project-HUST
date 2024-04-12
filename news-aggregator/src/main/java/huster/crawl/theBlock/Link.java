@@ -149,7 +149,7 @@ public class Link {
             Element metaKeywords = doc.selectFirst("meta[name=keywords]");
             Elements metaTag = doc.select("meta[property=article:tag]");
             if(metaKeywords == null && metaTag == null) return tag;
-            tagString = metaKeywords.attr("content") + ", ";
+            if(metaKeywords != null) tagString = metaKeywords.attr("content") + ", ";
     
             for(int i = 0; i < metaTag.size(); i++) {
                 tagString += metaTag.get(i).attr("content") + ", ";

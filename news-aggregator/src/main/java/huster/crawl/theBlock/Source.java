@@ -39,7 +39,7 @@ public class Source {
             {
                 String[] parts = linkElements.get(i).attr("href").split("/");
                 if(parts.length < 2) continue;
-                else if(parts[1].equals("post")) {
+                else if(parts[1].equals("post") || parts[1].equals("learn")) {
                     String linkNextPage = "https://www.theblock.co" + linkElements.get(i).attr("href");
                     tempLinks.add(linkNextPage);
                 }
@@ -51,7 +51,30 @@ public class Source {
             e.printStackTrace();
             return null;
         }
-        
+    }
 
+    public List<String> getLinks()
+    {
+        try {
+            Document doc = Jsoup.connect(url).ignoreHttpErrors(true).get();
+            Elements linkElements = doc.select("a");
+            Set<String> tempLinks = new HashSet<>();
+
+            for(int i = 0; i < linkElements.size(); i++)
+            {
+                String[] parts = linkElements.get(i).attr("href").split("/");
+                if(parts.length < 2) continue;
+                else if(parts[1].equals("post") || parts[1].equals("learn")) {
+                    String linkNextPage = "https://www.theblock.co" + linkElements.get(i).attr("href");
+                    tempLinks.add(linkNextPage);
+                }
+            }
+            List<String> links = new ArrayList<>(tempLinks);
+
+            return links;
+        } catch(Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
