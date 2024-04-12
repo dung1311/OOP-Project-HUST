@@ -14,13 +14,13 @@ public class MainTest {
         try{
             ReadJsonFile reader = new ReadJsonFile();
             JsonArray jsonArray = reader.read("news-aggregator/resource/data/data.json");
-            Tag curTag = new Tag();
-            curTag.setCurrentTagList(jsonArray.get(1));
-            System.out.println(curTag.getCurrentTagList());
-            if(curTag.isContainTag("#Tradin")) System.out.println("haha");
-            else System.out.println("kho co");
-            // Tag.setTag(jsonArray);
-            // System.out.println(Tag.hashtag);
+            // Tag curTag = new Tag();
+            // curTag.setCurrentTagList(jsonArray.get(1));
+            // System.out.println(curTag.getCurrentTagList());
+            // if(curTag.isContainTag("#meme")) System.out.println("haha");
+            // else System.out.println("kho co");
+            Tag.setTag(jsonArray);
+            System.out.println(Tag.getTag());
         } catch(Exception e) {
             e.printStackTrace();
 

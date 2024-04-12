@@ -12,7 +12,7 @@ import com.google.gson.JsonObject;
 
 public class Tag {
     private List<String> currentTagList = new ArrayList<>();
-    public static List<String> hashtag = new ArrayList<>() ;
+    private static List<String> hashtag = new ArrayList<>();
 
     public Tag() {}
     
@@ -29,7 +29,8 @@ public class Tag {
         return currentTagList;
     }
 
-    public void setCurrentTagList(JsonElement jsonElement) {
+    public void setCurrentTagList(JsonElement jsonElement) 
+    {
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         JsonArray currentTag = jsonObject.get("tag").getAsJsonArray();
         if(currentTag == null) return;
@@ -38,19 +39,27 @@ public class Tag {
         }
     }
     
+    public static List<String> getTag()
+    {
+        return hashtag;
+    }
 
-    public static void setTag(JsonArray jsonArray) {
+    public static void setTag(JsonArray jsonArray) 
+    {
         Set<String> hashtagSet = new HashSet<>();
 
-        for(JsonElement jsonElement : jsonArray) {
+        for(JsonElement jsonElement : jsonArray) 
+        {
             JsonObject jsonObject = jsonElement.getAsJsonObject();
             JsonArray currentTag = jsonObject.get("tag").getAsJsonArray();
             if(currentTag == null) continue;
             List<String> currentTagList = new ArrayList<>();
-            for(JsonElement element : currentTag) {
+            for(JsonElement element : currentTag) 
+            {
                 currentTagList.add(element.getAsString());
             }
             for(String eachTag : currentTagList) {
+
                 hashtagSet.add(eachTag);
             }
         }
@@ -58,7 +67,8 @@ public class Tag {
         Collections.sort(hashtag);
     }
 
-    public boolean isContainTag(String tagSearching) {
+    public boolean isContainTag(String tagSearching) 
+    {
         return currentTagList.contains(tagSearching);
     }
 }

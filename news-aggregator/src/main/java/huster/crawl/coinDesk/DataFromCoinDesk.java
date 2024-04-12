@@ -11,14 +11,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import huster.crawl.DataFormat.Data;
-
 public class DataFromCoinDesk {
-    public void writeOnJsonFile(String url)
+    public List<Data> writeOnJsonFile(String url)
     {
         try {
-            //Create dataList 
             List<Data> dataList = new ArrayList<>();
-            //Get all links from s
             Source source = new Source();
             List<String> linkList = source.getLinks(url);
             for(int i = 0; i < linkList.size(); i++)
@@ -43,17 +40,20 @@ public class DataFromCoinDesk {
                 item.setLinkImage(itemLink.getLinkImage(doc));   
                 dataList.add(item);                 
             }
-            if(dataList.isEmpty()) return;
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String json = gson.toJson(dataList);
+            if(dataList.isEmpty()) return null;
+            else return dataList;
+            // Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            // String json = gson.toJson(dataList);
+        
+            // FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/dataCoinDesk.json");
+            // if(json != null) fileWriter.write(json);
+            // fileWriter.close();
 
-            FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/data.json");
-            if(json != null) fileWriter.write(json);
-            fileWriter.close();
-
-            System.out.println("Write on JsonFile successful");
+            // System.out.println("Write on JsonFile successful");
         } catch (Exception e) {
             e.printStackTrace();
+            return null;
         }
     }
 }
+

@@ -1,4 +1,4 @@
-package huster.crawl.theBlock;
+package huster.crawl.newsBTC;
 
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import huster.crawl.DataFormat.Data;
-public class DataFromTheBlock {
+public class DataFromNewsBTC {
     public List<Data> writeOnJsonFile(String url)
     {
         try {
@@ -28,15 +28,15 @@ public class DataFromTheBlock {
                 item.setLink(itemLink.getLink());
                 item.setTitle(itemLink.getTitle(doc));
                 item.setType(itemLink.getType(doc));
-                if(item.getType().equals("unknownType")){
-                    continue;
-                }
                 item.setSummary(itemLink.getSummary(doc));
                 item.setContent(itemLink.getContent(doc));
                 item.setCategory(itemLink.getCategory(doc));
                 item.setDatetimeCreation(itemLink.getDateTimeCreation(doc));
                 item.setTag(itemLink.getTag(doc));
                 item.setAuthor(itemLink.getAuthor(doc));
+                if(item.getAuthor().equals("unknownAuthor")){
+                    continue;
+                }
                 item.setLinkImage(itemLink.getLinkImage(doc));   
                 dataList.add(item);                 
             }
@@ -45,7 +45,7 @@ public class DataFromTheBlock {
             // Gson gson = new GsonBuilder().setPrettyPrinting().create();
             // String json = gson.toJson(dataList);
         
-            // FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/dataTheBlock.json");
+            // FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/dataNewsBTC.json");
             // if(json != null) fileWriter.write(json);
             // fileWriter.close();
 
