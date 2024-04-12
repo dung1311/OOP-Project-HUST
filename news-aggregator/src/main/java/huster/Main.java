@@ -34,7 +34,6 @@ class MyRunnable {
     }
 
     public void crawl() {
-        String url = "https://www.coindesk.com/";
 
     }
 }
