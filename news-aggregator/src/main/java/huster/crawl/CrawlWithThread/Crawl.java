@@ -26,7 +26,7 @@ public class Crawl {
         this.dataList = dataList;
     }
 
-    public void crawl()
+    public static void crawl()
     {
         try{
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
