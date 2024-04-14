@@ -1,45 +1,26 @@
 package huster.crawl;
 
+import java.util.List;
+
 public class ItemNews {
+    private String url;
     private String link;
-    private String source;
     private String title;
-    private String category;
+    private String type;
     private String summary;
+    private String content;
+    private String category;
+    private String datetimeCreation;
+    private List<String> tag;
     private String author;
-    private String date;
-    private String hashTag;
+    private String linkImage;
 
-    public String getTitle() {
-        return title;
+    public String getUrl() {
+        return url;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getLink() {
@@ -50,6 +31,38 @@ public class ItemNews {
         this.link = link;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public String getCategory() {
         return category;
     }
@@ -58,20 +71,36 @@ public class ItemNews {
         this.category = category;
     }
 
-    public String getSource() {
-        return source;
+    public String getDatetimeCreation() {
+        return datetimeCreation;
     }
 
-    public void setSource(String source) {
-        this.source = source;
+    public void setDatetimeCreation(String datetimeCreation) {
+        this.datetimeCreation = datetimeCreation;
     }
 
-    public String getHashTag() {
-        return hashTag;
+    public List<String> getTag() {
+        return tag;
     }
 
-    public void setHashTag(String hashTag) {
-        this.hashTag = hashTag;
+    public void setTag(List<String> tag) {
+        this.tag = tag;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getLinkImage() {
+        return linkImage;
+    }
+
+    public void setLinkImage(String linkImage) {
+        this.linkImage = linkImage;
     }
 
 }
