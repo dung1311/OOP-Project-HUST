@@ -1,7 +1,7 @@
 from ntscraper import Nitter
 import pandas as pd
 
-scraper = Nitter()
+scraper = Nitter(log_level = 1, skip_instance_check = False)
 def crawl_tweet(name, type, amount):
     data_list = []
     tweets = scraper.get_tweets(name, mode=type, number=amount)
