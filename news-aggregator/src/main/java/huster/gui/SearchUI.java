@@ -7,14 +7,14 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Stack;
 
-public class SearchUI extends JFrame implements ActionListener, ItemListener {
+public class SearchUI extends JFrame{
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
 
-    public String tenDeTimTrongJSON;
+    public String articalNameJSON;
 
     private boolean isSuggestionPanelVisible = false;
     private int seeMoreButtonClickedCount = 0;
@@ -28,7 +28,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     private ImageIcon articleIcon;
 
     private AbstractButton articleButton;
-    private ArticlePanel panelTin;//Cái này có vẻ không cần thiết
+    private ArticlePanel panelTin;
 
     private String titlePanelTin;
     private String postingDatePanelTin;
@@ -55,7 +55,8 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         listModel = new DefaultListModel<>();
         suggestionList.setModel(listModel);
 
-        MenuAndSearchPanel menuAndSearchPanel = new MenuAndSearchPanel();
+        Header menuAndSearchPanel = new Header();
+        menuAndSearchPanel.addButtonForSearchUI();
         // menuAndSearchPanel.setLayout(new BoxLayout(menuAndSearchPanel, BoxLayout.Y_AXIS));
 
         // Sử dụng DocumentListener để lắng nghe sự kiện nhập liệu vào JTextField
@@ -160,7 +161,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         scrollResult.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
         searchResult_center.setLayout(null);
 
-        // Phần hiển thị gợi í cho searchBar
+        // Phần hiển thị kết quả cho searchBar
         ActionListener searchListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -171,7 +172,7 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
                 suggestionPanel.setVisible(false);
                 // Có thể phải code đưa thông tin vào JPanel, chưa thấy cách nào hay
                 createSearchResultPanels(6);
-                tenDeTimTrongJSON = searchBar.getText();
+                articalNameJSON = searchBar.getText();
                 contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
                 contentPane.add(scrollResult, BorderLayout.CENTER);
                 revalidate();
@@ -235,24 +236,36 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
         return relatedSuggestions.toArray(new String[0]);
     }
 
-    @Override
-    public void itemStateChanged(ItemEvent arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'itemStateChanged'");
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+    public void createSearchResultPanels(int numberOfRows) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = numberOfRows - 6; j < numberOfRows; j++) {
+                articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+                articleButton = new ArticleButton();
+                articleButton.setIcon(articleIcon);
+                panelTin = new ArticlePanel(getTitlePanelTin(), getPostingDatePanelTin());
+                panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
+                panelTin.add(articleButton, BorderLayout.NORTH);
+                articleButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        News news = new News(screenHistory);
+                        news.setVisible(true);
+                        dispose();
+                        news.setHeader(articleButton.getText());
+                    }
+                    
+                });
+                searchResult_center.add(panelTin);
+            }
+        }
     }
 
     public void setScreenHistory(JFrame frame) {
         screenHistory.push(frame);
     }
 
-    public String getTenDeTimTrongJSON(){
-        return tenDeTimTrongJSON;
+    public String getarticalNameJSON(){
+        return articalNameJSON;
     }
 
     public String getTitlePanelTin() {
@@ -278,30 +291,6 @@ public class SearchUI extends JFrame implements ActionListener, ItemListener {
     public void setArticleIcon(ImageIcon articleIcon) {
         this.articleIcon = articleIcon;
     }
-
-    public void createSearchResultPanels(int numberOfRows) {
-        for (int i = 0; i < 2; i++) {
-            for (int j = numberOfRows - 6; j < numberOfRows; j++) {
-                articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
-                articleButton = new ArticleButton();
-                articleButton.setIcon(articleIcon);
-                panelTin = new ArticlePanel(getTitlePanelTin(), getPostingDatePanelTin());
-                panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
-                panelTin.add(articleButton, BorderLayout.NORTH);
-                articleButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        News news = new News(screenHistory);
-                        news.setVisible(true);
-                        dispose();
-                        news.setHeader(articleButton.getText());
-                    }
-                    
-                });
-                searchResult_center.add(panelTin);
-            }
-        }
-    }
 }
 
 class ArticlePanel extends JPanel {
@@ -311,6 +300,7 @@ class ArticlePanel extends JPanel {
         String content = "<html><body>" + a + "<br>" + b + "</body></html>";
         JLabel articleName = new JLabel(content);
         add(articleName, BorderLayout.SOUTH);
+        
     }
 }
 
