@@ -12,4 +12,4 @@ def crawl_tweet(name, type, amount):
     return data
 
 data = crawl_tweet('itscrypto_news', 'user', 5)
-data.to_json('tweets.json')
+data.to_json(path_or_buf='news-aggregator\recourse\data\tweets.json')
