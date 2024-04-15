@@ -34,8 +34,8 @@ public class SearchUI extends JFrame{
     private String postingDatePanelTin;
 
 
-    public SearchUI(Stack<JFrame> screenHistory) {
-        this.screenHistory = screenHistory;
+    public SearchUI() {
+        ScreenHistory.getInstance();
 
         Font font40 = new Font("Arial", Font.PLAIN, 40);
 
@@ -92,8 +92,8 @@ public class SearchUI extends JFrame{
         menuAndSearchPanel.addCloseButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (!screenHistory.isEmpty()) {
-                    JFrame previousScreen = screenHistory.pop();
+                if (!ScreenHistory.getInstance().isEmpty()) {
+                    JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
                     dispose();
                 }
@@ -103,7 +103,7 @@ public class SearchUI extends JFrame{
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                new Menu(screenHistory).setVisible(true);;
+                new Menu().setVisible(true);;
                 dispose();
             }
         });
@@ -182,7 +182,7 @@ public class SearchUI extends JFrame{
                 menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        new SearchUI(screenHistory).setVisible(true);
+                        new SearchUI().setVisible(true);
                         dispose();
                     }
                 });
@@ -248,10 +248,11 @@ public class SearchUI extends JFrame{
                 articleButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        News news = new News(screenHistory);
+                        News news = new News();
                         news.setVisible(true);
                         dispose();
                         news.setHeader(articleButton.getText());
+                        revalidate();
                     }
                     
                 });

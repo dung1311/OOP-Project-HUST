@@ -4,7 +4,6 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Stack;
 
 public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -20,12 +19,12 @@ public class Menu extends JFrame {
     private JPanel labelPanel;
     private JPanel articlePanel;
     private ImageIcon articleIcon;
-    private Stack<JFrame> screenHistory;
-
+   
     Header menu = new Header();
 
-    public Menu(Stack<JFrame> screenHistory) {
-        this.screenHistory = screenHistory;
+    public Menu() {
+        ScreenHistory.getInstance();
+        ScreenHistory.getInstance().pushScreen(this);
         Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
 
         setSize(X, Y);
@@ -44,10 +43,9 @@ public class Menu extends JFrame {
         menu.addSearchButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchUI searchUI = new SearchUI(screenHistory);
+                SearchUI searchUI = new SearchUI();
                 searchUI.setVisible(true);
                 dispose();
-                screenHistory.push(new Menu(screenHistory));
             }
         });
 
@@ -72,7 +70,7 @@ public class Menu extends JFrame {
         BigarticleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                News news = new News(screenHistory);
+                News news = new News();
                 news.setVisible(true);
                 dispose();
             }
@@ -144,7 +142,7 @@ public class Menu extends JFrame {
                 articleButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        News news = new News(screenHistory);
+                        News news = new News();
                         news.setVisible(true);
                         dispose();
                     }
