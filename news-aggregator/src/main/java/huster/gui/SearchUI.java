@@ -5,7 +5,6 @@ import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Stack;
 
 public class SearchUI extends JFrame{
     private static final long serialVersionUID = 1L;
@@ -23,7 +22,6 @@ public class SearchUI extends JFrame{
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
 
-    private Stack<JFrame> screenHistory;
     private JPanel searchResult_center;
     private ImageIcon articleIcon;
 
@@ -57,8 +55,7 @@ public class SearchUI extends JFrame{
 
         Header menuAndSearchPanel = new Header();
         menuAndSearchPanel.addButtonForSearchUI();
-        // menuAndSearchPanel.setLayout(new BoxLayout(menuAndSearchPanel, BoxLayout.Y_AXIS));
-
+       
         // Sử dụng DocumentListener để lắng nghe sự kiện nhập liệu vào JTextField
         searchBar.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -168,8 +165,8 @@ public class SearchUI extends JFrame{
                 // Xóa hết mấy cái Panel hiện tại
                 // menuAndSearchPanel.setVisible(false);
                 contentPane.removeAll();
-                searchBar.setVisible(false);
-                suggestionPanel.setVisible(false);
+                // searchBar.setVisible(false);
+                // suggestionPanel.setVisible(false);
                 // Có thể phải code đưa thông tin vào JPanel, chưa thấy cách nào hay
                 createSearchResultPanels(6);
                 articalNameJSON = searchBar.getText();
@@ -261,10 +258,6 @@ public class SearchUI extends JFrame{
         }
     }
 
-    public void setScreenHistory(JFrame frame) {
-        screenHistory.push(frame);
-    }
-
     public String getarticalNameJSON(){
         return articalNameJSON;
     }
@@ -304,4 +297,69 @@ class ArticlePanel extends JPanel {
         
     }
 }
+
+class CreateSearchPanel extends JPanel {
+    public CreateSearchPanel() {
+        setPreferredSize(new Dimension(1440, 40));
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+    }
+}
+
+class SearchBar extends JTextField {
+    public SearchBar(int columns) {
+        super(columns);
+        setupSearchBar();
+    }
+
+    private void setupSearchBar() {
+        // Cấu hình các thuộc tính cho searchBar ở đây
+        Font font = new Font("Arial", Font.PLAIN, 30);
+        setFont(font);
+        setPreferredSize(new Dimension(1440, 60));
+    }
+}
+
+class ListOfCate extends JPanel {
+    public ListOfCate() {
+        System.setProperty("BLACK_menu", "0x222222");
+        Color BLACK_menu = Color.getColor("BLACK_menu");
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setPreferredSize(new Dimension(1440, 620));
+        setBackground(BLACK_menu);
+        setFont(new Font("Arial", Font.PLAIN, 14));
+
+        for (int i = 0; i < 10; i++) {
+            JLabel label1 = new JLabel("Blockchain" + i);
+            label1.setForeground(Color.WHITE);
+
+            Font font = new Font("Arial", Font.BOLD, 14);
+            label1.setFont(font);
+            label1.setAlignmentX(Component.LEFT_ALIGNMENT);
+            add(label1);
+
+            // Gắn sự kiện cho các dòng chữ
+            label1.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    // Xử lý sự kiện khi dòng chữ được click
+                    System.out.println("Bạn đã click vào Blockchain.");
+                }
+            });
+        }
+    }
+}
+
+class ArticleButton extends JButton {
+    public void articleButton() {
+        setPreferredSize(new Dimension(465, 132));
+        setBackground(Color.WHITE);
+        setHorizontalTextPosition(SwingConstants.CENTER);
+        setVerticalTextPosition(SwingConstants.BOTTOM);
+        setBorderPainted(false);
+                        
+    }
+}
+
+
 
