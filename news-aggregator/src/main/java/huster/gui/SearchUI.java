@@ -33,7 +33,9 @@ public class SearchUI extends JFrame{
 
     // private ScreenHistory historyStack;
 
-
+    // public SearchUI() {
+    //     ScreenHistory.getInstance();
+    // }
     public SearchUI() {
         ScreenHistory.getInstance();
         // ScreenHistory.getInstance().pushScreen(this);
@@ -252,6 +254,7 @@ public class SearchUI extends JFrame{
                         news.setVisible(true);
                         dispose();
                         news.setHeader(articleButton.getText());
+                        revalidate();
                     }
                     
                 });

@@ -28,6 +28,10 @@ public class News extends JFrame {
         ScreenHistory.getInstance();
         ScreenHistory.getInstance().pushScreen(this);
 
+    public News() {
+        ScreenHistory.getInstance();
+        ScreenHistory.getInstance().pushScreen(this);
+        
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -54,7 +58,7 @@ public class News extends JFrame {
                 SearchUI searchUI = new SearchUI();
                 // ScreenHistory.getInstance().pushScreen(new News());
                 searchUI.setVisible(true);
-                dispose();
+                dispose();;
             }
         });
 

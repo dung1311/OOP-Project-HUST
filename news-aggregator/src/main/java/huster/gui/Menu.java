@@ -6,11 +6,6 @@ import huster.action.SetPropertiesElements;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.concurrent.ArrayBlockingQueue;
-
-import java.util.List;
-
 
 public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -27,16 +22,12 @@ public class Menu extends JFrame {
     //
     private static JPanel articlePanel;
     private ImageIcon articleIcon;
-    // private ScreenHistory historyStack;
-    private static List<JPanel> jPanelList = new ArrayList<>(9);
-
-    public static List<JPanel> getjPanelList() {
-        return jPanelList;
-    }
-
+   
     Header menu = new Header();
 
     public Menu() {
+        ScreenHistory.getInstance();
+        ScreenHistory.getInstance().pushScreen(this);
         Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
 
         setSize(X, Y);
