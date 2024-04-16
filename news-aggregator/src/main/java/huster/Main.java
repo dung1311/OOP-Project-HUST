@@ -5,7 +5,6 @@ package huster;
 
 
 import huster.gui.Menu;
-import huster.gui.ScreenHistory;
 import java.io.IOException;
 
 import huster.crawl.CrawlWithThread.Crawl;
