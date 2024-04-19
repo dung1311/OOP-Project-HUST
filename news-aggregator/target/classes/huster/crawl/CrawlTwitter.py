@@ -1,47 +1,65 @@
-from ntscraper import Nitter #thư viện crawl tweet
-from numpy import column_stack
-import pandas as pd #chuyển dữ liệu sang dạng bảng
-#thư viện vẽ biểu đồ
-import matplotlib.pyplot as plt 
-from matplotlib.dates import DateFormatter
+from ntscraper import Nitter  # thư viện crawl tweet
+import pandas as pd  # chuyển dữ liệu sang dạng bảng
+# thư viện vẽ biểu đồ
+import matplotlib.pyplot as plt
 import seaborn as sns
+import json
+import os
 
-# scraper = Nitter(log_level = 1, skip_instance_check = False)
+scraper = Nitter(log_level=1, skip_instance_check=False)
 
-# #lấy tất cả dữ liệu, chia cột rồi lưu và tweetList_full
-# tweetList_full = scraper.get_tweets('SpaceX',mode= 'user',number= 10)
-# tweetList_full_pd = pd.DataFrame(tweetList_full['tweets'])
-# tweetList_full_pd.to_excel('news-aggregator\\recourse\\data\\tweetList_full.xlsx')
+def crawl_tweet(name, mode, amount, file_name):
+    tweetList_full = scraper.get_tweets(
+        name, mode=mode, number=amount, max_retries=100)
+    
+    if not os.path.exists(f'news-aggregator\\recourse\\data\\{file_name}.json'):
+        with open(file=f'news-aggregator\\recourse\\data\\{file_name}.json', mode='w') as file_json:
+            json.dump(tweetList_full['tweets'], file_json)
+    else:
+        with open(file=f'news-aggregator\\recourse\\data\\{file_name}.json', mode='w') as file_json:
+            json.dump(tweetList_full['tweets'], file_json)
 
-# #hàm crawl Tweet, trả về những giá trị cần dùng
-# def crawl_tweet(name, amount):
-#     list_tweets = scraper.get_tweets(name, mode = 'user', number = amount)
-#     data_list = []
-#     for tweet in list_tweets['tweets']:
-#         pictures_string = ', '.join(tweet['pictures']) if tweet['pictures'] else 'none'
-#         video_string = ', '.join(tweet['videos']) if tweet['videos'] else 'none'
-#         data = [ tweet['link'],  tweet['text'],  
-#                 tweet['date'], 
-#                 pictures_string , video_string, 
-#                 tweet['stats']['comments'], tweet['stats']['retweets'], tweet['stats']['quotes'], tweet['stats']['likes'] ]
-#         data_list.append(data)
-#     data_list_pd = pd.DataFrame(data_list, columns=['link', 'content', 'date&time', 'picture', 'video', 'comment', 'retweet', 'quote', 'like'])     
-#     return data_list_pd
+def draw_table(file_name):
+    list_tweet = pd.read_json(path_or_buf=f'news-aggregator\\recourse\\data\\{file_name}.json')
+    data_list = []
+    for index, tweet in list_tweet.iterrows():
+        try:
+            data = [
+                tweet['date'],
+                tweet['stats']['comments'],
+                tweet['stats']['retweets'],
+                tweet['stats']['quotes'],
+                tweet['stats']['likes']
+            ]
+            data_list.append(data)
+        except KeyError as e:
+            print(f"KeyError: {e}. Skipping tweet at index {index}")
 
-# #test
-# temp = crawl_tweet('SpaceX', 10)
-# temp.to_excel('news-aggregator\\recourse\\data\\tweets.xlsx')
+    data_list_pd = pd.DataFrame(
+        data_list, columns=['time', 'comment', 'retweet', 'quote', 'like'])
+    
+    data_list_pd = data_list_pd.sort_values(by='time')
+    
+    fig, ax = plt.subplots(figsize=(20, 10))
+    ax.plot(data_list_pd['time'], data_list_pd['comment'],
+            label='comment', marker='o')
+    ax.plot(data_list_pd['time'], data_list_pd['retweet'],
+            label='retweet', marker='o')
+    ax.plot(data_list_pd['time'], data_list_pd['like'],
+            label='like', marker='o')
+    ax.plot(data_list_pd['time'], data_list_pd['quote'],
+            label='quote', marker='o')
 
-#vẽ biểu đồ cột chồng với dữ liệu lấy từ reactionTweet_full, gộp lại theo từng bài với mốc là date
-reactionTweet_full = pd.read_excel('news-aggregator\\recourse\\data\\tweets.xlsx')
-column_items = pd.melt(reactionTweet_full, id_vars = 'date&time', 
-               value_vars = ['like', 'retweet', 'comment', 'quote'],
-               var_name = 'reaction_type',
-               value_name = 'count'
-              )
-plt.figure(figsize=(20,15))
-sns.barplot(x = 'date&time', y = 'count', hue = 'reaction_type', data = column_items)
-plt.xlabel('Date&Time')
-plt.ylabel('Count')
-plt.title('Grouped Reaction Metrics Over Time')
-plt.show()
+    plt.xlabel('Time')
+    plt.ylabel('Count')
+    plt.title('Tweet Stats over Time')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+#test
+#draw_table('news-aggregator\\recourse\\data\\tweets.json')
+
+file_name = 'abc'
+crawl_tweet('Bitcoin', mode='user', amount=10, file_name=file_name)
+draw_table(file_name)
