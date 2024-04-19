@@ -1,6 +1,5 @@
-from ntscraper import Nitter  # thư viện crawl tweet
-import pandas as pd  # chuyển dữ liệu sang dạng bảng
-# thư viện vẽ biểu đồ
+from ntscraper import Nitter 
+import pandas as pd 
 import matplotlib.pyplot as plt
 import seaborn as sns
 import json
@@ -59,7 +58,6 @@ def draw_table(file_name):
 
 #test
 #draw_table('news-aggregator\\recourse\\data\\tweets.json')
-
-file_name = 'abc'
-crawl_tweet('Bitcoin', mode='user', amount=10, file_name=file_name)
-draw_table(file_name)
+# file_name = 'abc'
+# crawl_tweet('Bitcoin', mode='user', amount=10, file_name=file_name)
+# draw_table(file_name)
