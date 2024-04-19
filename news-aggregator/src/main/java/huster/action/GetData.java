@@ -1,26 +1,20 @@
 package huster.action;
 
-import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-import javax.imageio.ImageIO;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -33,7 +27,7 @@ import huster.gui.News;
 
 
 
-public class SetPropertiesElements {
+public class GetData {
     // 
     private List<JsonObject> newsElements = new ArrayList<>(10);
     private String dataFilePath = "news-aggregator\\resource\\data\\totalData.json";
@@ -45,7 +39,7 @@ public class SetPropertiesElements {
         return newsElements;
     }   
 
-    public SetPropertiesElements() {
+    public GetData() {
         init();
     }
 

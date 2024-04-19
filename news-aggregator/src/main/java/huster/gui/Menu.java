@@ -2,11 +2,12 @@ package huster.gui;
 
 import javax.swing.*;
 
-import huster.action.SetPropertiesElements;
+import huster.action.GetData;
 
 import java.awt.*;
 import java.awt.event.*;
-
+import java.util.ArrayList;
+import java.util.List;
 public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
@@ -19,7 +20,8 @@ public class Menu extends JFrame {
     private JLabel articleLabel;
     private JPanel small_articlePanel;
     private JPanel labelPanel;
-    //
+    
+
     private static JPanel articlePanel;
     private ImageIcon articleIcon;
    
@@ -88,10 +90,6 @@ public class Menu extends JFrame {
         articlePanel = new JPanel();
         articlePanel.setPreferredSize(new Dimension(1280, 1500));
         articlePanel.setLayout(new GridLayout(6,2,175,0));
-        //bo di de thu ham test
-        // createSmall_articlePanel(6);
-        test();
-
         
         JPanel fullarticlePanel = new JPanel();
         fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
@@ -174,20 +172,7 @@ public class Menu extends JFrame {
 
     }
 
-    public static void test(){
-        new SetPropertiesElements().init();
-        JPanel jPanel = new JPanel();
-
-        for(int i = 0; i < 10; i++) {
-            jPanel = new SetPropertiesElements().set(new SetPropertiesElements().getNewsElements().get(i).get("linkImage").getAsString(), "Be xuan mai");
-            jPanelList.add(jPanel);
-
-            articlePanel.add(jPanelList.get(i));
-        }
-        articlePanel.setVisible(true);
-        
-    }
-
+   
 }
 
 //Class for generating Header
@@ -291,9 +276,4 @@ class Header extends JPanel{
     }
 }
 
-class Test {
-    public static void main(String[] args) {
-        Menu.test();
-    }
-}
 
