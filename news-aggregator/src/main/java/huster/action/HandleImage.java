@@ -43,5 +43,16 @@ public class HandleImage {
         return new ImageIcon(image);
     }
 
+    public static String ReadURL(String urlString) {
+        String decodeURL = new String();
+        try {
+            decodeURL = URLDecoder.decode(urlString, "UTF-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return decodeURL;
+    }
+
 }
 

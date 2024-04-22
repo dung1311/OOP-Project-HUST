@@ -30,7 +30,9 @@ import huster.gui.News;
 public class GetData {
     // 
     private List<JsonObject> newsElements = new ArrayList<>(10);
-    private String dataFilePath = "news-aggregator\\resource\\data\\totalData.json";
+    // private String dataFilePath = "news-aggregator\\resource\\data\\totalData.json";
+    private String dataFilePath = "news-aggregator\\resource\\data\\dataCoinDesk.json";
+
     // store news from database
     private JsonArray newsArray = new JsonArray();
     
@@ -59,7 +61,8 @@ public class GetData {
         Random random = new Random();
         //get radom index from newsArray
         while (randomSet.size() < 10) {
-            int randomNumber = random.nextInt(100);
+            // random number
+            int randomNumber = random.nextInt(40);
             randomSet.add(randomNumber);
         }
         // add news Elements into list

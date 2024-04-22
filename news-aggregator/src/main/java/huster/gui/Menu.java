@@ -2,7 +2,10 @@ package huster.gui;
 
 import javax.swing.*;
 
+import com.google.gson.JsonObject;
+
 import huster.action.GetData;
+import huster.action.HandleImage;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -24,6 +27,8 @@ public class Menu extends JFrame {
 
     private static JPanel articlePanel;
     private ImageIcon articleIcon;
+
+    private List<JPanel> newsList = new ArrayList<>();
    
     Header menu = new Header();
 
@@ -107,7 +112,7 @@ public class Menu extends JFrame {
                 fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1200 * seeMoreButtonClickedCount));
                 articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1200 * seeMoreButtonClickedCount));
                 articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
-                createSmall_articlePanel(3);
+                // createSmall_articlePanel(3);
                 revalidate();
             }
         });
@@ -130,48 +135,65 @@ public class Menu extends JFrame {
         // contentPane.add(toparticlePanel, BorderLayout.CENTER);
 
         contentPane.add(scrollPane_suggested,BorderLayout.CENTER);  
-    
+        // tao bang tin
+        articlePanel.setVisible(true);
+        createNews();
         // this.pack();        
         
     }
 
-    public void createSmall_articlePanel(int numberOfRows) {
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < numberOfRows; j++) {
-                articleButton = new JButton(articleIcon);
-                // articleButton.setBackground(GREY_menu);
-                articleButton.setContentAreaFilled(false);
-                articleButton.setBorderPainted(false);
-                articleButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        News news = new News();
-                        news.setVisible(true);
-                        dispose();
-                    }
-                });
+    // public void createSmall_articlePanel(int numberOfRows) {
+    //     for (int i = 0; i < 2; i++) {
+    //         for (int j = 0; j < numberOfRows; j++) {
+    //             articleButton = new JButton(articleIcon);
+    //             // articleButton.setBackground(GREY_menu);
+    //             articleButton.setContentAreaFilled(false);
+    //             articleButton.setBorderPainted(false);
+    //             articleButton.addActionListener(new ActionListener() {
+    //                 @Override
+    //                 public void actionPerformed(ActionEvent e) {
+    //                     News news = new News();
+    //                     news.setVisible(true);
+    //                     dispose();
+    //                 }
+    //             });
 
-                articleLabel = new JLabel("Be Xuan Mai");
-                articleLabel.setHorizontalAlignment(JLabel.CENTER);
-                articleLabel.setVerticalAlignment(JLabel.CENTER);
+    //             articleLabel = new JLabel("Be Xuan Mai");
+    //             articleLabel.setHorizontalAlignment(JLabel.CENTER);
+    //             articleLabel.setVerticalAlignment(JLabel.CENTER);
 
-                small_articlePanel = new JPanel();
-                small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
-                small_articlePanel.add(articleButton);
+    //             small_articlePanel = new JPanel();
+    //             small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
+    //             small_articlePanel.add(articleButton);
 
-                labelPanel = new JPanel();
-                labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-                labelPanel.add(articleLabel);
-                small_articlePanel.add(labelPanel);
-                // fix size
-                small_articlePanel.setPreferredSize(new Dimension(465, 180));
+    //             labelPanel = new JPanel();
+    //             labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+    //             labelPanel.add(articleLabel);
+    //             small_articlePanel.add(labelPanel);
+    //             // fix size
+    //             small_articlePanel.setPreferredSize(new Dimension(465, 180));
 
-                articlePanel.add(small_articlePanel);
-            }
+    //             articlePanel.add(small_articlePanel);
+    //         }
+    //     }
+
+    // }
+
+    // tao bang tin
+    public void createNews(){
+        List<JsonObject> _JsonObjects = new GetData().getNewsElements();
+        // System.out.println(_JsonObjects.get(0).get("linkImage").getAsString());
+        for(int i = 0; i < 10; i++){
+            JPanel _JPanel = new GetData().set(HandleImage.ReadURL(_JsonObjects.get(i).get("linkImage").getAsString()), _JsonObjects.get(i).get("title").getAsString());
+
+            newsList.add(_JPanel);
+        }
+
+        for(int i = 0; i < 10; i++){
+            articlePanel.add(newsList.get(i));
         }
 
     }
-
    
 }
 
@@ -275,5 +297,3 @@ class Header extends JPanel{
         menuButton.addActionListener(listener);
     }
 }
-
-
