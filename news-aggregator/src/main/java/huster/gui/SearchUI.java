@@ -14,13 +14,9 @@ public class SearchUI extends JFrame{
     public static final int ORIGIN_Y = 0;
 
     public String articalNameJSON;
-
-    private boolean isSuggestionPanelVisible = false;
     private int seeMoreButtonClickedCount = 0;
 
-    private SearchBar searchBar = new SearchBar(10);
-    private JList<String> suggestionList;
-    private DefaultListModel<String> listModel;
+    private SearchAndSuggestionPanel panel = new SearchAndSuggestionPanel();
 
     private JPanel searchResult_center;
     private ImageIcon articleIcon;
@@ -28,8 +24,8 @@ public class SearchUI extends JFrame{
     private AbstractButton articleButton;
     private ArticlePanel panelTin;
 
-    private String titlePanelTin;
-    private String postingDatePanelTin;
+    private String articleTitle;
+    private String postingDate;
 
 
     public SearchUI() {
@@ -46,46 +42,9 @@ public class SearchUI extends JFrame{
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        // set up cho gợi í của sưarchBar ***CÓ THỂ PHỈA THÊM PHƯƠNG THỨC NHẢY DỮ LIỆU
-        // TỪ FILE JSON?***
-        JPanel suggestionPanel = new JPanel();
-        suggestionList = new JList<>();
-        listModel = new DefaultListModel<>();
-        suggestionList.setModel(listModel);
-
         Header menuAndSearchPanel = new Header();
         menuAndSearchPanel.addButtonForSearchUI();
        
-        // Sử dụng DocumentListener để lắng nghe sự kiện nhập liệu vào JTextField
-        searchBar.getDocument().addDocumentListener(new DocumentListener() {
-            @Override
-            public void insertUpdate(DocumentEvent e) {
-                updateSuggestions();
-            }
-
-            @Override
-            public void removeUpdate(DocumentEvent e) {
-                updateSuggestions();
-            }
-
-            @Override
-            public void changedUpdate(DocumentEvent e) {
-                updateSuggestions();
-            }
-
-            private void updateSuggestions() {
-                String searchText = searchBar.getText();
-                // Thực hiện tìm kiếm trong dữ liệu và cập nhật danh sách gợi ý tìm kiếm
-                listModel.clear();
-                if (!searchText.isEmpty()) {
-                    String[] suggestions = searchSuggestions(searchText);
-                    for (String suggestion : suggestions) {
-                        listModel.addElement(suggestion);
-                    }
-                }
-            }
-        });
-
         menuAndSearchPanel.addCloseButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -105,32 +64,8 @@ public class SearchUI extends JFrame{
             }
         });
         
-        menuAndSearchPanel.add(searchBar);
+        menuAndSearchPanel.add(panel);
 
-        // Thêm JList vào JPanel để hiển thị gợi ý tìm kiếm()
-        suggestionPanel.setPreferredSize(new Dimension(1440, 40));
-        suggestionPanel.setLayout(new BoxLayout(suggestionPanel, BoxLayout.Y_AXIS));
-        suggestionPanel.add(new JScrollPane(suggestionList), BorderLayout.CENTER);
-        menuAndSearchPanel.add(suggestionPanel);
-        suggestionPanel.setVisible(false);
-
-        // Thêm ListSelectionListener cho suggestionList
-        suggestionList.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
-                if (!e.getValueIsAdjusting()) {
-                    // Lấy dòng được chọn từ suggestionList
-                    String selectedSuggestion = suggestionList.getSelectedValue();
-                    // Đặt nội dung của dòng được chọn vào searchBar
-                    searchBar.setText(selectedSuggestion);
-                    // Ẩn suggestionPanel sau khi chọn
-                    suggestionPanel.setVisible(false);
-                    // Đặt lại trạng thái của biến isSuggestionPanelVisible
-                    isSuggestionPanelVisible = false;
-                }
-            }
-        });
         // ------------------------------------------------
         // Đây là phần thêm kết quả tìm kiếm
         JPanel searchResult = new JPanel(new BorderLayout());
@@ -158,24 +93,23 @@ public class SearchUI extends JFrame{
         scrollResult.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
         searchResult_center.setLayout(null);
 
-        // Phần hiển thị kết quả cho searchBar
+        // This ActionListener is crucial!! Just know that it helps display searching result
         ActionListener searchListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Xóa hết mấy cái Panel hiện tại
-                // menuAndSearchPanel.setVisible(false);
+                // Delete everything from contentPane
                 contentPane.removeAll();
-                // searchBar.setVisible(false);
-                // suggestionPanel.setVisible(false);
-                // Có thể phải code đưa thông tin vào JPanel, chưa thấy cách nào hay
+                panel.setVisible(false);
+                
+                // Add stuff back
                 createSearchResultPanels(6);
-                articalNameJSON = searchBar.getText();
+                articalNameJSON = panel.getSearchBarText();
                 contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
                 contentPane.add(scrollResult, BorderLayout.CENTER);
                 revalidate();
                 repaint();
 
-                // Thêm actionListener cho searchButton sau khi hiển thị kết quả tìm kiếm
+                // This helps when you want to keep searching
                 menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
@@ -185,52 +119,15 @@ public class SearchUI extends JFrame{
                 });
             }
         };        
-        searchBar.addActionListener(searchListener);
+        
 
         // Thêm actionListener cho searchButton khi chưa hiển thị kết quả tìm kiếm
+        panel.addSearchBarActionListenner(searchListener);
         menuAndSearchPanel.addSearchButtonListener(searchListener);
-
-        // Trong constructor của SearchUI, thêm sự kiện cho searchBar
-        searchBar.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // Kiểm tra nếu suggestionPanel đang hiển thị thì ẩn nó đi, ngược lại thì hiển
-                // thị
-                if (isSuggestionPanelVisible) {
-                    suggestionPanel.setVisible(false);
-                    isSuggestionPanelVisible = false;
-                } else {
-                    suggestionPanel.setVisible(true);
-                    isSuggestionPanelVisible = true;
-                }
-            }
-        });
-
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         ListOfCate catePanel = new ListOfCate();
         contentPane.add(catePanel, BorderLayout.CENTER);
-    }
-
-    // Phương thức tìm kiếm gợi ý tìm kiếm dựa trên từ khóa nhập vào
-    // Muốn hiển thị gợi í cho người dùng thì Dũng nhét vào suggestion
-    private String[] searchSuggestions(String searchText) {
-        // Dữ liệu gợi ý
-        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency" };
-        // Danh sách chứa các gợi ý phù hợp
-        ArrayList<String> relatedSuggestions = new ArrayList<>();
-
-        // Lặp qua từng gợi ý
-        for (String suggestion : suggestions) {
-            // Nếu từ khóa được nhập vào là một phần của gợi ý
-            if (suggestion.toLowerCase().startsWith(searchText.toLowerCase())) {
-                // Thêm gợi ý này vào danh sách các gợi ý phù hợp
-                relatedSuggestions.add(suggestion);
-            }
-        }
-
-        // Chuyển danh sách các gợi ý phù hợp thành một mảng và trả về
-        return relatedSuggestions.toArray(new String[0]);
     }
 
     public void createSearchResultPanels(int numberOfRows) {
@@ -239,7 +136,7 @@ public class SearchUI extends JFrame{
                 articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
                 articleButton = new ArticleButton();
                 articleButton.setIcon(articleIcon);
-                panelTin = new ArticlePanel(getTitlePanelTin(), getPostingDatePanelTin());
+                panelTin = new ArticlePanel(getTitle(), getPostingDate());
                 panelTin.setBounds(100 + 715 * i, 72 + 300 * j, 465, 170);
                 panelTin.add(articleButton, BorderLayout.NORTH);
                 articleButton.addActionListener(new ActionListener() {
@@ -262,20 +159,20 @@ public class SearchUI extends JFrame{
         return articalNameJSON;
     }
 
-    public String getTitlePanelTin() {
-        return titlePanelTin;
+    public String getTitle() {
+        return articleTitle;
     }
 
-    public void setTitlePanelTin(String s) {
-        this.titlePanelTin = s;
+    public void setArticleTitle(String s) {
+        this.articleTitle = s;
     }
 
-    public String getPostingDatePanelTin() {
-        return postingDatePanelTin;
+    public String getPostingDate() {
+        return postingDate;
     }
 
-    public void setPostingDatePanelTin(String s) {
-        this.postingDatePanelTin = s;
+    public void setPostingDate(String s) {
+        this.postingDate = s;
     }
 
     public ImageIcon getArticleIcon() {
@@ -298,18 +195,11 @@ class ArticlePanel extends JPanel {
     }
 }
 
-class CreateSearchPanel extends JPanel {
-    public CreateSearchPanel() {
-        setPreferredSize(new Dimension(1440, 40));
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-
-    }
-}
-
 class SearchBar extends JTextField {
     public SearchBar(int columns) {
         super(columns);
         setupSearchBar();
+        
     }
 
     private void setupSearchBar() {
@@ -318,8 +208,11 @@ class SearchBar extends JTextField {
         setFont(font);
         setPreferredSize(new Dimension(1440, 60));
     }
+
+    
 }
 
+//This contains the categories about BlockChain topic
 class ListOfCate extends JPanel {
     public ListOfCate() {
         System.setProperty("BLACK_menu", "0x222222");
@@ -361,5 +254,118 @@ class ArticleButton extends JButton {
     }
 }
 
+// This class basically creates the searchbar with some suggestion for users
+class SearchAndSuggestionPanel extends JPanel{
+    private SearchBar searchBar = new SearchBar(10);
+    private boolean isSuggestionPanelVisible = false;
+    private JList<String> suggestionList;
+    private DefaultListModel<String> listModel;
 
+    public SearchAndSuggestionPanel(){
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        JPanel suggestionPanel = new JPanel();
+        suggestionList = new JList<>();
+        listModel = new DefaultListModel<>();
+        suggestionList.setModel(listModel);
 
+        suggestionPanel.setPreferredSize(new Dimension(1440, 40));
+        suggestionPanel.setLayout(new BoxLayout(suggestionPanel, BoxLayout.Y_AXIS));
+        suggestionPanel.add(new JScrollPane(suggestionList), BorderLayout.CENTER);
+        suggestionPanel.setVisible(isSuggestionPanelVisible);
+        
+        // Sử dụng DocumentListener để lắng nghe sự kiện nhập liệu vào JTextField
+        searchBar.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                updateSuggestions();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                updateSuggestions();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                updateSuggestions();
+            }
+
+            private void updateSuggestions() {
+                String searchText = searchBar.getText();
+                // Thực hiện tìm kiếm trong dữ liệu và cập nhật danh sách gợi ý tìm kiếm
+                listModel.clear();
+                if (!searchText.isEmpty()) {
+                    String[] suggestions = searchSuggestions(searchText);
+                    for (String suggestion : suggestions) {
+                        listModel.addElement(suggestion);
+                    }
+                }
+            }
+        });
+
+        suggestionList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
+                if (!e.getValueIsAdjusting()) {
+                    // Lấy dòng được chọn từ suggestionList
+                    String selectedSuggestion = suggestionList.getSelectedValue();
+                    // Đặt nội dung của dòng được chọn vào searchBar
+                    searchBar.setText(selectedSuggestion);
+                    // Ẩn suggestionPanel sau khi chọn
+                    suggestionPanel.setVisible(false);
+                    // Đặt lại trạng thái của biến isSuggestionPanelVisible
+                    isSuggestionPanelVisible = false;
+                }
+            }
+        });
+
+        searchBar.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Kiểm tra nếu suggestionPanel đang hiển thị thì ẩn nó đi, ngược lại thì hiển
+                // thị
+                if (isSuggestionPanelVisible) {
+                    suggestionPanel.setVisible(false);
+                    isSuggestionPanelVisible = false;
+                } else {
+                    suggestionPanel.setVisible(true);
+                    isSuggestionPanelVisible = true;
+                }
+            }
+        });
+
+        add(searchBar);
+        add(suggestionPanel);
+    }
+    private String[] searchSuggestions(String searchText) {
+        // Dữ liệu gợi ý
+        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency" };
+        // Danh sách chứa các gợi ý phù hợp
+        ArrayList<String> relatedSuggestions = new ArrayList<>();
+
+        // Lặp qua từng gợi ý
+        for (String suggestion : suggestions) {
+            // Nếu từ khóa được nhập vào là một phần của gợi ý
+            if (suggestion.toLowerCase().startsWith(searchText.toLowerCase())) {
+                // Thêm gợi ý này vào danh sách các gợi ý phù hợp
+                relatedSuggestions.add(suggestion);
+            }
+        }
+
+        // Chuyển danh sách các gợi ý phù hợp thành một mảng và trả về
+        return relatedSuggestions.toArray(new String[0]);
+    }
+
+    public void addSearchBarActionListenner(ActionListener e){
+        searchBar.addActionListener(e);
+    }
+
+    public String getSearchBarText(){
+        return searchBar.getText();
+    }
+}
+
+class SearchResult extends JPanel{
+
+}
