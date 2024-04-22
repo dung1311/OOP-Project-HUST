@@ -59,15 +59,15 @@ public class Menu extends JFrame {
         toparticlePanel.setPreferredSize(new Dimension(1280,625));
         toparticlePanel.setLayout(new BorderLayout());
 
-        JPanel nothingPanel = new JPanel();
-        nothingPanel.setPreferredSize(new Dimension(1280,75));
+        JPanel gapPanel = new JPanel();
+        gapPanel.setPreferredSize(new Dimension(1280,75));
 
-        JButton BigarticleButton = new JButton(BigarticleIcon);
-        BigarticleButton.setBackground(GREY_menu);
-        BigarticleButton.setOpaque(false);
-        BigarticleButton.setContentAreaFilled(false);
-        BigarticleButton.setBorderPainted(false);
-        BigarticleButton.addActionListener(new ActionListener() {
+        JButton bigArticleButton = new JButton(BigarticleIcon);
+        bigArticleButton.setBackground(GREY_menu);
+        bigArticleButton.setOpaque(false);
+        bigArticleButton.setContentAreaFilled(false);
+        bigArticleButton.setBorderPainted(false);
+        bigArticleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 News news = new News();
@@ -78,9 +78,9 @@ public class Menu extends JFrame {
         JLabel BigarticleLabel_title = new JLabel("Be Xuan Mai");
         BigarticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
         BigarticleLabel_title.setVerticalAlignment(JLabel.CENTER);
-        toparticlePanel.add(BigarticleButton,BorderLayout.NORTH);
+        toparticlePanel.add(bigArticleButton,BorderLayout.NORTH);
         toparticlePanel.add(BigarticleLabel_title,BorderLayout.CENTER);
-        toparticlePanel.add(nothingPanel,BorderLayout.SOUTH);
+        toparticlePanel.add(gapPanel,BorderLayout.SOUTH);
 
         articlePanel = new JPanel();
         articlePanel.setPreferredSize(new Dimension(1280, 1500));

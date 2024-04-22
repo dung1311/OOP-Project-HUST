@@ -80,7 +80,7 @@ public class SearchUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 seeMoreButtonClickedCount++;
                 searchResult.setPreferredSize(new Dimension(1440, 2000 + 900 * seeMoreButtonClickedCount));
-                createSearchResultPanels(6 + 3 * seeMoreButtonClickedCount);
+                // createSearchResultPanels(6 + 3 * seeMoreButtonClickedCount);
                 revalidate();
             }
         });
@@ -121,7 +121,7 @@ public class SearchUI extends JFrame{
         };        
         
 
-        // Thêm actionListener cho searchButton khi chưa hiển thị kết quả tìm kiếm
+        // Thêm actionListener cho searchButton và searchBar khi chưa hiển thị kết quả tìm kiếm
         panel.addSearchBarActionListenner(searchListener);
         menuAndSearchPanel.addSearchButtonListener(searchListener);
 
@@ -212,7 +212,7 @@ class SearchBar extends JTextField {
     
 }
 
-//This contains the categories about BlockChain topic
+//This contains the categories about BlockChain topics
 class ListOfCate extends JPanel {
     public ListOfCate() {
         System.setProperty("BLACK_menu", "0x222222");
@@ -260,6 +260,7 @@ class SearchAndSuggestionPanel extends JPanel{
     private boolean isSuggestionPanelVisible = false;
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
+    public String selectedSuggestion;
 
     public SearchAndSuggestionPanel(){
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -303,22 +304,22 @@ class SearchAndSuggestionPanel extends JPanel{
             }
         });
 
-        suggestionList.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
-                if (!e.getValueIsAdjusting()) {
-                    // Lấy dòng được chọn từ suggestionList
-                    String selectedSuggestion = suggestionList.getSelectedValue();
-                    // Đặt nội dung của dòng được chọn vào searchBar
-                    searchBar.setText(selectedSuggestion);
-                    // Ẩn suggestionPanel sau khi chọn
-                    suggestionPanel.setVisible(false);
-                    // Đặt lại trạng thái của biến isSuggestionPanelVisible
-                    isSuggestionPanelVisible = false;
-                }
-            }
-        });
+        // suggestionList.addListSelectionListener(new ListSelectionListener() {
+        //     @Override
+        //     public void valueChanged(ListSelectionEvent e) {
+        //         // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
+        //         if (!e.getValueIsAdjusting()) {
+        //             // Lấy dòng được chọn từ suggestionList
+        //             String selectedSuggestion = suggestionList.getSelectedValue();
+        //             // Đặt nội dung của dòng được chọn vào searchBar
+        //             searchBar.setText(selectedSuggestion);
+        //             // Ẩn suggestionPanel sau khi chọn
+        //             suggestionPanel.setVisible(false);
+        //             // Đặt lại trạng thái của biến isSuggestionPanelVisible
+        //             isSuggestionPanelVisible = false;
+        //         }
+        //     }
+        // });
 
         searchBar.addMouseListener(new MouseAdapter() {
             @Override
@@ -331,6 +332,26 @@ class SearchAndSuggestionPanel extends JPanel{
                 } else {
                     suggestionPanel.setVisible(true);
                     isSuggestionPanelVisible = true;
+                }
+            }
+        });
+
+        suggestionList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 1) {
+                    // Lấy từ được chọn
+                    selectedSuggestion = suggestionList.getSelectedValue();
+                    if (selectedSuggestion != null) {
+                        // Tạo một instance mới của News
+                        News news = new News();
+                        // Thiết lập tiêu đề cho News
+                        news.setHeader(selectedSuggestion);
+                        // Hiển thị News
+                        news.setVisible(true);
+                        // Đóng cửa sổ hiện tại
+                        SwingUtilities.getWindowAncestor(SearchAndSuggestionPanel.this).dispose();
+                    }
                 }
             }
         });
@@ -366,6 +387,3 @@ class SearchAndSuggestionPanel extends JPanel{
     }
 }
 
-class SearchResult extends JPanel{
-
-}
