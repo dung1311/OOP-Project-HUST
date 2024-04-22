@@ -69,8 +69,8 @@ public class News extends JFrame {
         jLabel_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jLabel_news_header.setFont(font30B);
 
-        JPanel jPanel_news_header = new JPanel();
-        jPanel_news_header.setLayout(new BorderLayout());
+        // JPanel jPanel_news_header = new JPanel();
+        // jPanel_news_header.setLayout(new BorderLayout());
 
         // jTextArea_news_header = new JTextArea("QUÁ VÔ ĐẠO BẤT LƯƠNG");
         // jTextArea_news_header.setFont(font30B);
@@ -78,7 +78,7 @@ public class News extends JFrame {
         // jTextArea_news_header.setLineWrap(true);
         // jTextArea_news_header.setWrapStyleWord(true);
 
-        jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
+        // jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
 
         jTextArea_news_author = new JTextArea("Author: Author's name");
         jTextArea_news_author.setBackground(jLabel_image.getBackground());
