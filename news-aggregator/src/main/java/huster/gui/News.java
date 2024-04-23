@@ -14,7 +14,7 @@ public class News extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 100;
     public static final int ORIGIN_Y = 100;
-    Header menu = new Header();
+    // Header menu = new Header();
     private JLabel jLabel_news_header;
     // private JTextArea jTextArea_news_header;
     private JTextArea jTextArea_news_center;
@@ -24,35 +24,51 @@ public class News extends JFrame {
     private JLabel jLabel_image;
 
     public News() {
-        ScreenHistory.getInstance();
-        ScreenHistory.getInstance().pushScreen(this);
+        // ScreenHistory.getInstance();
+        // ScreenHistory.getInstance().pushScreen(this);
         
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
-
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        System.setProperty("BLACK_menu", "0x222222");
+        Header menu = new Header();
+        menu.addButtonForNews();
 
+        System.setProperty("BLACK_menu", "0x222222");
         Font font30B = new Font("Arial", Font.BOLD, 30);
         Font font20 = new Font("Arial", Font.PLAIN, 20);
         Font font15I = new Font("Arial", Font.ITALIC, 15);
 
         menu.addHomeButtonListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e){
-                new Menu().setVisible(true);;
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+                new Menu().setVisible(true);
+                ScreenHistory.getInstance().pushScreen(frame);
                 dispose();
+            }
+        });
+
+        menu.addBackButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!ScreenHistory.getInstance().isEmpty()) {
+                    JFrame previousScreen = ScreenHistory.getInstance().popScreen();
+                    previousScreen.setVisible(true);
+                    dispose();
+                }
             }
         });
 
         menu.addSearchButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                 SearchUI searchUI = new SearchUI();
-                // ScreenHistory.getInstance().pushScreen(new News());
                 searchUI.setVisible(true);
+                ScreenHistory.getInstance().pushScreen(frame);
                 dispose();;
             }
         });

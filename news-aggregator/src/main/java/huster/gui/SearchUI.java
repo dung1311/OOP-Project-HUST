@@ -59,8 +59,10 @@ public class SearchUI extends JFrame{
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                new Menu().setVisible(true);;
-                dispose();
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
+                new Menu().setVisible(true);
+                ScreenHistory.getInstance().pushScreen(frame);
+                frame.dispose();
             }
         });
         
@@ -142,8 +144,10 @@ public class SearchUI extends JFrame{
                 articleButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(articleButton);
                         News news = new News();
                         news.setVisible(true);
+                        ScreenHistory.getInstance().pushScreen(frame);
                         dispose();
                         news.setHeader(articleButton.getText());
                         revalidate();
