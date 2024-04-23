@@ -14,7 +14,7 @@ public class News extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 100;
     public static final int ORIGIN_Y = 100;
-    JPanel menu = new JPanel();
+    Header menu = new Header();
     private JLabel jLabel_news_header;
     // private JTextArea jTextArea_news_header;
     private JTextArea jTextArea_news_center;
@@ -22,12 +22,11 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
     private JLabel jLabel_image;
-    // private ScreenHistory historyStack;
 
     public News() {
         ScreenHistory.getInstance();
         ScreenHistory.getInstance().pushScreen(this);
-
+        
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -36,93 +35,28 @@ public class News extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         System.setProperty("BLACK_menu", "0x222222");
-        Color BLACK_menu = Color.getColor("BLACK_menu");
-        
-        menu.setLayout(new FlowLayout(15));
-        menu.setSize(1440,101);
-        menu.setBackground(BLACK_menu);
-
 
         Font font30B = new Font("Arial", Font.BOLD, 30);
         Font font20 = new Font("Arial", Font.PLAIN, 20);
         Font font15I = new Font("Arial", Font.ITALIC, 15);
 
-
-        ImageIcon menuIcon = new ImageIcon("news-aggregator\\resource\\assets\\\\menuButton.png" );
-        JButton menuButton = new JButton(menuIcon);
-        menuButton.setPreferredSize(new Dimension(50, 50));
-        menuButton.setBorderPainted(false);
-        menuButton.setFocusPainted(false);
-        menuButton.setContentAreaFilled(false);
-        menuButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            }
-        });
-
-
-        // add buttons into menu
-        ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
-        JButton homeButton = new JButton(homeIcon);
-        homeButton.setPreferredSize(new Dimension(50, 50));
-        homeButton.setBorderPainted(false);
-        homeButton.setFocusPainted(false);
-        homeButton.setContentAreaFilled(false);
-        homeButton.addActionListener(new ActionListener() {
+        menu.addHomeButtonListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                 new Menu().setVisible(true);;
                 dispose();
             }
         });
 
-        ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
-        JButton userButton = new JButton(userIcon);
-        userButton.setPreferredSize(new Dimension(50, 50));
-        userButton.setBorderPainted(false);
-        userButton.setFocusPainted(false);
-        userButton.setContentAreaFilled(false);
-        userButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                
-            }
-        });
-
-        ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
-        JButton searchButton = new JButton(searchIcon);
-        searchButton.setPreferredSize(new Dimension(50, 50));
-        searchButton.setBorderPainted(false);
-        searchButton.setFocusPainted(false);
-        searchButton.setContentAreaFilled(false);
-        searchButton.addActionListener(new ActionListener() {
+        menu.addSearchButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SearchUI searchUI = new SearchUI();
                 // ScreenHistory.getInstance().pushScreen(new News());
                 searchUI.setVisible(true);
-                dispose();
+                dispose();;
             }
         });
 
-        menu.setLayout(new BorderLayout());
-
-        JPanel jPanel_left=new JPanel();
-        jPanel_left.setLayout(new FlowLayout(2));
-        jPanel_left.add(menuButton);
-        jPanel_left.add(homeButton);
-        jPanel_left.setBackground(BLACK_menu);
-        menu.add(jPanel_left,BorderLayout.WEST);
-
-        JPanel jPanel_right=new JPanel();
-        jPanel_right.setLayout(new FlowLayout(2));
-        jPanel_right.add(searchButton);
-        jPanel_right.add(userButton);
-        jPanel_right.setBackground(BLACK_menu);
-
-        menu.add(jPanel_right,BorderLayout.EAST);
-
-
-
-        
         // create centre panel
         JPanel jPanel_news = new JPanel();
         jPanel_news.setLayout(new BorderLayout());
@@ -135,8 +69,8 @@ public class News extends JFrame {
         jLabel_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jLabel_news_header.setFont(font30B);
 
-        JPanel jPanel_news_header = new JPanel();
-        jPanel_news_header.setLayout(new BorderLayout());
+        // JPanel jPanel_news_header = new JPanel();
+        // jPanel_news_header.setLayout(new BorderLayout());
 
         // jTextArea_news_header = new JTextArea("QUÁ VÔ ĐẠO BẤT LƯƠNG");
         // jTextArea_news_header.setFont(font30B);
@@ -144,7 +78,7 @@ public class News extends JFrame {
         // jTextArea_news_header.setLineWrap(true);
         // jTextArea_news_header.setWrapStyleWord(true);
 
-        jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
+        // jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
 
         jTextArea_news_author = new JTextArea("Author: Author's name");
         jTextArea_news_author.setBackground(jLabel_image.getBackground());
