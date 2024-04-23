@@ -115,66 +115,7 @@ public class News extends JFrame {
         // jPanel_news_source.add(jLabel_image);
 
 
-        String text = "Như đã thông báo lúc nào đó, team đã tạm hoãn nấu content láo nửa buổi để có thêm thời gian xem xét và xác định các dữ liệu bất thường phát sinh ở các bài post đã đăng. Từ đó, chúng tôi sẽ đối chiếu với những quy định nội bộ đã ban hành để đưa ra các quyết định nhằm đảm bảo tính minh bạch.\n"
-                    + "Dựa trên những kết quả kiểm tra ban đầu, Ngũ đại quyết định công khai tình trạng hiện tại của các thành viên sau đây:\n"
-                    + "\n"
-                    + "Lều báo: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "Diêm Thống Nhất: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "\n"
-                    + "Sau thời gian tạm dừng, chỉ đạo, những thực thể này sẽ vẫn tiếp tục tham gia bình thường và còn lót tích hơn nữa so với trước đây.\n"
-                    + "Trong quá trình thực hiện việc kiểm tra tuân thủ, chúng tôi sẽ cho phép các thành viên của Ngũ đại (những cá nhân không kể trên thì không được được phép) bổ sung thông tin hoặc phản hồi quyết định của BTC.\n"
-                    + "Những biện pháp này được thực hiện với sự nghiêm túc nhất để bảo đảm tính lót tích lành mạnh.\n"
-                    + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n"
-                    + "Dựa trên những kết quả kiểm tra ban đầu, Ngũ đại quyết định công khai tình trạng hiện tại của các thành viên sau đây:\n"
-                    + "\n"
-                    + "Lều báo: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "Diêm Thống Nhất: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "\n"
-                    + "Sau thời gian tạm dừng, chỉ đạo, những thực thể này sẽ vẫn tiếp tục tham gia bình thường và còn lót tích hơn nữa so với trước đây.\n"
-                    + "Trong quá trình thực hiện việc kiểm tra tuân thủ, chúng tôi sẽ cho phép các thành viên của Ngũ đại (những cá nhân không kể trên thì không được được phép) bổ sung thông tin hoặc phản hồi quyết định của BTC.\n"
-                    + "Những biện pháp này được thực hiện với sự nghiêm túc nhất để bảo đảm tính lót tích lành mạnh.\n"
-                    + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n"
-                    + "Dựa trên những kết quả kiểm tra ban đầu, Ngũ đại quyết định công khai tình trạng hiện tại của các thành viên sau đây:\n"
-                    + "\n"
-                    + "Lều báo: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "Diêm Thống Nhất: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "\n"
-                    + "Sau thời gian tạm dừng, chỉ đạo, những thực thể này sẽ vẫn tiếp tục tham gia bình thường và còn lót tích hơn nữa so với trước đây.\n"
-                    + "Trong quá trình thực hiện việc kiểm tra tuân thủ, chúng tôi sẽ cho phép các thành viên của Ngũ đại (những cá nhân không kể trên thì không được được phép) bổ sung thông tin hoặc phản hồi quyết định của BTC.\n"
-                    + "Những biện pháp này được thực hiện với sự nghiêm túc nhất để bảo đảm tính lót tích lành mạnh.\n"
-                    + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n"
-                    + "Dựa trên những kết quả kiểm tra ban đầu, Ngũ đại quyết định công khai tình trạng hiện tại của các thành viên sau đây:\n"
-                    + "\n"
-                    + "Lều báo: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "Diêm Thống Nhất: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "\n"
-                    + "Sau thời gian tạm dừng, chỉ đạo, những thực thể này sẽ vẫn tiếp tục tham gia bình thường và còn lót tích hơn nữa so với trước đây.\n"
-                    + "Trong quá trình thực hiện việc kiểm tra tuân thủ, chúng tôi sẽ cho phép các thành viên của Ngũ đại (những cá nhân không kể trên thì không được được phép) bổ sung thông tin hoặc phản hồi quyết định của BTC.\n"
-                    + "Những biện pháp này được thực hiện với sự nghiêm túc nhất để bảo đảm tính lót tích lành mạnh.\n"
-                    + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n"
-                    + "Dựa trên những kết quả kiểm tra ban đầu, Ngũ đại quyết định công khai tình trạng hiện tại của các thành viên sau đây:\n"
-                    + "\n"
-                    + "Lều báo: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "Diêm Thống Nhất: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "\n"
-                    + "Sau thời gian tạm dừng, chỉ đạo, những thực thể này sẽ vẫn tiếp tục tham gia bình thường và còn lót tích hơn nữa so với trước đây.\n"
-                    + "Trong quá trình thực hiện việc kiểm tra tuân thủ, chúng tôi sẽ cho phép các thành viên của Ngũ đại (những cá nhân không kể trên thì không được được phép) bổ sung thông tin hoặc phản hồi quyết định của BTC.\n"
-                    + "Những biện pháp này được thực hiện với sự nghiêm túc nhất để bảo đảm tính lót tích lành mạnh.\n"
-                    + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n"
-                    + "Dựa trên những kết quả kiểm tra ban đầu, Ngũ đại quyết định công khai tình trạng hiện tại của các thành viên sau đây:\n"
-                    + "\n"
-                    + "Lều báo: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "Diêm Thống Nhất: Vi phạm tiêu chuẩn cộng đồng\n"
-                    + "\n"
-                    + "Sau thời gian tạm dừng, chỉ đạo, những thực thể này sẽ vẫn tiếp tục tham gia bình thường và còn lót tích hơn nữa so với trước đây.\n"
-                    + "Trong quá trình thực hiện việc kiểm tra tuân thủ, chúng tôi sẽ cho phép các thành viên của Ngũ đại (những cá nhân không kể trên thì không được được phép) bổ sung thông tin hoặc phản hồi quyết định của BTC.\n"
-                    + "Những biện pháp này được thực hiện với sự nghiêm túc nhất để bảo đảm tính lót tích lành mạnh.\n"
-                    + "Chúng tôi sẽ sớm cập nhật thêm thông tin liên quan đến quá trình bắt đầu lót tích trở lại. Hãy tiếp tục theo dõi các kênh chính thức của Ngũ đại để nhận thông tin mới nhất. Xin chân thành cảm ơn sự đồng hành và ủng hộ của các fan diêm dành cho chúng tôi!\n";
-        
         jTextArea_news_center = new JTextArea();
-        jTextArea_news_center.setText(text);
-
-        // Đặt khoảng cách lề cho JTextArea
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
             new LineBorder(Color.BLACK), // Lề ngoài
             new EmptyBorder(10, 0, 0, 0) // Lề bên trong
