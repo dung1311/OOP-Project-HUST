@@ -4,19 +4,11 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import json
 
-scraper = Nitter(log_level=1, skip_instance_check=False)
-
-def crawl_tweet(name, mode, amount, file_name):
-    list_tweet = scraper.get_tweets(
-        name, mode=mode, number=amount, max_retries=100)
-
-    with open(file=f'news-aggregator\\recourse\\data\\{file_name}.json', mode='w') as file_json:
-        json.dump(list_tweet['tweets'], file_json)
 
 
 def draw_table(file_name):
-    list_tweet = pd.read_json(
-        path_or_buf=f'news-aggregator\\recourse\\data\\{file_name}.json')
+    file_path = 'news-aggregator\\\\recourse\\\\data\\\\' + file_name + '.json'
+    list_tweet = pd.read_json(path_or_buf=file_path)
     data_list = []
     for index, tweet in list_tweet.iterrows():
         try:
@@ -29,7 +21,7 @@ def draw_table(file_name):
             ]
             data_list.append(data)
         except KeyError as e:
-            print(f"KeyError: {e}. Skipping tweet at index {index}")
+            a
 
     data_list_pd = pd.DataFrame(
         data_list, columns=['time', 'comment', 'retweet', 'quote', 'like'])
@@ -56,5 +48,4 @@ def draw_table(file_name):
 
 # test
 file_name = 'abcd'
-crawl_tweet('Bitcoin', mode='user', amount=10, file_name=file_name)
 draw_table(file_name)
