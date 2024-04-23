@@ -17,6 +17,9 @@ public class Menu extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 100;
     public static final int ORIGIN_Y = 100;
+    
+
+    public int number_News = 12;
 
     private int seeMoreButtonClickedCount = 0;
     private JButton articleButton;
@@ -27,10 +30,14 @@ public class Menu extends JFrame {
 
     private static JPanel articlePanel;
     private ImageIcon articleIcon;
-
+    // luu tru bai viet
     private List<JPanel> newsList = new ArrayList<>();
    
     Header menu = new Header();
+
+    public int getNumberNews() {
+        return number_News;
+    }
 
     public Menu() {
         ScreenHistory.getInstance();
@@ -108,11 +115,18 @@ public class Menu extends JFrame {
         seeMoreButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                if(seeMoreButtonClickedCount == 2) {
+                    seeMoreButton.setVisible(false);
+                    return ;
+                }
+                
                 seeMoreButtonClickedCount++;
+                number_News += 6;
                 fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1200 * seeMoreButtonClickedCount));
                 articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1200 * seeMoreButtonClickedCount));
                 articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
                 // createSmall_articlePanel(3);
+                createNews();
                 revalidate();
             }
         });
@@ -183,13 +197,13 @@ public class Menu extends JFrame {
     public void createNews(){
         List<JsonObject> _JsonObjects = new GetData().getNewsElements();
         // System.out.println(_JsonObjects.get(0).get("linkImage").getAsString());
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < number_News; i++){
             JPanel _JPanel = new GetData().set(HandleImage.ReadURL(_JsonObjects.get(i).get("linkImage").getAsString()), _JsonObjects.get(i).get("title").getAsString());
 
             newsList.add(_JPanel);
         }
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < number_News; i++){
             articlePanel.add(newsList.get(i));
         }
 

@@ -22,13 +22,13 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-
+import huster.gui.Menu;
 import huster.gui.News;
 
 
 
 public class GetData {
-    // 
+     
     private List<JsonObject> newsElements = new ArrayList<>(10);
     // private String dataFilePath = "news-aggregator\\resource\\data\\totalData.json";
     private String dataFilePath = "news-aggregator\\resource\\data\\dataCoinDesk.json";
@@ -60,9 +60,9 @@ public class GetData {
         Set<Integer> randomSet = new HashSet<>();
         Random random = new Random();
         //get radom index from newsArray
-        while (randomSet.size() < 10) {
+        while (randomSet.size() < 30) {
             // random number
-            int randomNumber = random.nextInt(40);
+            int randomNumber = random.nextInt(45);
             randomSet.add(randomNumber);
         }
         // add news Elements into list
@@ -71,8 +71,6 @@ public class GetData {
         }
 
     }   
-
-
 
     public JPanel set(String urLString, String textString) {
         JPanel jPanel = new JPanel();
@@ -106,5 +104,4 @@ public class GetData {
         return jPanel;
     }
 }
-
 
