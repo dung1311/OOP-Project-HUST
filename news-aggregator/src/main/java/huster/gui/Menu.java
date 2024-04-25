@@ -19,8 +19,9 @@ public class Menu extends JFrame {
     private JPanel labelPanel;
     private JPanel articlePanel;
     private ImageIcon articleIcon;
+    private Font font40 = new Font("ARIAL",Font.PLAIN,40);
    
-    Header menu = new Header();
+    Header header = new Header();
 
     public Menu() {
         ScreenHistory.getInstance();
@@ -40,7 +41,7 @@ public class Menu extends JFrame {
         System.setProperty("GREY_menu", "0xFFFFFF");
         Color GREY_menu = Color.getColor("GREY_menu");
         
-        menu.addSearchButtonListener(new ActionListener() {
+        header.addSearchButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SearchUI searchUI = new SearchUI();
@@ -49,7 +50,7 @@ public class Menu extends JFrame {
             }
         });
 
-        Font font40 = new Font("ARIAL",Font.PLAIN,40);
+        
 
         articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
@@ -123,7 +124,7 @@ public class Menu extends JFrame {
 
         // contentPane.setBackground(GREY_menu);
         this.setBackground(GREY_menu);
-        contentPane.add(menu, BorderLayout.NORTH);
+        contentPane.add(header, BorderLayout.NORTH);
         // contentPane.add(toparticlePanel, BorderLayout.CENTER);
 
         contentPane.add(scrollPane_suggested,BorderLayout.CENTER);  
@@ -167,6 +168,16 @@ public class Menu extends JFrame {
             }
         }
 
+    }
+    public void disposeFrameListener(JButton b){
+        b.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                News news = new News();
+                news.setVisible(true);
+                dispose();
+            }
+        });
     }
 }
 
@@ -270,4 +281,60 @@ class Header extends JPanel{
         menuButton.addActionListener(listener);
     }
 }
+
+// class Body extends JScrollPane{
+//     private int seeMoreButtonClickedCount = 0;
+//     private JButton articleButton;
+//     private JLabel articleLabel;
+//     private JPanel small_articlePanel;
+//     private JPanel labelPanel;
+//     private JPanel articlePanel;
+//     private ImageIcon articleIcon;
+//     private Font font40 = new Font("ARIAL",Font.PLAIN,40);
+
+//     public Body(){
+//         System.setProperty("GREY_menu", "0xFFFFFF");
+//         Color GREY_menu = Color.getColor("GREY_menu");
+
+//         articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+//         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
+        
+//         JPanel toparticlePanel = new JPanel();
+//         toparticlePanel.setPreferredSize(new Dimension(1280,625));
+//         toparticlePanel.setLayout(new BorderLayout());
+
+//         JPanel gapPanel = new JPanel();
+//         gapPanel.setPreferredSize(new Dimension(1280,75));
+
+//         JButton bigArticleButton = new JButton(BigarticleIcon);
+//         bigArticleButton.setBackground(GREY_menu);
+//         bigArticleButton.setOpaque(false);
+//         bigArticleButton.setContentAreaFilled(false);
+//         bigArticleButton.setBorderPainted(false);
+
+//         JLabel BigarticleLabel_title = new JLabel("Be Xuan Mai");
+//         BigarticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
+//         BigarticleLabel_title.setVerticalAlignment(JLabel.CENTER);
+//         toparticlePanel.add(bigArticleButton,BorderLayout.NORTH);
+//         toparticlePanel.add(BigarticleLabel_title,BorderLayout.CENTER);
+//         toparticlePanel.add(gapPanel,BorderLayout.SOUTH);
+
+//         articlePanel = new JPanel();
+//         articlePanel.setPreferredSize(new Dimension(1280, 1500));
+//         articlePanel.setLayout(new GridLayout(6,2,175,0));
+//         createSmall_articlePanel(6);
+
+        
+//         JPanel fullarticlePanel = new JPanel();
+//         fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
+//         fullarticlePanel.setLayout(new BorderLayout());
+//         fullarticlePanel.add(toparticlePanel,BorderLayout.NORTH);
+//         fullarticlePanel.add(articlePanel,BorderLayout.CENTER);
+
+
+//         JButton seeMoreButton = new JButton("See more!");
+//         seeMoreButton.setFont(font40);
+//     }
+// }
+
 

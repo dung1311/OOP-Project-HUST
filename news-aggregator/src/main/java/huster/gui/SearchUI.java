@@ -359,6 +359,8 @@ class SearchAndSuggestionPanel extends JPanel{
         add(searchBar);
         add(suggestionPanel);
     }
+    
+    //Dungx cho các tên bài báo vào đây ở dạng String
     private String[] searchSuggestions(String searchText) {
         // Dữ liệu gợi ý
         String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency" };
@@ -385,5 +387,48 @@ class SearchAndSuggestionPanel extends JPanel{
     public String getSearchBarText(){
         return searchBar.getText();
     }
+
+    public void setListMouseListener(MouseAdapter a){
+        suggestionList.addMouseListener(a);
+    }
 }
 
+class SearchResult extends JScrollPane{
+    private JPanel searchResult = new JPanel(new BorderLayout());
+    private JPanel searchResult_Center;
+    private JButton seeMoreButton = new JButton("See more!");
+    public SearchResult(){
+        setPreferredSize(new Dimension(1440, 2000));
+        setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
+        
+        Font font40 = new Font("Arial", Font.PLAIN, 40);
+        
+        seeMoreButton.setFont(font40);
+
+        searchResult.setPreferredSize(new Dimension(1280, 1500));
+        searchResult.setLayout(new BorderLayout());
+        searchResult_Center = new JPanel();
+        searchResult_Center.setLayout(new GridLayout(6,2,175,0));
+        searchResult_Center.setPreferredSize(new Dimension(1280, 1500));
+
+        searchResult.add(searchResult_Center, BorderLayout.NORTH);
+        searchResult.add(seeMoreButton, BorderLayout.SOUTH);
+
+        add(searchResult);
+    }
+
+    public void seeMoreActionListeners(ActionListener e){
+        seeMoreButton.addActionListener(e);
+    }
+
+    public void addArticle(JPanel p){
+        searchResult_Center.add(p);
+    }
+
+    public void setLayoutAndSize(int n){
+        searchResult.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
+        searchResult_Center.setLayout(new GridLayout(6 + 3 * n,2,175,0));
+        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
+    }
+}
