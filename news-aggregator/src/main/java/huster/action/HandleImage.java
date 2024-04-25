@@ -7,8 +7,6 @@ import java.net.URLDecoder;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
 
 public class HandleImage {
 

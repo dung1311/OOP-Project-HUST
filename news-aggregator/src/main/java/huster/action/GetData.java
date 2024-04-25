@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -22,7 +24,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import huster.gui.Menu;
 import huster.gui.News;
 
 
@@ -82,8 +83,9 @@ public class GetData {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                News news = new News();
-                    news.setVisible(true);
+                News news = new News("Dung", "10-10-2024", "url.url", "Em yeu anh tinh yeu cua em tua ngan tia nang, anh lai la gay", "day la title");
+                news.setVisible(true);
+                System.out.println("clicked");    
             }
         });
 
@@ -101,7 +103,17 @@ public class GetData {
         jPanel.add(articleJButton);
         jPanel.add(articleLable);
 
+        jPanel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("hehehe");
+            }   
+        });
+
+
+
         return jPanel;
     }
+
 }
 

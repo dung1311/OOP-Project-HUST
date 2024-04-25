@@ -22,14 +22,14 @@ public class Menu extends JFrame {
     public int number_News = 12;
 
     private int seeMoreButtonClickedCount = 0;
-    private JButton articleButton;
-    private JLabel articleLabel;
-    private JPanel small_articlePanel;
-    private JPanel labelPanel;
+    // private JButton articleButton;
+    // private JLabel articleLabel;
+    // private JPanel small_articlePanel;
+    // private JPanel labelPanel;
     
 
     private static JPanel articlePanel;
-    private ImageIcon articleIcon;
+    // private ImageIcon articleIcon;
     // luu tru bai viet
     private List<JPanel> newsList = new ArrayList<>();
    
@@ -68,7 +68,7 @@ public class Menu extends JFrame {
 
         Font font40 = new Font("ARIAL",Font.PLAIN,40);
         // ảnh để hiện lên nút bấm bài báo
-        articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
+        // articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
         // đặt tên kiểu chi z ???
@@ -87,7 +87,7 @@ public class Menu extends JFrame {
         BigarticleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                News news = new News();
+                News news = new News("null", "null", "null", "null", "null");
                 news.setVisible(true);
                 dispose();
             }
@@ -152,46 +152,9 @@ public class Menu extends JFrame {
         // tao bang tin
         articlePanel.setVisible(true);
         createNews();
-        // this.pack();        
+        // this.pack();       
         
     }
-
-    // public void createSmall_articlePanel(int numberOfRows) {
-    //     for (int i = 0; i < 2; i++) {
-    //         for (int j = 0; j < numberOfRows; j++) {
-    //             articleButton = new JButton(articleIcon);
-    //             // articleButton.setBackground(GREY_menu);
-    //             articleButton.setContentAreaFilled(false);
-    //             articleButton.setBorderPainted(false);
-    //             articleButton.addActionListener(new ActionListener() {
-    //                 @Override
-    //                 public void actionPerformed(ActionEvent e) {
-    //                     News news = new News();
-    //                     news.setVisible(true);
-    //                     dispose();
-    //                 }
-    //             });
-
-    //             articleLabel = new JLabel("Be Xuan Mai");
-    //             articleLabel.setHorizontalAlignment(JLabel.CENTER);
-    //             articleLabel.setVerticalAlignment(JLabel.CENTER);
-
-    //             small_articlePanel = new JPanel();
-    //             small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
-    //             small_articlePanel.add(articleButton);
-
-    //             labelPanel = new JPanel();
-    //             labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-    //             labelPanel.add(articleLabel);
-    //             small_articlePanel.add(labelPanel);
-    //             // fix size
-    //             small_articlePanel.setPreferredSize(new Dimension(465, 180));
-
-    //             articlePanel.add(small_articlePanel);
-    //         }
-    //     }
-
-    // }
 
     // tao bang tin
     public void createNews(){
@@ -199,7 +162,7 @@ public class Menu extends JFrame {
         // System.out.println(_JsonObjects.get(0).get("linkImage").getAsString());
         for(int i = 0; i < number_News; i++){
             JPanel _JPanel = new GetData().set(HandleImage.ReadURL(_JsonObjects.get(i).get("linkImage").getAsString()), _JsonObjects.get(i).get("title").getAsString());
-
+            
             newsList.add(_JPanel);
         }
 
@@ -208,6 +171,7 @@ public class Menu extends JFrame {
         }
 
     }
+
    
 }
 

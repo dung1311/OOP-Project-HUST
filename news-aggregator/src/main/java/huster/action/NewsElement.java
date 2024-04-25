@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import com.google.gson.JsonObject;
@@ -31,7 +30,7 @@ public class NewsElement {
         JPanel containerJPanel = new JPanel();
         containerJPanel.setLayout(new BoxLayout(containerJPanel, BoxLayout.Y_AXIS));
 
-        JButton ImageButton = new JButton();
+        // JButton ImageButton = new JButton();
 
 
         return null;
