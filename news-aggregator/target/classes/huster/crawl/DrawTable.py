@@ -41,5 +41,5 @@ def draw_table(file_name):
 
 
 # test
-file_name = 'abc'
-draw_table(file_name)
+# file_name = 'abc'
+# draw_table(file_name)
