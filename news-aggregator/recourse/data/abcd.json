@@ -1,239 +1,277 @@
 [
     {
-        "link": "https://twitter.com/Bitcoin/status/1782610222176964808#m",
-        "text": "\u20ac62,669.67  #Bitcoin #BTC $BTC $EUR",
+        "link": "https://twitter.com/SpaceX/status/1784460530897625411#m",
+        "text": "After 36 days docked to the @space_station, the Dragon spacecraft supporting SpaceX\u2019s 30th commercial resupply mission for @NASA will undock from the orbiting lab on Sunday, April 28th. Watch live beginning at 12:45 p.m. ET \u2192 nasa.gov/nasalive",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 23, 2024 \u00b7 3:19 AM UTC",
+        "date": "Apr 28, 2024 \u00b7 5:51 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 49,
-            "retweets": 52,
-            "quotes": 3,
-            "likes": 290
+            "comments": 248,
+            "retweets": 458,
+            "quotes": 28,
+            "likes": 3769
         },
-        "pictures": [],
+        "pictures": [
+            "https://pbs.twimg.com/media/GMOswayboAAHjCE.jpg"
+        ],
         "videos": [],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1782525131283222649#m",
-        "text": "$66,502.70",
+        "link": "https://twitter.com/SpaceX/status/1784402379569574316#m",
+        "text": "Falcon 9 launches from LC-39A in Florida",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 22, 2024 \u00b7 9:41 PM UTC",
+        "date": "Apr 28, 2024 \u00b7 2:00 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 102,
-            "retweets": 131,
-            "quotes": 7,
-            "likes": 728
+            "comments": 286,
+            "retweets": 821,
+            "quotes": 40,
+            "likes": 7766
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/GMN4cShasAATSn0.jpg",
+            "https://pbs.twimg.com/media/GMN4cUya4AARbsX.jpg",
+            "https://pbs.twimg.com/media/GMN4fEtaUAAtqEo.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1784383402420154442#m",
+        "text": "Congrats to the SpaceX team for all the science, research, connectivity, and exploration you\u2019ve helped enable with this single Falcon 9 rocket \ud83e\udee1\ud83d\ude80",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 28, 2024 \u00b7 12:45 AM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [
+            "@SpaceX",
+            "@Starlink"
+        ],
+        "quoted-post": {},
+        "stats": {
+            "comments": 86,
+            "retweets": 196,
+            "quotes": 16,
+            "likes": 2531
         },
         "pictures": [],
         "videos": [],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1782427768237555734#m",
-        "text": "$65,825.20",
+        "link": "https://twitter.com/SpaceX/status/1784383268571529672#m",
+        "text": "This Falcon 9 first stage has launched ~200 spacecraft as part of our Rideshare program, supported 13 @Starlink missions to help connect people all around the world with high-speed, low-latency internet, sent a lunar lander to the Moon, and more. In total, this Falcon delivered 228+ metric tons to Earth orbit and beyond",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 22, 2024 \u00b7 3:14 PM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:44 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 135,
-            "retweets": 183,
-            "quotes": 7,
-            "likes": 961
+            "comments": 337,
+            "retweets": 954,
+            "quotes": 85,
+            "likes": 6682
         },
         "pictures": [],
-        "videos": [],
+        "videos": [
+            "https://video.twimg.com/ext_tw_video/1784382362178195456/pu/vid/avc1/1280x720/extV200fzoYJ9NSn.mp4?tag=12"
+        ],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1782339107995160988#m",
-        "text": "$65,963.40  #Bitcoin #BTC $BTC $USD",
+        "link": "https://twitter.com/SpaceX/status/1784382036096242138#m",
+        "text": "We\u2019re working toward qualifying our fleet of Falcon boosters and fairings to support 40 missions each. Increasing Falcon's flight count provides valuable information on repeated reuse, a critical element for making life multiplanetary with Starship",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 22, 2024 \u00b7 9:22 AM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:40 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 144,
-            "retweets": 215,
-            "quotes": 8,
-            "likes": 984
+            "comments": 60,
+            "retweets": 271,
+            "quotes": 52,
+            "likes": 2954
         },
         "pictures": [],
         "videos": [],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1782247838220431489#m",
-        "text": "\u20ac61,057.25  #Bitcoin #BTC $BTC $EUR",
+        "link": "https://twitter.com/SpaceX/status/1784381903954698245#m",
+        "text": "The last time a first stage was expended during a Falcon 9 mission was 146 flights ago in November 2022. On most Falcon 9 missions, enough propellant remains in the first stage after stage separation to enable landing, recovery, and ultimately reuse on future missions",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 22, 2024 \u00b7 3:19 AM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:39 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 131,
-            "retweets": 176,
-            "quotes": 4,
-            "likes": 729
+            "comments": 18,
+            "retweets": 126,
+            "quotes": 11,
+            "likes": 1741
         },
         "pictures": [],
         "videos": [],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1782162740259270811#m",
-        "text": "\u00a352,429.69  #Bitcoin #BTC $BTC $GBP",
+        "link": "https://twitter.com/SpaceX/status/1784381829388333385#m",
+        "text": "Due to the additional performance required to deliver the payload to medium Earth orbit, this mission marks the 20th and final launch for this Falcon 9 first stage booster",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 21, 2024 \u00b7 9:41 PM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:39 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 105,
-            "retweets": 123,
-            "quotes": 4,
-            "likes": 645
+            "comments": 113,
+            "retweets": 268,
+            "quotes": 28,
+            "likes": 3265
         },
         "pictures": [],
         "videos": [],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1782065371899428931#m",
-        "text": "\u20ac60,897.56  #Bitcoin #BTC $BTC $EUR",
+        "link": "https://twitter.com/SpaceX/status/1784381758399554041#m",
+        "text": "Fairing separation confirmed. This marks the 200th mission to use flight-proven fairings!",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 21, 2024 \u00b7 3:14 PM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:38 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 152,
-            "retweets": 186,
-            "quotes": 8,
-            "likes": 721
+            "comments": 62,
+            "retweets": 208,
+            "quotes": 14,
+            "likes": 2542
         },
         "pictures": [],
         "videos": [],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1781976682141741138#m",
-        "text": "\u20ac60,782.44",
+        "link": "https://twitter.com/SpaceX/status/1784381310359961724#m",
+        "text": "Liftoff!",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 21, 2024 \u00b7 9:22 AM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:37 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 154,
-            "retweets": 225,
-            "quotes": 7,
-            "likes": 900
+            "comments": 181,
+            "retweets": 706,
+            "quotes": 74,
+            "likes": 5476
         },
         "pictures": [],
-        "videos": [],
+        "videos": [
+            "https://video.twimg.com/amplify_video/1784381221587603456/vid/avc1/1920x1080/ktlgWFDZbxddQoLJ.mp4?tag=16"
+        ],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1781885459825590438#m",
-        "text": "\u20ac61,506.19  #Bitcoin #BTC $BTC $EUR",
+        "link": "https://twitter.com/SpaceX/status/1784378155299692794#m",
+        "text": "Watch Falcon 9 launch the European Commission\u2019s Galileo L12 mission to orbit  https://twitter.com/i/broadcasts/1gqxvQXrWvzJB",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 21, 2024 \u00b7 3:19 AM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:24 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
         "replying-to": [],
         "quoted-post": {},
         "stats": {
-            "comments": 160,
-            "retweets": 215,
-            "quotes": 7,
-            "likes": 856
+            "comments": 167,
+            "retweets": 510,
+            "quotes": 60,
+            "likes": 2981
         },
         "pictures": [],
         "videos": [],
         "gifs": []
     },
     {
-        "link": "https://twitter.com/Bitcoin/status/1781800357871427608#m",
-        "text": "\u00a352,298.49",
+        "link": "https://twitter.com/SpaceX/status/1784373354570674488#m",
+        "text": "Propellant load is underway for today\u2019s Falcon 9 launch from Florida \u2192 spacex.com/launches",
         "user": {
-            "name": "Bitcoin",
-            "username": "@Bitcoin",
-            "profile_id": "421692600446619648",
-            "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
         },
-        "date": "Apr 20, 2024 \u00b7 9:41 PM UTC",
+        "date": "Apr 28, 2024 \u00b7 12:05 AM UTC",
         "is-retweet": false,
         "is-pinned": false,
         "external-link": "",
@@ -241,9 +279,221 @@
         "quoted-post": {},
         "stats": {
             "comments": 109,
-            "retweets": 135,
-            "quotes": 3,
-            "likes": 660
+            "retweets": 360,
+            "quotes": 36,
+            "likes": 3282
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/GMNeDxqbAAAfbLI.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1783974479527543186#m",
+        "text": "Targeting two Falcon 9 launches from Florida this weekend \u2192 spacex.com/launches  Up first, Falcon 9 will launch the European Commission\u2019s Galileo L12 mission on Saturday from pad 39A  Then on Sunday, a Falcon 9 launch of 23 @Starlink satellites from pad 40",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 26, 2024 \u00b7 9:40 PM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 209,
+            "retweets": 1814,
+            "quotes": 46,
+            "likes": 4953
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ISS_Research/status/1783918977015751077#m",
+        "text": "Your science is ready for delivery. \ud83d\udce6  NASA astronaut Matthew Dominick closes out the Dragon spacecraft in preparation for its scheduled departure in late April. Dragon will return to Earth with samples and hardware from several experiments for further study.",
+        "user": {
+            "name": "ISS Research",
+            "username": "@ISS_Research",
+            "profile_id": "430363633390845952",
+            "avatar": "https://pbs.twimg.com/profile_images/430363633390845952/lrDS59Cd_bigger.jpeg"
+        },
+        "date": "Apr 26, 2024 \u00b7 6:00 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 138,
+            "retweets": 280,
+            "quotes": 27,
+            "likes": 2073
+        },
+        "pictures": [],
+        "videos": [
+            "https://video.twimg.com/amplify_video/1783914092761387009/vid/avc1/1280x720/rqrsqE9iu7QyolYn.mp4?tag=14"
+        ],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1782923098658140336#m",
+        "text": "Falcon 9 launches 23 @Starlink satellites to low-Earth orbit from Florida",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 24, 2024 \u00b7 12:02 AM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 469,
+            "retweets": 5904,
+            "quotes": 57,
+            "likes": 14060
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/GL43B42aIAIzdPt.jpg",
+            "https://pbs.twimg.com/media/GL43B4baoAIylg5.jpg",
+            "https://pbs.twimg.com/media/GL43B4BaUAAL1f5.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1782915406535282713#m",
+        "text": "Deployment of 23 @Starlink satellites confirmed",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 23, 2024 \u00b7 11:32 PM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 197,
+            "retweets": 3999,
+            "quotes": 32,
+            "likes": 7704
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1782898782885339562#m",
+        "text": "Falcon 9\u2019s first stage has landed on the Just Read the Instructions droneship, completing Falcon\u2019s 300th landing!",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 23, 2024 \u00b7 10:26 PM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 816,
+            "retweets": 2208,
+            "quotes": 358,
+            "likes": 15537
+        },
+        "pictures": [],
+        "videos": [
+            "https://video.twimg.com/amplify_video/1782898715533205507/vid/avc1/1920x1080/yp-ONKsyeBq-CptX.mp4?tag=16"
+        ],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1782896724580921609#m",
+        "text": "Engines full power and liftoff!",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 23, 2024 \u00b7 10:17 PM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 1264,
+            "retweets": 2730,
+            "quotes": 158,
+            "likes": 21671
+        },
+        "pictures": [],
+        "videos": [
+            "https://video.twimg.com/amplify_video/1782896653235810306/vid/avc1/1920x1080/O0wweltMF-jxMRwj.mp4?tag=16"
+        ],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1782895242926285005#m",
+        "text": "Watch Falcon 9 launch 23 @Starlink satellites to orbit https://twitter.com/i/broadcasts/1OdKrjZoWVAKX",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 23, 2024 \u00b7 10:12 PM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 193,
+            "retweets": 673,
+            "quotes": 43,
+            "likes": 4433
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/SpaceX/status/1782887896606994898#m",
+        "text": "Fueling of Falcon 9 is underway at pad 40 for this evening's @Starlink launch",
+        "user": {
+            "name": "SpaceX",
+            "username": "@SpaceX",
+            "profile_id": "1697749409851985920",
+            "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+        },
+        "date": "Apr 23, 2024 \u00b7 9:42 PM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 116,
+            "retweets": 285,
+            "quotes": 11,
+            "likes": 2901
         },
         "pictures": [],
         "videos": [],
