@@ -250,7 +250,7 @@ public class SearchUI extends JFrame{
                 articleButton.addActionListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        News news = new News();
+                        News news = new News("dd", "dd", "dd", "dd", "dd");
                         news.setVisible(true);
                         dispose();
                         news.setHeader(articleButton.getText());

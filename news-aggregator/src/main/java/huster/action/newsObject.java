@@ -65,6 +65,7 @@ public class newsObject {
         JPanel jPanel = new JPanel();
         JButton articleJButton = new JButton();
 
+
         articleJButton.setContentAreaFilled(false);
         articleJButton.setBorderPainted(false);
         articleJButton.addActionListener(new ActionListener() {
@@ -78,7 +79,7 @@ public class newsObject {
         });
 
         try {
-            Image image =  HandleImage.resizeImage(this.getLinkImage());
+            Image image =  GeneralHandle.resizeImage(this.getLinkImage());
             articleJButton.setIcon(new ImageIcon(image));
         } catch (Exception e) {
             e.printStackTrace();

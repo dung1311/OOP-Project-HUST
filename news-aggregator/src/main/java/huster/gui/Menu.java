@@ -5,7 +5,7 @@ import javax.swing.*;
 import com.google.gson.JsonObject;
 
 import huster.action.GetData;
-import huster.action.HandleImage;
+import huster.action.newsObject;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -161,7 +161,8 @@ public class Menu extends JFrame {
         List<JsonObject> _JsonObjects = new GetData().getNewsElements();
         // System.out.println(_JsonObjects.get(0).get("linkImage").getAsString());
         for(int i = 0; i < number_News; i++){
-            JPanel _JPanel = new GetData().set(HandleImage.ReadURL(_JsonObjects.get(i).get("linkImage").getAsString()), _JsonObjects.get(i).get("title").getAsString());
+            // JPanel _JPanel = new GetData().set(HandleImage.ReadURL(_JsonObjects.get(i).get("linkImage").getAsString()), _JsonObjects.get(i).get("title").getAsString());
+            JPanel _JPanel = new newsObject(_JsonObjects.get(i)).setAsJPanel();
             
             newsList.add(_JPanel);
         }
@@ -171,8 +172,7 @@ public class Menu extends JFrame {
         }
 
     }
-
-   
+    
 }
 
 //Class for generating Header

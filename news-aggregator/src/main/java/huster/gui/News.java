@@ -4,9 +4,12 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import huster.action.GeneralHandle;
+import huster.action.JHyperlink;
 
 import java.awt.*;
 import java.awt.event.*;
+
 
 public class News extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -25,6 +28,7 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_link;
     private JLabel jLabel_image;
     // private ScreenHistory historyStack;
+
 
     public News(String nameAuthor, String postingDate, String link, String textContent, String title) {
         ScreenHistory.getInstance();
@@ -75,36 +79,12 @@ public class News extends JFrame {
         JPanel jPanel_news_header = new JPanel();
         jPanel_news_header.setLayout(new BorderLayout());
 
-        // jTextArea_news_header = new JTextArea("QUÁ VÔ ĐẠO BẤT LƯƠNG");
-        // jTextArea_news_header.setFont(font30B);
-        // jTextArea_news_header.setEditable(false);
-        // jTextArea_news_header.setLineWrap(true);
-        // jTextArea_news_header.setWrapStyleWord(true);
-
         jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
 
-        jTextArea_news_author = new JTextArea(nameAuthor);
-        jTextArea_news_author.setBackground(jLabel_image.getBackground());
-        jTextArea_news_author.setFont(font15I);
-        jTextArea_news_author.setEditable(false);
-        jTextArea_news_author.setLineWrap(true);
-        jTextArea_news_author.setWrapStyleWord(true);
-
-        jTextArea_news_postingDate = new JTextArea(postingDate);
-        jTextArea_news_postingDate.setBackground(jLabel_image.getBackground());
-        jTextArea_news_postingDate.setFont(font15I);
-        jTextArea_news_postingDate.setEditable(false);
-        jTextArea_news_postingDate.setLineWrap(true);
-        jTextArea_news_postingDate.setWrapStyleWord(true);
-
-        jTextArea_news_link = new JTextArea(link);
-        jTextArea_news_link.setBackground(jLabel_image.getBackground());
-        jTextArea_news_link. setFont(font15I);
-        jTextArea_news_link.setEditable(false);
-        jTextArea_news_link.setLineWrap(true);
-        jTextArea_news_link.setWrapStyleWord(true);
-
-
+        setAuthor(nameAuthor);
+        setPostingDate(postingDate);
+        setLink(link);
+        
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
         JPanel jPanel_news_source = new JPanel();
         jPanel_news_source.setLayout(new GridLayout(1, 2));
@@ -163,16 +143,31 @@ public class News extends JFrame {
         jLabel_image.setIcon(icon);
     }
 
-    public void setAuthor(String s) {
-        jTextArea_news_author.setText("Author: " + s);
+    public void setAuthor(String authorName) {
+        jTextArea_news_author = new JTextArea("Author: " + authorName);
+        jTextArea_news_author.setBackground(jLabel_image.getBackground());
+        jTextArea_news_author.setFont(new Font("Arial", Font.ITALIC, 15));
+        jTextArea_news_author.setEditable(false);
+        jTextArea_news_author.setLineWrap(true);
+        jTextArea_news_author.setWrapStyleWord(true);
     }
 
-    public void setPostingDate(String s) {
-        jTextArea_news_postingDate.setText("Posting date: " + s);
+    public void setPostingDate(String postingDate) {
+        jTextArea_news_postingDate = new JTextArea("Posting date: " + postingDate);
+        jTextArea_news_postingDate.setBackground(jLabel_image.getBackground());
+        jTextArea_news_postingDate.setFont(new Font("Arial", Font.ITALIC, 15));
+        jTextArea_news_postingDate.setEditable(false);
+        jTextArea_news_postingDate.setLineWrap(true);
+        jTextArea_news_postingDate.setWrapStyleWord(true);
     }
 
-    public void setLink(String s) {
-        jTextArea_news_link.setText("More: " + s);
+    public void setLink(String link) {
+        jTextArea_news_link = new JTextArea(GeneralHandle.clickableLink(link));
+        jTextArea_news_link.setBackground(jLabel_image.getBackground());
+        jTextArea_news_link.setFont(new Font("Arial", Font.ITALIC, 15));
+        jTextArea_news_link.setEditable(false);
+        jTextArea_news_link.setLineWrap(true);
+        jTextArea_news_link.setWrapStyleWord(true);
     }
 
     public void setNewsContent(String s) {
