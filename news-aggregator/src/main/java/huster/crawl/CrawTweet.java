@@ -1,5 +1,6 @@
 package huster.crawl;
 
+import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -44,7 +45,7 @@ public class CrawTweet {
         }
 
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         TweetItem test = new TweetItem("Bitcoin", "user", "100");
         CrawTweet.crawlTweet(test, "abcd");
     }

@@ -1,3 +1,4 @@
+import signal
 from flask import Flask, request, jsonify, send_file
 from ntscraper import Nitter
 import json
@@ -8,10 +9,11 @@ import os
 
 app = Flask(__name__)
 
-# test
+# Test
 @app.route("/hello")
 def hello():
     return "Hello"
+
 
 # Tạo một phiên bản của Nitter bên ngoài hàm crawl_tweet
 @lru_cache(maxsize=None)
@@ -105,10 +107,8 @@ def shutdown():
 
 
 def shutdown_server():
-    func = request.environ.get('werkzeug.server.shutdown')
-    if func is None:
-        raise RuntimeError('Not running with the Werkzeug Server')
-    func()
+    pid = os.getpid()
+    os.kill(pid, signal.SIGTERM)
 
 
 if __name__ == '__main__':
