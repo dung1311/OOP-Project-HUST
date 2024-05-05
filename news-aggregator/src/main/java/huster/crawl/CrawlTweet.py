@@ -4,8 +4,14 @@ import json
 from functools import lru_cache
 import matplotlib.pyplot as plt
 import pandas as pd
+import os
 
 app = Flask(__name__)
+
+# test
+@app.route("/hello")
+def hello():
+    return "Hello"
 
 # Tạo một phiên bản của Nitter bên ngoài hàm crawl_tweet
 @lru_cache(maxsize=None)
@@ -32,17 +38,26 @@ def crawl_tweet_route():
 
     return jsonify({"message": "Success"})
 
+
+# @app.route('/draw_chart', methods=['POST'])
+# def draw_chart_route():
+#     data = request.json
+#     file_name = data['file_name']
+
+#     image_path = draw_table(file_name)
+
+#     return send_file(image_path, mimetype='image/png')
+
+
 @app.route('/draw_chart', methods=['POST'])
 def draw_chart_route():
-    data = request.json
-    file_name = data['file_name']
+    file_name = request.json['file_name']  # Extract file_name from request data
 
-    image_path = draw_table(file_name)
+    # Tạo đường dẫn tương đối đến thư mục chứa dữ liệu
+    data_directory = 'news-aggregator/recourse/data'
+    file_path = os.path.join(data_directory, file_name + '.json')
+    image_path = os.path.join(data_directory, 'output.png')
 
-    return send_file(image_path, mimetype='image/png')
-
-def draw_table(file_name):
-    file_path = 'news-aggregator\\recourse\\data\\' + file_name + '.json'
     list_tweet = pd.read_json(path_or_buf=file_path)
     data_list = []
 
@@ -76,11 +91,25 @@ def draw_table(file_name):
     plt.grid(True)
     plt.legend()
 
-    image_path = 'news-aggregator\\recourse\\data\\output.png'
     plt.savefig(image_path)
     plt.close()
 
-    return image_path
+    return send_file(image_path, mimetype='image/png')
+
+
+@app.route('/shutdown', methods=['POST'])
+def shutdown():
+    # Lệnh để đóng server Flask
+    shutdown_server()
+    return 'Server shutting down...'
+
+
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
+
 
 if __name__ == '__main__':
     app.run(debug=True)
