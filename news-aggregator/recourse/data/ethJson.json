@@ -1,0 +1,2621 @@
+[
+    {
+        "link": "https://twitter.com/ethdotorg/status/1782440030826369508#m",
+        "text": "The Infinite Garden Open Source Department presents:  \ud83c\udf31 Q2 2024 Roadmap (@ethdotorg version) \ud83c\udf31  Learn more about the projects we will be working on at  ethereum.org this quarter and how you can contribute \ud83d\udc99 \u2193  https://github.com/ethereum/ethereum-org-website/issues/12746",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Apr 22, 2024 \u00b7 4:03 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 141,
+            "retweets": 452,
+            "quotes": 9,
+            "likes": 610
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/joshdavislight/status/1782474104429264950#m",
+        "text": "The Ethereum Protocol Fellowship (EPF) had a very successfully fourth cohort. A new cohort is on the horizon. Catch the recap and how you can get involved. #Ethereum #EPF4 https://blog.ethereum.org/2024/04/22/epf-4-recap  \ud83e\uddf5A recap recap:",
+        "user": {
+            "name": "Josh Davis \u2600\ufe0f",
+            "username": "@joshdavislight",
+            "profile_id": "1653067275329736704",
+            "avatar": "https://pbs.twimg.com/profile_images/1653067275329736704/UeLUlCOC_bigger.jpg"
+        },
+        "date": "Apr 22, 2024 \u00b7 6:18 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 101,
+            "retweets": 346,
+            "quotes": 12,
+            "likes": 527
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/Drigolvc/status/1779936661071351965#m",
+        "text": "\ud83d\udce3 The Data viz challenge on @jokerace_io is now open!  Dive into data, create a visualization with your findings, host it on a public page, and win bounties!    Learn how to apply here \ud83d\udc47 https://www.jokerace.io/contest/arbitrumone/0x2cbf7729f91f0470a086974db7f814ba8cb8b90c",
+        "user": {
+            "name": "Rodrigo \ud83c\uddfb\ud83c\uddea",
+            "username": "@Drigolvc",
+            "profile_id": "1551586932949364742",
+            "avatar": "https://pbs.twimg.com/profile_images/1551586932949364742/RG4_lG9i_bigger.jpg"
+        },
+        "date": "Apr 15, 2024 \u00b7 6:15 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 81,
+            "retweets": 270,
+            "quotes": 10,
+            "likes": 415
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/drakefjustin/status/1778318187521564707#m",
+        "text": "love AI and Ethereum? EF research is hiring  ai@ethereum.org",
+        "user": {
+            "name": "Justin \u00d0rake \ud83e\udd87\ud83d\udd0a",
+            "username": "@drakefjustin",
+            "profile_id": "632301429424816128",
+            "avatar": "https://pbs.twimg.com/profile_images/632301429424816128/OwT0LdXU_bigger.jpg"
+        },
+        "date": "Apr 11, 2024 \u00b7 7:04 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 157,
+            "retweets": 356,
+            "quotes": 29,
+            "likes": 1072
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TheRealKartik/status/1770906963309682746#m",
+        "text": "\ud83e\udde0 We\u2019re hiring founding engineers at @ethglobal to bring our developer community onchain in 2024  We're looking for Fullstack Engineers to work directly with myself to ship products for 100,000+ developers building onchain apps & infra  See the role here: https://ethglob.al/fullstack",
+        "user": {
+            "name": "Kartik Talwar",
+            "username": "@TheRealKartik",
+            "profile_id": "1085757468158742528",
+            "avatar": "https://pbs.twimg.com/profile_images/1085757468158742528/0jwhEGnX_bigger.jpg"
+        },
+        "date": "Mar 21, 2024 \u00b7 8:14 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 780,
+            "retweets": 1165,
+            "quotes": 35,
+            "likes": 1625
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TimBeiko/status/1769783420542996589#m",
+        "text": "Quick Goerli update: while originally the network was expected to remain active for ~1 month post Dencun, nearly all validators have been shut down over the past few weeks. Consider this the final announcement to move to Sepolia or Holesky \ud83d\udce3  https://blog.ethereum.org/2023/11/30/goerli-lts-update",
+        "user": {
+            "name": "timbeiko.eth",
+            "username": "@TimBeiko",
+            "profile_id": "1082093593840349184",
+            "avatar": "https://pbs.twimg.com/profile_images/1082093593840349184/P2B7Qiyn_bigger.jpg"
+        },
+        "date": "Mar 18, 2024 \u00b7 5:50 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 357,
+            "retweets": 1525,
+            "quotes": 18,
+            "likes": 1755
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TimBeiko/status/1767559605947937277#m",
+        "text": "Less than 24h before Dencun .oO!   Since the announcement, many client teams have shipped performance & stability improvements. The blog post has been updated to list both minimum & recommended versions  \u2014 if you haven't done so yet, upgrade your node \ud83e\udd16  https://blog.ethereum.org/2024/02/27/dencun-mainnet-announcement",
+        "user": {
+            "name": "timbeiko.eth",
+            "username": "@TimBeiko",
+            "profile_id": "1082093593840349184",
+            "avatar": "https://pbs.twimg.com/profile_images/1082093593840349184/P2B7Qiyn_bigger.jpg"
+        },
+        "date": "Mar 12, 2024 \u00b7 2:33 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 330,
+            "retweets": 1549,
+            "quotes": 24,
+            "likes": 2002
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/WeekInEthNews/status/1763729965567393839#m",
+        "text": "Latest Week in Ethereum News  https://weekinethereumnews.com/week-in-ethereum-news-march-2-2024",
+        "user": {
+            "name": "Week in Ethereum News",
+            "username": "@WeekInEthNews",
+            "profile_id": "1310109035547549696",
+            "avatar": "https://pbs.twimg.com/profile_images/1310109035547549696/dhfgYGVZ_bigger.jpg"
+        },
+        "date": "Mar 2, 2024 \u00b7 12:56 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 291,
+            "retweets": 834,
+            "quotes": 17,
+            "likes": 1105
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFNextBillion/status/1763282275352154216#m",
+        "text": "Want to hear stories about Ethereum? Check out Devconnect Scholars' journey here: https://blog.ethereum.org/2024/02/29/scholars-stories",
+        "user": {
+            "name": "EF Next Billion",
+            "username": "@EFNextBillion",
+            "profile_id": "1545111638621265922",
+            "avatar": "https://pbs.twimg.com/profile_images/1545111638621265922/DGkjt4Gy_bigger.jpg"
+        },
+        "date": "Feb 29, 2024 \u00b7 7:17 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 248,
+            "retweets": 984,
+            "quotes": 11,
+            "likes": 1231
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/Drigolvc/status/1762927149164687685#m",
+        "text": "\ud83d\udce3 The 4844 Data Challenge is now open!  Dive into blob data, write a blog post with your findings, and win up to $30,000!  Learn how to apply here! \ud83d\udc47  https://esp.ethereum.foundation/data-challenge-4844",
+        "user": {
+            "name": "Rodrigo \ud83c\uddfb\ud83c\uddea",
+            "username": "@Drigolvc",
+            "profile_id": "1551586932949364742",
+            "avatar": "https://pbs.twimg.com/profile_images/1551586932949364742/RG4_lG9i_bigger.jpg"
+        },
+        "date": "Feb 28, 2024 \u00b7 7:46 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 194,
+            "retweets": 1281,
+            "quotes": 12,
+            "likes": 1305
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TimBeiko/status/1762492163869614411#m",
+        "text": "Blobs are coming .oO     Dencun is scheduled for mainnet activation at epoch 29696, occurring March 13 at 13:55 UTC. See the announcement below for client release versions and other useful info about the upgrade \ud83e\udd16  https://blog.ethereum.org/2024/02/27/dencun-mainnet-announcement",
+        "user": {
+            "name": "timbeiko.eth",
+            "username": "@TimBeiko",
+            "profile_id": "1082093593840349184",
+            "avatar": "https://pbs.twimg.com/profile_images/1082093593840349184/P2B7Qiyn_bigger.jpg"
+        },
+        "date": "Feb 27, 2024 \u00b7 2:57 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 222,
+            "retweets": 1434,
+            "quotes": 66,
+            "likes": 2011
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/erc4337/status/1761015846179360780#m",
+        "text": "We're thrilled to announce that EntryPoint v0.7 has been deployed onchain: #Ethereum @Optimism @arbitrum @0xPolygon @base @avax @gnosischain @BNBCHAIN https://blockscan.com/address/0x0000000071727De22E5E9d8BAf0edAc6f37da032",
+        "user": {
+            "name": "erc4337",
+            "username": "@erc4337",
+            "profile_id": "1628815896419467264",
+            "avatar": "https://pbs.twimg.com/profile_images/1628815896419467264/iWKzlbnE_bigger.jpg"
+        },
+        "date": "Feb 23, 2024 \u00b7 1:11 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 137,
+            "retweets": 273,
+            "quotes": 17,
+            "likes": 542
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/Drigolvc/status/1760393928338264379#m",
+        "text": "The ZK Grants round is now open for developers to apply for and receive funding!  The combined $900K pool for support was funded by @aztecnetwork, @0xPolygon, @Scroll_ZKP, @taikoxyz, @zksync, and @Ethereum Foundation.  Read the blog here! \ud83d\udc47",
+        "user": {
+            "name": "Rodrigo \ud83c\uddfb\ud83c\uddea",
+            "username": "@Drigolvc",
+            "profile_id": "1551586932949364742",
+            "avatar": "https://pbs.twimg.com/profile_images/1551586932949364742/RG4_lG9i_bigger.jpg"
+        },
+        "date": "Feb 21, 2024 \u00b7 7:59 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 85,
+            "retweets": 670,
+            "quotes": 0,
+            "likes": 556
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethereum/status/1760378315141939674#m",
+        "text": "\ud83d\udce3 The first ZK Grants Round is now open!  The Ethereum Foundation, in collaboration with Aztec, Polygon, Scroll, Taiko, and zkSync, contributed $150K each to the shared prize pool, totaling $900K.  Apply before March 18th! \ud83d\udc47  https://esp.ethereum.foundation/zk-grants",
+        "user": {
+            "name": "Ethereum Foundation",
+            "username": "@ethereum",
+            "profile_id": "1627642622645878784",
+            "avatar": "https://pbs.twimg.com/profile_images/1627642622645878784/TP1GH9TM_bigger.jpg"
+        },
+        "date": "Feb 21, 2024 \u00b7 6:57 PM UTC",
+        "is-retweet": false,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 290,
+            "retweets": 1477,
+            "quotes": 58,
+            "likes": 2319
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EF_ESP/status/1759997475434172604#m",
+        "text": "Curious about the latest projects that received funding support?  Check out our Allocation Update: Q4 2023 blog post to dive into the projects making waves last quarter! \ud83c\udf0a  https://blog.ethereum.org/2024/02/20/esp-allocation-q423",
+        "user": {
+            "name": "EF Ecosystem Support Program",
+            "username": "@EF_ESP",
+            "profile_id": "1245348179660472320",
+            "avatar": "https://pbs.twimg.com/profile_images/1245348179660472320/iFL_cwLb_bigger.jpg"
+        },
+        "date": "Feb 20, 2024 \u00b7 5:44 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 108,
+            "retweets": 948,
+            "quotes": 8,
+            "likes": 813
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/joshdavislight/status/1755331144009011467#m",
+        "text": "Excited to announce the launch of the Ethereum Protocol Fellowship Study Group (EPFsg)! A 10-week series designed to guide the next gen of #ethereum core devs. Dive deep into the protocol's mechanics with us.  https://blog.ethereum.org/2024/02/07/epf-study-group  \ud83e\uddf5",
+        "user": {
+            "name": "Josh Davis \u2600\ufe0f",
+            "username": "@joshdavislight",
+            "profile_id": "1653067275329736704",
+            "avatar": "https://pbs.twimg.com/profile_images/1653067275329736704/UeLUlCOC_bigger.jpg"
+        },
+        "date": "Feb 7, 2024 \u00b7 8:42 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 312,
+            "retweets": 796,
+            "quotes": 17,
+            "likes": 1083
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/Drigolvc/status/1754706255984132097#m",
+        "text": "\ud83d\udce3 The Ethereum Foundation's 2024 Academic Grants Round is now open!   Up to $1M is available for academic research advancing Ethereum.  \ud83c\udf93\ud83d\udcbc\ud83d\udd0d  Apply before March 5th!\ud83d\udc47 https://esp.ethereum.foundation/academic-grants",
+        "user": {
+            "name": "Rodrigo \ud83c\uddfb\ud83c\uddea",
+            "username": "@Drigolvc",
+            "profile_id": "1551586932949364742",
+            "avatar": "https://pbs.twimg.com/profile_images/1551586932949364742/RG4_lG9i_bigger.jpg"
+        },
+        "date": "Feb 6, 2024 \u00b7 3:19 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 255,
+            "retweets": 1079,
+            "quotes": 9,
+            "likes": 1019
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1752760162467577925#m",
+        "text": "\u2728 A look back at 2023, and a glimpse at what lies ahead in 2024 \u2728  Check it our newest article on the @Ethereum Foundation's blog and relive with us some highlights from this past year \u2935\ufe0f  https://blog.ethereum.org/2024/01/31/2023-on-ethereum-org",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Jan 31, 2024 \u00b7 6:26 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 286,
+            "retweets": 632,
+            "quotes": 12,
+            "likes": 865
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/trent_vanepps/status/1750609035340980298#m",
+        "text": "new post \"Wrapping up the KZG Ceremony!\" Started nearly 2 yrs ago, big thanks to anyone who contributed:  \ud83d\udd6f\ufe0fdesigns\ud83d\udd6f\ufe0faudits\ud83d\udd6f\ufe0f \ud83d\udd6f\ufe0fsupport\ud83d\udd6f\ufe0fentropy\ud83d\udd6f\ufe0f \ud83d\udd6f\ufe0fstories\ud83d\udd6f\ufe0f  When the Dencun upgrade goes live, our collective effort becomes embedded within the chain \u2764\ufe0f  blog.ethereum.org/2024/01/23\u2026",
+        "user": {
+            "name": "trent.eth",
+            "username": "@trent_vanepps",
+            "profile_id": "1695072606045515777",
+            "avatar": "https://pbs.twimg.com/profile_images/1695072606045515777/97BhkqE6_bigger.jpg"
+        },
+        "date": "Jan 25, 2024 \u00b7 7:58 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "http://blog.ethereum.org/2024/01/23/kzg-wrap",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 239,
+            "retweets": 440,
+            "quotes": 6,
+            "likes": 723
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TimBeiko/status/1750344001641947256#m",
+        "text": "More testnet blobs on the way .oO   Dencun will activate on Sepolia Jan 30, and on Holesky Feb 7. If running a node on either network, now's the time to update it!   Assuming both of these go smoothly, mainnet is next \u2705  https://blog.ethereum.org/2024/01/24/sepolia-holesky-dencun",
+        "user": {
+            "name": "timbeiko.eth",
+            "username": "@TimBeiko",
+            "profile_id": "1082093593840349184",
+            "avatar": "https://pbs.twimg.com/profile_images/1082093593840349184/P2B7Qiyn_bigger.jpg"
+        },
+        "date": "Jan 25, 2024 \u00b7 2:25 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 358,
+            "retweets": 642,
+            "quotes": 32,
+            "likes": 1049
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/parithosh_j/status/1747564353467936817#m",
+        "text": "The goerli fork finalized! :D https://dora.goerli.ethpandaops.io  After the fix was patched in, the validators came back online and the chain started finalizing again. The MEV circuitbreaker automatically disables and mev-blocks have started flowing through as well.   Yay client diversity!",
+        "user": {
+            "name": "parithosh | \ud83d\udc3c\ud83d\udc49\ud83d\udc48\ud83d\udc3c",
+            "username": "@parithosh_j",
+            "profile_id": "1257719305459904512",
+            "avatar": "https://pbs.twimg.com/profile_images/1257719305459904512/x5MkzrAf_bigger.jpg"
+        },
+        "date": "Jan 17, 2024 \u00b7 10:19 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {
+            "link": "https://twitter.com/parithosh_j/status/1747530212458311927#m",
+            "text": "TLDR on what Historical roots are :D  https://chat.openai.com/share/0d09080c-c18e-4d66-ad52-4d109fac761f",
+            "user": {
+                "name": "parithosh | \ud83d\udc3c\ud83d\udc49\ud83d\udc48\ud83d\udc3c",
+                "username": "@parithosh_j",
+                "profile_id": "1257719305459904512",
+                "avatar": "https://pbs.twimg.com/profile_images/1257719305459904512/x5MkzrAf_mini.jpg"
+            },
+            "date": "Jan 17, 2024 \u00b7 8:04 AM UTC",
+            "pictures": [],
+            "videos": [],
+            "gifs": []
+        },
+        "stats": {
+            "comments": 293,
+            "retweets": 439,
+            "quotes": 16,
+            "likes": 711
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFNextBillion/status/1746548340509311149#m",
+        "text": "\u23f0Pssst! Writing your @EFNextBillion\u00a0Fellowship application this weekend but need more time? \ud83d\udce2 The submission deadline has been extended by one week! Please submit your application ASAP but definitely before Jan 22, 2024  fellowship.ethereum.foundati\u2026",
+        "user": {
+            "name": "EF Next Billion",
+            "username": "@EFNextBillion",
+            "profile_id": "1545111638621265922",
+            "avatar": "https://pbs.twimg.com/profile_images/1545111638621265922/DGkjt4Gy_bigger.jpg"
+        },
+        "date": "Jan 14, 2024 \u00b7 3:02 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "http://fellowship.ethereum.foundation",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 258,
+            "retweets": 469,
+            "quotes": 13,
+            "likes": 539
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/fredriksvantes/status/1745334200713028045#m",
+        "text": "There is now a 2x multiplier for Dencun related vulnerabilities! \ud83c\udf89  Read the Goerli Dencun Announcement at https://blog.ethereum.org/2024/01/10/goerli-dencun-announcement and send in your vulnerability reports to earn rewards and help keep the protocol secure! \u2665\ufe0f",
+        "user": {
+            "name": "Fredrik Svantes",
+            "username": "@fredriksvantes",
+            "profile_id": "1396927530238623746",
+            "avatar": "https://pbs.twimg.com/profile_images/1396927530238623746/0EqklSzt_bigger.jpg"
+        },
+        "date": "Jan 11, 2024 \u00b7 6:37 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 284,
+            "retweets": 896,
+            "quotes": 11,
+            "likes": 871
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TimBeiko/status/1745285885514707043#m",
+        "text": "Blobs are coming to Goerli .oO  On Jan 17, at 6:32 UTC, Dencun will activate on the testnet! It will be the last network upgrade before Goerli shuts down in a few months.  More info on the upgrade, client releases, and more, in the full announcement \ud83d\udce3  https://blog.ethereum.org/2024/01/10/goerli-dencun-announcement",
+        "user": {
+            "name": "timbeiko.eth",
+            "username": "@TimBeiko",
+            "profile_id": "1082093593840349184",
+            "avatar": "https://pbs.twimg.com/profile_images/1082093593840349184/P2B7Qiyn_bigger.jpg"
+        },
+        "date": "Jan 11, 2024 \u00b7 3:25 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 135,
+            "retweets": 507,
+            "quotes": 32,
+            "likes": 979
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/icebearhww/status/1745060471496175770#m",
+        "text": "\ud83d\udce3 The 11th Ethereum Foundation Research Reddit AMA is starting in 30 minutes, at 1PM UTC today!  Join the conversation and get your questions answered!  \ud83d\udc3c\ud83c\udf0a\ud83e\udddf\u2705\ud83e\uddf9\ud83c\udfa9 #Ethereum #EFResearch #AMA https://teddit.net/r/ethereum/comments/191kke6/ama_we_are_ef_research_pt_11_10_january_2024/",
+        "user": {
+            "name": "Hsiao-Wei Wang",
+            "username": "@icebearhww",
+            "profile_id": "1633730071398846464",
+            "avatar": "https://pbs.twimg.com/profile_images/1633730071398846464/4a-Pex2Y_bigger.jpg"
+        },
+        "date": "Jan 10, 2024 \u00b7 12:30 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 264,
+            "retweets": 476,
+            "quotes": 9,
+            "likes": 897
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/drakefjustin/status/1744356460664898022#m",
+        "text": "the Ethereum Foundation research team will host a Reddit AMA on Jan 10 at 1pm UTC  questions can be submitted now :)  https://teddit.net/r/ethereum/comments/191kke6/ama_we_are_ef_research_pt_11_10_january_2024/",
+        "user": {
+            "name": "Justin \u00d0rake \ud83e\udd87\ud83d\udd0a",
+            "username": "@drakefjustin",
+            "profile_id": "632301429424816128",
+            "avatar": "https://pbs.twimg.com/profile_images/632301429424816128/OwT0LdXU_bigger.jpg"
+        },
+        "date": "Jan 8, 2024 \u00b7 1:52 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 102,
+            "retweets": 684,
+            "quotes": 10,
+            "likes": 893
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevcon/status/1742555345371681238#m",
+        "text": "\ud83c\udf1f New year, new horizons! \ud83e\udd84  Get ready for Devcon Southeast Asia, and join us from November 12-15 for a gathering that promises to resonate across the region.  Where exactly will we meet? \ud83d\udc40 Check out the blog and read about our new vision! \ud83d\udc47 https://blog.ethereum.org/2024/01/03/devcon-sea-announcement",
+        "user": {
+            "name": "Deva the Devcon Unicorn",
+            "username": "@EFDevcon",
+            "profile_id": "1767609408458989568",
+            "avatar": "https://pbs.twimg.com/profile_images/1767609408458989568/vswkDJBl_bigger.jpg"
+        },
+        "date": "Jan 3, 2024 \u00b7 2:35 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 258,
+            "retweets": 662,
+            "quotes": 262,
+            "likes": 1486
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EF_ESP/status/1737075138024399115#m",
+        "text": "Before we wrap up the year, it\u2019s time to showcase the amazing projects that received funding last quarter \u2b50\ufe0f Dive into our Allocation Update: Q3 2023 blog post to learn more!  https://blog.ethereum.org/2023/12/19/esp-allocation-q323",
+        "user": {
+            "name": "EF Ecosystem Support Program",
+            "username": "@EF_ESP",
+            "profile_id": "1245348179660472320",
+            "avatar": "https://pbs.twimg.com/profile_images/1245348179660472320/iFL_cwLb_bigger.jpg"
+        },
+        "date": "Dec 19, 2023 \u00b7 11:39 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 341,
+            "retweets": 622,
+            "quotes": 15,
+            "likes": 762
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TimBeiko/status/1734676637202141185#m",
+        "text": "At long last, another here's another long-form #AllCoreDevs update: it covers Dencun, the EIP process changes, and the Prague/Electra planning kickoff \ud83d\ude04  https://tim.mirror.xyz/HzH5MpK1dnw7qhBSmzCfdCIxpwpD6DpwlfxtaAwEFro",
+        "user": {
+            "name": "timbeiko.eth",
+            "username": "@TimBeiko",
+            "profile_id": "1082093593840349184",
+            "avatar": "https://pbs.twimg.com/profile_images/1082093593840349184/P2B7Qiyn_bigger.jpg"
+        },
+        "date": "Dec 12, 2023 \u00b7 8:48 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 293,
+            "retweets": 739,
+            "quotes": 15,
+            "likes": 944
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/solidity_lang/status/1733167411472581016#m",
+        "text": "\ud83e\udd41 Final update before we wrap up 2023 \ud83e\udd41  The Solidity Developer Survey 2023 is live! \ud83c\udf89  \u270d\ufe0fRead the announcement:https://soliditylang.org/blog/2023/12/08/solidity-developer-survey-2023-announcement/ \ud83d\udcc4Take the survey:https://cryptpad.fr/form/#/2/form/view/pV-DdryeJoYUWvW+gXsFaMNynEY7t5mUsgeD1urgwSE/  Check out some cool highlights from past years and learn what the survey means for Solidity!\ud83d\udc47\ud83e\uddf5",
+        "user": {
+            "name": "Solidity",
+            "username": "@solidity_lang",
+            "profile_id": "1240311693177167892",
+            "avatar": "https://pbs.twimg.com/profile_images/1240311693177167892/-5a2yoQp_bigger.jpg"
+        },
+        "date": "Dec 8, 2023 \u00b7 4:51 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 164,
+            "retweets": 537,
+            "quotes": 22,
+            "likes": 627
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/GA1yfzWbQAE2lgd.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EF_ESP/status/1732413587195679174#m",
+        "text": "Earlier this year, ESP hosted the Run a Node Grants Round to encourage the exploration of diverse ideas for operating nodes beyond running a validator \ud83d\udcab  Curious to know which projects were supported? Read more about them in our blog post below!  https://blog.ethereum.org/2023/12/06/run-a-node-grantee",
+        "user": {
+            "name": "EF Ecosystem Support Program",
+            "username": "@EF_ESP",
+            "profile_id": "1245348179660472320",
+            "avatar": "https://pbs.twimg.com/profile_images/1245348179660472320/iFL_cwLb_bigger.jpg"
+        },
+        "date": "Dec 6, 2023 \u00b7 2:56 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 194,
+            "retweets": 470,
+            "quotes": 16,
+            "likes": 579
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/solidity_lang/status/1730281695134544014#m",
+        "text": "It was great to see everyone at Solidity Summit 2023 with 300 participants gathered for 15+ sessions on advanced Solidity topics. \ud83c\udf89  Check out our recap blog post to watch the talks and read the summary! \u270d\ufe0fhttps://soliditylang.org/blog/2023/11/30/solidity-summit-2023-recap/  Some highlights of the talks \ud83d\udc47\ud83e\uddf5",
+        "user": {
+            "name": "Solidity",
+            "username": "@solidity_lang",
+            "profile_id": "1240311693177167892",
+            "avatar": "https://pbs.twimg.com/profile_images/1240311693177167892/-5a2yoQp_bigger.jpg"
+        },
+        "date": "Nov 30, 2023 \u00b7 5:44 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 102,
+            "retweets": 373,
+            "quotes": 3,
+            "likes": 503
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TimBeiko/status/1730243410278178859#m",
+        "text": "Dencun will be the last fork deployed on Goerli and client & testing teams will be exiting their validators in the months after it activates,  \u203c\ufe0f You should migrate to another network before this \u203c\ufe0f  Timeline specifics & email alert sign up in the post \ud83d\udc47  https://blog.ethereum.org/2023/11/30/goerli-lts-update",
+        "user": {
+            "name": "timbeiko.eth",
+            "username": "@TimBeiko",
+            "profile_id": "1082093593840349184",
+            "avatar": "https://pbs.twimg.com/profile_images/1082093593840349184/P2B7Qiyn_bigger.jpg"
+        },
+        "date": "Nov 30, 2023 \u00b7 3:12 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 160,
+            "retweets": 505,
+            "quotes": 13,
+            "likes": 631
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFNextBillion/status/1729518694231949478#m",
+        "text": "\ud83d\udc40We are looking for Cohort 4!  The Next Billion Fellowship at the Ethereum Foundation is a search for individuals with stories to tell us about today, and projects that work towards tomorrow.\ud83c\udf31  We'd love to hear from you! \ud83e\udef5\ud83c\udffe Sign up or share on  https://blog.ethereum.org/2023/11/28/nxbn-cohort4-apply",
+        "user": {
+            "name": "EF Next Billion",
+            "username": "@EFNextBillion",
+            "profile_id": "1545111638621265922",
+            "avatar": "https://pbs.twimg.com/profile_images/1545111638621265922/DGkjt4Gy_bigger.jpg"
+        },
+        "date": "Nov 28, 2023 \u00b7 3:12 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 118,
+            "retweets": 540,
+            "quotes": 12,
+            "likes": 675
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/0xZendetta/status/1724847216341201040#m",
+        "text": "Happy to share my latest blog at @ethereum @EFNextBillion \ud83c\udf10. I examine how #blockchain humanizes aid delivery, infuses transparency & efficiency & disrupts bureaucratic quagmires in crisis and post-crisis societies \ud83c\udf0d\ud83d\udee0\ufe0f  https://blog.ethereum.org/2023/11/15/beyond-borders-nb",
+        "user": {
+            "name": "Karam",
+            "username": "@0xZendetta",
+            "profile_id": "1691195142483402752",
+            "avatar": "https://pbs.twimg.com/profile_images/1691195142483402752/ZAmkMw4B_bigger.jpg"
+        },
+        "date": "Nov 15, 2023 \u00b7 5:49 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 264,
+            "retweets": 576,
+            "quotes": 11,
+            "likes": 604
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1723667086730219795#m",
+        "text": "Stronger together \ud83d\udcaa",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Nov 12, 2023 \u00b7 11:40 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {
+            "link": "https://twitter.com/EthPrague/status/1723666701928091705#m",
+            "text": "Are you in Berlin or Europe, unable to get to @EFDevconnect, and want to meet the some of the Ethereum community? Join us for a week of co-working, talks, food and great views in Prague!  \ud83d\udcc6: 15-21 Nov. Prague, CZ. \ud83c\udf9f\ufe0f/\ud83d\udde3\ufe0f: https://DCxPrague.org TG: https://t.me/DCxPrague",
+            "user": {
+                "name": "ETHPrague",
+                "username": "@EthPrague",
+                "profile_id": "1761793077302157312",
+                "avatar": "https://pbs.twimg.com/profile_images/1761793077302157312/ZWMuqBeG_mini.jpg"
+            },
+            "date": "Nov 12, 2023 \u00b7 11:39 AM UTC",
+            "pictures": [],
+            "videos": [],
+            "gifs": []
+        },
+        "stats": {
+            "comments": 160,
+            "retweets": 525,
+            "quotes": 8,
+            "likes": 515
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EthPrague/status/1722563396543848559#m",
+        "text": "DCxPrague is here for you as a satellite @EFDevconnect event, and now, we're featured on the Devconnect website!  We can't thank @Ethereum Foundation enough for this incredible support!  Join: \ud83d\udcc6: 15-21 Nov. Prague, CZ. \ud83c\udf9f\ufe0f/\ud83d\udde3\ufe0f: https://DCxPrague.org TG: https://t.me/DCxPrague",
+        "user": {
+            "name": "ETHPrague",
+            "username": "@EthPrague",
+            "profile_id": "1761793077302157312",
+            "avatar": "https://pbs.twimg.com/profile_images/1761793077302157312/ZWMuqBeG_bigger.jpg"
+        },
+        "date": "Nov 9, 2023 \u00b7 10:34 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 165,
+            "retweets": 423,
+            "quotes": 11,
+            "likes": 500
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F-fF4AKX0AArqIp.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1720491072080511088#m",
+        "text": "Update #2: Preparing for Devconnect Events  Click to find important details necessary for those attending the event week, including city and event information for events that have planned to move forward.   https://blog.ethereum.org/2023/11/03/devconnect-ist-update-2",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Nov 3, 2023 \u00b7 5:20 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 95,
+            "retweets": 453,
+            "quotes": 13,
+            "likes": 593
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1721587276394922092#m",
+        "text": "How to pack for Istanbul? \u2614\ufe0f\ud83e\udde5\u26c5\ufe0f\ud83e\udd7e\ud83c\udf08\ud83c\udf42  Istanbul in autumn is a mix of crisp air with occasional rain showers. \ud83d\udc49Pack some cozy layers and don't forget your rain jacket. \ud83d\udc49Pack sturdy shoes because Istanbul can get hilly.",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Nov 6, 2023 \u00b7 5:56 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 66,
+            "retweets": 262,
+            "quotes": 5,
+            "likes": 446
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EthPrague/status/1721870055284039802#m",
+        "text": "Not only will @AyaMiyagotchi be in Istanbul for @EFDevconnect, she'll be \u2708\ufe0f jumping to Prague as well. @Ethereum Foundation's support of all of those unable to attend in IST can't be overstated. Thanks so much for helping us pull this together so quickly!   \ud83d\udcc6: 15-21 Nov. Prague, CZ. \ud83c\udf9f\ufe0f/\ud83d\udde3\ufe0f: https://DCxPrague.org TG: https://t.me/DCxPrague",
+        "user": {
+            "name": "ETHPrague",
+            "username": "@EthPrague",
+            "profile_id": "1761793077302157312",
+            "avatar": "https://pbs.twimg.com/profile_images/1761793077302157312/ZWMuqBeG_bigger.jpg"
+        },
+        "date": "Nov 7, 2023 \u00b7 12:39 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 82,
+            "retweets": 207,
+            "quotes": 9,
+            "likes": 340
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F-VMLaKWIAAp0-j.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1721569421167333413#m",
+        "text": "If you tend to book accommodations at the last minute, here's what to keep in mind:  We recommend staying within walking distance of the ICC or close to Metro lines M2 and F1 for ease of moving around the city (ICC is connected to Taksim and Osmanbey stations).",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Nov 6, 2023 \u00b7 4:45 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 54,
+            "retweets": 181,
+            "quotes": 4,
+            "likes": 211
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F-Q-Q42aMAALh9-.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EthPrague/status/1721538772112695789#m",
+        "text": "\ud83d\udd0a ANNOUNCEMENT TIME: DCxPrague has the support of @Ethereum Foundation and @PWNDAO as lead sponsors.  In the next hours, we'll announce some incredible participants + programming. Thanks so much for helping to bring a piece of @EFDevconnect to Prague on such short notice!",
+        "user": {
+            "name": "ETHPrague",
+            "username": "@EthPrague",
+            "profile_id": "1761793077302157312",
+            "avatar": "https://pbs.twimg.com/profile_images/1761793077302157312/ZWMuqBeG_bigger.jpg"
+        },
+        "date": "Nov 6, 2023 \u00b7 2:43 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 50,
+            "retweets": 178,
+            "quotes": 6,
+            "likes": 240
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F-Qh5PlXUAAwwxF.jpg",
+            "https://pbs.twimg.com/media/F-Qh5PnXIAAy9JY.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EthPrague/status/1720795300451729597#m",
+        "text": "HERE WE GO: Meet the DCxPrague venues! \ud83c\udf1f  DCxPrague will take place at the GRAM Cafe in Vinohrady, and at the iconic Lobkowicz Palace. Yes, really, we're all going to the castle. \ud83c\udff0  Learn more about our venues below, and get your \ud83c\udf9f\ufe0f now at https://DCxPrague.org.  We kick off the first two days, 15-16 Nov., at the vibrant GRAM Cafe & Coworking in Vinohrady, in the heart of the former royal vineyards. This expat-favorite district boasts art nouveau architecture, incredible restaurants, and Prague's best cafes \u2615  From November 17th to 21st, we'll transport you to the iconic Lobkowicz Palace! We're taking you straight to the royal home itself! Experience the 16th-century Baroque splendor and enjoy the best view of Prague.\ud83c\udff0\u2728  Join us for a majestic journey through Prague's rich history and innovation. \u2728  \ud83d\udcc6: 15-21 Nov. Prague, CZ. \ud83c\udf9f\ufe0f/\ud83d\udde3\ufe0f: https://DCxPrague.org TG: https://t.me/DCxPrague",
+        "user": {
+            "name": "ETHPrague",
+            "username": "@EthPrague",
+            "profile_id": "1761793077302157312",
+            "avatar": "https://pbs.twimg.com/profile_images/1761793077302157312/ZWMuqBeG_bigger.jpg"
+        },
+        "date": "Nov 4, 2023 \u00b7 1:29 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 75,
+            "retweets": 194,
+            "quotes": 5,
+            "likes": 272
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F-F-MmDXQAARLdA.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/JustinTraglia/status/1720052388776595683#m",
+        "text": "The Protocol Security Research team had a fun time reviewing C-KZG-4844, an important cryptographic library for the upcoming Dencun upgrade. Check out this article which goes over some things developers can do to find bugs in C projects.  https://blog.ethereum.org/2023/11/02/writing-robust-c",
+        "user": {
+            "name": "jtraglia.eth",
+            "username": "@JustinTraglia",
+            "profile_id": "1648459994256543744",
+            "avatar": "https://pbs.twimg.com/profile_images/1648459994256543744/fn_SnKW5_bigger.jpg"
+        },
+        "date": "Nov 2, 2023 \u00b7 12:17 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 99,
+            "retweets": 264,
+            "quotes": 5,
+            "likes": 322
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EthPrague/status/1719693116100190677#m",
+        "text": "\ud83d\udea8 BREAKING: Tickets + Speaker Apps for DCxPrague, a satellite Devconnect event in Prague from EthPrague & @PWNDAO, are now LIVE:  \ud83d\udcc6: 15-21 Nov. Prague, CZ. \ud83c\udf9f\ufe0f/\ud83d\udde3\ufe0f: https://DCxPrague.org/ TG: https://t.me/DCxPrague Post: https://pwn.mirror.xyz/-xhSUweY9UDwZKobqITcrgKrZ3X1RrD8cOJL6NT6LYg Fiat, ETH & DAI + L2s \u2705!  \ud83e\uddf5...",
+        "user": {
+            "name": "ETHPrague",
+            "username": "@EthPrague",
+            "profile_id": "1761793077302157312",
+            "avatar": "https://pbs.twimg.com/profile_images/1761793077302157312/ZWMuqBeG_bigger.jpg"
+        },
+        "date": "Nov 1, 2023 \u00b7 12:29 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 69,
+            "retweets": 223,
+            "quotes": 7,
+            "likes": 225
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/fredriksvantes/status/1717301298507252222#m",
+        "text": "SEAL just announced its free public good, SEAL Drills, to help crypto projects with incident response training.",
+        "user": {
+            "name": "Fredrik Svantes",
+            "username": "@fredriksvantes",
+            "profile_id": "1396927530238623746",
+            "avatar": "https://pbs.twimg.com/profile_images/1396927530238623746/0EqklSzt_bigger.jpg"
+        },
+        "date": "Oct 25, 2023 \u00b7 10:05 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {
+            "link": "https://twitter.com/samczsun/status/1717243519243636755#m",
+            "text": "In a war room, every second counts. But without having been in one, how could you know what to expect or how to respond? Blog posts and tweet threads can only take you so far. Today, I'm excited to announce a new option: SEAL Drills.",
+            "user": {
+                "name": "samczsun",
+                "username": "@samczsun",
+                "profile_id": "1629980586378141696",
+                "avatar": "https://pbs.twimg.com/profile_images/1629980586378141696/3onkhqws_mini.jpg"
+            },
+            "date": "Oct 25, 2023 \u00b7 6:15 PM UTC",
+            "pictures": [
+                "https://pbs.twimg.com/media/F9TciUzb0AUMgqm.jpg"
+            ],
+            "videos": [],
+            "gifs": []
+        },
+        "stats": {
+            "comments": 119,
+            "retweets": 459,
+            "quotes": 15,
+            "likes": 396
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1716550362759360544#m",
+        "text": "Update #1: Advisory on recent events and potential travel considerations related to Devconnect IST.  https://blog.ethereum.org/2023/10/23/devconnect-ist-advisory-update",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Oct 23, 2023 \u00b7 8:21 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 120,
+            "retweets": 414,
+            "quotes": 25,
+            "likes": 553
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1710297758396018691#m",
+        "text": "Happy 1st Friday of Q4 for those who celebrate it \ud83e\udea9\ud83e\udd42  @ethdotorg Q4 2023 product roadmap is out!  From planting seeds to platform exodus, @EFDevconnect to Dencun, wallets & pens... we've got a variety of projects you can contribute with \ud83e\uddd1\u200d\ud83d\udcbb  Take a look\ud83d\udc47 https://github.com/ethereum/ethereum-org-website/issues/11386",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Oct 6, 2023 \u00b7 2:15 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 300,
+            "retweets": 1033,
+            "quotes": 14,
+            "likes": 846
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/BarnabasBusa/status/1707398296732312010#m",
+        "text": "Holesky chain launched, and now finalizing. After the first few epochs, most of the validator groups are now online and validating! ~78% participation rate right now.   Huge thanks for all the teams dedicating massive amount of resources to get this chain up and running!",
+        "user": {
+            "name": "Barnabas Busa",
+            "username": "@BarnabasBusa",
+            "profile_id": "534855342300352514",
+            "avatar": "https://pbs.twimg.com/profile_images/534855342300352514/m-C5ReWq_bigger.jpeg"
+        },
+        "date": "Sep 28, 2023 \u00b7 2:14 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 216,
+            "retweets": 571,
+            "quotes": 15,
+            "likes": 734
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F7HlULnWkAA13F1.png"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EF_ESP/status/1706714672823677249#m",
+        "text": "ESP is excited to announce the first round of Data Collection Grants! Our aim is to support public goods and infrastructure that support the extraordinary amount of data analysis in the Ethereum ecosystem.  \ud83d\udcca\ud83d\udcc9\ud83e\uddd1\u200d\ud83d\udcbb  To learn more and apply, please visit: https://esp.ethereum.foundation/data-collection-grants",
+        "user": {
+            "name": "EF Ecosystem Support Program",
+            "username": "@EF_ESP",
+            "profile_id": "1245348179660472320",
+            "avatar": "https://pbs.twimg.com/profile_images/1245348179660472320/iFL_cwLb_bigger.jpg"
+        },
+        "date": "Sep 26, 2023 \u00b7 4:57 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 154,
+            "retweets": 523,
+            "quotes": 13,
+            "likes": 591
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1704519230178070592#m",
+        "text": "We're still living off all the Translatathon magic \ud83e\ude84\u2728   Check it out @LKropec's article about how was the first Ethereum.org online translation competition & the full list of prize winners on @ethereum's blog:  https://blog.ethereum.org/2023/09/20/ethereum-org-translatathon",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Sep 20, 2023 \u00b7 3:33 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 184,
+            "retweets": 424,
+            "quotes": 7,
+            "likes": 492
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/erc4337/status/1704478188896923663#m",
+        "text": "The @ethereum Foundation's ERC-4337 team is excited to announce our first official conference during @EFDevconnect - 4337: The Gathering!  Co-hosted with @AlchemyPlatform @etherspot and @BloctoApp  \ud83d\udccd November 19, Istanbul  https://lu.ma/4337TheGathering",
+        "user": {
+            "name": "erc4337",
+            "username": "@erc4337",
+            "profile_id": "1628815896419467264",
+            "avatar": "https://pbs.twimg.com/profile_images/1628815896419467264/iWKzlbnE_bigger.jpg"
+        },
+        "date": "Sep 20, 2023 \u00b7 12:50 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 140,
+            "retweets": 389,
+            "quotes": 17,
+            "likes": 535
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/asanso/status/1703805870704836854#m",
+        "text": "About VDF @ethereum  ! Read carefully!! https://ethresear.ch/t/statement-regarding-the-public-report-on-the-analysis-of-minroot/16670",
+        "user": {
+            "name": "asanso.eth \ud83e\udd87\ud83d\udd0a\ud83d\udc3c\ud83e\uddf1\ud83d\udd25",
+            "username": "@asanso",
+            "profile_id": "1416008094337978368",
+            "avatar": "https://pbs.twimg.com/profile_images/1416008094337978368/rGtv8Gqc_bigger.jpg"
+        },
+        "date": "Sep 18, 2023 \u00b7 4:19 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 102,
+            "retweets": 272,
+            "quotes": 7,
+            "likes": 336
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1703796509404479936#m",
+        "text": "\ud83d\ude80 Devconnect September Updates \ud83d\ude80  Discover the latest updates on our blog, including:  \ud83e\udd84 Reasons why you should attend Devconnect \ud83e\udd84 A list of all events with open ticket sales and applications \ud83e\udd84 All current updates  Enjoy the read! https://blog.ethereum.org/2023/09/18/devconnect-ist-updates",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Sep 18, 2023 \u00b7 3:41 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 145,
+            "retweets": 250,
+            "quotes": 6,
+            "likes": 356
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/go_ethereum/status/1701554416485056533#m",
+        "text": "It's been 6 years in the making, but Geth v1.13.0 - with proper state pruning - is *finally* released!  Faster, lighter and more robust than ever! Opt in via `--state.scheme=path` (needs a resync (keep ancients)).  https://blog.ethereum.org/2023/09/12/geth-v1-13-0",
+        "user": {
+            "name": "Go Ethereum",
+            "username": "@go_ethereum",
+            "profile_id": "1605238709451898881",
+            "avatar": "https://pbs.twimg.com/profile_images/1605238709451898881/Kl-bliNn_bigger.jpg"
+        },
+        "date": "Sep 12, 2023 \u00b7 11:12 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 680,
+            "retweets": 494,
+            "quotes": 29,
+            "likes": 821
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/erc4337/status/1699391370182701297#m",
+        "text": "We are delighted to announce the recipients of the @ethereum #AccountAbstraction grant round!  A total of 18 teams have already begun building a variety of projects focused on ERC-4337.  https://mirror.xyz/erc4337official.eth/hRn_41cef8oKn44ZncN9pXvY3VID6LZOtpLlktXYtmA",
+        "user": {
+            "name": "erc4337",
+            "username": "@erc4337",
+            "profile_id": "1628815896419467264",
+            "avatar": "https://pbs.twimg.com/profile_images/1628815896419467264/iWKzlbnE_bigger.jpg"
+        },
+        "date": "Sep 6, 2023 \u00b7 11:57 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 518,
+            "retweets": 650,
+            "quotes": 62,
+            "likes": 1008
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/_SamWilsn_/status/1696584700511309989#m",
+        "text": "After at least a year of development, we're pleased to announce the \"official\" release of the Ethereum Execution Layer Specification (or EELS):  https://blog.ethereum.org/2023/08/29/eel-spec  Big thanks to @guruka_math, @peter_t_davies, and everyone else who has contributed!",
+        "user": {
+            "name": "Sam Wilson \u00b7 samwilsn.eth",
+            "username": "@_SamWilsn_",
+            "profile_id": "1434112869977759748",
+            "avatar": "https://pbs.twimg.com/profile_images/1434112869977759748/cfTpPYeQ_bigger.png"
+        },
+        "date": "Aug 29, 2023 \u00b7 6:04 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 282,
+            "retweets": 599,
+            "quotes": 39,
+            "likes": 928
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1693935301255995466#m",
+        "text": "\ud83d\udce2 gm Ethereum journalists, and podcasters!  Deliver something new and meaningful.  Don't miss the significant event this year for connecting with the innovators building Ethereum - don't miss @EFDevconnect  You can inquire about a Cowork press pass here\ud83d\udc47 https://forms.gle/se7hd5Sz5x8Lkoj87",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Aug 22, 2023 \u00b7 10:37 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 512,
+            "retweets": 1099,
+            "quotes": 40,
+            "likes": 958
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F4IRLUVbIAA7ONg.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TheGivingBlock/status/1691474911569616896#m",
+        "text": "GM friends. Maui urgently needs our help recovering from devastating wildfires.  Our Maui Emergency Response Fund is now live\u2014with a $500,000 donation match offer.  You can help with a crypto, stock, DAF or card donation. https://thegivingblock.com/campaigns/maui-fund/",
+        "user": {
+            "name": "The Giving Block",
+            "username": "@TheGivingBlock",
+            "profile_id": "1519765300094418949",
+            "avatar": "https://pbs.twimg.com/profile_images/1519765300094418949/6yfhVEAZ_bigger.png"
+        },
+        "date": "Aug 15, 2023 \u00b7 3:40 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 474,
+            "retweets": 616,
+            "quotes": 32,
+            "likes": 684
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EF_ESP/status/1691467351622107137#m",
+        "text": "Time to round up all the projects that received funding last quarter \ud83e\udd20 Read all about \u2018em in our Allocation Update: Q2 2023 blogpost!     https://blog.ethereum.org/2023/08/15/allocation-update-q2-23",
+        "user": {
+            "name": "EF Ecosystem Support Program",
+            "username": "@EF_ESP",
+            "profile_id": "1245348179660472320",
+            "avatar": "https://pbs.twimg.com/profile_images/1245348179660472320/iFL_cwLb_bigger.jpg"
+        },
+        "date": "Aug 15, 2023 \u00b7 3:10 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 278,
+            "retweets": 533,
+            "quotes": 18,
+            "likes": 568
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1691175236765380608#m",
+        "text": "\u23f0 LAST CALL to join Ethereum.org 's Translatathon! \u23f0  \ud83d\uddd3\ufe0f 8-days online competition \ud83d\udde3\ufe0f +60 languages you can choose to translate \ud83e\udd1d Join individually or as a team \ud83c\udf81 $30K prize pool \ud83d\ude80 Help scaling Ethereum, one word at a time  Apply today \ud83d\udc47 https://ethereum.org/en/contributing/translation-program/translatathon",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Aug 14, 2023 \u00b7 7:49 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 210,
+            "retweets": 446,
+            "quotes": 8,
+            "likes": 448
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1688942888334540800#m",
+        "text": "Hi everyone, it's happening! Ticket sales for the Devconnect Cowork in Istanbul are now open! \ud83e\udd73  A few things for you to do:  \ud83c\udf9fSnag your Cowork ticket! \u2708\ufe0fPlan your trip to Istanbul \ud83d\udc85 Check the new website \ud83d\udcaaApply as a volunteer  \ud83d\udcd3Read all info here: https://blog.ethereum.org/2023/08/08/devconnect-ist-cowork-tickets",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Aug 8, 2023 \u00b7 3:58 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 269,
+            "retweets": 454,
+            "quotes": 35,
+            "likes": 591
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1688822903414910976#m",
+        "text": "A little over a week until the translatathon begins \ud83d\udc40  Come help translate Ethereum and win prizes \ud83c\udf81\ud83d\udc47  https://ethereum.org/en/contributing/translation-program/translatathon/",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Aug 8, 2023 \u00b7 8:02 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 182,
+            "retweets": 381,
+            "quotes": 12,
+            "likes": 510
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/dannyryan/status/1688644951230267392#m",
+        "text": "Any single actor, entity, or protocol exceeding key thresholds - 1/3 being  critical - is a threat to Ethereum's security, neutrality, and legitimacy   There are dozens of great solutions out there. Protect your capital by staking with a minority solution  https://github.com/djrtwo/writing/blob/main/docs/2022-05-30_the-risks-of-lsd.md",
+        "user": {
+            "name": "dannyryan",
+            "username": "@dannyryan",
+            "profile_id": "869016575839539200",
+            "avatar": "https://pbs.twimg.com/profile_images/869016575839539200/Eh7zVsBa_bigger.jpg"
+        },
+        "date": "Aug 7, 2023 \u00b7 8:15 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 90,
+            "retweets": 294,
+            "quotes": 27,
+            "likes": 606
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFNextBillion/status/1688511519967916032#m",
+        "text": "At long last, we are proud to announce the third cohort of the Next Billion Fellowship! blog.ethereum.org/2023/08/07\u2026 \ud83c\udf89 Keep an eye out for their stories, and connect with the Fellows and Team Next Billion in Istanbul at @EFDevconnect \ud83d\ude4c\ud83c\uddf9\ud83c\uddf7",
+        "user": {
+            "name": "EF Next Billion",
+            "username": "@EFNextBillion",
+            "profile_id": "1545111638621265922",
+            "avatar": "https://pbs.twimg.com/profile_images/1545111638621265922/DGkjt4Gy_bigger.jpg"
+        },
+        "date": "Aug 7, 2023 \u00b7 11:24 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "http://blog.ethereum.org/2023/08/07/nb-fellows-cohort-3",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 126,
+            "retweets": 251,
+            "quotes": 14,
+            "likes": 314
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/trent_vanepps/status/1687539720144748558#m",
+        "text": "The KZG Ceremony: Special Contributions post is now live! \ud83d\udd6f\ufe0f\ud83d\udd6f\ufe0f\ud83d\udd6f\ufe0f  Thanks to everyone from the community who participated in this part of the project \ud83d\ude4f  https://blog.ethereum.org/2023/08/02/kzg-special-contributions",
+        "user": {
+            "name": "trent.eth",
+            "username": "@trent_vanepps",
+            "profile_id": "1695072606045515777",
+            "avatar": "https://pbs.twimg.com/profile_images/1695072606045515777/97BhkqE6_bigger.jpg"
+        },
+        "date": "Aug 4, 2023 \u00b7 7:03 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 170,
+            "retweets": 258,
+            "quotes": 14,
+            "likes": 393
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1686377458529075200#m",
+        "text": "It's time to announce our first Ethereum.org Translatathon! \ud83c\udf89  Ethereum.org 's Translatathon is a collaborative hackathon-style online event where participants can compete for prizes by translating our website into different languages.  Keep reading  \ud83e\uddf5 \ud83d\udc47",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Aug 1, 2023 \u00b7 2:04 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 294,
+            "retweets": 405,
+            "quotes": 21,
+            "likes": 482
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": [
+            "https://video.twimg.com/tweet_video/F2c3WxWbsAA6W7g.mp4"
+        ]
+    },
+    {
+        "link": "https://twitter.com/EFNextBillion/status/1682238977670287365#m",
+        "text": "\ud83d\udea8Only 3 days left to apply to the Devconnect Scholars Program!   Apply here by Sunday, July 23rd: https://devconnectscholars.paperform.co  See more here: https://blog.ethereum.org/2023/06/26/devconnect-instanbul-scholars",
+        "user": {
+            "name": "EF Next Billion",
+            "username": "@EFNextBillion",
+            "profile_id": "1545111638621265922",
+            "avatar": "https://pbs.twimg.com/profile_images/1545111638621265922/DGkjt4Gy_bigger.jpg"
+        },
+        "date": "Jul 21, 2023 \u00b7 4:00 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 822,
+            "retweets": 565,
+            "quotes": 16,
+            "likes": 571
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/dankrad/status/1680542923669094400#m",
+        "text": "This is great! Celo is showing the way forward.  We need to make sure that Ethereum will provide a cheap and secure data availability layer, so chains like Celo can use native data availability asap.",
+        "user": {
+            "name": "Dankrad Feist",
+            "username": "@dankrad",
+            "profile_id": "1115816977061351424",
+            "avatar": "https://pbs.twimg.com/profile_images/1115816977061351424/HdvT_PLp_bigger.png"
+        },
+        "date": "Jul 16, 2023 \u00b7 11:40 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {
+            "link": "https://twitter.com/marek_/status/1680534592057475073#m",
+            "text": "After many months of research, I'm excited to share cLabs' proposal for turning Celo into an Ethereum L2!   This is the start of Celo's return home to Ethereum!",
+            "user": {
+                "name": "Marek | Celo \ud83d\udcf1\ud83d\udc77",
+                "username": "@marek_",
+                "profile_id": "1786269829755969536",
+                "avatar": "https://pbs.twimg.com/profile_images/1786269829755969536/csfYiXfm_mini.jpg"
+            },
+            "date": "Jul 16, 2023 \u00b7 11:07 AM UTC",
+            "pictures": [],
+            "videos": [],
+            "gifs": []
+        },
+        "stats": {
+            "comments": 247,
+            "retweets": 295,
+            "quotes": 8,
+            "likes": 570
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1681265326183395329#m",
+        "text": "\ud83d\udc40\ud83d\udc47",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Jul 18, 2023 \u00b7 11:31 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {
+            "link": "https://twitter.com/bDAOtranslators/status/1681232490558640128#m",
+            "text": "GM folks! \ud83d\udd34 Guess what? Exciting news!  Calling all language enthusiasts! The Ethereum.org translation bounty is now live on Dework! \ud83d\ude80  1/6",
+            "user": {
+                "name": "Bankless Translators",
+                "username": "@bDAOtranslators",
+                "profile_id": "1661002339816177666",
+                "avatar": "https://pbs.twimg.com/profile_images/1661002339816177666/NgJfIcJo_mini.jpg"
+            },
+            "date": "Jul 18, 2023 \u00b7 9:20 AM UTC",
+            "pictures": [
+                "https://pbs.twimg.com/media/F1TwCGnWcAADVB5.jpg"
+            ],
+            "videos": [],
+            "gifs": []
+        },
+        "stats": {
+            "comments": 368,
+            "retweets": 292,
+            "quotes": 4,
+            "likes": 316
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/powdr_labs/status/1679822931340173313#m",
+        "text": "Introducing \ud835\udc5d\ud835\udc5c\ud835\udc64\ud835\udc51\ud835\udc5f, a modular stack for zkVMs!  Earlier this year, @ethchris, @vanderkriek & @leonardoalt started the \ud835\udc5d\ud835\udc5c\ud835\udc64\ud835\udc51\ud835\udc5f project to improve zkVM tooling. With the continued support from the @ethereum Foundation, the team will soon become \ud835\udc5d\ud835\udc5c\ud835\udc64\ud835\udc51\ud835\udc5f \ud835\udc59\ud835\udc4e\ud835\udc4f\ud835\udc60.  More \u2193",
+        "user": {
+            "name": "powdr labs",
+            "username": "@powdr_labs",
+            "profile_id": "1679768781898276864",
+            "avatar": "https://pbs.twimg.com/profile_images/1679768781898276864/jv-88AqV_bigger.jpg"
+        },
+        "date": "Jul 14, 2023 \u00b7 11:59 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 280,
+            "retweets": 313,
+            "quotes": 34,
+            "likes": 497
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/F0_tfwdWIAEd-8e.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1679181591438819333#m",
+        "text": "a Q3 roadmap appears \ud83d\udc40  https://github.com/ethereum/ethereum-org-website/issues/10666",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Jul 12, 2023 \u00b7 5:31 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 278,
+            "retweets": 288,
+            "quotes": 9,
+            "likes": 333
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/icebearhww/status/1679105875154468864#m",
+        "text": "\ud83d\udce3 The 10th Ethereum Foundation Research Reddit AMA is starting in just 30 minutes, at 1PM UTC today!  Dive deep into discussions about Ethereum protocol, cryptography, and economics. Join the conversation and get your questions answered! \ud83e\udef0  #Ethereum https://teddit.net/r/ethereum/comments/14vpyb3/ama_we_are_ef_research_pt_10_12_july_2023/",
+        "user": {
+            "name": "Hsiao-Wei Wang",
+            "username": "@icebearhww",
+            "profile_id": "1633730071398846464",
+            "avatar": "https://pbs.twimg.com/profile_images/1633730071398846464/4a-Pex2Y_bigger.jpg"
+        },
+        "date": "Jul 12, 2023 \u00b7 12:30 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 174,
+            "retweets": 234,
+            "quotes": 5,
+            "likes": 249
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/drakefjustin/status/1678351493236154368#m",
+        "text": "the Ethereum Foundation research team will host a Reddit AMA on Jul 12 at 1pm UTC  https://teddit.net/r/ethereum/comments/14vpyb3/ama_we_are_ef_research_pt_10_12_july_2023/",
+        "user": {
+            "name": "Justin \u00d0rake \ud83e\udd87\ud83d\udd0a",
+            "username": "@drakefjustin",
+            "profile_id": "632301429424816128",
+            "avatar": "https://pbs.twimg.com/profile_images/632301429424816128/OwT0LdXU_bigger.jpg"
+        },
+        "date": "Jul 10, 2023 \u00b7 10:32 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 307,
+            "retweets": 698,
+            "quotes": 9,
+            "likes": 806
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/CarlBeek/status/1675839250225405952#m",
+        "text": "\ud83d\udd6f\ufe0fannouncing the final round of of contributions to the KZG ceremony. \ud83d\udd6f\ufe0f  if you haven't contributed yet, now's the time: - the minimum number of transactions has been lowered to 8 - the blacklist was just cleared - contribtutions will close 23-07-23  ceremony.ethereum.org",
+        "user": {
+            "name": "carlbeek.eth",
+            "username": "@CarlBeek",
+            "profile_id": "1628382245223374852",
+            "avatar": "https://pbs.twimg.com/profile_images/1628382245223374852/RwKWATtt_bigger.jpg"
+        },
+        "date": "Jul 3, 2023 \u00b7 12:09 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "http://ceremony.ethereum.org",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 377,
+            "retweets": 266,
+            "quotes": 17,
+            "likes": 363
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevcon/status/1674553371444015104#m",
+        "text": "\ud83d\udce2 The Road to Devcon 7 in Southeast Asia begins! \ud83d\udee3  Are you: \ud83c\udf0f Located in Southeast Asia, \ud83e\udd1d Driven by a community-focused spirit, \ud83e\uddd1\u200d\ud83c\udfeb Passionate about organizing educational Ethereum meetups?  Read on & find out about the Road To Devcon Grants round: blog.ethereum.org/2023/06/29\u2026",
+        "user": {
+            "name": "Deva the Devcon Unicorn",
+            "username": "@EFDevcon",
+            "profile_id": "1767609408458989568",
+            "avatar": "https://pbs.twimg.com/profile_images/1767609408458989568/vswkDJBl_bigger.jpg"
+        },
+        "date": "Jun 29, 2023 \u00b7 11:00 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 370,
+            "retweets": 342,
+            "quotes": 12,
+            "likes": 479
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/Fz01abVaQAEnBL4.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/Drigolvc/status/1674071929039523841#m",
+        "text": "\ud83c\udf93 The Ethereum Academic Grants Round 2023 is finalized. \ud83c\udf93  43 Projects with research teams from 21 countries were selected to receive over $2M in funding.  \ud83c\udf8a Congratulations to the grantees! \ud83c\udf8a  Find out more about their research in the blog:  https://blog.ethereum.org/2023/06/28/academic-grants-round-23",
+        "user": {
+            "name": "Rodrigo \ud83c\uddfb\ud83c\uddea",
+            "username": "@Drigolvc",
+            "profile_id": "1551586932949364742",
+            "avatar": "https://pbs.twimg.com/profile_images/1551586932949364742/RG4_lG9i_bigger.jpg"
+        },
+        "date": "Jun 28, 2023 \u00b7 3:07 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 204,
+            "retweets": 252,
+            "quotes": 8,
+            "likes": 301
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFNextBillion/status/1673385214746214402#m",
+        "text": "Announcing the Devconnect Scholars Program! \ud83d\udce3\ud83c\udf93  The Program will provide talented individuals from communities currently geographically & demographically underrepresented in Ethereum with financial support to attend Devconnect in Istanbul this November.  https://blog.ethereum.org/2023/06/26/devconnect-instanbul-scholars",
+        "user": {
+            "name": "EF Next Billion",
+            "username": "@EFNextBillion",
+            "profile_id": "1545111638621265922",
+            "avatar": "https://pbs.twimg.com/profile_images/1545111638621265922/DGkjt4Gy_bigger.jpg"
+        },
+        "date": "Jun 26, 2023 \u00b7 5:38 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 275,
+            "retweets": 312,
+            "quotes": 30,
+            "likes": 451
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EthereumOnARM/status/1669257232779825153#m",
+        "text": "This is an #Ethereum Archive Node (@erigon) running on a <$500  ARM board using 10w of power.  In 2023 you can run an archive node on commodity hardware because Ethereum has always prioritized decentralization.  Hardware breakdown and info \u2b07\ufe0f",
+        "user": {
+            "name": "Ethereum on ARM (and RISC-V) \ud83e\udd87\ud83d\udd0a\ud83d\udc3c\ud83d\udc49\ud83d\udc48\ud83d\udc3c",
+            "username": "@EthereumOnARM",
+            "profile_id": "1221153512505192448",
+            "avatar": "https://pbs.twimg.com/profile_images/1221153512505192448/N-ve4m9F_bigger.jpg"
+        },
+        "date": "Jun 15, 2023 \u00b7 8:15 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 419,
+            "retweets": 485,
+            "quotes": 37,
+            "likes": 715
+        },
+        "pictures": [],
+        "videos": [
+            "https://video.twimg.com/ext_tw_video/1669254845184843777/pu/pl/00E5E-Ap-YyUk4Ys.m3u8?tag=12&container=cmaf"
+        ],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TMIYChao/status/1669282800539783168#m",
+        "text": "The deadline for EPF applications was just extended to June 18, Sunday! You can take a time during the weekend to submit it and if you are still not sure about the program details, checkout the town hall call recording. Everything in the blog post: https://blog.ethereum.org/2023/06/01/ethereum-protocol-fellowship-fourth-apps-open",
+        "user": {
+            "name": "Mario Havel",
+            "username": "@TMIYChao",
+            "profile_id": "1471102487365136384",
+            "avatar": "https://pbs.twimg.com/profile_images/1471102487365136384/3FeDe54c_bigger.jpg"
+        },
+        "date": "Jun 15, 2023 \u00b7 9:56 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 255,
+            "retweets": 239,
+            "quotes": 7,
+            "likes": 310
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EFDevconnect/status/1669370842118225920#m",
+        "text": "\ud83e\udd73 We're excited to share a first glimpse into the Devconnect schedule!  It's a work in progress & we'll see more events to come! Which events do you wanna attend?  Remember, each event is independently hosted and ticketed. Ticket info soon available here: https://devconnect.org/schedule",
+        "user": {
+            "name": "Devconnect.eth",
+            "username": "@EFDevconnect",
+            "profile_id": "1653427962350370816",
+            "avatar": "https://pbs.twimg.com/profile_images/1653427962350370816/GiJ0Wh-h_bigger.jpg"
+        },
+        "date": "Jun 15, 2023 \u00b7 3:46 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 109,
+            "retweets": 197,
+            "quotes": 8,
+            "likes": 317
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/FyrL7iZakAUPONj.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EF_ESP/status/1669361954736201734#m",
+        "text": "New year, new grants \u2728  Check out our latest Allocation Update blog post to learn more about the projects that received funding in Q1!  https://blog.ethereum.org/2023/06/15/allocation-update-q1-23",
+        "user": {
+            "name": "EF Ecosystem Support Program",
+            "username": "@EF_ESP",
+            "profile_id": "1245348179660472320",
+            "avatar": "https://pbs.twimg.com/profile_images/1245348179660472320/iFL_cwLb_bigger.jpg"
+        },
+        "date": "Jun 15, 2023 \u00b7 3:11 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 145,
+            "retweets": 196,
+            "quotes": 15,
+            "likes": 267
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ethdotorg/status/1668400232562929664#m",
+        "text": "Got questions? Better have the answers too... \ud83e\uddd0  We're delighted to announce that all quizzes on Ethereum.org are now available at the Quiz Hub - test your knowledge, track your progress & compare results with your frens, all in one place \ud83c\udfae  ethereum.org/en/quizzes",
+        "user": {
+            "name": "ethereum.org",
+            "username": "@ethdotorg",
+            "profile_id": "1319701954520600577",
+            "avatar": "https://pbs.twimg.com/profile_images/1319701954520600577/yPSMZJuz_bigger.jpg"
+        },
+        "date": "Jun 12, 2023 \u00b7 11:29 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "http://ethereum.org/en/quizzes",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 86,
+            "retweets": 164,
+            "quotes": 4,
+            "likes": 177
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TheDRC_/status/1667190418423836678#m",
+        "text": "How do we mitigate our Big Tech problem?  By enhancing & supporting equitably owned and governed alternatives.  We describe how in our paper published with the Harvard @belfercenter & @TAPP_Project by @c_spelliscy @sarahhubba @samuelvancelaw & @ntnsndr.\ud83e\uddf5  https://www.belfercenter.org/publication/toward-equitable-ownership-and-governance-digital-public-sphere",
+        "user": {
+            "name": "Decentralization Research Center",
+            "username": "@TheDRC_",
+            "profile_id": "1519720826635005952",
+            "avatar": "https://pbs.twimg.com/profile_images/1519720826635005952/lBqR0CQg_bigger.jpg"
+        },
+        "date": "Jun 9, 2023 \u00b7 3:22 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 151,
+            "retweets": 242,
+            "quotes": 23,
+            "likes": 272
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ETHGlobal/status/1667203734844108801#m",
+        "text": "\ud83c\udf41 The countdown is on!   Hackers, ETHGlobal Waterloo is officially only two weeks away!  Now is the time to finalize your submission, travel plans and start brainstorming your big ideas. Keen to see what you can expect?   \ud83d\udc49  https://waterloo.ethglobal.com/  \ud83d\udc48  \ud83e\uddf5 Here's the tl;dr \u2728",
+        "user": {
+            "name": "ETHGlobal",
+            "username": "@ETHGlobal",
+            "profile_id": "1770009360011333632",
+            "avatar": "https://pbs.twimg.com/profile_images/1770009360011333632/H5BFG6-M_bigger.jpg"
+        },
+        "date": "Jun 9, 2023 \u00b7 4:15 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 305,
+            "retweets": 268,
+            "quotes": 9,
+            "likes": 332
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/EF_ESP/status/1666533500260843522#m",
+        "text": "\ud83c\udf89\ud83c\udf89\ud83c\udf89\ud83c\udf89 ESP is hosting a new round to encourage the diversification of Ethereum nodes and their use cases.  Looking for creative and interesting outputs for the Ethereum community by running a node using @dappnode or a custom build! https://esp.ethereum.foundation/run-a-node-grants  Deadline: June 20!",
+        "user": {
+            "name": "EF Ecosystem Support Program",
+            "username": "@EF_ESP",
+            "profile_id": "1245348179660472320",
+            "avatar": "https://pbs.twimg.com/profile_images/1245348179660472320/iFL_cwLb_bigger.jpg"
+        },
+        "date": "Jun 7, 2023 \u00b7 7:52 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 1713,
+            "retweets": 252,
+            "quotes": 14,
+            "likes": 354
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/TMIYChao/status/1666385322911858688#m",
+        "text": "Still not sure about applying? You have time till June 16 and on June 12, 4:30PM UTC, we will hold a town hall to answer all your questions about EPF! Join the call on Monday to learn about the program structure, goals and even discuss potential projects\ud83d\udd25 https://blog.ethereum.org/2023/06/01/ethereum-protocol-fellowship-fourth-apps-open",
+        "user": {
+            "name": "Mario Havel",
+            "username": "@TMIYChao",
+            "profile_id": "1471102487365136384",
+            "avatar": "https://pbs.twimg.com/profile_images/1471102487365136384/3FeDe54c_bigger.jpg"
+        },
+        "date": "Jun 7, 2023 \u00b7 10:03 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {
+            "link": "https://twitter.com/TMIYChao/status/1664287479145410562#m",
+            "text": "The fourth cohort of Ethereum Protocol Fellowship is here!  If you are you interested in Ethereum core development and want to become ready to be a contributor, don't miss the EPF application: https://blog.ethereum.org/2023/06/01/ethereum-protocol-fellowship-fourth-apps-open",
+            "user": {
+                "name": "Mario Havel",
+                "username": "@TMIYChao",
+                "profile_id": "1471102487365136384",
+                "avatar": "https://pbs.twimg.com/profile_images/1471102487365136384/3FeDe54c_mini.jpg"
+            },
+            "date": "Jun 1, 2023 \u00b7 3:07 PM UTC",
+            "pictures": [],
+            "videos": [],
+            "gifs": []
+        },
+        "stats": {
+            "comments": 491,
+            "retweets": 112,
+            "quotes": 5,
+            "likes": 162
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/joshdavislight/status/1664289815473557504#m",
+        "text": "\ud83c\udf89 Big news, #Ethereum community! Applications for the 4th cohort of the Ethereum Protocol Fellowship (EPF) are now OPEN. The EPF is a unique initiative designed to foster the next generation of Ethereum core contributors. More info and how to apply \ud83d\udc47  https://blog.ethereum.org/2023/06/01/ethereum-protocol-fellowship-fourth-apps-open",
+        "user": {
+            "name": "Josh Davis \u2600\ufe0f",
+            "username": "@joshdavislight",
+            "profile_id": "1653067275329736704",
+            "avatar": "https://pbs.twimg.com/profile_images/1653067275329736704/UeLUlCOC_bigger.jpg"
+        },
+        "date": "Jun 1, 2023 \u00b7 3:16 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 1595,
+            "retweets": 253,
+            "quotes": 11,
+            "likes": 389
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/dannyryan/status/1664018289021063168#m",
+        "text": "Repost -- LSDs above critical consensus thresholds pose risks to the Ethereum protocol  With withdrawals enabled, it's time to reshuffle  https://github.com/djrtwo/writing/blob/main/docs/2022-05-30_the-risks-of-lsd.md",
+        "user": {
+            "name": "dannyryan",
+            "username": "@dannyryan",
+            "profile_id": "869016575839539200",
+            "avatar": "https://pbs.twimg.com/profile_images/869016575839539200/Eh7zVsBa_bigger.jpg"
+        },
+        "date": "May 31, 2023 \u00b7 9:17 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 585,
+            "retweets": 230,
+            "quotes": 33,
+            "likes": 447
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/CarlBeek/status/1662456925374521344#m",
+        "text": "\ud83d\udd6f\ufe0f100k! \ud83d\udd6f\ufe0f  the KZG ceremony has hit 100k contributions! this is more than 10x my goal for this project.  i\u2019m humbled by everyone\u2019s willingness to participate, you\u2019ve been amazing!",
+        "user": {
+            "name": "carlbeek.eth",
+            "username": "@CarlBeek",
+            "profile_id": "1628382245223374852",
+            "avatar": "https://pbs.twimg.com/profile_images/1628382245223374852/RwKWATtt_bigger.jpg"
+        },
+        "date": "May 27, 2023 \u00b7 1:53 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 1593,
+            "retweets": 202,
+            "quotes": 8,
+            "likes": 436
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/FxI7wUaWYAYq5Qn.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/sinahab/status/1662068109539438592#m",
+        "text": "Here is my conversation with @AyaMiyagotchi.  We talk about Aya's philosophy in leading the Ethereum Foundation, Ethereum as an infinite garden, subtraction, diversity, building for the next billion, and more.  Links below.",
+        "user": {
+            "name": "Sina Habibian - sinahab.eth",
+            "username": "@sinahab",
+            "profile_id": "1729160358986727425",
+            "avatar": "https://pbs.twimg.com/profile_images/1729160358986727425/tCa0hUbK_bigger.jpg"
+        },
+        "date": "May 26, 2023 \u00b7 12:08 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 1056,
+            "retweets": 180,
+            "quotes": 8,
+            "likes": 266
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/FxDaINxacAEyJs-.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/CarlBeek/status/1661795909875924992#m",
+        "text": "\ud83d\udd6f\ufe0fto participate in the KZG ceremony, you now have to have sent only 16 transactions in the past\ud83d\udd6f\ufe0f  let's get to 100k contributions: ceremony.ethereum.org/",
+        "user": {
+            "name": "carlbeek.eth",
+            "username": "@CarlBeek",
+            "profile_id": "1628382245223374852",
+            "avatar": "https://pbs.twimg.com/profile_images/1628382245223374852/RwKWATtt_bigger.jpg"
+        },
+        "date": "May 25, 2023 \u00b7 6:06 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "http://ceremony.ethereum.org/",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 1728,
+            "retweets": 161,
+            "quotes": 6,
+            "likes": 229
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/ETHGlobal/status/1661462376565313536#m",
+        "text": "\ud83c\udf41 ETHGlobal Waterloo is in less than a month!   \ud83d\udcb8 $200,000 USD in prizes are available \ud83d\uddfa Meet builders from around the world \ud83e\uddba 24/7 mentorship  \ud83d\udcbb Hands-on workshops at the beginning  \ud83d\udc47 Apply now for a very special hackathon in the city we call home: https://ethglobal.com/events/waterloo2023",
+        "user": {
+            "name": "ETHGlobal",
+            "username": "@ETHGlobal",
+            "profile_id": "1770009360011333632",
+            "avatar": "https://pbs.twimg.com/profile_images/1770009360011333632/H5BFG6-M_bigger.jpg"
+        },
+        "date": "May 24, 2023 \u00b7 8:01 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 547,
+            "retweets": 210,
+            "quotes": 4,
+            "likes": 305
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/Fw6w_y0agAMCAvq.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/erc4337/status/1658861935226413058#m",
+        "text": "Are you ready for Paymasters?  Two huge announcements today \ud83e\udd2f  1. @visa showcased two ERC-4337 Paymasters, demonstrating both fully sponsored and ERC-20 txs  2. @pimlicoHQ launched its fully-audited and permissionless ERC-20 Paymaster",
+        "user": {
+            "name": "erc4337",
+            "username": "@erc4337",
+            "profile_id": "1628815896419467264",
+            "avatar": "https://pbs.twimg.com/profile_images/1628815896419467264/iWKzlbnE_bigger.jpg"
+        },
+        "date": "May 17, 2023 \u00b7 3:48 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 755,
+            "retweets": 260,
+            "quotes": 11,
+            "likes": 514
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/terencechain/status/1657053102321836032#m",
+        "text": "I developed a newfound appreciation for blockchain liveness (especially LMD-GHOST fork choice) since yesterday's incident. Ethereum didn't finalize for 3 epochs, but it kept going. Users were barely affected or noticed the finality gap.",
+        "user": {
+            "name": "terence.eth",
+            "username": "@terencechain",
+            "profile_id": "1767254738008240129",
+            "avatar": "https://pbs.twimg.com/profile_images/1767254738008240129/7hA2_fDm_bigger.jpg"
+        },
+        "date": "May 12, 2023 \u00b7 4:00 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 2256,
+            "retweets": 224,
+            "quotes": 9,
+            "likes": 370
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/superphiz/status/1657000847782338560#m",
+        "text": "The beacon chain did not \"halt\", to suggest that it did is willfully spreading misinformation. Finalization was delayed for 3 epochs (about 19 minutes), and was recovered after turbulence. End users would have no idea this happened and transactions continued normally.",
+        "user": {
+            "name": "superphiz.eth \ud83e\udd87\ud83d\udd0a\ud83d\udee1\ufe0f",
+            "username": "@superphiz",
+            "profile_id": "1516043447408513024",
+            "avatar": "https://pbs.twimg.com/profile_images/1516043447408513024/aYz5ndlh_bigger.jpg"
+        },
+        "date": "May 12, 2023 \u00b7 12:32 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 580,
+            "retweets": 172,
+            "quotes": 7,
+            "likes": 498
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/dannyryan/status/1657145341781655553#m",
+        "text": "client diversity ftw hard to imagine working on a system without it  not only does it bring an incredibly diverse set of characters to build, vet, and secure the specifications and implementations  but it literally saves the chain on days like today",
+        "user": {
+            "name": "dannyryan",
+            "username": "@dannyryan",
+            "profile_id": "869016575839539200",
+            "avatar": "https://pbs.twimg.com/profile_images/869016575839539200/Eh7zVsBa_bigger.jpg"
+        },
+        "date": "May 12, 2023 \u00b7 10:06 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 485,
+            "retweets": 189,
+            "quotes": 4,
+            "likes": 505
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/solidity_lang/status/1656342755776544768#m",
+        "text": "We just released Solidity 0.8.20! \ud83d\ude80 This latest version includes a range of improvements in the via-IR pipeline and improves the list of events exposed in the contract ABI, and, most importantly, support for Shanghai! \ud83d\udcd6: https://blog.soliditylang.org/2023/05/10/solidity-0.8.20-release-announcement/ \ud83d\udcbe: https://github.com/ethereum/solidity/releases/tag/v0.8.20",
+        "user": {
+            "name": "Solidity",
+            "username": "@solidity_lang",
+            "profile_id": "1240311693177167892",
+            "avatar": "https://pbs.twimg.com/profile_images/1240311693177167892/-5a2yoQp_bigger.jpg"
+        },
+        "date": "May 10, 2023 \u00b7 4:57 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 416,
+            "retweets": 226,
+            "quotes": 31,
+            "likes": 586
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/FvyCosQWYAAcc2m.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/joshdavislight/status/1656365631003041795#m",
+        "text": "We just released the recap of the third cohort of the Ethereum Protocol Fellowship plus a little teaser for what's coming next...  https://blog.ethereum.org/2023/05/10/ethereum-protocol-fellowship-third-recap",
+        "user": {
+            "name": "Josh Davis \u2600\ufe0f",
+            "username": "@joshdavislight",
+            "profile_id": "1653067275329736704",
+            "avatar": "https://pbs.twimg.com/profile_images/1653067275329736704/UeLUlCOC_bigger.jpg"
+        },
+        "date": "May 10, 2023 \u00b7 6:28 PM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 415,
+            "retweets": 142,
+            "quotes": 8,
+            "likes": 270
+        },
+        "pictures": [],
+        "videos": [],
+        "gifs": []
+    },
+    {
+        "link": "https://twitter.com/dirtynodes/status/1654083896554795008#m",
+        "text": "\ud83e\udd8f Rhino Review - Ethereum Staking Journal #6 is out!  \u26a1\ufe0fMaximize decentralization of the Ethereum network\u26a1\ufe0f   @ethStaker @coincashew_ @beaconcha_in @stereumdev @EthereumOnARM @Wenmerge2022 @EthKipu @ether_fi @swellnetworkio @gnosisbuilders   \ud83d\udd17 https://rhinoreview.substack.com/p/rhino-review-ethereum-staking-journal-093",
+        "user": {
+            "name": "Armog \ud83e\udd89\ud83c\udff4",
+            "username": "@dirtynodes",
+            "profile_id": "1634336099068723200",
+            "avatar": "https://pbs.twimg.com/profile_images/1634336099068723200/Ukhq_kXK_bigger.jpg"
+        },
+        "date": "May 4, 2023 \u00b7 11:21 AM UTC",
+        "is-retweet": true,
+        "is-pinned": false,
+        "external-link": "",
+        "replying-to": [],
+        "quoted-post": {},
+        "stats": {
+            "comments": 145,
+            "retweets": 376,
+            "quotes": 5,
+            "likes": 380
+        },
+        "pictures": [
+            "https://pbs.twimg.com/media/FvR8TWEWYAAeZrU.jpg"
+        ],
+        "videos": [],
+        "gifs": []
+    }
+]

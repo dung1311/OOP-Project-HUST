@@ -14,7 +14,6 @@ app = Flask(__name__)
 def hello():
     return "Hello"
 
-
 # Tạo một phiên bản của Nitter bên ngoài hàm crawl_tweet
 @lru_cache(maxsize=None)
 def create_nitter():
@@ -33,7 +32,7 @@ def crawl_tweet_route():
     scraper = create_nitter()
 
     list_tweet = scraper.get_tweets(
-        name, mode=mode, number=amount, max_retries=100)
+        name,mode=mode, number=amount, max_retries=100)
 
     with open('news-aggregator\\recourse\\data\\' + file_name + '.json', mode='w') as file_json:
         json.dump(list_tweet['tweets'], file_json)
@@ -41,24 +40,19 @@ def crawl_tweet_route():
     return jsonify({"message": "Success"})
 
 
-# @app.route('/draw_chart', methods=['POST'])
-# def draw_chart_route():
-#     data = request.json
-#     file_name = data['file_name']
-
-#     image_path = draw_table(file_name)
-
-#     return send_file(image_path, mimetype='image/png')
-
-
 @app.route('/draw_chart', methods=['POST'])
 def draw_chart_route():
-    file_name = request.json['file_name']  # Extract file_name from request data
-
+    
+    file_json_name = request.json['file_json_name']
+    file_pictures_name = request.json['file_pictures_name']
+    
     # Tạo đường dẫn tương đối đến thư mục chứa dữ liệu
     data_directory = 'news-aggregator/recourse/data'
-    file_path = os.path.join(data_directory, file_name + '.json')
-    image_path = os.path.join(data_directory, 'output.png')
+    file_path = os.path.join(data_directory, file_json_name + '.json')
+    image_path = os.path.join(data_directory, file_pictures_name + '.png')
+
+    # Chuyển đổi đường dẫn tương đối thành đường dẫn tuyệt đối
+    image_path_absolute = os.path.abspath(image_path)
 
     list_tweet = pd.read_json(path_or_buf=file_path)
     data_list = []
@@ -93,19 +87,13 @@ def draw_chart_route():
     plt.grid(True)
     plt.legend()
 
-    plt.savefig(image_path)
+    plt.savefig(image_path_absolute)
     plt.close()
 
-    return send_file(image_path, mimetype='image/png')
+    return send_file(image_path_absolute, mimetype='image/png')
 
 
 @app.route('/shutdown', methods=['POST'])
-def shutdown():
-    # Lệnh để đóng server Flask
-    shutdown_server()
-    return 'Server shutting down...'
-
-
 def shutdown_server():
     pid = os.getpid()
     os.kill(pid, signal.SIGTERM)

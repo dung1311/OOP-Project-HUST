@@ -5,7 +5,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class ServerUtility {
-    
+
     public static void openServer() throws IOException, InterruptedException {
         ProcessBuilder processBuilder = new ProcessBuilder("python",
                 "news-aggregator/src/main/java/huster/crawl/CrawlTweet.py");
