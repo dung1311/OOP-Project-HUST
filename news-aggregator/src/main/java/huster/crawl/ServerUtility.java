@@ -8,7 +8,7 @@ public class ServerUtility {
 
     public static void openServer() throws IOException, InterruptedException {
         ProcessBuilder processBuilder = new ProcessBuilder("python",
-                "news-aggregator/src/main/java/huster/crawl/CrawlTweet.py");
+                "news-aggregator/src/main/java/huster/crawl/TweetFlaskServer.py");
         processBuilder.inheritIO();
         Process process = processBuilder.start();
         process.waitFor();

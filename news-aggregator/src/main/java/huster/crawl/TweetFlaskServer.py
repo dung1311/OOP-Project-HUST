@@ -59,7 +59,7 @@ def draw_chart_route():
 
     for index, tweet in list_tweet.iterrows():
         try:
-            data = [tweet['date'], tweet['stats']['comments'], tweet['stats']['retweets'],
+            data = [tweet['PostingDate'], tweet['stats']['comments'], tweet['stats']['retweets'],
                     tweet['stats']['quotes'], tweet['stats']['likes']]
             data_list.append(data)
         except KeyError as e:
@@ -81,6 +81,7 @@ def draw_chart_route():
     ax.plot(data_list_pd['time'], data_list_pd['quote'],
             label='quote', marker='o')
 
+    
     plt.xlabel('Time')
     plt.ylabel('Count')
     plt.title('Tweet Stats over Time')

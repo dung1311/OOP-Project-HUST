@@ -1,11 +1,15 @@
 package huster.crawl;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -51,6 +55,24 @@ public class CrawTweet {
         }
     }
 
+    public static void replaceJsonFile(String fileJsonName) throws IOException {
+        JsonArray jsonArray = new JsonArray();
+        String dataPath = "news-aggregator\\recourse\\data\\" + fileJsonName + ".json";
+
+        BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath));
+        jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
+        bufferedReader.close();
+
+        String modifyString = jsonArray.toString();
+        modifyString = modifyString.replace("date", "PostingDate");
+        modifyString = modifyString.replace("text", "Content");
+        modifyString = modifyString.replace("link", "LinkTweet");
+
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(dataPath));
+        bufferedWriter.write(modifyString);
+        bufferedWriter.close();
+    }
+
     @SuppressWarnings("deprecation")
     public static void crawlTweet(TweetItem temp, String fileName) {
         crawlTweetFisrt(temp, fileName);
@@ -72,6 +94,8 @@ public class CrawTweet {
 
             } while (isEmptyArray);
 
+        replaceJsonFile(fileName);
+        
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,9 +103,9 @@ public class CrawTweet {
 
     public static void main(String[] args) {
 
-        String fileName = "ethJson";
-        TweetItem test = new TweetItem("ethereum", "user", "100");
-
-        crawlTweet(test, fileName);
+        String fileName = "chonLien";
+        TweetItem chonLien = new TweetItem("chien10042004", "user", "100");
+        crawlTweet(chonLien, fileName);
+        
     }
 }
