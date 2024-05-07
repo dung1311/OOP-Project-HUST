@@ -8,28 +8,32 @@ import com.google.gson.JsonObject;
 
 public class DrawTable {
 
-    public static void drawTable(String fileJsonName, String filePicturesName) throws IOException {
-        @SuppressWarnings("deprecation")
-        URL url = new URL("http://localhost:5000/draw_chart");
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("POST");
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setDoOutput(true);
+    public static void drawTable(String fileJsonName, String filePicturesName) {
+        try {
+            @SuppressWarnings("deprecation")
+            URL url = new URL("http://localhost:5000/draw_chart");
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.setRequestProperty("Content-Type", "application/json");
+            connection.setDoOutput(true);
 
-        JsonObject data = new JsonObject();
-        data.addProperty("file_json_name", fileJsonName);
-        data.addProperty("file_pictures_name", filePicturesName);
+            JsonObject data = new JsonObject();
+            data.addProperty("file_json_name", fileJsonName);
+            data.addProperty("file_pictures_name", filePicturesName);
 
-        OutputStream os = connection.getOutputStream();
-        os.write(data.toString().getBytes());
-        os.flush();
-        os.close();
+            OutputStream os = connection.getOutputStream();
+            os.write(data.toString().getBytes());
+            os.flush();
+            os.close();
 
-        connection.getResponseCode();
-        connection.disconnect();
+            connection.getResponseCode();
+            connection.disconnect();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         DrawTable.drawTable("chonLien", "chonLien");
     }
 }
