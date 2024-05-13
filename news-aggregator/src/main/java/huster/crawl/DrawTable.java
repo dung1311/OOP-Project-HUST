@@ -34,6 +34,6 @@ public class DrawTable {
     }
 
     public static void main(String[] args) {
-        DrawTable.drawTable("chonLien", "chonLien");
+        DrawTable.drawTable("test4", "test4");
     }
 }

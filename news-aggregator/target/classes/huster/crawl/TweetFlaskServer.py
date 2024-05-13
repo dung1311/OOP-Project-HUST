@@ -9,10 +9,6 @@ import os
 
 app = Flask(__name__)
 
-# Test
-@app.route("/hello")
-def hello():
-    return "Hello"
 
 # Tạo một phiên bản của Nitter bên ngoài hàm crawl_tweet
 @lru_cache(maxsize=None)
@@ -32,7 +28,7 @@ def crawl_tweet_route():
     scraper = create_nitter()
 
     list_tweet = scraper.get_tweets(
-        name,mode=mode, number=amount, max_retries=100)
+        name, mode=mode, number=amount, max_retries=100)
 
     with open('news-aggregator\\recourse\\data\\' + file_name + '.json', mode='w') as file_json:
         json.dump(list_tweet['tweets'], file_json)
@@ -42,10 +38,10 @@ def crawl_tweet_route():
 
 @app.route('/draw_chart', methods=['POST'])
 def draw_chart_route():
-    
+
     file_json_name = request.json['file_json_name']
     file_pictures_name = request.json['file_pictures_name']
-    
+
     # Tạo đường dẫn tương đối đến thư mục chứa dữ liệu
     data_directory = 'news-aggregator/recourse/data'
     file_path = os.path.join(data_directory, file_json_name + '.json')
@@ -81,7 +77,6 @@ def draw_chart_route():
     ax.plot(data_list_pd['time'], data_list_pd['quote'],
             label='quote', marker='o')
 
-    
     plt.xlabel('Time')
     plt.ylabel('Count')
     plt.title('Tweet Stats over Time')

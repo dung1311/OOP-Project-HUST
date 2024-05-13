@@ -33,7 +33,7 @@ public class CrawTweet {
             // Tạo một đối tượng JSON để đại diện cho dữ liệu cần gửi
             JsonObject data = new JsonObject();
             data.addProperty("name", temp.getName());
-            data.addProperty("mode", temp.getType());
+            data.addProperty("mode", "user");
             data.addProperty("amount", temp.getAmount());
             data.addProperty("file_name", fileName);
 
@@ -94,8 +94,8 @@ public class CrawTweet {
 
             } while (isEmptyArray);
 
-        replaceJsonFile(fileName);
-        
+            replaceJsonFile(fileName);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -103,9 +103,9 @@ public class CrawTweet {
 
     public static void main(String[] args) {
 
-        String fileName = "chonLien";
-        TweetItem chonLien = new TweetItem("chien10042004", "user", "100");
-        crawlTweet(chonLien, fileName);
-        
+        String fileName = "test4";
+        TweetItem bitcoin = new TweetItem("elonmusk", "300");
+        crawlTweet(bitcoin, fileName);
+
     }
 }
