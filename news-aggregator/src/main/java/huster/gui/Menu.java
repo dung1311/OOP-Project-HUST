@@ -132,8 +132,6 @@ public class Menu extends JFrame {
         });
         fullarticlePanel.add(seeMoreButton, BorderLayout.SOUTH);
 
-
-
         JScrollPane scrollPane_suggested = new JScrollPane(fullarticlePanel);
         scrollPane_suggested.setPreferredSize(new Dimension(1280, 800));
         scrollPane_suggested.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
@@ -173,6 +171,8 @@ public class Menu extends JFrame {
 
     }
     
+
+
 }
 
 //Class for generating Header
