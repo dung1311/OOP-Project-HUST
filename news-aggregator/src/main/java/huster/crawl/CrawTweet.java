@@ -2,82 +2,75 @@ package huster.crawl;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class CrawTweet {
+    private ServerClient serverClient;
 
-    public static void crawlTweetFisrt(TweetItem temp, String fileName) {
+    public CrawTweet(ServerClient serverClient) {
+        this.serverClient = serverClient;
+    }
+
+    public void crawlTweetFirst(TweetItem tweetItem, String fileJsonName) throws IOException {
+
+        JsonObject data = new JsonObject();
+        data.addProperty("name", tweetItem.getName());
+        data.addProperty("mode", "user");
+        data.addProperty("amount", tweetItem.getAmount());
+        data.addProperty("file_name", fileJsonName);
         try {
-            // Thiết lập yêu cầu HTTP
-            @SuppressWarnings("deprecation")
-            URL url = new URL("http://localhost:5000/crawl_tweet");
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            // Thiết lập phương thức yêu cầu là POST
-            connection.setRequestMethod("POST");
-            // Thiết lập tiêu đề yêu cầu để chỉ định kiểu dữ liệu truyền đi là JSON
-            connection.setRequestProperty("Content-Type", "application/json");
-            // Cho phép ghi dữ liệu đến máy chủ
-            connection.setDoOutput(true);
-
-            // Tạo một đối tượng JSON để đại diện cho dữ liệu cần gửi
-            JsonObject data = new JsonObject();
-            data.addProperty("name", temp.getName());
-            data.addProperty("mode", "user");
-            data.addProperty("amount", temp.getAmount());
-            data.addProperty("file_name", fileName);
-
-            // Mở một luồng đầu ra từ kết nối HTTP để gửi dữ liệu
-            OutputStream os = connection.getOutputStream();
-
-            // Ghi dữ liệu JSON đã tạo vào luồng đầu ra
-            os.write(data.toString().getBytes());
-            os.flush();
-            os.close();
-
-            // Nhận mã phản hồi từ server
-            connection.getResponseCode();
-            // Đóng kết nối
-            connection.disconnect();
-
+            serverClient.sendRequest("/crawl_tweet", data);
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        File file = new File("news-aggregator/recourse/data/" + fileJsonName + ".json");
+        if (!file.exists()) {
+            throw new IOException("File not created: " + fileJsonName + ".json");
         }
     }
 
     public static void replaceJsonFile(String fileJsonName) throws IOException {
-        JsonArray jsonArray = new JsonArray();
         String dataPath = "news-aggregator\\recourse\\data\\" + fileJsonName + ".json";
 
-        BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath));
-        jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
-        bufferedReader.close();
+        // Đọc dữ liệu JSON từ file và chuyển thành JsonArray
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath))) {
+            JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
 
-        String modifyString = jsonArray.toString();
-        modifyString = modifyString.replace("date", "PostingDate");
-        modifyString = modifyString.replace("text", "Content");
-        modifyString = modifyString.replace("link", "LinkTweet");
+            // Thực hiện thay đổi trên chuỗi JSON
+            String modifiedJsonString = jsonArray.toString();
+            modifiedJsonString = modifiedJsonString.replace("date", "PostingDate");
+            modifiedJsonString = modifiedJsonString.replace("text", "Content");
+            modifiedJsonString = modifiedJsonString.replace("link", "LinkTweet");
 
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(dataPath));
-        bufferedWriter.write(modifyString);
-        bufferedWriter.close();
+            // Sử dụng GsonBuilder để định dạng lại chuỗi JSON
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            jsonArray = new Gson().fromJson(modifiedJsonString, JsonArray.class);
+
+            // Ghi chuỗi JSON đã sửa đổi vào file với định dạng đẹp
+            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(dataPath))) {
+                gson.toJson(jsonArray, bufferedWriter);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @SuppressWarnings("deprecation")
-    public static void crawlTweet(TweetItem temp, String fileName) {
-        crawlTweetFisrt(temp, fileName);
-        boolean isEmptyArray = true;
+    public void crawlTweet(TweetItem tweetItem, String fileName) {
         try {
+            crawlTweetFirst(tweetItem, fileName);
+            boolean isEmptyArray = true;
+
             do {
                 JsonParser parser = new JsonParser();
                 JsonElement readJson = parser
@@ -89,7 +82,7 @@ public class CrawTweet {
                 }
 
                 if (isEmptyArray) {
-                    CrawTweet.crawlTweetFisrt(temp, fileName);
+                    crawlTweetFirst(tweetItem, fileName);
                 }
 
             } while (isEmptyArray);
@@ -99,13 +92,5 @@ public class CrawTweet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-
-        String fileName = "test4";
-        TweetItem bitcoin = new TweetItem("elonmusk", "300");
-        crawlTweet(bitcoin, fileName);
-
     }
 }

@@ -2,9 +2,9 @@ package huster.crawl;
 
 public class TweetItem {
     private String name;
-    private String amount;
+    private int amount;
 
-    public TweetItem(String name, String amount) {
+    public TweetItem(String name, int amount) {
         this.name = name;
         this.amount = amount;
     }
@@ -17,11 +17,11 @@ public class TweetItem {
         this.name = name;
     }
 
-    public String getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 

@@ -1,5 +1,187 @@
 [
   {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1790118678865838540#m",
+    "Content": "SpaceX’s mission is to extend consciousness to Mars and then the stars",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 13, 2024 · 8:35 PM UTC",
+    "is-retweet": false,
+    "is-pinned": true,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 11405,
+      "retweets": 13195,
+      "quotes": 1550,
+      "likes": 157441
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1790245005291913422#m",
+    "Content": "",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 14, 2024 · 4:57 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 6259,
+      "retweets": 17518,
+      "quotes": 1291,
+      "likes": 228110
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNg6WBLWMAAluok.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1790242290503749975#m",
+    "Content": "You can also support this platform by sharing 𝕏.com LinkTweets with your friends.",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 14, 2024 · 4:46 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 421,
+      "retweets": 670,
+      "quotes": 21,
+      "likes": 3573
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1781833985574010880/vid/avc1/742x720/EIR8Q3l7yfokSJ1c.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1790124424986849471#m",
+    "Content": "Truth is stranger \u0026 funnier than fiction 😂",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 13, 2024 · 8:58 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/Not_the_Bee/status/1790080764672872862#m",
+      "Content": "Pelosi says 2016 election was \"hijacked\" during Oxford Union debate with Mumford \u0026 Sons guitarist https://notthebee.com/article/pelosi-just-repeated-that-she-thinks-the-2016-election-was-hijacked-by-interrupting-an-oxford-debate https://notthebee.com/article/pelosi-just-repeated-that-she-thinks-the-2016-election-was-hijacked-by-interrupting-an-oxford-debate",
+      "user": {
+        "name": "Not the Bee",
+        "username": "@Not_the_Bee",
+        "profile_id": "1299007907623825411",
+        "avatar": "https://pbs.twimg.com/profile_images/1299007907623825411/Vo7e-cEQ_mini.jpg"
+      },
+      "PostingDate": "May 13, 2024 · 6:04 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 2619,
+      "retweets": 8876,
+      "quotes": 206,
+      "likes": 52863
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1790118216196329917#m",
+    "Content": "This sounds bad",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 13, 2024 · 8:33 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/Not_the_Bee/status/1790093402731925933#m",
+      "Content": "Investigative report exposes NGOs that have made BILLIONS on the border crisis since Biden took office https://notthebee.com/tf580 https://notthebee.com/tf580",
+      "user": {
+        "name": "Not the Bee",
+        "username": "@Not_the_Bee",
+        "profile_id": "1299007907623825411",
+        "avatar": "https://pbs.twimg.com/profile_images/1299007907623825411/Vo7e-cEQ_mini.jpg"
+      },
+      "PostingDate": "May 13, 2024 · 6:55 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 3859,
+      "retweets": 19679,
+      "quotes": 503,
+      "likes": 83670
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/ScarantinoX/status/1787686863379353684#m",
+    "Content": "This efficiency is NUTTY 🤯  Currently projecting ~365miles of range at highway speed (75mph). Destination is +100ft elevation from departing location.  The 2024 Model 3 Long Range is a roadtripping beast!  @Tesla",
+    "user": {
+      "name": "Joey",
+      "username": "@ScarantinoX",
+      "profile_id": "1785737852032331778",
+      "avatar": "https://pbs.twimg.com/profile_images/1785737852032331778/u1W92hn3_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 3:32 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 464,
+      "retweets": 1046,
+      "quotes": 32,
+      "likes": 6367
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GM8juVtb0AAWKRV.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
     "LinkTweet": "https://twitter.com/SpaceX/status/1789840066149261793#m",
     "Content": "Falcon 9 launches 23 @StarLinkTweet satellites to low-Earth orbit from Florida",
     "user": {
@@ -9,99 +191,22 @@
       "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
     },
     "PostingDate": "May 13, 2024 · 2:08 AM UTC",
-    "is-retweet": false,
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 316,
-      "retweets": 638,
-      "quotes": 43,
-      "likes": 5561
+      "comments": 1377,
+      "retweets": 2979,
+      "quotes": 107,
+      "likes": 20609
     },
     "pictures": [
       "https://pbs.twimg.com/media/GNbJvrDakAAc8ca.jpg",
       "https://pbs.twimg.com/media/GNbJ-37bsAAMDHz.jpg"
     ],
     "videos": [],
-    "gifs": []
-  },
-  {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1789838269418471902#m",
-    "Content": "All @StarLinkTweet satellites on-orbit weathered the geomagnetic storm and remain healthy",
-    "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
-    },
-    "PostingDate": "May 13, 2024 · 2:01 AM UTC",
-    "is-retweet": false,
-    "is-pinned": false,
-    "external-LinkTweet": "",
-    "replying-to": [],
-    "quoted-post": {},
-    "stats": {
-      "comments": 234,
-      "retweets": 631,
-      "quotes": 98,
-      "likes": 6257
-    },
-    "pictures": [],
-    "videos": [],
-    "gifs": []
-  },
-  {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1789837693024633307#m",
-    "Content": "Deployment of 23 @StarLinkTweet satellites confirmed",
-    "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
-    },
-    "PostingDate": "May 13, 2024 · 1:58 AM UTC",
-    "is-retweet": false,
-    "is-pinned": false,
-    "external-LinkTweet": "",
-    "replying-to": [],
-    "quoted-post": {},
-    "stats": {
-      "comments": 89,
-      "retweets": 190,
-      "quotes": 12,
-      "likes": 2167
-    },
-    "pictures": [],
-    "videos": [],
-    "gifs": []
-  },
-  {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1789823468877525336#m",
-    "Content": "Falcon 9 lands on the A Shortfall of Gravitas droneship",
-    "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
-    },
-    "PostingDate": "May 13, 2024 · 1:02 AM UTC",
-    "is-retweet": false,
-    "is-pinned": false,
-    "external-LinkTweet": "",
-    "replying-to": [],
-    "quoted-post": {},
-    "stats": {
-      "comments": 179,
-      "retweets": 509,
-      "quotes": 41,
-      "likes": 4674
-    },
-    "pictures": [],
-    "videos": [
-      "https://video.twimg.com/amplify_video/1789823402095853569/pl/BuKB4u92bQLMX9dh.m3u8?tag\u003d16\u0026container\u003dcmaf"
-    ],
     "gifs": []
   },
   {
@@ -114,68 +219,164 @@
       "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
     },
     "PostingDate": "May 13, 2024 · 12:54 AM UTC",
-    "is-retweet": false,
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 332,
-      "retweets": 919,
-      "quotes": 82,
-      "likes": 7657
+      "comments": 780,
+      "retweets": 3381,
+      "quotes": 147,
+      "likes": 22361
     },
     "pictures": [],
     "videos": [
-      "https://video.twimg.com/amplify_video/1789821399760351232/pl/NH798kfrBhBDuH7P.m3u8?tag\u003d16\u0026container\u003dcmaf"
+      "https://video.twimg.com/amplify_video/1789821399760351232/vid/avc1/1920x1080/ESgT1JbCXvF-bkdj.mp4?tag\u003d16"
     ],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1789819605944574006#m",
-    "Content": "Watch Falcon 9 launch 23 @StarLinkTweet satellites to orbit https://nitter.net/i/broadcasts/1dRKZEmEXOQxB",
+    "LinkTweet": "https://twitter.com/alx/status/1789733381237813365#m",
+    "Content": "Someone should tell Johnny McEntee to start posting on 𝕏 🤣",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "ALX 🇺🇸",
+      "username": "@alx",
+      "profile_id": "1780219882132631552",
+      "avatar": "https://pbs.twimg.com/profile_images/1780219882132631552/hnvZdZjK_bigger.jpg"
     },
-    "PostingDate": "May 13, 2024 · 12:47 AM UTC",
-    "is-retweet": false,
+    "PostingDate": "May 12, 2024 · 7:04 PM UTC",
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 190,
-      "retweets": 440,
-      "quotes": 43,
-      "likes": 3021
+      "comments": 1266,
+      "retweets": 6035,
+      "quotes": 365,
+      "likes": 24530
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1788973920348966912/pu/vid/avc1/540x960/pEaQ95c-6io55C3Z.mp4?tag\u003d12"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/NASA/status/1789731954423709711#m",
+    "Content": "Have you seen the aurora this weekend?  Follow @NASASun to learn more about how it happens—and keep an eye on @NOAA (and @NWSSWPC) for the latest aurora upPostingDates. We\u0027d love to see your favorite photos from the aurora, too!",
+    "user": {
+      "name": "NASA",
+      "username": "@NASA",
+      "profile_id": "1321163587679784960",
+      "avatar": "https://pbs.twimg.com/profile_images/1321163587679784960/0ZxKlEKB_bigger.jpg"
+    },
+    "PostingDate": "May 12, 2024 · 6:58 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 1790,
+      "retweets": 4273,
+      "quotes": 216,
+      "likes": 29254
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNZnuhrW4AEscf3.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789731229807333615#m",
+    "Content": "Yup",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 12, 2024 · 6:55 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/cb_doge/status/1789725388840538249#m",
+      "Content": "",
+      "user": {
+        "name": "DogeDesigner",
+        "username": "@cb_doge",
+        "profile_id": "1498070100393754625",
+        "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_mini.jpg"
+      },
+      "PostingDate": "May 12, 2024 · 6:32 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GNZhwAZX0AAxhN0.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 17062,
+      "retweets": 71438,
+      "quotes": 2423,
+      "likes": 445494
     },
     "pictures": [],
     "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1789812522440167713#m",
-    "Content": "Propellant load of Falcon 9 is underway ahead of tonight’s @StarLinkTweet launch from Florida",
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789678328875745575#m",
+    "Content": "",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
     },
-    "PostingDate": "May 13, 2024 · 12:18 AM UTC",
+    "PostingDate": "May 12, 2024 · 3:25 PM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 94,
-      "retweets": 217,
-      "quotes": 12,
-      "likes": 2316
+      "comments": 7054,
+      "retweets": 26125,
+      "quotes": 1666,
+      "likes": 189013
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1687053636105613313/vid/1080x1080/eR5ha-v_32wTVld_.mp4?tag\u003d16"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789676834420044102#m",
+    "Content": "🥰 Happy Mother’s Day 🥰",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 12, 2024 · 3:19 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 16475,
+      "retweets": 55077,
+      "quotes": 2505,
+      "likes": 750549
     },
     "pictures": [],
     "videos": [],
@@ -191,21 +392,152 @@
       "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
     },
     "PostingDate": "May 11, 2024 · 8:57 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 1794,
+      "retweets": 5195,
+      "quotes": 291,
+      "likes": 32211
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNU5VmJa0AAocqx.jpg",
+      "https://pbs.twimg.com/media/GNU5VniboAA3LRv.jpg",
+      "https://pbs.twimg.com/media/GNU5VmRa4AAgFJx.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789394404446282213#m",
+    "Content": "How the Federal Reserve works",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 11, 2024 · 8:37 PM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 1742,
-      "retweets": 4642,
-      "quotes": 285,
-      "likes": 29357
+      "comments": 12876,
+      "retweets": 76005,
+      "quotes": 4428,
+      "likes": 479663
     },
     "pictures": [
-      "https://pbs.twimg.com/media/GNU5VmJa0AAocqx.jpg",
-      "https://pbs.twimg.com/media/GNU5VniboAA3LRv.jpg",
-      "https://pbs.twimg.com/media/GNU5VmRa4AAgFJx.jpg"
+      "https://pbs.twimg.com/media/GNU0uk9bQAAdQPU.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789393397523915023#m",
+    "Content": "You really feel that bass",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 11, 2024 · 8:33 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 30662,
+      "retweets": 59375,
+      "quotes": 15771,
+      "likes": 726720
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNUzz9RaAAA3cM3.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/engineers_feed/status/1789342579118727452#m",
+    "Content": "The U.S. government has issued its first severe geomagnetic storm watch in nearly two decades, highlighting the risk from multiple earth-directed coronal mass ejections and extensive sunspots. https://worldofengineering.online/g5-solar-storm-threatens-communication-and-gps-systems/",
+    "user": {
+      "name": "World of Engineering",
+      "username": "@engineers_feed",
+      "profile_id": "1509808420030844929",
+      "avatar": "https://pbs.twimg.com/profile_images/1509808420030844929/ifEhyqHM_bigger.jpg"
+    },
+    "PostingDate": "May 11, 2024 · 5:11 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 578,
+      "retweets": 2629,
+      "quotes": 145,
+      "likes": 9318
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/XNews/status/1789057703609794627#m",
+    "Content": "x.com/i/article/178905300235…",
+    "user": {
+      "name": "News",
+      "username": "@XNews",
+      "profile_id": "1683507244741083137",
+      "avatar": "https://pbs.twimg.com/profile_images/1683507244741083137/tcy3kQbC_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 10:19 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 289,
+      "retweets": 872,
+      "quotes": 67,
+      "likes": 4987
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789374509285269663#m",
+    "Content": "“You will use dongles and you will be happy”",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 11, 2024 · 7:18 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 7324,
+      "retweets": 20054,
+      "quotes": 1070,
+      "likes": 292429
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNUiodWbMAA6-lI.jpg"
     ],
     "videos": [],
     "gifs": []
@@ -220,16 +552,16 @@
       "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
     },
     "PostingDate": "May 11, 2024 · 6:44 PM UTC",
-    "is-retweet": true,
+    "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 10286,
-      "retweets": 30523,
-      "quotes": 1498,
-      "likes": 381592
+      "comments": 10856,
+      "retweets": 32574,
+      "quotes": 1551,
+      "likes": 410684
     },
     "pictures": [
       "https://pbs.twimg.com/media/GNUa6dAaUAALO-D.jpg"
@@ -238,28 +570,401 @@
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1789063978435645631#m",
-    "Content": "Targeting Sunday, May 12 for a Falcon 9 launch of 23 @StarLinkTweet satellites to low-Earth orbit from Florida → spacex.com/launches",
+    "LinkTweet": "https://twitter.com/cb_doge/status/1789188343105741243#m",
+    "Content": "Just a reminder:  On 𝕏, the average cost per ad click is only $0.38, lowest as compared to other platforms.",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 10:44 PM UTC",
+    "PostingDate": "May 11, 2024 · 6:58 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 671,
+      "retweets": 1796,
+      "quotes": 52,
+      "likes": 7841
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNR5T4aXsAApF1X.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789184692161569063#m",
+    "Content": "Only 𝕏 resisted censoring your voice",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 11, 2024 · 6:44 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/cb_doge/status/1788849502259957993#m",
+      "Content": "\"Other platforms, such as Meta, took down the content quickly when asked.\"  - eSafety Commissioner Lawyer 🇦🇺",
+      "user": {
+        "name": "DogeDesigner",
+        "username": "@cb_doge",
+        "profile_id": "1498070100393754625",
+        "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_mini.jpg"
+      },
+      "PostingDate": "May 10, 2024 · 8:32 AM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GNNE_4mXIAAH5uk.png"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 21292,
+      "retweets": 58198,
+      "quotes": 3039,
+      "likes": 430724
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/daltybrewer/status/1789104509626544229#m",
+    "Content": "I took my first road trip in my Tesla using FSD v12.3.6.  My car drove me 366 miles with 0 disengagements.  I can confidently say FSD is the best technology I’ve ever experienced.  $TSLA",
+    "user": {
+      "name": "Dalton Brewer",
+      "username": "@daltybrewer",
+      "profile_id": "1492404350764859393",
+      "avatar": "https://pbs.twimg.com/profile_images/1492404350764859393/1HQ2wC-n_bigger.jpg"
+    },
+    "PostingDate": "May 11, 2024 · 1:25 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 535,
+      "retweets": 1333,
+      "quotes": 46,
+      "likes": 8949
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789173902289338518#m",
+    "Content": "Major geomagnetic solar storm happening right now. Biggest in a long time. StarLinkTweet satellites are under a lot of pressure, but holding up so far.",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 11, 2024 · 6:01 AM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 232,
-      "retweets": 442,
-      "quotes": 26,
-      "likes": 3011
+      "comments": 8286,
+      "retweets": 33686,
+      "quotes": 2332,
+      "likes": 224922
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNRsLoJbcAARSeP.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/jordanbpeterson/status/1787978564517663020#m",
+    "Content": "Mr. Musk  @elonmusk   It\u0027s much much worse than you have been informed: plans to shackle Canadians electronically if accusers fear a \"hate crime\" might (might) be committed.   It\u0027s the most Orwellian piece of legislation ever promoted in the West:",
+    "user": {
+      "name": "Dr Jordan B Peterson",
+      "username": "@jordanbpeterson",
+      "profile_id": "1407056014776614923",
+      "avatar": "https://pbs.twimg.com/profile_images/1407056014776614923/TKBC60e1_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 10:51 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/elonmusk/status/1787910522547093951#m",
+      "Content": "This sounds insane if accurate!  @CommunityNotes, please check",
+      "user": {
+        "name": "Elon Musk",
+        "username": "@elonmusk",
+        "profile_id": "1780044485541699584",
+        "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 6:21 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 2084,
+      "retweets": 14105,
+      "quotes": 495,
+      "likes": 61005
     },
     "pictures": [],
     "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789049294160621882#m",
+    "Content": "Interesting",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 9:46 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [
+      "@fentasyl"
+    ],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/fentasyl/status/1789046972835303677#m",
+      "Content": "Any guesses who already is leading the western world in censorship demands to social media?",
+      "user": {
+        "name": "~~datahazard~~",
+        "username": "@fentasyl",
+        "profile_id": "1769078926544949248",
+        "avatar": "https://pbs.twimg.com/profile_images/1769078926544949248/1aWVXbsP_mini.jpg"
+      },
+      "PostingDate": "May 10, 2024 · 9:36 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GNP4kAhWQAAw-lT.png"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 5838,
+      "retweets": 21889,
+      "quotes": 803,
+      "likes": 103016
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1789039218607747137#m",
+    "Content": "I doubt that the people of Australia agree with suppressing their rights",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 9:06 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/fentasyl/status/1789018244600242570#m",
+      "Content": "UpPostingDate from Australia\u0027s PM -- you\u0027re going to need a Social License to post memes.  \"Parliament needs to understand how social media companies dial up and down the content that supports healthy democracies, as well as the anti-social content that undermines public safety.\" -- Minister of Communications Hon Michelle Rowland MP.",
+      "user": {
+        "name": "~~datahazard~~",
+        "username": "@fentasyl",
+        "profile_id": "1769078926544949248",
+        "avatar": "https://pbs.twimg.com/profile_images/1769078926544949248/1aWVXbsP_mini.jpg"
+      },
+      "PostingDate": "May 10, 2024 · 7:42 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GNPd0TrXkAAE6Bf.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 7479,
+      "retweets": 24785,
+      "quotes": 1188,
+      "likes": 106385
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/pmarca/status/1789007259718283572#m",
+    "Content": "Please enjoy @bhorowitz and me answering questions on the current state of AI!  01:14 How AI startups can compete with the bigger players 05:57 Will the \"God models\" get 100x better? 09:19 Counter argument: Are the tests too simple? 10:14 Internet data represents average human activity 11:50 AI\u0027s ability to unlock latent super genius limits 15:30 Neural networks exhibit generalized learning and computation functions 17:01 Reports of self improvement loops 19:10 Current data improvements 22:05 Challenges for AI applications 25:48 Business value-based pricing model 29:38 Two diametrically opposed questions about AI\u0027s impact on tech investment 32:48 The Jevons Paradox 36:46 John Maynard Keynes vs. Karl Marx 39:29 Demand for softwares is perfectly elastic 41:12 AI based medical diagnosis 42:09 Reality of data moats 48:06 Big companies and actionable data validation 52:05 Big companies using stolen data 53:07 Genetic Information Nondiscrimination Act (GINA) 57:53 Comparison of AI boom and internet boom 1:02:23 Marc\u0027s prediction for the AI industry 1:08:07 Lessons learned from internet era 1:12:12 Big companies trying to lock down AI 1:13:28 Core VC assumes half of investments will fail",
+    "user": {
+      "name": "Marc Andreessen 🇺🇸",
+      "username": "@pmarca",
+      "profile_id": "1701859298052395008",
+      "avatar": "https://pbs.twimg.com/profile_images/1701859298052395008/LRL52lFR_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 6:59 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 361,
+      "retweets": 1147,
+      "quotes": 43,
+      "likes": 4308
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1789001237301780481/vid/avc1/1280x720/ymhpf2x7cEaAKtCi.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788996442574450777#m",
+    "Content": "Concerning",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 6:16 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/CollinRugg/status/1788954532124455368#m",
+      "Content": "NEW: Georgia Election Board dumbfounded after finding out that 3,000 ballots were scanned twice in the 2020 election recount in Fulton County.  The board also revealed that 380,761 ballot images from machine count were “not available.”  Q: Does Fulton County know why there are not 380,761 ballot images from election day?  A: As with the investigators we have not been apprised of this allegation. This is the first I\u0027m hearing about it.  General counsel for the secretary of state’s office Charlene McGowan confirmed that Fulton County broke the law in their recount.  “Fulton County used improper procedures during the recount of the presidential contest in 2020.”  Despite this, the board refused to approve further investigation.",
+      "user": {
+        "name": "Collin Rugg",
+        "username": "@CollinRugg",
+        "profile_id": "1325087660428447746",
+        "avatar": "https://pbs.twimg.com/profile_images/1325087660428447746/4DL2iq76_mini.jpg"
+      },
+      "PostingDate": "May 10, 2024 · 3:29 PM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1788954466462646272/vid/avc1/888x490/TqR2iafEzqOqPWgX.mp4?tag\u003d14"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 13582,
+      "retweets": 56080,
+      "quotes": 2607,
+      "likes": 238681
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/DongWookChung2/status/1788906744564883763#m",
+    "Content": "I love X Communities because they provide a much bigger chance for great content from small accounts to be featured and allow continuous discussions on specific topics.  If you post into the relevant Communities of same interests, your post will be immediately judged by all members. If it\u0027s great, it will quickly become visible on the explore tab, which features the global best and attracts millions of views in a few days.  Try out the new explore tab for Communities! The team is dedicated to improve and build more attractive features for Communities in the upcoming months.",
+    "user": {
+      "name": "Dongwook",
+      "username": "@DongWookChung2",
+      "profile_id": "1733575617810165760",
+      "avatar": "https://pbs.twimg.com/profile_images/1733575617810165760/uxe2tg7c_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 12:19 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/X/status/1783948857128161377#m",
+      "Content": "alright everyone @hicommunities just got multiple improvements!  - there’s now an explore page for the top posts of all Communities by topic  - you can also discover new Communities by topic   - looking for drama or just bangers? look no further. you can now sort by trending in Communities you’ve joined   go try it out ⭐️  (available on iOS \u0026 web for now, Android coming very soon!)",
+      "user": {
+        "name": "X",
+        "username": "@X",
+        "profile_id": "1683899100922511378",
+        "avatar": "https://pbs.twimg.com/profile_images/1683899100922511378/5lY42eHs_mini.jpg"
+      },
+      "PostingDate": "Apr 26, 2024 · 7:58 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GMHcBupWcAIkFSE.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 237,
+      "retweets": 679,
+      "quotes": 17,
+      "likes": 2969
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/jack/status/1786773074232107424#m",
+    "Content": "don’t depend on corporations to grant you rights. defend them yourself using freedom technology.  (you’re on one)",
+    "user": {
+      "name": "jack",
+      "username": "@jack",
+      "profile_id": "1661201415899951105",
+      "avatar": "https://pbs.twimg.com/profile_images/1661201415899951105/azNjKOSH_bigger.jpg"
+    },
+    "PostingDate": "May 4, 2024 · 3:01 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 2895,
+      "retweets": 3891,
+      "quotes": 641,
+      "likes": 27589
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/farzyness/status/1788916910651810153#m",
+    "Content": "NeuraLinkTweet\u0027s First Patient Reveals Astonishing Results.  Here\u0027s an edit of @ModdedQuad first livestream explaining in detail how his NeuraLinkTweet chip works and how it has changed his life.  @elonmusk @chapman_bliss",
+    "user": {
+      "name": "Farzad",
+      "username": "@farzyness",
+      "profile_id": "1756427926080307200",
+      "avatar": "https://pbs.twimg.com/profile_images/1756427926080307200/6o9Luupx_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 1:00 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 521,
+      "retweets": 1657,
+      "quotes": 138,
+      "likes": 7477
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1788765782924541952/vid/avc1/1280x720/NK-pPAGmIPVpd1nu.mp4?tag\u003d14"
+    ],
     "gifs": []
   },
   {
@@ -272,16 +977,16 @@
       "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
     },
     "PostingDate": "May 10, 2024 · 5:56 AM UTC",
-    "is-retweet": false,
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 682,
-      "retweets": 1841,
-      "quotes": 84,
-      "likes": 10914
+      "comments": 687,
+      "retweets": 1872,
+      "quotes": 85,
+      "likes": 11074
     },
     "pictures": [
       "https://pbs.twimg.com/media/GNMe-_QaQAAHZL8.jpg",
@@ -291,112 +996,190 @@
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788806619436122523#m",
-    "Content": "On orbit, the 13 Direct to Cell satellites will connect over laser backhaul to the @StarLinkTweet constellation, eliminating dead zones and providing peace of mind when customers need it most",
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788936435589947426#m",
+    "Content": "This is accurate",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 5:41 AM UTC",
+    "PostingDate": "May 10, 2024 · 2:17 PM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
-    "quoted-post": {},
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/WesternLensman/status/1788910367118373213#m",
+      "Content": "When the below video went viral, there was a lot of pushback from the left about the claims made.  In light of recent Dem votes A) For counting illegals in congressional apportionment, and B) Against laws preventing non-citizen voting —  Seems like those people need a re-watch.",
+      "user": {
+        "name": "Western Lensman",
+        "username": "@WesternLensman",
+        "profile_id": "1744453002168045569",
+        "avatar": "https://pbs.twimg.com/profile_images/1744453002168045569/Q9ZomyTL_mini.jpg"
+      },
+      "PostingDate": "May 10, 2024 · 12:34 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
     "stats": {
-      "comments": 67,
-      "retweets": 145,
-      "quotes": 18,
-      "likes": 1279
+      "comments": 5047,
+      "retweets": 16476,
+      "quotes": 413,
+      "likes": 73979
     },
     "pictures": [],
     "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788806226845073804#m",
-    "Content": "Deployment of 20 @StarLinkTweet satellites confirmed",
+    "LinkTweet": "https://twitter.com/TeslaCharging/status/1788747817869312282#m",
+    "Content": "New Tesla Supercharger: IOI City Mall Putrajaya, Malaysia (4 stalls)  https://www.tesla.com/findus?location\u003d412673",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Tesla Charging",
+      "username": "@TeslaCharging",
+      "profile_id": "1362134815844294661",
+      "avatar": "https://pbs.twimg.com/profile_images/1362134815844294661/vKTmG2CO_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 5:40 AM UTC",
+    "PostingDate": "May 10, 2024 · 1:48 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 596,
+      "retweets": 1098,
+      "quotes": 51,
+      "likes": 7133
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNLoqVqbcAAJHHl.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788838767165415549#m",
+    "Content": "Just started a Supercharger Community  https://x.com/i/communities/1788837406478594280",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 7:49 AM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 134,
-      "retweets": 319,
-      "quotes": 17,
-      "likes": 3399
+      "comments": 3436,
+      "retweets": 6334,
+      "quotes": 369,
+      "likes": 30430
     },
     "pictures": [],
     "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788790848328704138#m",
-    "Content": "Falcon 9’s first stage has landed on the Of Course I Still Love You droneship",
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788835845601952007#m",
+    "Content": "Our 75th launch from Vandenberg, California",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 4:39 AM UTC",
+    "PostingDate": "May 10, 2024 · 7:37 AM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
-    "quoted-post": {},
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/SpaceX/status/1788788926947410196#m",
+      "Content": "Falcon 9 lifts off for the 75th time from pad 4E in California!",
+      "user": {
+        "name": "SpaceX",
+        "username": "@SpaceX",
+        "profile_id": "1697749409851985920",
+        "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_mini.jpg"
+      },
+      "PostingDate": "May 10, 2024 · 4:31 AM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1788788838510526464/vid/avc1/1920x1080/BoVv_2nF9o631QzF.mp4?tag\u003d16"
+      ],
+      "gifs": []
+    },
     "stats": {
-      "comments": 270,
-      "retweets": 911,
-      "quotes": 70,
-      "likes": 7848
+      "comments": 4054,
+      "retweets": 16628,
+      "quotes": 512,
+      "likes": 145954
     },
     "pictures": [],
-    "videos": [
-      "https://video.twimg.com/amplify_video/1788790776325177344/pl/pqEpRKqmpP4Sdqvf.m3u8?tag\u003d16\u0026container\u003dcmaf"
-    ],
+    "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788788926947410196#m",
-    "Content": "Falcon 9 lifts off for the 75th time from pad 4E in California!",
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788834859110002716#m",
+    "Content": "Just to reiterate: Tesla will spend well over $500M expanding our Supercharger network to create thousands of NEW chargers this year.   That’s just on new sites and expansions, not counting operations costs, which are much higher.",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 4:31 AM UTC",
+    "PostingDate": "May 10, 2024 · 7:34 AM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 500,
-      "retweets": 1801,
-      "quotes": 215,
-      "likes": 14713
+      "comments": 5673,
+      "retweets": 12416,
+      "quotes": 854,
+      "likes": 98950
     },
     "pictures": [],
-    "videos": [
-      "https://video.twimg.com/amplify_video/1788788838510526464/pl/HMJKu79RJmq4EaaU.m3u8?tag\u003d16\u0026container\u003dcmaf"
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788828194419736695#m",
+    "Content": "What Earthlooks like in radio frequency from the ⁦@StarLinkTweet⁩ direct to phone satellites",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 10, 2024 · 7:07 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 6369,
+      "retweets": 14099,
+      "quotes": 864,
+      "likes": 158310
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNMxww4XMAAbH9S.jpg"
     ],
+    "videos": [],
     "gifs": []
   },
   {
     "LinkTweet": "https://twitter.com/SpaceX/status/1788787012889362689#m",
-    "Content": "Watch Falcon 9 launch 20 @StarLinkTweet satellites to orbit from California, including 13 with Direct to Cell capabilities https://nitter.net/i/broadcasts/1LyxBnANDLoxN",
+    "Content": "Watch Falcon 9 launch 20 @StarLinkTweet satellites to orbit from California, including 13 with Direct to Cell capabilities https://twitter.com/i/broadcasts/1LyxBnANDLoxN",
     "user": {
       "name": "SpaceX",
       "username": "@SpaceX",
@@ -404,116 +1187,1930 @@
       "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
     },
     "PostingDate": "May 10, 2024 · 4:23 AM UTC",
-    "is-retweet": false,
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 537,
-      "retweets": 1526,
+      "comments": 543,
+      "retweets": 1556,
       "quotes": 70,
-      "likes": 7847
+      "likes": 7957
     },
     "pictures": [],
     "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788779975648391457#m",
-    "Content": "Propellant load has begun for tonight’s launch of 20 @StarLinkTweet satellites from California",
+    "LinkTweet": "https://twitter.com/XBusiness/status/1788689860150141381#m",
+    "Content": "👀 Coming soon: AI Audiences   Briefly describe the target audience for your ads and our AI systems will generate a pool of the most relevant X users to target in seconds.",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Business",
+      "username": "@XBusiness",
+      "profile_id": "1683501317929549830",
+      "avatar": "https://pbs.twimg.com/profile_images/1683501317929549830/oBdmDQ8f_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 3:55 AM UTC",
-    "is-retweet": false,
+    "PostingDate": "May 9, 2024 · 9:57 PM UTC",
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 164,
-      "retweets": 272,
-      "quotes": 14,
-      "likes": 3123
+      "comments": 784,
+      "retweets": 1294,
+      "quotes": 186,
+      "likes": 6935
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1788677382313754624/vid/avc1/1920x1080/qoV369mjrA4MSzvs.mp4?tag\u003d16"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1788709048260370599#m",
+    "Content": "You can upload 4hr long videos on this platform. 📽️",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 9, 2024 · 11:14 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/elonmusk/status/1788706137824518260#m",
+      "Content": "Post your movies, TV series or podcast on this platform and monetize by turning on subscriptions!",
+      "user": {
+        "name": "Elon Musk",
+        "username": "@elonmusk",
+        "profile_id": "1780044485541699584",
+        "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_mini.jpg"
+      },
+      "PostingDate": "May 9, 2024 · 11:02 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 668,
+      "retweets": 1320,
+      "quotes": 75,
+      "likes": 6833
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1788708987082244097/vid/avc1/720x720/1RH_OrnyD6I8dUuz.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788706137824518260#m",
+    "Content": "Post your movies, TV series or podcast on this platform and monetize by turning on subscriptions!",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 9, 2024 · 11:02 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/ToscaMusk/status/1788547679405936676#m",
+      "Content": "Love that people are watching my movies here on X ❤️. This one is a beautiful slow burn. 🔥 Gabriel’s Inferno 🔥",
+      "user": {
+        "name": "Tosca Musk",
+        "username": "@ToscaMusk",
+        "profile_id": "427559226",
+        "avatar": "https://pbs.twimg.com/profile_images/427559226/IMG_6338_mini.JPG"
+      },
+      "PostingDate": "May 9, 2024 · 12:32 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 3787,
+      "retweets": 8174,
+      "quotes": 491,
+      "likes": 57591
     },
     "pictures": [],
     "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788763479031300264#m",
-    "Content": "Now targeting a new T-0 in the launch window for Falcon 9 lift off from pad 4E in California → spacex.com/launches/mission/…",
+    "LinkTweet": "https://twitter.com/TeslaBoomerMama/status/1788614161771253890#m",
+    "Content": "Please hear me out for instructions on how to vote and what to do thereafter, to help maximize participation in Tesla\u0027s Annual Shareholder votes. Thank you so much!",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Ale𝕏andra Merz",
+      "username": "@TeslaBoomerMama",
+      "profile_id": "1748168541717876736",
+      "avatar": "https://pbs.twimg.com/profile_images/1748168541717876736/rAftXPQF_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 2:50 AM UTC",
-    "is-retweet": false,
+    "PostingDate": "May 9, 2024 · 4:57 PM UTC",
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 150,
-      "retweets": 293,
-      "quotes": 27,
-      "likes": 2266
+      "comments": 330,
+      "retweets": 969,
+      "quotes": 40,
+      "likes": 4638
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1788613831650050052/pu/vid/avc1/1554x720/lghqWB5hezQl4GGW.mp4?tag\u003d12"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788671611329007841#m",
+    "Content": "This illustrates just how much the legacy media lies to the public!",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 9, 2024 · 8:45 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/cb_doge/status/1788559034238247031#m",
+      "Content": "The media feeds on negativity.  This is how the media covers the company that is set to change the lives of millions and benefit humanity.  Perhaps they should read what the patient himself said about his experience:  “Y\u0027all are giving me too much, it\u0027s like a luxury overload, I haven\u0027t been able to do these things in 8 years and now I don\u0027t know where to even start allocating my attention.  The biggest thing with comfort is that I can lie in my bed and use \u0027The Link\u0027. Any other assistive technology had to have someone else help or have me sit up. Sitting causes stress mentally and on my body which would give me pressure sores or spasms. It lets me live on my own time, not needing to have someone adjust me, etc. throughout the day.  \u0027The Link\u0027 has helped me reconnect with the world, my friends, and my family. It\u0027s given me the ability to do things on my own again without needing my family at all hours of the day and night.”",
+      "user": {
+        "name": "DogeDesigner",
+        "username": "@cb_doge",
+        "profile_id": "1498070100393754625",
+        "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_mini.jpg"
+      },
+      "PostingDate": "May 9, 2024 · 1:17 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GNI89NaWEAAGbBD.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 6497,
+      "retweets": 23595,
+      "quotes": 808,
+      "likes": 110285
     },
     "pictures": [],
     "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788757211621294554#m",
-    "Content": "Less than one hour until Falcon 9’s launch of 20 @StarLinkTweet satellites from California → spacex.com/launches/mission/…",
+    "LinkTweet": "https://twitter.com/kcoleman/status/1788621334471434648#m",
+    "Content": "When we started @CommunityNotes, all the concept testing showed people across the political spectrum wanted it. But could we build it? Would it work?  Half a million contributors later, four new unaffiliated/external research studies + large scale stats show how effective it is.   One of the best decisions we made from day 1 was to open source the code + all the data. It\u0027s amazing to see what the public + researchers are doing with it, and there\u0027s even more in the works. Thank you to all the contributors out there who\u0027ve created this for the world.",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Keith Coleman 🌱😀🙌",
+      "username": "@kcoleman",
+      "profile_id": "1093367487566012416",
+      "avatar": "https://pbs.twimg.com/profile_images/1093367487566012416/9Wc1J-Pk_bigger.jpg"
     },
-    "PostingDate": "May 10, 2024 · 2:25 AM UTC",
-    "is-retweet": false,
+    "PostingDate": "May 9, 2024 · 5:25 PM UTC",
+    "is-retweet": true,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
-    "quoted-post": {},
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/CommunityNotes/status/1788617818784792880#m",
+      "Content": "x.com/i/article/178861409389…",
+      "user": {
+        "name": "Community Notes",
+        "username": "@CommunityNotes",
+        "profile_id": "1685001119934607360",
+        "avatar": "https://pbs.twimg.com/profile_images/1685001119934607360/Dh2Z7jCt_mini.png"
+      },
+      "PostingDate": "May 9, 2024 · 5:11 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
     "stats": {
-      "comments": 121,
-      "retweets": 291,
-      "quotes": 24,
-      "likes": 2471
+      "comments": 457,
+      "retweets": 1012,
+      "quotes": 45,
+      "likes": 5936
     },
     "pictures": [],
     "videos": [],
     "gifs": []
   },
   {
-    "LinkTweet": "https://twitter.com/SpaceX/status/1788417702316634399#m",
-    "Content": "Standing down from tonight\u0027s Falcon 9 launch of @StarLinkTweet satellites from California, now targeting tomorrow, May 9 → spacex.com/launches",
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788564251931508966#m",
+    "Content": "Given the terrible flooding in Rio Grande do Sul, @StarLinkTweet will donate 1000 terminals to emergency responders and make usage for all terminals in the region free until the region has recovered.  I hope the best for the people of Brazil.",
     "user": {
-      "name": "SpaceX",
-      "username": "@SpaceX",
-      "profile_id": "1697749409851985920",
-      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
     },
-    "PostingDate": "May 9, 2024 · 3:56 AM UTC",
+    "PostingDate": "May 9, 2024 · 1:38 PM UTC",
     "is-retweet": false,
     "is-pinned": false,
     "external-LinkTweet": "",
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 215,
-      "retweets": 455,
-      "quotes": 47,
-      "likes": 2981
+      "comments": 24919,
+      "retweets": 75123,
+      "quotes": 7196,
+      "likes": 519101
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1788564152081915904/vid/avc1/364x640/zkhLKMJsSmtz3MAz.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788447422294749665#m",
+    "Content": "💯",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 9, 2024 · 5:54 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/StephenM/status/1788379168981327912#m",
+      "Content": "ALERT: House Dems just voted UNANIMOUSLY to give illegals representation in Congress AND the Electoral College. House Seats and Electoral College votes WILL BE added to areas with the most illegals (including all Biden illegals) unless Senate passes the bill. Invasion by design.",
+      "user": {
+        "name": "Stephen Miller",
+        "username": "@StephenM",
+        "profile_id": "1364996415731171329",
+        "avatar": "https://pbs.twimg.com/profile_images/1364996415731171329/d4WWN4ak_mini.jpg"
+      },
+      "PostingDate": "May 9, 2024 · 1:23 AM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GNGZYFmXsAA-ler.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 10584,
+      "retweets": 49438,
+      "quotes": 2615,
+      "likes": 162661
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/SpaceX/status/1788310386846179345#m",
+    "Content": "Static fire of Flight 5 Starship’s six Raptor engines",
+    "user": {
+      "name": "SpaceX",
+      "username": "@SpaceX",
+      "profile_id": "1697749409851985920",
+      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+    },
+    "PostingDate": "May 8, 2024 · 8:49 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 975,
+      "retweets": 4381,
+      "quotes": 337,
+      "likes": 33211
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1788309206170574855/pu/vid/avc1/1920x1080/v07KaLRbK1EY8AH_.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Tesla_Megapack/status/1788332678842032540#m",
+    "Content": "60MW / 160MWh of Tesla Megapacks at @GridStorLLC\u0027s site in Goleta, CA are now Santa Barbara County\u0027s largest power resource, surpassing the local peaker plant  This battery storage system bolsters grid reliability for the region and supports California\u0027s transition to renewables ⚡️",
+    "user": {
+      "name": "Tesla Megapack",
+      "username": "@Tesla_Megapack",
+      "profile_id": "1618601860687974402",
+      "avatar": "https://pbs.twimg.com/profile_images/1618601860687974402/LRksyZ7i_bigger.jpg"
+    },
+    "PostingDate": "May 8, 2024 · 10:18 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 352,
+      "retweets": 1120,
+      "quotes": 56,
+      "likes": 6426
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNFu5ZtboAUk6ws.jpg",
+      "https://pbs.twimg.com/media/GNFu5ZwboAEFYUZ.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/SpaceX/status/1788310589548405224#m",
+    "Content": "Photos from today’s Starship static fire",
+    "user": {
+      "name": "SpaceX",
+      "username": "@SpaceX",
+      "profile_id": "1697749409851985920",
+      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+    },
+    "PostingDate": "May 8, 2024 · 8:50 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 915,
+      "retweets": 4159,
+      "quotes": 296,
+      "likes": 37837
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNFa77rboAQVyNm.jpg",
+      "https://pbs.twimg.com/media/GNFa80abIAAL7Sf.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788442903481647566#m",
+    "Content": "This is real",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 9, 2024 · 5:36 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 20883,
+      "retweets": 46356,
+      "quotes": 3668,
+      "likes": 746117
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNHTV1cWEAA7TpO.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1788390068811370925#m",
+    "Content": "If your company is hiring, consider signing up as a Verified Organization on 𝕏. You can then list your job openings directly on your profile.  PS: NeuraLinkTweet is hiring 🧠",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 9, 2024 · 2:06 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 470,
+      "retweets": 1022,
+      "quotes": 29,
+      "likes": 5212
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1781474804534579200/vid/avc1/720x742/uMQ_cpCHdY8sKXfn.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788383707880894957#m",
+    "Content": "Successful 100 days with first human implant of @NeuraLinkTweet",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 9, 2024 · 1:41 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/neuraLinkTweet/status/1788283349452333402#m",
+      "Content": "We’ve just passed 100 days since the first participant in our clinical trial received his NeuraLinkTweet implant. Read our latest progress upPostingDate here: https://neuraLinkTweet.com/blog/prime-study-progress-upPostingDate-user-experience/",
+      "user": {
+        "name": "NeuraLinkTweet",
+        "username": "@neuraLinkTweet",
+        "profile_id": "1661856130535165953",
+        "avatar": "https://pbs.twimg.com/profile_images/1661856130535165953/zMoW6Sr1_mini.jpg"
+      },
+      "PostingDate": "May 8, 2024 · 7:02 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 6737,
+      "retweets": 10108,
+      "quotes": 4432,
+      "likes": 85505
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1788265890460438831#m",
+    "Content": "Americans\u0027 trust in media over the years:",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 8, 2024 · 5:53 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 1035,
+      "retweets": 1757,
+      "quotes": 121,
+      "likes": 8826
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GNEyJmFWAAA2bhA.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/SpaceX/status/1787570716931731909#m",
+    "Content": "Falcon 9 launches 23 @StarLinkTweet satellites to low-Earth orbit from Florida",
+    "user": {
+      "name": "SpaceX",
+      "username": "@SpaceX",
+      "profile_id": "1697749409851985920",
+      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+    },
+    "PostingDate": "May 6, 2024 · 7:50 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 990,
+      "retweets": 2439,
+      "quotes": 181,
+      "likes": 16888
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GM66EU3bQAEbxmL.jpg",
+      "https://pbs.twimg.com/media/GM66ER3bcAArkk9.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788065938220486764#m",
+    "Content": "A terrible attack on the rights of Canadians to speak freely!",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 8, 2024 · 4:38 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/jordanbpeterson/status/1787978564517663020#m",
+      "Content": "Mr. Musk  @elonmusk   It\u0027s much much worse than you have been informed: plans to shackle Canadians electronically if accusers fear a \"hate crime\" might (might) be committed.   It\u0027s the most Orwellian piece of legislation ever promoted in the West:",
+      "user": {
+        "name": "Dr Jordan B Peterson",
+        "username": "@jordanbpeterson",
+        "profile_id": "1407056014776614923",
+        "avatar": "https://pbs.twimg.com/profile_images/1407056014776614923/TKBC60e1_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 10:51 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 5732,
+      "retweets": 28078,
+      "quotes": 751,
+      "likes": 148858
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/SpaceX/status/1787977151394062577#m",
+    "Content": "View of yesterday’s @StarLinkTweet deploy during an orbital sunrise",
+    "user": {
+      "name": "SpaceX",
+      "username": "@SpaceX",
+      "profile_id": "1697749409851985920",
+      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 10:45 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 815,
+      "retweets": 2535,
+      "quotes": 149,
+      "likes": 16716
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1787976629832269824/pu/vid/avc1/1280x720/Iorgr3XuZ174QzvH.mp4?tag\u003d12"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1788028272628097460#m",
+    "Content": "The latest version of Tesla’s (supervised) self-driving will blow your mind",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 8, 2024 · 2:08 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/Tesla/status/1787984202828251408#m",
+      "Content": "Driving with FSD Supervised can help reduce fatigue since you won’t have to frequently make micro-adjustments as compared to driving without it",
+      "user": {
+        "name": "Tesla",
+        "username": "@Tesla",
+        "profile_id": "1337607516008501250",
+        "avatar": "https://pbs.twimg.com/profile_images/1337607516008501250/6Ggc4S5n_mini.png"
+      },
+      "PostingDate": "May 7, 2024 · 11:13 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 7799,
+      "retweets": 7677,
+      "quotes": 627,
+      "likes": 58865
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787916246404710478#m",
+    "Content": "How to vote your Tesla shares",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 6:43 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/ICannot_Enough/status/1787861522565259485#m",
+      "Content": "Attention Tesla shareholders with Fidelity accounts: here’s how to vote your shares. If you have multiple accounts with $TSLA shares and voted already by clicking a LinkTweet in an email from Fidelity, DON’T ASSUME all of your shares have been voted; you should check right now to make sure you have voted your shares in all of your accounts— because you probably haven’t! 👀  From a web browser (not the Fidelity app), go to digital.fidelity.com Log in Select Accounts and Trade at the top Select Documents from the list Select Other Documents Select Proxy Materials  Accounts that say “Voted” in the status column have already been voted.   Accounts that say “Vote” haven’t been voted yet.  For each Vote hyperLinkTweet, click it to be redirected to the proxyvote.com site where you can actually vote your Fidelity shares.  The Tesla board’s recommendations on each item are shown in Bold (FOR the first five and AGAINST the rest).  Fidelity’s deadline to vote is June 12th.  Please comment below if you thought you had already voted all of your shares and discovered you hadn’t by following the instructions above.",
+      "user": {
+        "name": "James Stephenson",
+        "username": "@ICannot_Enough",
+        "profile_id": "1334264832397291522",
+        "avatar": "https://pbs.twimg.com/profile_images/1334264832397291522/AR2jbpaD_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 3:06 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GM_ClGpXIAEwfrk.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 3380,
+      "retweets": 4394,
+      "quotes": 185,
+      "likes": 27962
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787846184968556630#m",
+    "Content": "𝕏 is the #1 news app on the AppStore in Argentina, leading both the free and grossing categories. 🥇",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 2:05 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 701,
+      "retweets": 1696,
+      "quotes": 66,
+      "likes": 10295
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1787846107520712704/pu/vid/avc1/1280x720/J6y5-LYe4rDAektX.mp4?tag\u003d12"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787914668570550511#m",
+    "Content": "At the risk of sounding elitist, I prefer IHOP",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 6:37 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 11853,
+      "retweets": 18471,
+      "quotes": 1554,
+      "likes": 237260
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GM_y6jraYAAYSiP.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787910522547093951#m",
+    "Content": "This sounds insane if accurate!  @CommunityNotes, please check",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 6:21 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/newstart_2024/status/1787852468828643457#m",
+      "Content": "The Trudeau regime has introduced an Orwellian new law called the Online Harms Bill C-63, which will give police the power to retroactively search the Internet for ‘hate speech’ violations and arrest offenders, even if the offence occurred before the law existed. This new bill is aimed at safeguarding the masses from so-called “hate speech.” Revolver.news reports: The real shocker in this bill is the alarming retroactive aspect. Essentially, whatever you’ve said in the past can now be weaponized against you by today’s draconian standards. Historian Dr. Muriel Blaive has weighed in on this draconian law, labeling it outright “mad.” She points out how it literally spits in the face of all Western legal traditions, especially the one about only being punished if you infringed on a law that was valid at the time of committing a crime. https://thepeoplesvoice.tv/canada-to-imprison-anyone-who-has-ever-posted-hate-speech-online/",
+      "user": {
+        "name": "Camus",
+        "username": "@newstart_2024",
+        "profile_id": "1729784630734123008",
+        "avatar": "https://pbs.twimg.com/profile_images/1729784630734123008/aXeiuu36_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 2:30 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GM-6VoAWwAEqhH8.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 17774,
+      "retweets": 43977,
+      "quotes": 2833,
+      "likes": 184533
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787908517724344648#m",
+    "Content": "Why it is so important for @xAI’s @Grok to succeed. This is a much bigger deal than it may seem.",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 6:13 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/cb_doge/status/1787856308470747496#m",
+      "Content": "\"AI would be very  dangerous if powerful, but trained to lie to be politically correct.\" 一 @elonmusk",
+      "user": {
+        "name": "DogeDesigner",
+        "username": "@cb_doge",
+        "profile_id": "1498070100393754625",
+        "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 2:45 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GM-9wT2XAAAaq7P.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 5788,
+      "retweets": 19297,
+      "quotes": 732,
+      "likes": 110367
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/ID_AA_Carmack/status/1787850053912064005#m",
+    "Content": "Act on press  This is a UI design hill I will die on, and it dismays me how often and hard I have had to fight for it.  Almost all interaction methods have a “press” and “release” event associated with them. Whenever possible, you should “do the thing” when you get the press event instead of waiting for the release event, because it makes the interaction feel substantially more responsive, and it reduces user errors by not allowing the focus to slide out of the hot box between press and release.  Even a “ballistic tap”, where your finger is intentionally bouncing off the button or touch surface, involves several tens of milliseconds delay between the press and release, and most button presses have well over a hundred ms dwell time. There is a delight in interfaces that feel like they respond instantly to your wishes, and the benefit to every single user is often more important than additional niche features.  Game developers, with simple UI toolkits, tend to get this right more often, but “sophisticated” app designers will often fight hard against it because it is mostly incompatible with options like interactive touch scrolling views, long press menus, and drag and drop.  Being able to drag scroll a web page or view with interactive controls in it is here to stay, and nets out way better than having to use a separate scroll bar, but there are still tons of fixed position controls that should act on press, and it is good UI design to favor them when possible.  In the early days of mobile VR, the system keyboard was a dedicated little OpenGL app that responded instantly. With full internationalization it became prudent to turn it into a conventional Android app, but the default act-on-release button behavior made it feel noticeably crappier. The design team resisted a push to change it, and insisted on commissioning a user study, which is a corporate politics ploy to bury something. I was irritated at how they tried to use leading questions and tasks, but It still came back one of the clearest slam-dunks I have seen for user testing – objectively less typos, expressed preference, and interview comments about the act-on-press version feeling “crisper” and “more responsive”.  So, I won that one, but the remaining times I brought it up for other interfaces, I did not, and you still see act-on-release throughout the Meta VR system interfaces.",
+    "user": {
+      "name": "John Carmack",
+      "username": "@ID_AA_Carmack",
+      "profile_id": "1560764938083352577",
+      "avatar": "https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 2:20 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 401,
+      "retweets": 976,
+      "quotes": 91,
+      "likes": 6176
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787769025461961108#m",
+    "Content": "❤️",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 8:58 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/TheQuartering/status/1787490058691338445#m",
+      "Content": "The original creator of Twitter Jack Dorsey has abandoned the lefts \"twitter killer\" \u0026 endorsed X.",
+      "user": {
+        "name": "TheQuartering",
+        "username": "@TheQuartering",
+        "profile_id": "1673518285122412544",
+        "avatar": "https://pbs.twimg.com/profile_images/1673518285122412544/WabOxy1m_mini.png"
+      },
+      "PostingDate": "May 6, 2024 · 2:30 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GM5wtVEWMAAsJga.png"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 7407,
+      "retweets": 21792,
+      "quotes": 819,
+      "likes": 192852
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787768103449010597#m",
+    "Content": "Accurate analysis.   Only about 1/10,000 of distance driven is useful for training.   The limiting factor for FSD progress was AI training compute, but now it is validation, as the interventions are so rare.",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 8:55 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/stevenmarkryan/status/1787712715840004496#m",
+      "Content": "Billionaire Investor BLOWN Away By Tesla FSD v12  $TSLA",
+      "user": {
+        "name": "stevenmarkryan",
+        "username": "@stevenmarkryan",
+        "profile_id": "1295881160879415300",
+        "avatar": "https://pbs.twimg.com/profile_images/1295881160879415300/_Y5CVaOU_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 5:15 AM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1787297218493583360/vid/avc1/1280x720/rHLCu8KhOiPylFCo.mp4?tag\u003d14"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 2112,
+      "retweets": 4690,
+      "quotes": 217,
+      "likes": 25737
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787765015036199281#m",
+    "Content": "Great idea",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 8:42 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/transenv/status/1787739355907285039#m",
+      "Content": "Today 60% of new cars are registered by companies, most of which are large corporations.  The EU should set a target for 100% of new cars in company fleets to be electric by 2030 as part of the ongoing public consultation on the topic. 🧵",
+      "user": {
+        "name": "Transport \u0026 Environment (T\u0026E)",
+        "username": "@transenv",
+        "profile_id": "1788173880667828225",
+        "avatar": "https://pbs.twimg.com/profile_images/1788173880667828225/UCPQgG-X_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 7:00 AM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/ext_tw_video/1787739282607661056/pu/vid/avc1/720x720/N-nD-r6SGUMX97om.mp4?tag\u003d12"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 3386,
+      "retweets": 4777,
+      "quotes": 267,
+      "likes": 29189
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/MarioNawfal/status/1787763172780241028#m",
+    "Content": "🇺🇸 ELON: CIVILIZATIONAL RISKS KEEP ME UP AT NIGHT, BUT KIDS KEEP ME GOING  \"Kids give me joy. I probably get the most joy from my kids. I\u0027m not saying that\u0027s the reason you should have kids because you should have them anyway, but they\u0027re the greatest source of joy in my life.  In terms of what keeps me up at night, I guess it\u0027s anything that\u0027s a civilizational risk. If the birth rates are continuing to plummet, anything that undermines the foundations of democracy, and anything that\u0027s leading us away from a merit-based system is a risk.\"  Source: The Milken Institute",
+    "user": {
+      "name": "Mario Nawfal",
+      "username": "@MarioNawfal",
+      "profile_id": "1670905743619268609",
+      "avatar": "https://pbs.twimg.com/profile_images/1670905743619268609/pYItlWat_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 8:35 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 746,
+      "retweets": 1785,
+      "quotes": 118,
+      "likes": 10304
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1787762916084629505/pu/vid/avc1/768x480/4kj4MlMokcBPMJL0.mp4?tag\u003d12"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/natemcgrady/status/1787696125253648680#m",
+    "Content": "NBA Live on X is 🔥 https://twitter.com/i/events/1785175286989918208",
+    "user": {
+      "name": "Nate",
+      "username": "@natemcgrady",
+      "profile_id": "1743716376584257536",
+      "avatar": "https://pbs.twimg.com/profile_images/1743716376584257536/n9kq5sAT_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 4:09 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 305,
+      "retweets": 740,
+      "quotes": 25,
+      "likes": 4047
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787756308462030873#m",
+    "Content": "Every school in the world should adopt this method of teaching!",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 8:08 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 766,
+      "retweets": 2131,
+      "quotes": 204,
+      "likes": 9792
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787756175196340224/vid/avc1/928x720/Q1uNf6FcSIIM2Z_1.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787666910785527887#m",
+    "Content": "\"The birth rate is dropping, which leads to a civilization that dies not with a bang, but with a whimper in adult diapers.  One of the things that is overlooked by most historians is the role of low birth rate in the decline of civilizations. Prosperity destroys the birth rate.\"",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 2:12 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 734,
+      "retweets": 1340,
+      "quotes": 107,
+      "likes": 6522
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787666707475025920/vid/avc1/802x720/DX63LpeOinn_CAcI.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787752278377824612#m",
+    "Content": "Worth watching",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 7:52 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/RobertKennedyJr/status/1786816692611592223#m",
+      "Content": "The Bobby Kennedy video Meta doesn’t want you to see, narrated by Woody Harrelson.",
+      "user": {
+        "name": "Robert F. Kennedy Jr",
+        "username": "@RobertKennedyJr",
+        "profile_id": "1665141083624423428",
+        "avatar": "https://pbs.twimg.com/profile_images/1665141083624423428/geiQrLwM_mini.jpg"
+      },
+      "PostingDate": "May 4, 2024 · 5:54 PM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1786810577014427648/vid/avc1/1280x720/SHQUYdV_47aXkNxQ.mp4?tag\u003d14"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 9149,
+      "retweets": 38410,
+      "quotes": 1661,
+      "likes": 181525
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787747492328861770#m",
+    "Content": "This was Optimus not long ago",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 7:33 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 33058,
+      "retweets": 33598,
+      "quotes": 1445,
+      "likes": 545346
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GM9a3plbgAA95rk.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787740176695112185#m",
+    "Content": "No humans, no humanity",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 7:04 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/cb_doge/status/1787737639077962215#m",
+      "Content": "\"Low birth rate was a problem in Rome in 50 BC. The same is true of Ancient Greece.\"  Low Birth Rate \u003d Decline of Civilization",
+      "user": {
+        "name": "DogeDesigner",
+        "username": "@cb_doge",
+        "profile_id": "1498070100393754625",
+        "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 6:54 AM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1787737537118601217/vid/avc1/802x720/zdZI1A3NW9PblvN6.mp4?tag\u003d14"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 19474,
+      "retweets": 28500,
+      "quotes": 2202,
+      "likes": 181612
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787723851167871099#m",
+    "Content": "Good breakdown of the discussion",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 5:59 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/MuskBreaking/status/1787676846298997138#m",
+      "Content": "Elon Musk was interviewed by Michael Milken earlier today. Here\u0027s the full conversation with timestamps:  0:52 What will most impact humanity\u0027s future 3:45 Becoming a multiplanetary species 5:34 Aliens \u0026 the precariousness of civilization 8:21 Freedom of speech 10:05 Socialism 11:42 Merit \u0026 discrimination 12:54 Regulation 15:16 Education \u0026 gamification 19:24 Immigration 21:47 StarLinkTweet \u0026 access to information 23:37 Rise and fall of civilizations 25:08 Dying on Mars (but not on impact) 26:49 Passing a Fermi Great Filter 28:36 AI needs to be truth-seeking 33:21 Birth rate (if possible, have at least 3 kids) 38:09 What keeps Elon up at night",
+      "user": {
+        "name": "Documenting Elon Musk",
+        "username": "@MuskBreaking",
+        "profile_id": "1777554101338865664",
+        "avatar": "https://pbs.twimg.com/profile_images/1777554101338865664/wTE0LT61_mini.jpg"
+      },
+      "PostingDate": "May 7, 2024 · 2:52 AM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1787668997854404608/vid/avc1/1920x1080/R0e_d8iXq5ABtt7D.mp4?tag\u003d16"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 2278,
+      "retweets": 9076,
+      "quotes": 419,
+      "likes": 55956
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/MilkenInstitute/status/1787635180121084044#m",
+    "Content": "Watch LIVE: @MilkenInstitute Chairman Mike Milken in conversation with @elonmusk at #MIGlobal https://twitter.com/i/broadcasts/1BRKjPvrBejJw",
+    "user": {
+      "name": "Milken Institute",
+      "username": "@MilkenInstitute",
+      "profile_id": "1227697901519818752",
+      "avatar": "https://pbs.twimg.com/profile_images/1227697901519818752/NmBYX_ri_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 12:06 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 466,
+      "retweets": 1338,
+      "quotes": 121,
+      "likes": 4509
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/stevenmarkryan/status/1787651035848425590#m",
+    "Content": "Elon Musk’s FULL Conversation At Milken Institute (silence removed to save you time)",
+    "user": {
+      "name": "stevenmarkryan",
+      "username": "@stevenmarkryan",
+      "profile_id": "1295881160879415300",
+      "avatar": "https://pbs.twimg.com/profile_images/1295881160879415300/_Y5CVaOU_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 1:09 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 509,
+      "retweets": 1662,
+      "quotes": 123,
+      "likes": 7755
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787650148409262080/vid/avc1/1280x720/_x5TInoJygVipwTT.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787655350147035334#m",
+    "Content": "\"I\u0027m in favor of greatly expediting legal immigration. But having a secure southern border so there\u0027s some vetting of who comes into the United States.\"",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 1:27 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 672,
+      "retweets": 1614,
+      "quotes": 91,
+      "likes": 9580
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787655236192022528/vid/avc1/828x720/g-ITyd2pwLGs0us6.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787645925747220651#m",
+    "Content": "\"SpaceX has roughly 6000 satellites and not once have we had to maneuver around a UFO.  Civilization is rare. We should do everything possible to save it.\"",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 12:49 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 796,
+      "retweets": 1783,
+      "quotes": 118,
+      "likes": 10969
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787645797397368832/vid/avc1/832x720/3zcIrtp2gzH7sDJ-.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787652623748804641#m",
+    "Content": "\"Laws and regulations are immortal. If year after year there are more laws and regulations passed, eventually everything will be illegal.\"",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 1:16 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 614,
+      "retweets": 1783,
+      "quotes": 127,
+      "likes": 9161
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787652500000026625/vid/avc1/808x720/Ya6U3KgwJNolQRFA.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787654457339342932#m",
+    "Content": "I recommend investing in Argentina",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 1:23 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/elonmusk/status/1787627184812949968#m",
+      "Content": "Great meeting with President ⁦@JMilei⁩!",
+      "user": {
+        "name": "Elon Musk",
+        "username": "@elonmusk",
+        "profile_id": "1780044485541699584",
+        "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_mini.jpg"
+      },
+      "PostingDate": "May 6, 2024 · 11:35 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GM7tcpMboAAi2E5.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 22041,
+      "retweets": 66062,
+      "quotes": 11923,
+      "likes": 558165
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787638333684027413#m",
+    "Content": "https://twitter.com/i/spaces/1gqxvQVpljBJB",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 12:19 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 3297,
+      "retweets": 4176,
+      "quotes": 323,
+      "likes": 20709
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787633810361946264#m",
+    "Content": "Streaming live from @MilkenInstitute in ~10 mins",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 7, 2024 · 12:01 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 5669,
+      "retweets": 3685,
+      "quotes": 223,
+      "likes": 34359
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787627184812949968#m",
+    "Content": "Great meeting with President ⁦@JMilei⁩!",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 6, 2024 · 11:35 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 12207,
+      "retweets": 38924,
+      "quotes": 3380,
+      "likes": 464713
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GM7tcpMboAAi2E5.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787591856542667195#m",
+    "Content": "Are you saying the fine was for repeating accurate government statistics?   Was there anything inaccurate in what she said?",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 6, 2024 · 9:14 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/EndWokeness/status/1787540072096522673#m",
+      "Content": "German politician of the AFD party, Marie-Thérèse Kaiser was just convicted \u0026 fined $6,000+  Her crime? Posting statistics showing that Afghan immigrants are disproportionately committing sexuaI assauIt in Germany.",
+      "user": {
+        "name": "End Wokeness",
+        "username": "@EndWokeness",
+        "profile_id": "1563691268793946117",
+        "avatar": "https://pbs.twimg.com/profile_images/1563691268793946117/OedvhFeS_mini.jpg"
+      },
+      "PostingDate": "May 6, 2024 · 5:48 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GM6eOKaXsAAEHdQ.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 14094,
+      "retweets": 53974,
+      "quotes": 1773,
+      "likes": 257271
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Tesla/status/1787516171970830479#m",
+    "Content": "$99/month",
+    "user": {
+      "name": "Tesla",
+      "username": "@Tesla",
+      "profile_id": "1337607516008501250",
+      "avatar": "https://pbs.twimg.com/profile_images/1337607516008501250/6Ggc4S5n_bigger.png"
+    },
+    "PostingDate": "May 6, 2024 · 4:14 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/ByeonChansoo/status/1787297026742358513#m",
+      "Content": "Tesla FSD drove the entire way from underground garage to home after a Toronto FC game last night... (~50 minute drive). Check out the bold moments below!   this is insane in a good way @elonmusk   0:05 underground parking escape success 0:34 Liberty Village night traffic 2:00 super narrow and backed up road 🤯 4:00 left a gap for traffic to flow - very nice 5:35 truck driver cuts in \u0026 FSD handles it perfectly 6:02 Highway merge (QEW) 8:00 Highway interchange  9:38 Highway interchange 2  11:50 Highway exit   @ICannot_Enough @WholeMarsBlog @28delayslater @SawyerMerritt @niccruzpatane @DriveTeslaca @Tesla @Tesla_AI @aelluswamy",
+      "user": {
+        "name": "Chansoo Byeon",
+        "username": "@ByeonChansoo",
+        "profile_id": "1642973743436779521",
+        "avatar": "https://pbs.twimg.com/profile_images/1642973743436779521/BFSbPnbf_mini.jpg"
+      },
+      "PostingDate": "May 6, 2024 · 1:43 AM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1787288372014141441/vid/avc1/1280x720/-zdUqcHx18YUwKwp.mp4?tag\u003d14"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 1588,
+      "retweets": 2485,
+      "quotes": 158,
+      "likes": 20106
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/SpaceX/status/1787548693748666609#m",
+    "Content": "Falcon 9’s first stage booster lands on the Just Read the Instructions droneship for recovery and refurbishment ahead of its 16th mission",
+    "user": {
+      "name": "SpaceX",
+      "username": "@SpaceX",
+      "profile_id": "1697749409851985920",
+      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+    },
+    "PostingDate": "May 6, 2024 · 6:23 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 662,
+      "retweets": 1772,
+      "quotes": 88,
+      "likes": 12559
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787548599796342786/vid/avc1/1920x1080/_GY902Nc9NDAK0Ne.mp4?tag\u003d16"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787531120852312388#m",
+    "Content": "Although Boeing got $4.2 billion to develop an astronaut capsule and SpaceX only got $2.6 billion, SpaceX finished 4 years sooner.   Note, the crew capsule design of Dragon 2 has almost nothing in common with Dragon 1.   Too many non-technical managers at Boeing.",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 6, 2024 · 5:13 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/SciGuySpace/status/1787456163438534856#m",
+      "Content": "Here\u0027s my deep dive into why Starliner is seven years late.  https://arstechnica.com/space/2024/05/the-surprise-is-not-that-boeing-lost-commercial-crew-but-that-it-finished-at-all/",
+      "user": {
+        "name": "Eric Berger",
+        "username": "@SciGuySpace",
+        "profile_id": "1365795824127651845",
+        "avatar": "https://pbs.twimg.com/profile_images/1365795824127651845/d6DJqa7S_mini.jpg"
+      },
+      "PostingDate": "May 6, 2024 · 12:15 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 7828,
+      "retweets": 19872,
+      "quotes": 1127,
+      "likes": 132441
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/ByeonChansoo/status/1787297026742358513#m",
+    "Content": "Tesla FSD drove the entire way from underground garage to home after a Toronto FC game last night... (~50 minute drive). Check out the bold moments below!   this is insane in a good way @elonmusk   0:05 underground parking escape success 0:34 Liberty Village night traffic 2:00 super narrow and backed up road 🤯 4:00 left a gap for traffic to flow - very nice 5:35 truck driver cuts in \u0026 FSD handles it perfectly 6:02 Highway merge (QEW) 8:00 Highway interchange  9:38 Highway interchange 2  11:50 Highway exit   @ICannot_Enough @WholeMarsBlog @28delayslater @SawyerMerritt @niccruzpatane @DriveTeslaca @Tesla @Tesla_AI @aelluswamy",
+    "user": {
+      "name": "Chansoo Byeon",
+      "username": "@ByeonChansoo",
+      "profile_id": "1642973743436779521",
+      "avatar": "https://pbs.twimg.com/profile_images/1642973743436779521/BFSbPnbf_bigger.jpg"
+    },
+    "PostingDate": "May 6, 2024 · 1:43 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 1325,
+      "retweets": 2517,
+      "quotes": 313,
+      "likes": 16805
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787288372014141441/vid/avc1/1280x720/-zdUqcHx18YUwKwp.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787279202191884365#m",
+    "Content": "🥇",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 6, 2024 · 12:32 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 859,
+      "retweets": 1019,
+      "quotes": 35,
+      "likes": 6385
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GM2w9VSXYAAatfg.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/cb_doge/status/1787171495539524057#m",
+    "Content": "Users are spending an average of ~34 minutes per day on 𝕏, a 13% year-over-year increase.",
+    "user": {
+      "name": "DogeDesigner",
+      "username": "@cb_doge",
+      "profile_id": "1498070100393754625",
+      "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_bigger.jpg"
+    },
+    "PostingDate": "May 5, 2024 · 5:24 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 1158,
+      "retweets": 1520,
+      "quotes": 136,
+      "likes": 9075
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1785380920759103488/pu/vid/avc1/1280x720/yxKG6-6d4y1vGXlL.mp4?tag\u003d12"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/teslaownersSV/status/1786625103419392163#m",
+    "Content": "Human scale vs Starship",
+    "user": {
+      "name": "Tesla Owners Silicon Valley",
+      "username": "@teslaownersSV",
+      "profile_id": "1694755043638140928",
+      "avatar": "https://pbs.twimg.com/profile_images/1694755043638140928/9EnIf30U_bigger.jpg"
+    },
+    "PostingDate": "May 4, 2024 · 5:13 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 825,
+      "retweets": 2379,
+      "quotes": 182,
+      "likes": 17426
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1786625079880949760/pu/vid/avc1/720x1280/lpOpubRQbSr6g8Nf.mp4?tag\u003d12"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1787165820512051626#m",
+    "Content": "Maiden launch of Falcon Heavy, the most powerful operational rocket on Earth, with the first dual rocket landing",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 5, 2024 · 5:01 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 11822,
+      "retweets": 37316,
+      "quotes": 2986,
+      "likes": 289876
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/ext_tw_video/1786950044282712065/pu/vid/avc1/1920x1080/0nSeWwZ6a_-oCmph.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Tesla_Optimus/status/1787027808436330505#m",
+    "Content": "Trying to be useful lately!",
+    "user": {
+      "name": "Tesla Optimus",
+      "username": "@Tesla_Optimus",
+      "profile_id": "1753642663310700544",
+      "avatar": "https://pbs.twimg.com/profile_images/1753642663310700544/EFfmIhRX_bigger.jpg"
+    },
+    "PostingDate": "May 5, 2024 · 7:53 AM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 2341,
+      "retweets": 5613,
+      "quotes": 1517,
+      "likes": 30534
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1787027443074715648/vid/avc1/1280x720/50DJrlckMb5qd5ZC.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/FairElectFund/status/1786781178886033519#m",
+    "Content": "🚨 If you are an election worker, organizer, or concerned citizen who has seen corruption in our elections firsthand, we want to hear your story.   Those who report fraud or abuse are eligible for payment from our $5 million fund.",
+    "user": {
+      "name": "Fair Election Fund",
+      "username": "@FairElectFund",
+      "profile_id": "1782778224423866368",
+      "avatar": "https://pbs.twimg.com/profile_images/1782778224423866368/hP038GKz_bigger.jpg"
+    },
+    "PostingDate": "May 4, 2024 · 3:33 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 1110,
+      "retweets": 5727,
+      "quotes": 277,
+      "likes": 16651
+    },
+    "pictures": [],
+    "videos": [
+      "https://video.twimg.com/amplify_video/1786780028271030272/vid/avc1/1280x720/5l_5dysRr1qdpA-X.mp4?tag\u003d14"
+    ],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/SpaceX/status/1786764079002161572#m",
+    "Content": "Chat with the Polaris Dawn crew and SpaceX team today ~3:00 p.m. ET on Spaces →",
+    "user": {
+      "name": "SpaceX",
+      "username": "@SpaceX",
+      "profile_id": "1697749409851985920",
+      "avatar": "https://pbs.twimg.com/profile_images/1697749409851985920/HbrI04tM_bigger.jpg"
+    },
+    "PostingDate": "May 4, 2024 · 2:25 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/PolarisProgram/status/1786760319471161688#m",
+      "Content": "More @SpaceX photos of the new Extravehicular Activity (EVA) suit the Polaris Dawn crew will wear during their upcoming mission. Let us know your questions below ahead of today’s X Spaces event with the crew and SpaceX team👇",
+      "user": {
+        "name": "Polaris",
+        "username": "@PolarisProgram",
+        "profile_id": "1492978945309831168",
+        "avatar": "https://pbs.twimg.com/profile_images/1492978945309831168/qxqYf-uK_mini.jpg"
+      },
+      "PostingDate": "May 4, 2024 · 2:10 PM UTC",
+      "pictures": [
+        "https://pbs.twimg.com/media/GMvYxi4WsAARFW9.jpg",
+        "https://pbs.twimg.com/media/GMvYxi4WoAAFum_.jpg",
+        "https://pbs.twimg.com/media/GMvYxi4XsAAZljT.jpg",
+        "https://pbs.twimg.com/media/GMvYxi4WQAEnMwP.jpg"
+      ],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 741,
+      "retweets": 1924,
+      "quotes": 87,
+      "likes": 12758
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/JohnnaCrider1/status/1786851048591675668#m",
+    "Content": "Thank you Elon Musk and SpaceX for creating StarLinkTweet.   Even with obstructions (power lines) I have never seen internet this fast before.    Best purchase I\u0027ve ever made.",
+    "user": {
+      "name": "Johnna",
+      "username": "@JohnnaCrider1",
+      "profile_id": "1782164679839621120",
+      "avatar": "https://pbs.twimg.com/profile_images/1782164679839621120/9w8VtfpO_bigger.jpg"
+    },
+    "PostingDate": "May 4, 2024 · 8:11 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 760,
+      "retweets": 1345,
+      "quotes": 63,
+      "likes": 10775
+    },
+    "pictures": [
+      "https://pbs.twimg.com/media/GMwra6dXMAAskPD.jpg"
+    ],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1786861963848671413#m",
+    "Content": "This will improve the quality of your replies",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 4, 2024 · 8:54 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/cb_doge/status/1786861276628410553#m",
+      "Content": "𝕏 Hack 一 Limit replies to verified users only to prevent spam in your comment section.",
+      "user": {
+        "name": "DogeDesigner",
+        "username": "@cb_doge",
+        "profile_id": "1498070100393754625",
+        "avatar": "https://pbs.twimg.com/profile_images/1498070100393754625/C2V-fbll_mini.jpg"
+      },
+      "PostingDate": "May 4, 2024 · 8:51 PM UTC",
+      "pictures": [],
+      "videos": [
+        "https://video.twimg.com/amplify_video/1781387275324026880/vid/avc1/736x720/1Lz0xzCoXwxZjpui.mp4?tag\u003d14"
+      ],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 15755,
+      "retweets": 7286,
+      "quotes": 1427,
+      "likes": 46025
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/elonmusk/status/1786838832287265191#m",
+    "Content": "Doesn’t make sense that American taxpayers are forced to fund anti-American activities",
+    "user": {
+      "name": "Elon Musk",
+      "username": "@elonmusk",
+      "profile_id": "1780044485541699584",
+      "avatar": "https://pbs.twimg.com/profile_images/1780044485541699584/p78MCn3B_bigger.jpg"
+    },
+    "PostingDate": "May 4, 2024 · 7:22 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/EndWokeness/status/1786837196835795360#m",
+      "Content": "Federal funding of universities, 2023:  Columbia: $1.2 billion Penn: $955.6 million NYU: $805.5 million Yale: $776.8 million Cornell: $736.2 million Harvard: $676.1 million UT Austin: $645 million Berkeley: $451.4 million Princeton: $403 million GWU: $200.2 million",
+      "user": {
+        "name": "End Wokeness",
+        "username": "@EndWokeness",
+        "profile_id": "1563691268793946117",
+        "avatar": "https://pbs.twimg.com/profile_images/1563691268793946117/OedvhFeS_mini.jpg"
+      },
+      "PostingDate": "May 4, 2024 · 7:16 PM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 24177,
+      "retweets": 52485,
+      "quotes": 3201,
+      "likes": 263817
     },
     "pictures": [],
     "videos": [],

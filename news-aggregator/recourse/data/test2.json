@@ -1,5 +1,105 @@
 [
   {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1790220374610743755#m",
+    "Content": "May 14, 2024 @ 03:19 AM (UTC) Current Price of Bitcoin  (BTC-USD):        $62,425.00 (BTC-EUR):        €57,873.91",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "May 14, 2024 · 3:19 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 74,
+      "retweets": 85,
+      "quotes": 7,
+      "likes": 329
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1790135290054447337#m",
+    "Content": "€58,326.16",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "May 13, 2024 · 9:41 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 66,
+      "retweets": 93,
+      "quotes": 6,
+      "likes": 408
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1790037904477041118#m",
+    "Content": "$62,808.30",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "May 13, 2024 · 3:14 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 102,
+      "retweets": 195,
+      "quotes": 8,
+      "likes": 960
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1789949207811412130#m",
+    "Content": "May 13, 2024 @ 09:20 AM (UTC) Current Price of Bitcoin  (BTC-USD):        $62,898.30 (BTC-EUR):        €58,311.76",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "May 13, 2024 · 9:22 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 86,
+      "retweets": 184,
+      "quotes": 8,
+      "likes": 572
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
     "LinkTweet": "https://twitter.com/Bitcoin/status/1789857995771306104#m",
     "Content": "£48,583.22",
     "user": {
@@ -15,10 +115,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 61,
-      "retweets": 54,
+      "comments": 111,
+      "retweets": 140,
       "quotes": 5,
-      "likes": 211
+      "likes": 482
     },
     "pictures": [],
     "videos": [],
@@ -40,10 +140,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 102,
-      "retweets": 91,
+      "comments": 115,
+      "retweets": 154,
       "quotes": 2,
-      "likes": 389
+      "likes": 547
     },
     "pictures": [],
     "videos": [],
@@ -65,10 +165,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 139,
-      "retweets": 167,
-      "quotes": 10,
-      "likes": 761
+      "comments": 150,
+      "retweets": 224,
+      "quotes": 11,
+      "likes": 861
     },
     "pictures": [],
     "videos": [],
@@ -90,10 +190,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 170,
-      "retweets": 212,
+      "comments": 181,
+      "retweets": 251,
       "quotes": 6,
-      "likes": 620
+      "likes": 696
     },
     "pictures": [],
     "videos": [],
@@ -116,9 +216,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 103,
-      "retweets": 156,
+      "retweets": 176,
       "quotes": 3,
-      "likes": 478
+      "likes": 534
     },
     "pictures": [],
     "videos": [],
@@ -140,10 +240,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 125,
-      "retweets": 157,
+      "comments": 130,
+      "retweets": 174,
       "quotes": 2,
-      "likes": 630
+      "likes": 688
     },
     "pictures": [],
     "videos": [],
@@ -165,10 +265,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 106,
-      "retweets": 141,
+      "comments": 108,
+      "retweets": 159,
       "quotes": 3,
-      "likes": 485
+      "likes": 529
     },
     "pictures": [],
     "videos": [],
@@ -191,9 +291,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 128,
-      "retweets": 195,
+      "retweets": 209,
       "quotes": 9,
-      "likes": 590
+      "likes": 617
     },
     "pictures": [],
     "videos": [],
@@ -215,10 +315,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 71,
-      "retweets": 148,
+      "comments": 72,
+      "retweets": 159,
       "quotes": 9,
-      "likes": 458
+      "likes": 478
     },
     "pictures": [],
     "videos": [],
@@ -241,9 +341,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 180,
-      "retweets": 235,
+      "retweets": 247,
       "quotes": 9,
-      "likes": 1064
+      "likes": 1086
     },
     "pictures": [],
     "videos": [],
@@ -266,9 +366,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 86,
-      "retweets": 155,
+      "retweets": 170,
       "quotes": 9,
-      "likes": 578
+      "likes": 594
     },
     "pictures": [],
     "videos": [],
@@ -290,10 +390,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 91,
-      "retweets": 222,
+      "comments": 93,
+      "retweets": 237,
       "quotes": 6,
-      "likes": 559
+      "likes": 582
     },
     "pictures": [],
     "videos": [],
@@ -316,9 +416,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 91,
-      "retweets": 184,
+      "retweets": 198,
       "quotes": 2,
-      "likes": 555
+      "likes": 571
     },
     "pictures": [],
     "videos": [],
@@ -340,10 +440,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 122,
-      "retweets": 213,
+      "comments": 123,
+      "retweets": 222,
       "quotes": 6,
-      "likes": 617
+      "likes": 638
     },
     "pictures": [],
     "videos": [],
@@ -365,10 +465,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 145,
-      "retweets": 255,
+      "comments": 144,
+      "retweets": 256,
       "quotes": 7,
-      "likes": 930
+      "likes": 938
     },
     "pictures": [],
     "videos": [],
@@ -390,10 +490,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 109,
-      "retweets": 220,
+      "comments": 111,
+      "retweets": 228,
       "quotes": 6,
-      "likes": 685
+      "likes": 692
     },
     "pictures": [],
     "videos": [],
@@ -415,10 +515,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 63,
-      "retweets": 232,
+      "comments": 64,
+      "retweets": 238,
       "quotes": 5,
-      "likes": 568
+      "likes": 574
     },
     "pictures": [],
     "videos": [],
@@ -441,9 +541,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 159,
-      "retweets": 254,
+      "retweets": 263,
       "quotes": 6,
-      "likes": 919
+      "likes": 926
     },
     "pictures": [],
     "videos": [],
@@ -465,10 +565,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 127,
-      "retweets": 194,
+      "comments": 129,
+      "retweets": 201,
       "quotes": 5,
-      "likes": 616
+      "likes": 623
     },
     "pictures": [],
     "videos": [],
@@ -490,10 +590,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 127,
-      "retweets": 265,
+      "comments": 130,
+      "retweets": 277,
       "quotes": 5,
-      "likes": 636
+      "likes": 648
     },
     "pictures": [],
     "videos": [],
@@ -515,10 +615,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 128,
-      "retweets": 197,
+      "comments": 130,
+      "retweets": 204,
       "quotes": 2,
-      "likes": 589
+      "likes": 600
     },
     "pictures": [],
     "videos": [],
@@ -541,9 +641,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 113,
-      "retweets": 217,
+      "retweets": 227,
       "quotes": 10,
-      "likes": 873
+      "likes": 882
     },
     "pictures": [],
     "videos": [],
@@ -565,10 +665,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 97,
-      "retweets": 209,
+      "comments": 98,
+      "retweets": 216,
       "quotes": 6,
-      "likes": 608
+      "likes": 621
     },
     "pictures": [],
     "videos": [],
@@ -590,10 +690,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 134,
-      "retweets": 237,
+      "comments": 135,
+      "retweets": 246,
       "quotes": 9,
-      "likes": 844
+      "likes": 856
     },
     "pictures": [],
     "videos": [],
@@ -615,10 +715,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 108,
-      "retweets": 212,
+      "comments": 110,
+      "retweets": 219,
       "quotes": 4,
-      "likes": 748
+      "likes": 757
     },
     "pictures": [],
     "videos": [],
@@ -640,10 +740,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 125,
-      "retweets": 192,
+      "comments": 126,
+      "retweets": 200,
       "quotes": 2,
-      "likes": 617
+      "likes": 633
     },
     "pictures": [],
     "videos": [],
@@ -666,9 +766,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 144,
-      "retweets": 247,
+      "retweets": 258,
       "quotes": 6,
-      "likes": 828
+      "likes": 844
     },
     "pictures": [],
     "videos": [],
@@ -690,10 +790,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 98,
-      "retweets": 194,
+      "comments": 100,
+      "retweets": 197,
       "quotes": 3,
-      "likes": 590
+      "likes": 602
     },
     "pictures": [],
     "videos": [],
@@ -715,10 +815,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 98,
-      "retweets": 216,
+      "comments": 99,
+      "retweets": 221,
       "quotes": 4,
-      "likes": 606
+      "likes": 616
     },
     "pictures": [],
     "videos": [],
@@ -740,10 +840,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 100,
-      "retweets": 187,
+      "comments": 102,
+      "retweets": 193,
       "quotes": 1,
-      "likes": 594
+      "likes": 607
     },
     "pictures": [],
     "videos": [],
@@ -765,10 +865,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 122,
-      "retweets": 199,
+      "comments": 121,
+      "retweets": 201,
       "quotes": 6,
-      "likes": 658
+      "likes": 666
     },
     "pictures": [],
     "videos": [],
@@ -790,10 +890,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 270,
-      "retweets": 274,
+      "comments": 271,
+      "retweets": 275,
       "quotes": 5,
-      "likes": 826
+      "likes": 831
     },
     "pictures": [],
     "videos": [],
@@ -815,10 +915,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 75,
-      "retweets": 160,
+      "comments": 76,
+      "retweets": 165,
       "quotes": 1,
-      "likes": 575
+      "likes": 582
     },
     "pictures": [],
     "videos": [],
@@ -840,10 +940,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 114,
-      "retweets": 253,
+      "comments": 116,
+      "retweets": 251,
       "quotes": 1,
-      "likes": 725
+      "likes": 729
     },
     "pictures": [],
     "videos": [],
@@ -865,10 +965,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 117,
-      "retweets": 181,
+      "comments": 119,
+      "retweets": 183,
       "quotes": 7,
-      "likes": 706
+      "likes": 713
     },
     "pictures": [],
     "videos": [],
@@ -890,10 +990,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 216,
-      "retweets": 229,
+      "comments": 218,
+      "retweets": 235,
       "quotes": 8,
-      "likes": 781
+      "likes": 792
     },
     "pictures": [],
     "videos": [],
@@ -915,10 +1015,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 102,
-      "retweets": 160,
+      "comments": 103,
+      "retweets": 162,
       "quotes": 2,
-      "likes": 640
+      "likes": 645
     },
     "pictures": [],
     "videos": [],
@@ -940,10 +1040,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 115,
-      "retweets": 184,
+      "comments": 116,
+      "retweets": 190,
       "quotes": 8,
-      "likes": 691
+      "likes": 698
     },
     "pictures": [],
     "videos": [],
@@ -965,10 +1065,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 138,
-      "retweets": 218,
+      "comments": 139,
+      "retweets": 222,
       "quotes": 7,
-      "likes": 582
+      "likes": 592
     },
     "pictures": [],
     "videos": [],
@@ -990,10 +1090,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 116,
-      "retweets": 209,
+      "comments": 118,
+      "retweets": 212,
       "quotes": 1,
-      "likes": 541
+      "likes": 552
     },
     "pictures": [],
     "videos": [],
@@ -1015,10 +1115,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 127,
-      "retweets": 249,
+      "comments": 129,
+      "retweets": 254,
       "quotes": 6,
-      "likes": 872
+      "likes": 875
     },
     "pictures": [],
     "videos": [],
@@ -1041,9 +1141,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 86,
-      "retweets": 215,
+      "retweets": 217,
       "quotes": 7,
-      "likes": 530
+      "likes": 534
     },
     "pictures": [],
     "videos": [],
@@ -1065,10 +1165,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 115,
-      "retweets": 220,
+      "comments": 116,
+      "retweets": 222,
       "quotes": 6,
-      "likes": 608
+      "likes": 612
     },
     "pictures": [],
     "videos": [],
@@ -1090,10 +1190,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 184,
-      "retweets": 286,
+      "comments": 183,
+      "retweets": 278,
       "quotes": 18,
-      "likes": 926
+      "likes": 918
     },
     "pictures": [],
     "videos": [],
@@ -1115,10 +1215,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 79,
-      "retweets": 213,
+      "comments": 80,
+      "retweets": 215,
       "quotes": 7,
-      "likes": 510
+      "likes": 518
     },
     "pictures": [],
     "videos": [],
@@ -1140,10 +1240,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 108,
-      "retweets": 192,
+      "comments": 109,
+      "retweets": 193,
       "quotes": 6,
-      "likes": 543
+      "likes": 544
     },
     "pictures": [],
     "videos": [],
@@ -1166,9 +1266,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 133,
-      "retweets": 206,
+      "retweets": 201,
       "quotes": 6,
-      "likes": 613
+      "likes": 607
     },
     "pictures": [],
     "videos": [],
@@ -1190,8 +1290,8 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 102,
-      "retweets": 166,
+      "comments": 103,
+      "retweets": 168,
       "quotes": 4,
       "likes": 456
     },
@@ -1216,9 +1316,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 117,
-      "retweets": 211,
+      "retweets": 213,
       "quotes": 11,
-      "likes": 600
+      "likes": 607
     },
     "pictures": [],
     "videos": [],
@@ -1240,10 +1340,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 86,
-      "retweets": 156,
+      "comments": 87,
+      "retweets": 161,
       "quotes": 1,
-      "likes": 433
+      "likes": 440
     },
     "pictures": [],
     "videos": [],
@@ -1266,9 +1366,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 105,
-      "retweets": 203,
+      "retweets": 199,
       "quotes": 3,
-      "likes": 500
+      "likes": 497
     },
     "pictures": [],
     "videos": [],
@@ -1290,10 +1390,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 81,
-      "retweets": 144,
+      "comments": 82,
+      "retweets": 148,
       "quotes": 3,
-      "likes": 475
+      "likes": 479
     },
     "pictures": [],
     "videos": [],
@@ -1316,9 +1416,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 95,
-      "retweets": 144,
+      "retweets": 146,
       "quotes": 3,
-      "likes": 488
+      "likes": 490
     },
     "pictures": [],
     "videos": [],
@@ -1341,7 +1441,7 @@
     "quoted-post": {},
     "stats": {
       "comments": 91,
-      "retweets": 217,
+      "retweets": 220,
       "quotes": 10,
       "likes": 756
     },
@@ -1365,10 +1465,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 131,
-      "retweets": 190,
+      "comments": 132,
+      "retweets": 193,
       "quotes": 7,
-      "likes": 634
+      "likes": 638
     },
     "pictures": [],
     "videos": [],
@@ -1391,9 +1491,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 134,
-      "retweets": 178,
+      "retweets": 182,
       "quotes": 1,
-      "likes": 642
+      "likes": 643
     },
     "pictures": [],
     "videos": [],
@@ -1415,10 +1515,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 99,
-      "retweets": 160,
+      "comments": 100,
+      "retweets": 162,
       "quotes": 3,
-      "likes": 511
+      "likes": 513
     },
     "pictures": [],
     "videos": [],
@@ -1441,9 +1541,9 @@
     "quoted-post": {},
     "stats": {
       "comments": 131,
-      "retweets": 245,
+      "retweets": 244,
       "quotes": 1,
-      "likes": 628
+      "likes": 626
     },
     "pictures": [],
     "videos": [],
@@ -1465,10 +1565,10 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 172,
-      "retweets": 179,
+      "comments": 174,
+      "retweets": 181,
       "quotes": 5,
-      "likes": 605
+      "likes": 606
     },
     "pictures": [],
     "videos": [],
@@ -1490,10 +1590,423 @@
     "replying-to": [],
     "quoted-post": {},
     "stats": {
-      "comments": 236,
-      "retweets": 300,
+      "comments": 237,
+      "retweets": 299,
       "quotes": 7,
-      "likes": 1085
+      "likes": 1081
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1784422167100182923#m",
+    "Content": "€60,048.71",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 28, 2024 · 3:19 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 115,
+      "retweets": 183,
+      "quotes": 5,
+      "likes": 643
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1784337073178087611#m",
+    "Content": "£49,992.49  #Bitcoin #BTC $BTC $GBP",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 27, 2024 · 9:41 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 120,
+      "retweets": 196,
+      "quotes": 5,
+      "likes": 647
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1784239695964045671#m",
+    "Content": "April 27, 2024 @ 03:12 PM (UTC) Current Price of Bitcoin  (BTC-USD):        $63,123.80 (BTC-EUR):        €58,979.72",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 27, 2024 · 3:14 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 153,
+      "retweets": 239,
+      "quotes": 5,
+      "likes": 641
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1784151009993937392#m",
+    "Content": "£50,371.47  #Bitcoin #BTC $BTC $GBP",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 27, 2024 · 9:22 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 155,
+      "retweets": 229,
+      "quotes": 7,
+      "likes": 639
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1784059774826357184#m",
+    "Content": "£50,471.33",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 27, 2024 · 3:19 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 105,
+      "retweets": 171,
+      "quotes": 1,
+      "likes": 498
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783974686960886123#m",
+    "Content": "¥10,093,250.05",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 26, 2024 · 9:41 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 131,
+      "retweets": 182,
+      "quotes": 5,
+      "likes": 511
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Dennis_Porter_/status/1783632855760871801#m",
+    "Content": "They will come for self-custody.   And We 👏 will 👏 fight 👏 back!  The idea that we cannot posses our own #Bitcoin is insane.",
+    "user": {
+      "name": "Dennis Porter",
+      "username": "@Dennis_Porter_",
+      "profile_id": "1664469789564366850",
+      "avatar": "https://pbs.twimg.com/profile_images/1664469789564366850/YzVp6b_p_bigger.jpg"
+    },
+    "PostingDate": "Apr 25, 2024 · 11:03 PM UTC",
+    "is-retweet": true,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 168,
+      "retweets": 398,
+      "quotes": 27,
+      "likes": 2175
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783929053843693799#m",
+    "Content": "Naivety. 😵",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 26, 2024 · 6:40 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {
+      "LinkTweet": "https://twitter.com/Excellion/status/1783766300050751732#m",
+      "Content": "Privacy can still be maintained by breaking the flow of information in another place: by keeping public keys anonymous. The public can see that someone is sending an amount to someone else, but without information LinkTweeting the transaction to anyone.  - Satoshi Nakamoto",
+      "user": {
+        "name": "Samson Mow",
+        "username": "@Excellion",
+        "profile_id": "1705336770270023680",
+        "avatar": "https://pbs.twimg.com/profile_images/1705336770270023680/cfqn0ruH_mini.jpg"
+      },
+      "PostingDate": "Apr 26, 2024 · 7:53 AM UTC",
+      "pictures": [],
+      "videos": [],
+      "gifs": []
+    },
+    "stats": {
+      "comments": 83,
+      "retweets": 147,
+      "quotes": 1,
+      "likes": 325
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783877313983128059#m",
+    "Content": "¥10,025,395.18",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 26, 2024 · 3:14 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 85,
+      "retweets": 189,
+      "quotes": 2,
+      "likes": 537
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783788613248884956#m",
+    "Content": "¥10,085,400.38",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 26, 2024 · 9:22 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 122,
+      "retweets": 268,
+      "quotes": 6,
+      "likes": 751
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783697388785279132#m",
+    "Content": "$64,364.20",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 26, 2024 · 3:19 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 141,
+      "retweets": 319,
+      "quotes": 11,
+      "likes": 913
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783612297144934484#m",
+    "Content": "€60,705.81",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 25, 2024 · 9:41 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 118,
+      "retweets": 168,
+      "quotes": 8,
+      "likes": 614
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783514928587895251#m",
+    "Content": "£50,758.20  #Bitcoin #BTC $BTC $GBP",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 25, 2024 · 3:14 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 157,
+      "retweets": 197,
+      "quotes": 5,
+      "likes": 662
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783426232089985139#m",
+    "Content": "€59,717.30",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 25, 2024 · 9:22 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 133,
+      "retweets": 181,
+      "quotes": 2,
+      "likes": 644
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783335008846962908#m",
+    "Content": "$64,138.20  #Bitcoin #BTC $BTC $USD",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 25, 2024 · 3:19 AM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 151,
+      "retweets": 252,
+      "quotes": 12,
+      "likes": 970
+    },
+    "pictures": [],
+    "videos": [],
+    "gifs": []
+  },
+  {
+    "LinkTweet": "https://twitter.com/Bitcoin/status/1783249902513901918#m",
+    "Content": "¥9,982,809.94",
+    "user": {
+      "name": "Bitcoin",
+      "username": "@Bitcoin",
+      "profile_id": "421692600446619648",
+      "avatar": "https://pbs.twimg.com/profile_images/421692600446619648/dWAbC2wg_bigger.jpeg"
+    },
+    "PostingDate": "Apr 24, 2024 · 9:41 PM UTC",
+    "is-retweet": false,
+    "is-pinned": false,
+    "external-LinkTweet": "",
+    "replying-to": [],
+    "quoted-post": {},
+    "stats": {
+      "comments": 111,
+      "retweets": 158,
+      "quotes": 6,
+      "likes": 609
     },
     "pictures": [],
     "videos": [],
