@@ -202,7 +202,7 @@ class Header extends JPanel{
         menuRight.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
          // Thêm các nút vào menuLeft
-       
+        // TODO
         ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
         menuButton.setIcon(menuIcon);
         menuButton.setPreferredSize(new Dimension(50,50));

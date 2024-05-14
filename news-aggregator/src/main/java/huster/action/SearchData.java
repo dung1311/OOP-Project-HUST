@@ -3,27 +3,24 @@ package huster.action;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
+
+import javax.swing.JPanel;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 public class SearchData {
     // store value of json file
-    private String readJsonData = new String();
     String DATAPATH = "news-aggregator\\resource\\data\\dataCoinDesk.json";
     private JsonArray _JsonArray = new JsonArray();
 
-    public JsonArray get_JsonArray(){
+    public JsonArray get_JsonArray() {
         return _JsonArray;
     }
 
-    public SearchData(){
+    public SearchData() {
         init();
     }
 
@@ -43,32 +40,29 @@ public class SearchData {
     String findingText = new String();
     private List<JsonObject> result = new ArrayList<>();
 
-    public void search(String findText) {
+    public List<JPanel> search(String findText) {
         int length = get_JsonArray().size();
+        List<JPanel> jPanels = new ArrayList<>();
 
         List<JsonObject> s_JsonObjects = new ArrayList<>();
-        for(int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             s_JsonObjects.add(_JsonArray.get(i).getAsJsonObject());
         }
 
-        for(int i = 0; i < s_JsonObjects.size(); i++) {
+        for (int i = 0; i < s_JsonObjects.size(); i++) {
             String jsonString = new String();
             jsonString = s_JsonObjects.get(i).toString();
-            if(jsonString.contains(findText)){
+            if (jsonString.contains(findText)) {
                 result.add(s_JsonObjects.get(i));
             }
         }
+
+        for(int i = 0; i < result.size(); i++) {
+            JPanel jPanel = new newsObject(result.get(i)).setAsJPanel();
+            jPanels.add(jPanel);
+        }
+
+        return jPanels;
     }
 
-    public List<JsonObject> getResult() {
-        return result;
-    }
-}
-
-class Test333 {
-    public static void main(String[] args) {
-        SearchData test = new SearchData();
-        test.search("bitcoin");
-        System.out.println(test.getResult());
-    }
 }

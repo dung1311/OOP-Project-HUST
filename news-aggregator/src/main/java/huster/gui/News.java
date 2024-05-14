@@ -79,7 +79,7 @@ public class News extends JFrame {
         // JPanel jPanel_news_header = new JPanel();
         // jPanel_news_header.setLayout(new BorderLayout());
 
-        jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
+        // jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
 
         setAuthor(nameAuthor);
         setPostingDate(postingDate);

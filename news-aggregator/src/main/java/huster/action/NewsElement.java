@@ -42,11 +42,3 @@ public class NewsElement {
     }
 }
 
-
-class Test {
-
-    public static void main(String[] args) {
-        NewsElement test = new NewsElement();
-        test.test();
-    }
-}
