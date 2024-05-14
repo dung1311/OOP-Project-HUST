@@ -35,7 +35,7 @@ public class CrawTweet {
         }
         File file = new File("news-aggregator/recourse/data/" + fileJsonName + ".json");
         if (!file.exists()) {
-            throw new IOException("File not created: " + fileJsonName + ".json");
+            throw new IOException("File not created");
         }
     }
 
@@ -62,15 +62,15 @@ public class CrawTweet {
     }
 
     @SuppressWarnings("deprecation")
-    public void crawlTweet(TweetItem tweetItem, String fileName) {
+    public void crawlTweet(TweetItem tweetItem, String fileJsonName) {
         try {
-            crawlTweetFirst(tweetItem, fileName);
+            crawlTweetFirst(tweetItem, fileJsonName);
             boolean isEmptyArray = true;
 
             do {
                 JsonParser parser = new JsonParser();
                 JsonElement readJson = parser
-                        .parse(new FileReader("news-aggregator\\recourse\\data\\" + fileName + ".json"));
+                        .parse(new FileReader("news-aggregator\\recourse\\data\\" + fileJsonName + ".json"));
 
                 JsonArray jsonArray = readJson.getAsJsonArray();
                 if (jsonArray.size() != 0) {
@@ -78,12 +78,12 @@ public class CrawTweet {
                 }
 
                 if (isEmptyArray) {
-                    crawlTweetFirst(tweetItem, fileName);
+                    crawlTweetFirst(tweetItem, fileJsonName);
                 }
 
             } while (isEmptyArray);
 
-            replaceJsonFile(fileName);
+            replaceJsonFile(fileJsonName);
 
         } catch (IOException e) {
             e.printStackTrace();

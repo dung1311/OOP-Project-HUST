@@ -42,7 +42,7 @@ public class ServerClient {
         connection.setRequestMethod("POST");
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoOutput(true);
-        
+
         OutputStream os = connection.getOutputStream();
         os.write(data.toString().getBytes());
         os.flush();
