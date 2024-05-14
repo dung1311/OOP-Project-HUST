@@ -33,7 +33,7 @@ public class Menu extends JFrame {
     // luu tru bai viet
     private List<JPanel> newsList = new ArrayList<>();
    
-    Header menu = new Header();
+    Header header = new Header();
 
     public int getNumberNews() {
         return number_News;
@@ -57,7 +57,7 @@ public class Menu extends JFrame {
         System.setProperty("GREY_menu", "0xFFFFFF");
         Color GREY_menu = Color.getColor("GREY_menu");
         
-        menu.addSearchButtonListener(new ActionListener() {
+        header.addSearchButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SearchUI searchUI = new SearchUI();
@@ -79,12 +79,12 @@ public class Menu extends JFrame {
         JPanel nothingPanel = new JPanel();
         nothingPanel.setPreferredSize(new Dimension(1280,75));
 
-        JButton BigarticleButton = new JButton(BigarticleIcon);
-        BigarticleButton.setBackground(GREY_menu);
-        BigarticleButton.setOpaque(false);
-        BigarticleButton.setContentAreaFilled(false);
-        BigarticleButton.setBorderPainted(false);
-        BigarticleButton.addActionListener(new ActionListener() {
+        JButton bigArticleButton = new JButton(BigarticleIcon);
+        bigArticleButton.setBackground(GREY_menu);
+        bigArticleButton.setOpaque(false);
+        bigArticleButton.setContentAreaFilled(false);
+        bigArticleButton.setBorderPainted(false);
+        bigArticleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 News news = new News("null", "null", "null", "null", "null");
@@ -95,9 +95,9 @@ public class Menu extends JFrame {
         JLabel BigarticleLabel_title = new JLabel("Be Xuan Mai");
         BigarticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
         BigarticleLabel_title.setVerticalAlignment(JLabel.CENTER);
-        toparticlePanel.add(BigarticleButton,BorderLayout.NORTH);
+        toparticlePanel.add(bigArticleButton,BorderLayout.NORTH);
         toparticlePanel.add(BigarticleLabel_title,BorderLayout.CENTER);
-        toparticlePanel.add(nothingPanel,BorderLayout.SOUTH);
+        // toparticlePanel.add(gapPanel,BorderLayout.SOUTH);
 
         articlePanel = new JPanel();
         articlePanel.setPreferredSize(new Dimension(1280, 1500));
@@ -143,7 +143,7 @@ public class Menu extends JFrame {
 
         // contentPane.setBackground(GREY_menu);
         this.setBackground(GREY_menu);
-        contentPane.add(menu, BorderLayout.NORTH);
+        contentPane.add(header, BorderLayout.NORTH);
         // contentPane.add(toparticlePanel, BorderLayout.CENTER);
 
         contentPane.add(scrollPane_suggested,BorderLayout.CENTER);  

@@ -76,8 +76,8 @@ public class News extends JFrame {
         jLabel_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jLabel_news_header.setFont(font30B);
 
-        JPanel jPanel_news_header = new JPanel();
-        jPanel_news_header.setLayout(new BorderLayout());
+        // JPanel jPanel_news_header = new JPanel();
+        // jPanel_news_header.setLayout(new BorderLayout());
 
         jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
 
