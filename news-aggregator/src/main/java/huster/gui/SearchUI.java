@@ -16,7 +16,7 @@ public class SearchUI extends JFrame{
     public String articalNameJSON;
     private int seeMoreButtonClickedCount = 0;
 
-    private SearchAndSuggestionPanel panel = new SearchAndSuggestionPanel();
+    private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
 
     private JPanel searchResult_center;
     private ImageIcon articleIcon;
@@ -64,7 +64,7 @@ public class SearchUI extends JFrame{
             }
         });
         
-        menuAndSearchPanel.add(panel);
+        menuAndSearchPanel.add(searchPanel);
 
         // ------------------------------------------------
         // Đây là phần thêm kết quả tìm kiếm
@@ -99,13 +99,13 @@ public class SearchUI extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 // Delete everything from contentPane
                 contentPane.removeAll();
-                panel.setVisible(false);
+                searchPanel.setVisible(false);
                 
                 // Add stuff back
                 createSearchResultPanels(6);
-                articalNameJSON = panel.getSearchBarText();
+                articalNameJSON = searchPanel.getSearchBarText();
                 contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-                contentPane.add(scrollResult, BorderLayout.CENTER);
+                contentPane.add(scrollResult, BorderLayout.CENTER);//Thay bằng class SearchResult
                 revalidate();
                 repaint();
 
@@ -118,11 +118,31 @@ public class SearchUI extends JFrame{
                     }
                 });
             }
-        };        
+        };
+        // JButton seeMoreButton = new JButton("See more!");
+        // seeMoreButton.setFont(font40);
+        // seeMoreButton.addActionListener(new ActionListener() {
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //         if(seeMoreButtonClickedCount == 2) {
+        //             seeMoreButton.setVisible(false);
+        //             return ;
+        //         }
+                
+        //         seeMoreButtonClickedCount++;
+        //         number_News += 6;
+        //         fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1200 * seeMoreButtonClickedCount));
+        //         articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1200 * seeMoreButtonClickedCount));
+        //         articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
+        //         // createSmall_articlePanel(3);
+        //         createNews();
+        //         revalidate();
+        //     }
+        // });        
         
 
         // Thêm actionListener cho searchButton và searchBar khi chưa hiển thị kết quả tìm kiếm
-        panel.addSearchBarActionListenner(searchListener);
+        searchPanel.addSearchBarActionListenner(searchListener);
         menuAndSearchPanel.addSearchButtonListener(searchListener);
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
@@ -304,22 +324,23 @@ class SearchAndSuggestionPanel extends JPanel{
             }
         });
 
-        // suggestionList.addListSelectionListener(new ListSelectionListener() {
-        //     @Override
-        //     public void valueChanged(ListSelectionEvent e) {
-        //         // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
-        //         if (!e.getValueIsAdjusting()) {
-        //             // Lấy dòng được chọn từ suggestionList
-        //             String selectedSuggestion = suggestionList.getSelectedValue();
-        //             // Đặt nội dung của dòng được chọn vào searchBar
-        //             searchBar.setText(selectedSuggestion);
-        //             // Ẩn suggestionPanel sau khi chọn
-        //             suggestionPanel.setVisible(false);
-        //             // Đặt lại trạng thái của biến isSuggestionPanelVisible
-        //             isSuggestionPanelVisible = false;
-        //         }
-        //     }
-        // });
+        suggestionList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
+                if (!e.getValueIsAdjusting()) {
+                    // Lấy dòng được chọn từ suggestionList
+                    String selectedSuggestion = suggestionList.getSelectedValue();
+                    // Đặt nội dung của dòng được chọn vào searchBar
+                    searchBar.setText(selectedSuggestion);
+                    // Ẩn suggestionPanel sau khi chọn
+                    suggestionPanel.setVisible(false);
+                    // Đặt lại trạng thái của biến isSuggestionPanelVisible
+                    isSuggestionPanelVisible = false;
+                    searchBar.requestFocusInWindow();
+                }
+            }
+        });
 
         searchBar.addMouseListener(new MouseAdapter() {
             @Override
@@ -336,25 +357,25 @@ class SearchAndSuggestionPanel extends JPanel{
             }
         });
 
-        suggestionList.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if (e.getClickCount() == 1) {
-                    // Lấy từ được chọn
-                    selectedSuggestion = suggestionList.getSelectedValue();
-                    if (selectedSuggestion != null) {
-                        // Tạo một instance mới của News
-                        News news = new News();
-                        // Thiết lập tiêu đề cho News
-                        news.setHeader(selectedSuggestion);
-                        // Hiển thị News
-                        news.setVisible(true);
-                        // Đóng cửa sổ hiện tại
-                        SwingUtilities.getWindowAncestor(SearchAndSuggestionPanel.this).dispose();
-                    }
-                }
-            }
-        });
+        // suggestionList.addMouseListener(new MouseAdapter() {
+        //     @Override
+        //     public void mouseClicked(MouseEvent e) {
+        //         if (e.getClickCount() == 1) {
+        //             // Lấy từ được chọn
+        //             selectedSuggestion = suggestionList.getSelectedValue();
+        //             if (selectedSuggestion != null) {
+        //                 // Tạo một instance mới của News
+        //                 News news = new News();
+        //                 // Thiết lập tiêu đề cho News
+        //                 news.setHeader(selectedSuggestion);
+        //                 // Hiển thị News
+        //                 news.setVisible(true);
+        //                 // Đóng cửa sổ hiện tại
+        //                 SwingUtilities.getWindowAncestor(SearchAndSuggestionPanel.this).dispose();
+        //             }
+        //         }
+        //     }
+        // });
 
         add(searchBar);
         add(suggestionPanel);
@@ -392,6 +413,8 @@ class SearchAndSuggestionPanel extends JPanel{
         suggestionList.addMouseListener(a);
     }
 }
+
+//This class will display the result after search, can be used in menu aswell with consideration, contact me for more infomation
 
 class SearchResult extends JScrollPane{
     private JPanel searchResult = new JPanel(new BorderLayout());
