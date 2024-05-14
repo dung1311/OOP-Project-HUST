@@ -42,21 +42,17 @@ public class CrawTweet {
     public static void replaceJsonFile(String fileJsonName) throws IOException {
         String dataPath = "news-aggregator\\recourse\\data\\" + fileJsonName + ".json";
 
-        // Đọc dữ liệu JSON từ file và chuyển thành JsonArray
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath))) {
             JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
 
-            // Thực hiện thay đổi trên chuỗi JSON
             String modifiedJsonString = jsonArray.toString();
             modifiedJsonString = modifiedJsonString.replace("date", "PostingDate");
             modifiedJsonString = modifiedJsonString.replace("text", "Content");
             modifiedJsonString = modifiedJsonString.replace("link", "LinkTweet");
 
-            // Sử dụng GsonBuilder để định dạng lại chuỗi JSON
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             jsonArray = new Gson().fromJson(modifiedJsonString, JsonArray.class);
 
-            // Ghi chuỗi JSON đã sửa đổi vào file với định dạng đẹp
             try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(dataPath))) {
                 gson.toJson(jsonArray, bufferedWriter);
             }
