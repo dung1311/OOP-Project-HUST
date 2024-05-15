@@ -1,4 +1,4 @@
-package huster.crawl;
+package huster.crawl.crawlTweet;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,7 +17,7 @@ public class ServerClient {
     public static void runServer() {
         try {
             ProcessBuilder processBuilder = new ProcessBuilder("python",
-                    "news-aggregator/src/main/java/huster/crawl/TweetFlaskServer.py");
+                    "news-aggregator/src/main/java/huster/crawl/crawlTweet/TweetFlaskServer.py");
             processBuilder.inheritIO();
             processBuilder.start();
         } catch (IOException e) {
@@ -51,7 +51,4 @@ public class ServerClient {
         }
     }
 
-    public static void main(String[] args) {
-        ServerClient.runServer();
-    }
 }

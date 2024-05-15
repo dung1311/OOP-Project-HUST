@@ -141,7 +141,7 @@ public class SearchUI extends JFrame {
         contentPane.add(catePanel, BorderLayout.CENTER);
         
         // TODO
-        List<JPanel> listJPanels = new SearchData().search("bitcoin");
+        List<JPanel> listJPanels = new SearchData().search("dung dep trai vcl");
         for(int i = 0; i < 10; i++) {
             hihi.addArticle(listJPanels.get(i));
         }
@@ -393,7 +393,8 @@ class SearchResult extends JScrollPane {
         searchResult.add(searchResult_Center, BorderLayout.NORTH);
         searchResult.add(seeMoreButton, BorderLayout.SOUTH);
 
-        add(searchResult);
+        // add(searchResult);
+        setViewportView(searchResult);
     }
 
     public void seeMoreActionListeners(ActionListener e) {

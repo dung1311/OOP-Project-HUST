@@ -32,7 +32,7 @@ def crawl_tweet_route():
     list_tweet = scraper.get_tweets(
         name, mode=mode, number=amount, max_retries=100)
 
-    with open('news-aggregator\\recourse\\data\\' + file_name + '.json', mode='w') as file_json:
+    with open('news-aggregator\\resource\\data\\' + file_name + '.json', mode='w') as file_json:
         json.dump(list_tweet['tweets'], file_json)
 
     return jsonify({"message": "Success"})
@@ -45,7 +45,7 @@ def draw_chart_route():
     file_pictures_name = request.json['file_pictures_name']
 
     # Tạo đường dẫn tương đối đến thư mục chứa dữ liệu
-    data_directory = 'news-aggregator/recourse/data'
+    data_directory = 'news-aggregator/resource/data'
     file_path = os.path.join(data_directory, file_json_name + '.json')
     image_path = os.path.join(data_directory, file_pictures_name + '.png')
 

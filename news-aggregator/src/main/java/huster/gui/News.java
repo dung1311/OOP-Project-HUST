@@ -5,7 +5,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import huster.action.GeneralHandle;
-import huster.action.JHyperlink;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -39,7 +38,7 @@ public class News extends JFrame {
         setLocationRelativeTo(null);
         setTitle("The MENU");
 
-        // setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         System.setProperty("BLACK_menu", "0x222222");
 

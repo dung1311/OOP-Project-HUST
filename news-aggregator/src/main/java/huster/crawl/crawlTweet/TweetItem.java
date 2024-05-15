@@ -1,4 +1,4 @@
-package huster.crawl;
+package huster.crawl.crawlTweet;
 
 public class TweetItem {
     private String name;

@@ -1,4 +1,4 @@
-package huster.crawl;
+package huster.crawl.crawlTweet;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -33,14 +33,14 @@ public class TweetUltility {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        File file = new File("news-aggregator/recourse/data/" + fileJsonName + ".json");
+        File file = new File("news-aggregator/resource/data" + fileJsonName + ".json");
         if (!file.exists()) {
             throw new IOException("File not created");
         }
     }
 
     public static void replaceJsonFile(String fileJsonName) throws IOException {
-        String dataPath = "news-aggregator\\recourse\\data\\" + fileJsonName + ".json";
+        String dataPath = "news-aggregator\\resource\\data" + fileJsonName + ".json";
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath))) {
             JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
@@ -70,7 +70,7 @@ public class TweetUltility {
             do {
                 JsonParser parser = new JsonParser();
                 JsonElement readJson = parser
-                        .parse(new FileReader("news-aggregator\\recourse\\data\\" + fileJsonName + ".json"));
+                        .parse(new FileReader("news-aggregator\\resource\\data" + fileJsonName + ".json"));
 
                 JsonArray jsonArray = readJson.getAsJsonArray();
                 if (jsonArray.size() != 0) {
