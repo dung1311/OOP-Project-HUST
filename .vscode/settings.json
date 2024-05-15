@@ -1,7 +1,8 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.configuration.updateBuildConfiguration": "interactive",
     "git.ignoreLimitWarning": true,
     "java.debug.settings.onBuildFailureProceed": true,
     "python.analysis.typeCheckingMode": "off",
-    "python.analysis.autoImportCompletions": true
+    "python.analysis.autoImportCompletions": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
