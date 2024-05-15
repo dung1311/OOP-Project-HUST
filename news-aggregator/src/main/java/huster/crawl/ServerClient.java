@@ -14,21 +14,12 @@ public class ServerClient {
         this.serverUrl = serverUrl;
     }
 
-    public static void runServer() throws IOException {
-        ProcessBuilder processBuilder = new ProcessBuilder("python",
-                "news-aggregator/src/main/java/huster/crawl/TweetFlaskServer.py");
-        processBuilder.inheritIO();
-        processBuilder.start();
-    }
-
-    public static void shutDownServer() throws IOException {
+    public static void runServer() {
         try {
-            @SuppressWarnings("deprecation")
-            URL url = new URL("http://localhost:5000/shutdown");
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-            connection.setRequestMethod("POST");
-            connection.getResponseCode();
-            connection.disconnect();
+            ProcessBuilder processBuilder = new ProcessBuilder("python",
+                    "news-aggregator/src/main/java/huster/crawl/TweetFlaskServer.py");
+            processBuilder.inheritIO();
+            processBuilder.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -52,7 +43,15 @@ public class ServerClient {
         connection.disconnect();
     }
 
-    public static void main(String[] args) throws IOException {
+    public void shutDownServer() {
+        try {
+            sendRequest("/shutdown", new JsonObject());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
         ServerClient.runServer();
     }
 }

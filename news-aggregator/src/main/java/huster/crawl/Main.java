@@ -6,14 +6,16 @@ public class Main {
     static String serverUrl = "http://localhost:5000";
 
     public static void main(String[] args) throws IOException {
-        String fileJsonName = "test3";
-        String filePicturesName = "test3";
-        TweetItem temp = new TweetItem("elonmusk", 200);
+        String fileJsonName = "test1";
+        String filePicturesName = "test1";
+        TweetItem temp = new TweetItem("Bitcoin", 800);
 
         ServerClient serverClient = new ServerClient(serverUrl);
-        CrawTweet crawTweet = new CrawTweet(serverClient);
-        DrawChart drawChart = new DrawChart(serverClient);
+        TweetUltility crawTweet = new TweetUltility(serverClient);
+
         crawTweet.crawlTweet(temp, fileJsonName);
-        drawChart.drawChart(fileJsonName, filePicturesName);
+        crawTweet.drawChart(fileJsonName, filePicturesName);
+
+        serverClient.shutDownServer();
     }
 }

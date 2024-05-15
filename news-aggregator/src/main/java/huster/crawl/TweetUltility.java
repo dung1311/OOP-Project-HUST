@@ -14,10 +14,10 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class CrawTweet {
+public class TweetUltility {
     private ServerClient serverClient;
 
-    public CrawTweet(ServerClient serverClient) {
+    public TweetUltility(ServerClient serverClient) {
         this.serverClient = serverClient;
     }
 
@@ -88,5 +88,12 @@ public class CrawTweet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void drawChart(String fileJsonName, String filePicturesName) throws IOException {
+        JsonObject data = new JsonObject();
+        data.addProperty("file_json_name", fileJsonName);
+        data.addProperty("file_pictures_name", filePicturesName);
+        serverClient.sendRequest("/draw_chart", data);
     }
 }

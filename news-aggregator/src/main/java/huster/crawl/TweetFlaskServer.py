@@ -1,3 +1,5 @@
+import os
+import pandas as pd
 import signal
 from flask import Flask, request, jsonify, send_file
 import matplotlib
@@ -6,8 +8,6 @@ import json
 from functools import lru_cache
 import matplotlib.pyplot as plt
 matplotlib.use('Agg')
-import pandas as pd
-import os
 
 app = Flask(__name__)
 
@@ -108,16 +108,16 @@ def json_analyst():
             print("KeyError: {}. Skipping tweet at index {}".format(e, index))
 
     data_list_pd = pd.DataFrame(
-        data_list, columns=['LinkTweet', 'Content','Time', 'Comment', 'Retweet', 'Quote', 'Like'])
+        data_list, columns=['LinkTweet', 'Content', 'Time', 'Comment', 'Retweet', 'Quote', 'Like'])
     data_list_pd = data_list_pd.sort_values(by='Time')
-    
-    return(data_list_pd)
+
+    return (data_list_pd)
 
 
 @app.route('/shutdown', methods=['POST'])
 def shutdown_server():
-    pid = os.getpid()
-    os.kill(pid, signal.SIGTERM)
+    print("Shutting down server...")
+    os.kill(os.getpid(), signal.SIGINT)
 
 
 if __name__ == '__main__':
