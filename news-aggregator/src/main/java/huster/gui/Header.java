@@ -33,20 +33,13 @@ class Header extends JPanel{
 
          // Thêm các nút vào menuLeft
        
-        ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
-        menuButton.setIcon(menuIcon);
-        menuButton.setPreferredSize(new Dimension(50,50));
-        menuButton.setBorderPainted(false);
-        menuButton.setFocusPainted(false);
-        menuButton.setContentAreaFilled(false);
-        menuLeft.add(menuButton);
-       
-        ImageIcon closeIcon = new ImageIcon("news-aggregator\\resource\\assets\\closeIcon.png");
-        closeButton.setIcon(closeIcon);
-        closeButton.setPreferredSize(new Dimension(50, 50));
-        closeButton.setBorderPainted(false);
-        closeButton.setFocusPainted(false);
-        closeButton.setContentAreaFilled(false);
+        // ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
+        // menuButton.setIcon(menuIcon);
+        // menuButton.setPreferredSize(new Dimension(50,50));
+        // menuButton.setBorderPainted(false);
+        // menuButton.setFocusPainted(false);
+        // menuButton.setContentAreaFilled(false);
+        // menuLeft.add(menuButton);
 
         ImageIcon backIcon = new ImageIcon("news-aggregator\\resource\\assets\\backIcon.png");
         backButton.setIcon(backIcon);
@@ -61,7 +54,7 @@ class Header extends JPanel{
         homeButton.setBorderPainted(false);
         homeButton.setFocusPainted(false);
         homeButton.setContentAreaFilled(false);
-        menuLeft.add(homeButton);
+        // menuLeft.add(homeButton);
 
         // Thêm các nút vào menuRight
         ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
@@ -85,21 +78,14 @@ class Header extends JPanel{
         this.add(menu);
     }
 
-    public void addButtonForSearchUI(){
-        menuLeft.removeAll();
-        menuLeft.add(closeButton);
-        menuLeft.add(homeButton);
-
-    }
-
     public void addButtonForNews() {
         menuLeft.removeAll();
         menuLeft.add(backButton);
         menuLeft.add(homeButton);
     }
 
-    public void addCloseButtonListener(ActionListener listener) {
-        closeButton.addActionListener(listener);
+    public void addBackButtonForMenu() {
+        menuLeft.add(backButton);
     }
     
     public void addHomeButtonListener(ActionListener listener) {

@@ -43,15 +43,17 @@ public class SearchUI extends JFrame{
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Header menuAndSearchPanel = new Header();
-        menuAndSearchPanel.addButtonForSearchUI();
+        menuAndSearchPanel.addButtonForNews();
        
-        menuAndSearchPanel.addCloseButtonListener(new ActionListener() {
+        menuAndSearchPanel.addBackButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!ScreenHistory.getInstance().isEmpty()) {
+                    JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
-                    dispose();
+                    ScreenHistory.getInstance().pushScreen(frame);
+                    frame.dispose();
                 }
             }
         });
@@ -60,7 +62,9 @@ public class SearchUI extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e){
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
-                new Menu().setVisible(true);
+                Menu menu = new Menu();
+                menu.setVisible(true);
+                menu.addBackButton();
                 ScreenHistory.getInstance().pushScreen(frame);
                 frame.dispose();
             }
@@ -115,14 +119,15 @@ public class SearchUI extends JFrame{
                 menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
+                        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                         new SearchUI().setVisible(true);
-                        dispose();
+                        ScreenHistory.getInstance().pushScreen(frame);
+                        frame.dispose();
                     }
                 });
             }
-        };        
+        };       
         
-
         // Thêm actionListener cho searchButton và searchBar khi chưa hiển thị kết quả tìm kiếm
         panel.addSearchBarActionListenner(searchListener);
         menuAndSearchPanel.addSearchButtonListener(searchListener);
@@ -307,23 +312,6 @@ class SearchAndSuggestionPanel extends JPanel{
                 }
             }
         });
-
-        // suggestionList.addListSelectionListener(new ListSelectionListener() {
-        //     @Override
-        //     public void valueChanged(ListSelectionEvent e) {
-        //         // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
-        //         if (!e.getValueIsAdjusting()) {
-        //             // Lấy dòng được chọn từ suggestionList
-        //             String selectedSuggestion = suggestionList.getSelectedValue();
-        //             // Đặt nội dung của dòng được chọn vào searchBar
-        //             searchBar.setText(selectedSuggestion);
-        //             // Ẩn suggestionPanel sau khi chọn
-        //             suggestionPanel.setVisible(false);
-        //             // Đặt lại trạng thái của biến isSuggestionPanelVisible
-        //             isSuggestionPanelVisible = false;
-        //         }
-        //     }
-        // });
 
         searchBar.addMouseListener(new MouseAdapter() {
             @Override
