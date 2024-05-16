@@ -4,9 +4,12 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import huster.action.GeneralHandle;
+import huster.action.JHyperlink;
 
 import java.awt.*;
 import java.awt.event.*;
+
 
 public class News extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -14,6 +17,9 @@ public class News extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 100;
     public static final int ORIGIN_Y = 100;
+    // header of news UI
+    Header menu = new Header(); 
+    
     private JLabel jLabel_news_header;
     // private JTextArea jTextArea_news_header;
     private JTextArea jTextArea_news_center;
@@ -21,12 +27,17 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
 
-    public News() {       
+
+    public News(String nameAuthor, String postingDate, String link, String textContent, String title) {
+        ScreenHistory.getInstance();
+        ScreenHistory.getInstance().pushScreen(this);
+        
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        // setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Header menu = new Header();
         menu.addButtonForNews();
@@ -77,43 +88,19 @@ public class News extends JFrame {
         jPanel_news.setLayout(new BorderLayout());
 
 
-        jLabel_news_header = new JLabel("QUÁ VÔ ĐẠO BẤT LƯƠNG", JLabel.CENTER);
+        jLabel_news_header = new JLabel(title, JLabel.CENTER);
         jLabel_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jLabel_news_header.setFont(font30B);
 
         // JPanel jPanel_news_header = new JPanel();
         // jPanel_news_header.setLayout(new BorderLayout());
 
-        // jTextArea_news_header = new JTextArea("QUÁ VÔ ĐẠO BẤT LƯƠNG");
-        // jTextArea_news_header.setFont(font30B);
-        // jTextArea_news_header.setEditable(false);
-        // jTextArea_news_header.setLineWrap(true);
-        // jTextArea_news_header.setWrapStyleWord(true);
-
         // jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
 
-        jTextArea_news_author = new JTextArea("Author: Author's name");
-        jTextArea_news_author.setBackground(jLabel_news_header.getBackground());
-        jTextArea_news_author.setFont(font15I);
-        jTextArea_news_author.setEditable(false);
-        jTextArea_news_author.setLineWrap(true);
-        jTextArea_news_author.setWrapStyleWord(true);
-
-        jTextArea_news_postingDate = new JTextArea("Posting date:");
-        jTextArea_news_postingDate.setBackground(jLabel_news_header.getBackground());
-        jTextArea_news_postingDate.setFont(font15I);
-        jTextArea_news_postingDate.setEditable(false);
-        jTextArea_news_postingDate.setLineWrap(true);
-        jTextArea_news_postingDate.setWrapStyleWord(true);
-
-        jTextArea_news_link = new JTextArea("Chi tiết: link bài viết");
-        jTextArea_news_link.setBackground(jLabel_news_header.getBackground());
-        jTextArea_news_link. setFont(font15I);
-        jTextArea_news_link.setEditable(false);
-        jTextArea_news_link.setLineWrap(true);
-        jTextArea_news_link.setWrapStyleWord(true);
-
-
+        setAuthor(nameAuthor);
+        setPostingDate(postingDate);
+        setLink(link);
+        
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
         JPanel jPanel_news_source = new JPanel();
         jPanel_news_source.setLayout(new GridLayout(3, 1));
@@ -126,6 +113,8 @@ public class News extends JFrame {
         // jPanel_news_source.add(jPanel_news_source_left);
         // jPanel_news_source.add(jLabel_image);
 
+        
+        String text = textContent;
 
         jTextArea_news_center = new JTextArea();
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
@@ -167,16 +156,31 @@ public class News extends JFrame {
     //     jLabel_image.setIcon(icon);
     // }
 
-    public void setAuthor(String s) {
-        jTextArea_news_author.setText("Author: " + s);
+    public void setAuthor(String authorName) {
+        jTextArea_news_author = new JTextArea("Author: " + authorName);
+        jTextArea_news_author.setBackground(jLabel_image.getBackground());
+        jTextArea_news_author.setFont(new Font("Arial", Font.ITALIC, 15));
+        jTextArea_news_author.setEditable(false);
+        jTextArea_news_author.setLineWrap(true);
+        jTextArea_news_author.setWrapStyleWord(true);
     }
 
-    public void setPostingDate(String s) {
-        jTextArea_news_postingDate.setText("Posting date: " + s);
+    public void setPostingDate(String postingDate) {
+        jTextArea_news_postingDate = new JTextArea("Posting date: " + postingDate);
+        jTextArea_news_postingDate.setBackground(jLabel_image.getBackground());
+        jTextArea_news_postingDate.setFont(new Font("Arial", Font.ITALIC, 15));
+        jTextArea_news_postingDate.setEditable(false);
+        jTextArea_news_postingDate.setLineWrap(true);
+        jTextArea_news_postingDate.setWrapStyleWord(true);
     }
 
-    public void setLink(String s) {
-        jTextArea_news_link.setText("More: " + s);
+    public void setLink(String link) {
+        jTextArea_news_link = new JTextArea(GeneralHandle.clickableLink(link));
+        jTextArea_news_link.setBackground(jLabel_image.getBackground());
+        jTextArea_news_link.setFont(new Font("Arial", Font.ITALIC, 15));
+        jTextArea_news_link.setEditable(false);
+        jTextArea_news_link.setLineWrap(true);
+        jTextArea_news_link.setWrapStyleWord(true);
     }
 
     public void setNewsContent(String s) {
