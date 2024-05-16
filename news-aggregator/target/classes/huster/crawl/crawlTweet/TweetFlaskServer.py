@@ -94,7 +94,7 @@ def draw_chart_route():
 @app.route('/json_analyst', methods=['POST'])
 def json_analyst():
     file_json_name = request.json['file_json_name']
-    data_directory = 'news-aggregator/recourse/data'
+    data_directory = 'news-aggregator/resource/data'
     file_path = os.path.join(data_directory, file_json_name + '.json')
     list_tweet = pd.read_json(path_or_buf=file_path)
     data_list = []
@@ -109,9 +109,16 @@ def json_analyst():
 
     data_list_pd = pd.DataFrame(
         data_list, columns=['LinkTweet', 'Content', 'Time', 'Comment', 'Retweet', 'Quote', 'Like'])
-    data_list_pd = data_list_pd.sort_values(by='Time')
+    max_interaction_tweet = data_list_pd.loc[data_list_pd[[
+        'Comment', 'Retweet', 'Quote', 'Like']].sum(axis=1).idxmax()]
+    min_interaction_tweet = data_list_pd.loc[data_list_pd[[
+        'Comment', 'Retweet', 'Quote', 'Like']].sum(axis=1).idxmin()]
+    result = {
+        'maxTweet': max_interaction_tweet.to_json(),
+        'minTweet': min_interaction_tweet.to_json()
+    }
 
-    return (data_list_pd)
+    return jsonify(result)
 
 
 @app.route('/shutdown', methods=['POST'])
