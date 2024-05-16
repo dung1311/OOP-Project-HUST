@@ -69,7 +69,7 @@ public class SearchUI extends JFrame {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 Menu menu = new Menu();
                 menu.setVisible(true);
-                menu.addBackButton();
+                menu.addBackButtonForMenu();
                 ScreenHistory.getInstance().pushScreen(frame);
                 frame.dispose();
             }

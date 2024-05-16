@@ -5,7 +5,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import huster.action.GeneralHandle;
-import huster.action.JHyperlink;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -45,7 +44,6 @@ public class News extends JFrame {
         System.setProperty("BLACK_menu", "0x222222");
         Font font30B = new Font("Arial", Font.BOLD, 30);
         Font font20 = new Font("Arial", Font.PLAIN, 20);
-        Font font15I = new Font("Arial", Font.ITALIC, 15);
 
         menu.addHomeButtonListener(new ActionListener() {
             @Override
@@ -53,7 +51,7 @@ public class News extends JFrame {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                 Menu menu = new Menu();
                 menu.setVisible(true);
-                menu.addBackButton();
+                menu.addBackButtonForMenu();
                 ScreenHistory.getInstance().pushScreen(frame);
                 dispose();
             }
@@ -158,7 +156,7 @@ public class News extends JFrame {
 
     public void setAuthor(String authorName) {
         jTextArea_news_author = new JTextArea("Author: " + authorName);
-        jTextArea_news_author.setBackground(jLabel_image.getBackground());
+        jTextArea_news_author.setBackground(jLabel_news_header.getBackground());
         jTextArea_news_author.setFont(new Font("Arial", Font.ITALIC, 15));
         jTextArea_news_author.setEditable(false);
         jTextArea_news_author.setLineWrap(true);
@@ -167,7 +165,7 @@ public class News extends JFrame {
 
     public void setPostingDate(String postingDate) {
         jTextArea_news_postingDate = new JTextArea("Posting date: " + postingDate);
-        jTextArea_news_postingDate.setBackground(jLabel_image.getBackground());
+        jTextArea_news_postingDate.setBackground(jLabel_news_header.getBackground());
         jTextArea_news_postingDate.setFont(new Font("Arial", Font.ITALIC, 15));
         jTextArea_news_postingDate.setEditable(false);
         jTextArea_news_postingDate.setLineWrap(true);
@@ -176,7 +174,7 @@ public class News extends JFrame {
 
     public void setLink(String link) {
         jTextArea_news_link = new JTextArea(GeneralHandle.clickableLink(link));
-        jTextArea_news_link.setBackground(jLabel_image.getBackground());
+        jTextArea_news_link.setBackground(jLabel_news_header.getBackground());
         jTextArea_news_link.setFont(new Font("Arial", Font.ITALIC, 15));
         jTextArea_news_link.setEditable(false);
         jTextArea_news_link.setLineWrap(true);
