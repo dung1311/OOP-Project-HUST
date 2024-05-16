@@ -401,9 +401,9 @@ class SearchResult extends JScrollPane {
 }
 
 
-class Test {
-    public static void main(String[] args) {
-        SearchUI test = new SearchUI();
-        test.setVisible(true);
-    }
-}
+// class Test {
+//     public static void main(String[] args) {
+//         SearchUI test = new SearchUI();
+//         test.setVisible(true);
+//     }
+// }

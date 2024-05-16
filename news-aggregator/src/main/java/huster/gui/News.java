@@ -111,8 +111,6 @@ public class News extends JFrame {
         // jPanel_news_source.add(jPanel_news_source_left);
         // jPanel_news_source.add(jLabel_image);
 
-        
-        String text = textContent;
 
         jTextArea_news_center = new JTextArea();
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
