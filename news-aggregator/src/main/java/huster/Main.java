@@ -5,6 +5,10 @@ package huster;
 
 
 import huster.gui.Menu;
+import huster.gui.MenuHistory;
+import huster.gui.SearchUI;
+import huster.gui.SearchUIHistory;
+
 import java.io.IOException;
 
 import huster.crawl.CrawlWithThread.Crawl;
@@ -17,7 +21,7 @@ public class Main {
         // long endTime = System.currentTimeMillis();
         // long runTime = endTime - startTime;
         // System.out.println("Running Time: " + runTime); 
-
+        
         MyRunnable myRunnable = new MyRunnable();
 
         Thread displayThread = new Thread(new Runnable() {
@@ -38,7 +42,10 @@ class MyRunnable {
     }
 
     public void display() {
+        SearchUI searchUI = new SearchUI();
+        SearchUIHistory.getInstance().pushScreen(searchUI);
         Menu menu = new Menu();
         menu.setVisible(true);
+        MenuHistory.getInstance().pushScreen(menu);
     }
 }

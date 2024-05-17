@@ -20,11 +20,12 @@ public class News extends JFrame {
     Header menu = new Header(); 
     
     private JLabel jLabel_news_header;
-    // private JTextArea jTextArea_news_header;
+    private JTextArea jTextArea_news_header;
     private JTextArea jTextArea_news_center;
     private JTextArea jTextArea_news_author;
     private JTextArea jTextArea_news_postingDate;
     private JTextArea jTextArea_news_link;
+    private JPanel jPanel_news;
 
 
     public News(String nameAuthor, String postingDate, String link, String textContent, String title) {
@@ -36,7 +37,7 @@ public class News extends JFrame {
         setLocationRelativeTo(null);
         setTitle("The MENU");
 
-        // setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Header menu = new Header();
         menu.addButtonForNews();
@@ -49,9 +50,9 @@ public class News extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e){
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
-                Menu menu = new Menu();
-                menu.setVisible(true);
-                menu.addBackButtonForMenu();
+                Menu previousScreen = MenuHistory.getInstance().peekScreen();
+                previousScreen.setVisible(true);
+                previousScreen.addBackButton();
                 ScreenHistory.getInstance().pushScreen(frame);
                 dispose();
             }
@@ -74,15 +75,15 @@ public class News extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
-                SearchUI searchUI = new SearchUI();
-                searchUI.setVisible(true);
+                SearchUI previousScreen = SearchUIHistory.getInstance().peekScreen();
+                previousScreen.setVisible(true);
                 ScreenHistory.getInstance().pushScreen(frame);
                 dispose();;
             }
         });
 
         // create centre panel
-        JPanel jPanel_news = new JPanel();
+        jPanel_news = new JPanel();
         jPanel_news.setLayout(new BorderLayout());
 
 
@@ -90,10 +91,13 @@ public class News extends JFrame {
         jLabel_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jLabel_news_header.setFont(font30B);
 
-        // JPanel jPanel_news_header = new JPanel();
-        // jPanel_news_header.setLayout(new BorderLayout());
-
-        // jPanel_news_header.add(jLabel_news_header, BorderLayout.CENTER);
+        jTextArea_news_header = new JTextArea(title);
+        // jTextArea_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        jTextArea_news_header.setBackground(jLabel_news_header.getBackground());
+        jTextArea_news_header.setFont(font30B);
+        jTextArea_news_header.setLineWrap(true);
+        jTextArea_news_header.setWrapStyleWord(true);
+        jTextArea_news_header.setEditable(false);
 
         setAuthor(nameAuthor);
         setPostingDate(postingDate);
@@ -145,12 +149,15 @@ public class News extends JFrame {
     }
 
     public void setHeader(String s) {
-        jLabel_news_header.setText(s);
+        if(s.length() < 86) {
+            jLabel_news_header.setText(s);
+        }
+        else {
+            jPanel_news.remove(jLabel_news_header);
+            jPanel_news.add(jTextArea_news_header, BorderLayout.NORTH);
+            jTextArea_news_header.setText(s);
+        }
     }
-
-    // public void setImage(ImageIcon icon) {
-    //     jLabel_image.setIcon(icon);
-    // }
 
     public void setAuthor(String authorName) {
         jTextArea_news_author = new JTextArea("Author: " + authorName);

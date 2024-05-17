@@ -31,7 +31,7 @@ class Header extends JPanel{
         menuRight.setBackground(BLACK_menu);
         menuRight.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
-         // Thêm các nút vào menuLeft
+        // Thêm các nút vào menuLeft
        
         // ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
         // menuButton.setIcon(menuIcon);
@@ -54,7 +54,6 @@ class Header extends JPanel{
         homeButton.setBorderPainted(false);
         homeButton.setFocusPainted(false);
         homeButton.setContentAreaFilled(false);
-        // menuLeft.add(homeButton);
 
         // Thêm các nút vào menuRight
         ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
@@ -63,7 +62,6 @@ class Header extends JPanel{
         searchButton.setBorderPainted(false);
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
-        menuRight.add(searchButton);
 
         ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
         userButton.setIcon(userIcon);
@@ -71,7 +69,6 @@ class Header extends JPanel{
         userButton.setBorderPainted(false);
         userButton.setFocusPainted(false);
         userButton.setContentAreaFilled(false);
-        menuRight.add(userButton);
         
         menu.add(menuLeft, BorderLayout.WEST);
         menu.add(menuRight, BorderLayout.EAST);
@@ -79,9 +76,21 @@ class Header extends JPanel{
     }
 
     public void addButtonForNews() {
-        menuLeft.removeAll();
         menuLeft.add(backButton);
         menuLeft.add(homeButton);
+        menuRight.add(searchButton);
+        menuRight.add(userButton);
+    }
+
+    public void addButtonForMenu() {
+        menuRight.add(searchButton);
+        menuRight.add(userButton);
+    }
+
+    public void addButtonForSearchUI() {
+        menuLeft.add(backButton);
+        menuLeft.add(homeButton);
+        menuRight.add(userButton);
     }
 
     public void addBackButtonForMenu() {
