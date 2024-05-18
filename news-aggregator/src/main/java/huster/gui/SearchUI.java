@@ -3,16 +3,10 @@ package huster.gui;
 import javax.swing.*;
 import javax.swing.event.*;
 
-import com.google.gson.JsonObject;
-
-import huster.action.GetData;
-import huster.action.SearchData;
-import huster.action.newsObject;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SearchUI extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -20,22 +14,11 @@ public class SearchUI extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
-    // TODO
-    public String articalNameJSON = "bitcoin";
-    private int seeMoreButtonClickedCount = 0;
 
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
 
-    private ImageIcon articleIcon;
-
-    private String articleTitle;
-    private String postingDate;
-    private List<JPanel> listJPanels;
-
 
     public SearchUI() {
-        ScreenHistory.getInstance();
-
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(false);
@@ -74,92 +57,63 @@ public class SearchUI extends JFrame {
         });
 
         menuAndSearchPanel.add(searchPanel);
-
-        // TODO
-        
-        SearchResult resultPanel = new SearchResult(); 
         
         ListOfCate catePanel = new ListOfCate();
 
-        // TODO
-        
 
-        resultPanel.seeMoreActionListeners(new ActionListener() {
+        // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính acticalNameJSON
+        ActionListener searchListener = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
-                seeMoreButtonClickedCount += 1;
-                resultPanel.setLayoutAndSize(seeMoreButtonClickedCount);
-                for(int i = 0; i < 6; i++) {
-                    resultPanel.addArticle(listJPanels.get(12 + seeMoreButtonClickedCount*6 + i));
-                }
-            }
-        });
+            public void actionPerformed(ActionEvent e) {               
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
         
-        // tìm kiếm
-        searchPanel.addSearchBarActionListenner(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                contentPane.remove(catePanel);
-                searchPanel.hiddenSuggestionPanel();
-                // resultPanel.clearPanel();
+                // Hide the catePanel
+                catePanel.setVisible(false);
                 
-                articalNameJSON = searchPanel.getSearchBarText();
-                // searchPanel.clearSearchBar();
-                listJPanels = new SearchData().search(articalNameJSON);
-                for(int i = 0; i < 12; i++) {
-                    resultPanel.addArticle(listJPanels.get(i));
-                }
-                contentPane.add(resultPanel, BorderLayout.CENTER);// Thay bằng class SearchResult
-                revalidate();
-                repaint();
+                // Display "please wait" message
+                JLabel pleaseWaitLabel = new JLabel("Please wait...");
+                pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
+                pleaseWaitLabel.setVerticalAlignment(JLabel.CENTER);
+                pleaseWaitLabel.setFont(new Font("Arial", Font.BOLD, 24));
+                contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
+                contentPane.revalidate();
+                contentPane.repaint();
+                
+                // Use SwingWorker to create and show the SearchResultUI
+                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        SearchResultUI searchResultUI = new SearchResultUI();
+                        searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
+                        searchResultUI.setVisible(true);
+                        ScreenHistory.getInstance().pushScreen(frame);
+                        return null;
+                    }
+
+                    @Override
+                    protected void done() {
+                        // Remove the "please wait" message
+                        contentPane.remove(pleaseWaitLabel);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                        
+                        // Dispose the current frame
+                        dispose();
+                    }
+                };
+                worker.execute();
             }    
-        });
+        };
+
+        // tìm kiếm
+        searchPanel.addSearchBarActionListenner(searchListener);
+        menuAndSearchPanel.addSearchButtonListener(searchListener);
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         contentPane.add(catePanel, BorderLayout.CENTER);
     }
-
-    
-
-    public String getarticalNameJSON() {
-        return articalNameJSON;
-    }
-
-    public String getTitle() {
-        return articleTitle;
-    }
-
-    public void setArticleTitle(String s) {
-        this.articleTitle = s;
-    }
-
-    public String getPostingDate() {
-        return postingDate;
-    }
-
-    public void setPostingDate(String s) {
-        this.postingDate = s;
-    }
-
-    public ImageIcon getArticleIcon() {
-        return articleIcon;
-    }
-
-    public void setArticleIcon(ImageIcon articleIcon) {
-        this.articleIcon = articleIcon;
-    }
 }
 
-class ArticlePanel extends JPanel {
-    public ArticlePanel(String a, String b) {
-        setPreferredSize(new Dimension(465, 170));
-        setLayout(new BorderLayout());
-        String content = "<html><body>" + a + "<br>" + b + "</body></html>";
-        JLabel articleName = new JLabel(content);
-        add(articleName, BorderLayout.SOUTH);
-
-    }
-}
 
 class SearchBar extends JTextField {
     public SearchBar(int columns) {
@@ -205,17 +159,6 @@ class ListOfCate extends JPanel {
                 }
             });
         }
-    }
-}
-
-class ArticleButton extends JButton {
-    public void articleButton() {
-        setPreferredSize(new Dimension(465, 132));
-        setBackground(Color.WHITE);
-        setHorizontalTextPosition(SwingConstants.CENTER);
-        setVerticalTextPosition(SwingConstants.BOTTOM);
-        setBorderPainted(false);
-
     }
 }
 
@@ -266,43 +209,21 @@ class SearchAndSuggestionPanel extends JPanel {
                     for (String suggestion : suggestions) {
                         listModel.addElement(suggestion);
                     }
-                    suggestionPanel.setVisible(suggestions.length > 0);
-                }
-                else{
-                    suggestionPanel.setVisible(false);
                 }
             }
         });
 
-        // searchBar.addMouseListener(new MouseAdapter() {
-        //     @Override
-        //     public void mouseClicked(MouseEvent e) {
-        //         // Kiểm tra nếu suggestionPanel đang hiển thị thì ẩn nó đi, ngược lại thì hiển
-        //         // thị
-        //         if (isSuggestionPanelVisible) {
-        //             suggestionPanel.setVisible(false);
-        //             isSuggestionPanelVisible = false;
-        //         } else {
-        //             suggestionPanel.setVisible(true);
-        //             isSuggestionPanelVisible = true;
-        //         }
-        //     }
-        // });
-
-        suggestionList.addListSelectionListener(new ListSelectionListener() {
+        searchBar.addMouseListener(new MouseAdapter() {
             @Override
-            public void valueChanged(ListSelectionEvent e) {
-                // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
-                if (!e.getValueIsAdjusting()) {
-                    // Lấy dòng được chọn từ suggestionList
-                    String selectedSuggestion = suggestionList.getSelectedValue();
-                    // Đặt nội dung của dòng được chọn vào searchBar
-                    searchBar.setText(selectedSuggestion);
-                    // Ẩn suggestionPanel sau khi chọn
+            public void mouseClicked(MouseEvent e) {
+                // Kiểm tra nếu suggestionPanel đang hiển thị thì ẩn nó đi, ngược lại thì hiển
+                // thị
+                if (isSuggestionPanelVisible) {
                     suggestionPanel.setVisible(false);
-                    // Đặt lại trạng thái của biến isSuggestionPanelVisible
                     isSuggestionPanelVisible = false;
-                    searchBar.requestFocusInWindow();
+                } else {
+                    suggestionPanel.setVisible(true);
+                    isSuggestionPanelVisible = true;
                 }
             }
         });
@@ -339,70 +260,11 @@ class SearchAndSuggestionPanel extends JPanel {
         return searchBar.getText();
     }
 
-    public void clearSearchBar(){
-        searchBar.setText("");
-    }
-
     public void setListMouseListener(MouseAdapter a) {
         suggestionList.addMouseListener(a);
     }
 
     public void hiddenSuggestionPanel() {
         suggestionPanel.setVisible(false);
-        revalidate();
     }
 }
-
-// This class will display the result after search, can be used in menu aswell
-// with consideration, contact me for more infomation
-
-class SearchResult extends JScrollPane {
-    private JPanel searchResult = new JPanel(new BorderLayout());
-    private JPanel searchResult_Center;
-    private JButton seeMoreButton = new JButton("See more!");
-
-    public SearchResult() {
-        setPreferredSize(new Dimension(1280, 800));
-        setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-        setVisible(true);
-
-        Font font30 = new Font("Arial", Font.PLAIN, 30);
-
-        seeMoreButton.setFont(font30);
-
-        searchResult.setPreferredSize(new Dimension(1280, 2500));
-        searchResult.setLayout(new BorderLayout());
-        searchResult_Center = new JPanel();
-        searchResult_Center.setLayout(new GridLayout(6, 2, 175, 0));
-        searchResult_Center.setPreferredSize(new Dimension(1280, 1500));
-
-        searchResult.add(searchResult_Center, BorderLayout.NORTH);
-        searchResult.add(seeMoreButton, BorderLayout.SOUTH);
-
-        // add(searchResult);
-        setViewportView(searchResult);
-    }
-
-    public void seeMoreActionListeners(ActionListener e) {
-        seeMoreButton.addActionListener(e);
-    }
-
-    public void addArticle(JPanel p) {
-        searchResult_Center.add(p);
-    }
-
-    public void setLayoutAndSize(int n) {
-        searchResult.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
-        searchResult_Center.setLayout(new GridLayout(6 + 3 * n, 2, 175, 0));
-        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
-    }
-
-    public void clearPanel(){
-        searchResult_Center.removeAll();
-        revalidate();
-        repaint();
-    }
-}
-
-

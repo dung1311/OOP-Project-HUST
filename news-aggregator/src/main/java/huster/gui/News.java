@@ -75,10 +75,9 @@ public class News extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
-                SearchUI previousScreen = SearchUIHistory.getInstance().peekScreen();
-                previousScreen.setVisible(true);
+                new SearchUI().setVisible(true);
                 ScreenHistory.getInstance().pushScreen(frame);
-                dispose();;
+                dispose();
             }
         });
 
@@ -102,22 +101,17 @@ public class News extends JFrame {
         setAuthor(nameAuthor);
         setPostingDate(postingDate);
         setLink(link);
-        // setNewsContent(textContent);
-
+        
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
         JPanel jPanel_news_source = new JPanel();
         jPanel_news_source.setLayout(new GridLayout(3, 1));
         
-        // JPanel jPanel_news_source = new JPanel(new GridLayout(3, 1));
         jPanel_news_source.add(jTextArea_news_author);
         jPanel_news_source.add(jTextArea_news_postingDate);
         jPanel_news_source.add(jTextArea_news_link);
 
-        // jPanel_news_source.add(jPanel_news_source_left);
-        // jPanel_news_source.add(jLabel_image);
 
-
-        jTextArea_news_center = new JTextArea(textContent);
+        jTextArea_news_center = new JTextArea();
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
             new LineBorder(Color.BLACK), // Lề ngoài
             new EmptyBorder(10, 0, 0, 0) // Lề bên trong
@@ -126,7 +120,6 @@ public class News extends JFrame {
         jTextArea_news_center.setLineWrap(true);
         jTextArea_news_center.setWrapStyleWord(true);
         jTextArea_news_center.setEditable(false);
-        jTextArea_news_center.setText(textContent);
 
         jPanel_news_center.add(jPanel_news_source, BorderLayout.NORTH);
         jPanel_news_center.add(jTextArea_news_center, BorderLayout.CENTER);

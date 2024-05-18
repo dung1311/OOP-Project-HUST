@@ -55,8 +55,7 @@ public class Menu extends JFrame {
         menu.addSearchButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchUI previousScreen = SearchUIHistory.getInstance().peekScreen();
-                previousScreen.setVisible(true);
+                new SearchUI().setVisible(true);
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                 ScreenHistory.getInstance().pushScreen(frame);
                 dispose();
