@@ -3,11 +3,8 @@ package huster.gui;
 import javax.swing.*;
 import javax.swing.event.*;
 
-import com.google.gson.JsonObject;
 
-import huster.action.GetData;
 import huster.action.SearchData;
-import huster.action.newsObject;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -31,7 +28,6 @@ public class SearchUI extends JFrame {
 
     private String articleTitle;
     private String postingDate;
-
 
     public SearchUI() {
         ScreenHistory.getInstance();
@@ -65,7 +61,7 @@ public class SearchUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new Menu().setVisible(true);
-                ;
+
                 dispose();
             }
         });
@@ -82,13 +78,14 @@ public class SearchUI extends JFrame {
         // JButton seeMoreButton = new JButton("See more!");
         // seeMoreButton.setFont(font40);
         // seeMoreButton.addActionListener(new ActionListener() {
-        //     @Override
-        //     public void actionPerformed(ActionEvent e) {
-        //         seeMoreButtonClickedCount++;
-        //         searchResult.setPreferredSize(new Dimension(1440, 2000 + 900 * seeMoreButtonClickedCount));
-        //         // createSearchResultPanels(6 + 3 * seeMoreButtonClickedCount);
-        //         revalidate();
-        //     }
+        // @Override
+        // public void actionPerformed(ActionEvent e) {
+        // seeMoreButtonClickedCount++;
+        // searchResult.setPreferredSize(new Dimension(1440, 2000 + 900 *
+        // seeMoreButtonClickedCount));
+        // // createSearchResultPanels(6 + 3 * seeMoreButtonClickedCount);
+        // revalidate();
+        // }
         // });
         // searchResult.add(searchResult_center, BorderLayout.CENTER);
         // searchResult.add(seeMoreButton, BorderLayout.SOUTH);
@@ -103,8 +100,13 @@ public class SearchUI extends JFrame {
         // // result
 
         // TODO
-        SearchResult hihi = new SearchResult();    
-
+        SearchResult hihi = new SearchResult();
+        // TODO
+        List<JPanel> listJPanels = new SearchData().search("bitcoin");
+        for (int i = 0; i < 10; i++) {
+            hihi.addArticle(listJPanels.get(i));
+        }
+        // TODO
         ActionListener searchListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -139,14 +141,9 @@ public class SearchUI extends JFrame {
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         ListOfCate catePanel = new ListOfCate();
         contentPane.add(catePanel, BorderLayout.CENTER);
-        
-        // TODO
-        List<JPanel> listJPanels = new SearchData().search("bitcoin");
-        for(int i = 0; i < 10; i++) {
-            hihi.addArticle(listJPanels.get(i));
-        }
-    }
 
+        
+    }
 
     public String getarticalNameJSON() {
         return articalNameJSON;
@@ -393,7 +390,9 @@ class SearchResult extends JScrollPane {
         searchResult.add(searchResult_Center, BorderLayout.NORTH);
         searchResult.add(seeMoreButton, BorderLayout.SOUTH);
 
-        add(searchResult);
+        // add(searchResult);
+        setViewportView(searchResult);
+        
     }
 
     public void seeMoreActionListeners(ActionListener e) {
@@ -402,6 +401,7 @@ class SearchResult extends JScrollPane {
 
     public void addArticle(JPanel p) {
         searchResult_Center.add(p);
+        revalidate();
     }
 
     public void setLayoutAndSize(int n) {
@@ -409,8 +409,8 @@ class SearchResult extends JScrollPane {
         searchResult_Center.setLayout(new GridLayout(6 + 3 * n, 2, 175, 0));
         searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
     }
-}
 
+}
 
 class Test {
     public static void main(String[] args) {
