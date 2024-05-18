@@ -102,7 +102,8 @@ public class News extends JFrame {
         setAuthor(nameAuthor);
         setPostingDate(postingDate);
         setLink(link);
-        
+        // setNewsContent(textContent);
+
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
         JPanel jPanel_news_source = new JPanel();
         jPanel_news_source.setLayout(new GridLayout(3, 1));
@@ -116,7 +117,7 @@ public class News extends JFrame {
         // jPanel_news_source.add(jLabel_image);
 
 
-        jTextArea_news_center = new JTextArea();
+        jTextArea_news_center = new JTextArea(textContent);
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
             new LineBorder(Color.BLACK), // Lề ngoài
             new EmptyBorder(10, 0, 0, 0) // Lề bên trong
