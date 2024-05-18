@@ -31,8 +31,6 @@ public class SearchUI extends JFrame {
 
     public SearchUI() {
         ScreenHistory.getInstance();
-        // ScreenHistory.getInstance().pushScreen(this);
-        Font font40 = new Font("Arial", Font.PLAIN, 40);
 
         Container contentPane = getContentPane();
         setSize(X, Y);
@@ -45,24 +43,29 @@ public class SearchUI extends JFrame {
 
         Header menuAndSearchPanel = new Header();
         menuAndSearchPanel.addButtonForSearchUI();
-
-        menuAndSearchPanel.addCloseButtonListener(new ActionListener() {
+       
+        menuAndSearchPanel.addBackButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (!ScreenHistory.getInstance().isEmpty()) {
+                    JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
-                    dispose();
+                    ScreenHistory.getInstance().pushScreen(frame);
+                    frame.dispose();
                 }
             }
         });
 
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                new Menu().setVisible(true);
-
-                dispose();
+            public void actionPerformed(ActionEvent e){
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
+                Menu previousScreen = MenuHistory.getInstance().peekScreen();
+                previousScreen.setVisible(true);
+                previousScreen.addBackButton();
+                ScreenHistory.getInstance().pushScreen(frame);
+                frame.dispose();
             }
         });
 
@@ -100,46 +103,25 @@ public class SearchUI extends JFrame {
         // // result
 
         // TODO
-        SearchResult hihi = new SearchResult();
-        // TODO
-        List<JPanel> listJPanels = new SearchData().search("bitcoin");
-        for (int i = 0; i < 10; i++) {
-            hihi.addArticle(listJPanels.get(i));
-        }
-        // TODO
-        ActionListener searchListener = new ActionListener() {
+        SearchResult hihi = new SearchResult(); 
+        
+        ListOfCate catePanel = new ListOfCate();
+
+        // tìm kiếm
+        searchPanel.addSearchBarActionListenner(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Delete everything from contentPane
-                contentPane.removeAll();
-                searchPanel.setVisible(false);
-
-                // Add stuff back
-                // createSearchResultPanels(6);
+                contentPane.remove(catePanel);
+                searchPanel.hiddenSuggestionPanel();
+                
                 articalNameJSON = searchPanel.getSearchBarText();
-                contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
                 contentPane.add(hihi, BorderLayout.CENTER);// Thay bằng class SearchResult
                 revalidate();
                 repaint();
-
-                // This helps when you want to keep searching
-                menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        new SearchUI().setVisible(true);
-                        dispose();
-                    }
-                });
-            }
-        };
-
-        // Thêm actionListener cho searchButton và searchBar khi chưa hiển thị kết quả
-        // tìm kiếm
-        searchPanel.addSearchBarActionListenner(searchListener);
-        menuAndSearchPanel.addSearchButtonListener(searchListener);
+            }    
+        });
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-        ListOfCate catePanel = new ListOfCate();
         contentPane.add(catePanel, BorderLayout.CENTER);
 
         
@@ -250,10 +232,11 @@ class SearchAndSuggestionPanel extends JPanel {
     private JList<String> suggestionList;
     private DefaultListModel<String> listModel;
     public String selectedSuggestion;
+    private JPanel suggestionPanel;
 
     public SearchAndSuggestionPanel() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        JPanel suggestionPanel = new JPanel();
+        suggestionPanel = new JPanel();
         suggestionList = new JList<>();
         listModel = new DefaultListModel<>();
         suggestionList.setModel(listModel);
@@ -289,24 +272,6 @@ class SearchAndSuggestionPanel extends JPanel {
                     for (String suggestion : suggestions) {
                         listModel.addElement(suggestion);
                     }
-                }
-            }
-        });
-
-        suggestionList.addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                // Kiểm tra xem sự kiện có phải là sự kiện kết thúc việc chọn không
-                if (!e.getValueIsAdjusting()) {
-                    // Lấy dòng được chọn từ suggestionList
-                    String selectedSuggestion = suggestionList.getSelectedValue();
-                    // Đặt nội dung của dòng được chọn vào searchBar
-                    searchBar.setText(selectedSuggestion);
-                    // Ẩn suggestionPanel sau khi chọn
-                    suggestionPanel.setVisible(false);
-                    // Đặt lại trạng thái của biến isSuggestionPanelVisible
-                    isSuggestionPanelVisible = false;
-                    searchBar.requestFocusInWindow();
                 }
             }
         });
@@ -361,6 +326,10 @@ class SearchAndSuggestionPanel extends JPanel {
     public void setListMouseListener(MouseAdapter a) {
         suggestionList.addMouseListener(a);
     }
+
+    public void hiddenSuggestionPanel() {
+        suggestionPanel.setVisible(false);
+    }
 }
 
 // This class will display the result after search, can be used in menu aswell
@@ -377,9 +346,9 @@ class SearchResult extends JScrollPane {
         getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
         setVisible(true);
 
-        Font font40 = new Font("Arial", Font.PLAIN, 40);
+        Font font30 = new Font("Arial", Font.PLAIN, 30);
 
-        seeMoreButton.setFont(font40);
+        seeMoreButton.setFont(font30);
 
         searchResult.setPreferredSize(new Dimension(1280, 1500));
         searchResult.setLayout(new BorderLayout());
@@ -392,7 +361,6 @@ class SearchResult extends JScrollPane {
 
         // add(searchResult);
         setViewportView(searchResult);
-        
     }
 
     public void seeMoreActionListeners(ActionListener e) {
@@ -412,9 +380,9 @@ class SearchResult extends JScrollPane {
 
 }
 
-class Test {
-    public static void main(String[] args) {
-        SearchUI test = new SearchUI();
-        test.setVisible(true);
-    }
-}
+// class Test {
+//     public static void main(String[] args) {
+//         SearchUI test = new SearchUI();
+//         test.setVisible(true);
+//     }
+// }

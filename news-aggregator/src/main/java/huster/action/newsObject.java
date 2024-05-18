@@ -3,13 +3,15 @@ package huster.action;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+import javax.swing.SwingUtilities;
 
 import com.google.gson.JsonObject;
 
 import huster.gui.News;
+import huster.gui.ScreenHistory;
 
 import java.awt.Dimension;
 import java.awt.Image;
@@ -73,8 +75,12 @@ public class newsObject {
             @Override
             public void actionPerformed(ActionEvent e) {
                 News news = new News(getAuthorName(), "posting date", getLink(), getContent(), getTitle());
+                news.setHeader(getTitle());
                 news.setVisible(true);
-                    
+                
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(articleJButton);
+                ScreenHistory.getInstance().pushScreen(frame);
+                frame.dispose();
             }
         });
 
