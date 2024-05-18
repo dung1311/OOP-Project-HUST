@@ -125,6 +125,7 @@ public class News extends JFrame {
         jTextArea_news_center.setLineWrap(true);
         jTextArea_news_center.setWrapStyleWord(true);
         jTextArea_news_center.setEditable(false);
+        jTextArea_news_center.setText(textContent);
 
         jPanel_news_center.add(jPanel_news_source, BorderLayout.NORTH);
         jPanel_news_center.add(jTextArea_news_center, BorderLayout.CENTER);
