@@ -18,12 +18,8 @@ public class Menu extends JFrame {
     public static final int ORIGIN_X = 100;
     public static final int ORIGIN_Y = 100;
     
-
     public int number_News = 12;
-
     private int seeMoreButtonClickedCount = 0;
-    
-
     private static JPanel articlePanel;
 
     // luu tru bai viet
@@ -77,8 +73,6 @@ public class Menu extends JFrame {
         });
 
         Font font30 = new Font("ARIAL",Font.PLAIN,30);
-        // ảnh để hiện lên nút bấm bài báo
-        // articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
         ImageIcon toparticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
         JPanel toparticlePanel = new JPanel();
@@ -133,8 +127,8 @@ public class Menu extends JFrame {
                 fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1000 * seeMoreButtonClickedCount));
                 articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1000 * seeMoreButtonClickedCount));
                 articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
-                // createSmall_articlePanel(3);
-                createNews();
+                // createNews();
+                addNews();
                 revalidate();
             }
         });
@@ -146,9 +140,6 @@ public class Menu extends JFrame {
         scrollPane_suggested.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane_suggested.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
 
-
-
-
         // contentPane.setBackground(GREY_menu);
         this.setBackground(GREY_menu);
         contentPane.add(menu, BorderLayout.NORTH);
@@ -158,25 +149,29 @@ public class Menu extends JFrame {
         // tao bang tin
         articlePanel.setVisible(true);
         createNews();
-        // this.pack();       
-        
+        addNews();
     }
 
     // tao bang tin
-    public void createNews(){
+    public List<JPanel> createNews(){
         List<JsonObject> _JsonObjects = new GetData().getNewsElements();
-        // System.out.println(_JsonObjects.get(0).get("linkImage").getAsString());
-        for(int i = 0; i < number_News; i++){
-            // JPanel _JPanel = new GetData().set(HandleImage.ReadURL(_JsonObjects.get(i).get("linkImage").getAsString()), _JsonObjects.get(i).get("title").getAsString());
+        
+        for(int i = 0; i < 30; i++){
             JPanel _JPanel = new newsObject(_JsonObjects.get(i)).setAsJPanel();
-
             newsList.add(_JPanel);
         }
 
+        // for(int i = 0; i < number_News; i++){
+        //     articlePanel.add(newsList.get(i));
+        // }
+        
+        return newsList;
+    }
+
+    public void addNews(){
         for(int i = 0; i < number_News; i++){
             articlePanel.add(newsList.get(i));
         }
-
     }
 
     public void addBackButton() {

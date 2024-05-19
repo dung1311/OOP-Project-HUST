@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import huster.action.GeneralHandle;
+import huster.action.JHyperlink;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -102,7 +103,6 @@ public class News extends JFrame {
         setAuthor(nameAuthor);
         setPostingDate(postingDate);
         setLink(link);
-        // setNewsContent(textContent);
 
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
         JPanel jPanel_news_source = new JPanel();
@@ -111,11 +111,7 @@ public class News extends JFrame {
         // JPanel jPanel_news_source = new JPanel(new GridLayout(3, 1));
         jPanel_news_source.add(jTextArea_news_author);
         jPanel_news_source.add(jTextArea_news_postingDate);
-        jPanel_news_source.add(jTextArea_news_link);
-
-        // jPanel_news_source.add(jPanel_news_source_left);
-        // jPanel_news_source.add(jLabel_image);
-
+        jPanel_news_source.add(new JHyperlink("Link: " + link, link, "click here"));
 
         jTextArea_news_center = new JTextArea(textContent);
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(

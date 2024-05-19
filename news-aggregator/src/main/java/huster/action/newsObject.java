@@ -26,6 +26,7 @@ public class newsObject {
     private String linkImage;
     private String title;
     private String summary;
+    private String postingDate;
 
 
     public newsObject(JsonObject jsonObject){
@@ -35,8 +36,12 @@ public class newsObject {
         this.linkImage = jsonObject.get("linkImage").getAsString();
         this.title = jsonObject.get("title").getAsString();
         this.summary = jsonObject.get("summary").getAsString();
+        this.postingDate = jsonObject.get("datetimeCreation").getAsString();
     }
 
+    public String getPostingDate() {
+        return postingDate;
+    }
 
     public String getAuthorName() {
         return authorName;
@@ -74,7 +79,7 @@ public class newsObject {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                News news = new News(getAuthorName(), "posting date", getLink(), getContent(), getTitle());
+                News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
                 news.setHeader(getTitle());
                 news.setVisible(true);
                 

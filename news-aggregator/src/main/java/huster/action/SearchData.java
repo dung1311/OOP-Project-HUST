@@ -13,7 +13,7 @@ import com.google.gson.JsonObject;
 
 public class SearchData {
     // store value of json file
-    String DATAPATH = "news-aggregator\\resource\\data\\dataCoinDesk.json";
+    String DATAPATH = "news-aggregator\\resource\\data\\totalData.json";
     private JsonArray _JsonArray = new JsonArray();
 
     public JsonArray get_JsonArray() {

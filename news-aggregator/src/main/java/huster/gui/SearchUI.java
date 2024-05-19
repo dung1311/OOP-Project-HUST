@@ -4,12 +4,10 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 
-import huster.action.SearchData;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class SearchUI extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -18,12 +16,10 @@ public class SearchUI extends JFrame {
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
     // TODO
-    public String articalNameJSON = "bitcoin";
-    private int seeMoreButtonClickedCount = 0;
+    public String articalNameJSON;
 
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
 
-    private JPanel searchResult_center;
     private ImageIcon articleIcon;
 
     private String articleTitle;
@@ -71,39 +67,8 @@ public class SearchUI extends JFrame {
 
         menuAndSearchPanel.add(searchPanel);
 
-        // ------------------------------------------------
-        // Đây là phần thêm kết quả tìm kiếm
-        // JPanel searchResult = new JPanel(new BorderLayout());
-        // searchResult.setPreferredSize(new Dimension(1440, 2000));
-        // searchResult_center = new JPanel();
-
-        // // Thêm button See more
-        // JButton seeMoreButton = new JButton("See more!");
-        // seeMoreButton.setFont(font40);
-        // seeMoreButton.addActionListener(new ActionListener() {
-        // @Override
-        // public void actionPerformed(ActionEvent e) {
-        // seeMoreButtonClickedCount++;
-        // searchResult.setPreferredSize(new Dimension(1440, 2000 + 900 *
-        // seeMoreButtonClickedCount));
-        // // createSearchResultPanels(6 + 3 * seeMoreButtonClickedCount);
-        // revalidate();
-        // }
-        // });
-        // searchResult.add(searchResult_center, BorderLayout.CENTER);
-        // searchResult.add(seeMoreButton, BorderLayout.SOUTH);
-
-        // JScrollPane scrollResult = new JScrollPane(searchResult);
-        // scrollResult.setPreferredSize(new Dimension(1440, 2000));
-        // scrollResult.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        // scrollResult.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-        // searchResult_center.setLayout(null);
-
-        // // This ActionListener is crucial!! Just know that it helps display searching
-        // // result
-
         // TODO
-        SearchResult hihi = new SearchResult(); 
+        SearchResult res = new SearchResult(); 
         
         ListOfCate catePanel = new ListOfCate();
 
@@ -113,9 +78,9 @@ public class SearchUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 contentPane.remove(catePanel);
                 searchPanel.hiddenSuggestionPanel();
-                
                 articalNameJSON = searchPanel.getSearchBarText();
-                contentPane.add(hihi, BorderLayout.CENTER);// Thay bằng class SearchResult
+                
+                contentPane.add(res, BorderLayout.CENTER);
                 revalidate();
                 repaint();
             }    
@@ -123,7 +88,6 @@ public class SearchUI extends JFrame {
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         contentPane.add(catePanel, BorderLayout.CENTER);
-
         
     }
 
@@ -359,7 +323,6 @@ class SearchResult extends JScrollPane {
         searchResult.add(searchResult_Center, BorderLayout.NORTH);
         searchResult.add(seeMoreButton, BorderLayout.SOUTH);
 
-        // add(searchResult);
         setViewportView(searchResult);
     }
 
@@ -379,10 +342,3 @@ class SearchResult extends JScrollPane {
     }
 
 }
-
-// class Test {
-//     public static void main(String[] args) {
-//         SearchUI test = new SearchUI();
-//         test.setVisible(true);
-//     }
-// }
