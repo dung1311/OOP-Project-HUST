@@ -23,7 +23,7 @@ public class SearchResultUI extends JFrame {
     private String postingDate;
 
 
-    public SearchResultUI(String barContent) {
+    public SearchResultUI(String findText) {
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(false);
@@ -73,19 +73,19 @@ public class SearchResultUI extends JFrame {
 
 
         // TODO
-        SearchResult hihi = new SearchResult(); 
+        SearchResult resPanel = new SearchResult(); 
 
         // TODO
-        List<JPanel> listJPanels = new SearchData().search(barContent);
-        for(int i = 0; i < 10; i++) {
-            hihi.addArticle(listJPanels.get(i));
+        List<JPanel> listJPanels = new SearchData().search(findText);
+        for(int i = 0; i < 12; i++) {
+            resPanel.addArticle(listJPanels.get(i));
         }
         
         // tìm kiếm
-        contentPane.add(hihi, BorderLayout.CENTER);// Thay bằng class SearchResult
+        contentPane.add(resPanel, BorderLayout.CENTER);// Thay bằng class SearchResult
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-        
-        
+        revalidate();
+        repaint();
     }
 
 
@@ -163,7 +163,7 @@ class SearchResult extends JScrollPane {
 
         seeMoreButton.setFont(font30);
 
-        searchResult.setPreferredSize(new Dimension(1280, 1500));
+        searchResult.setPreferredSize(new Dimension(1280, 2500));
         searchResult.setLayout(new BorderLayout());
         searchResult_Center = new JPanel();
         searchResult_Center.setLayout(new GridLayout(6, 2, 175, 0));

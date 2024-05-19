@@ -62,62 +62,20 @@ public class SearchUI extends JFrame {
         menuAndSearchPanel.add(searchPanel);
 
         // TODO
-        SearchResult res = new SearchResult();
-
         ListOfCate catePanel = new ListOfCate();
 
         // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính
         // acticalNameJSON
         ActionListener searchListener = new ActionListener() {
             @Override
-            // public void actionPerformed(ActionEvent e) {
-            // contentPane.remove(catePanel);
-            // searchPanel.hiddenSuggestionPanel();
-            // articalNameJSON = searchPanel.getSearchBarText();
-
-            // contentPane.add(res, BorderLayout.CENTER);
-            // revalidate();
-            // repaint();
-            // }
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
-
-                // Hide the catePanel
-                catePanel.setVisible(false);
-
-                // Display "please wait" message
-                JLabel pleaseWaitLabel = new JLabel("Please wait...");
-                pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
-                pleaseWaitLabel.setVerticalAlignment(JLabel.CENTER);
-                pleaseWaitLabel.setFont(new Font("Arial", Font.BOLD, 24));
-                contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
-                contentPane.revalidate();
-                contentPane.repaint();
-
-                // Use SwingWorker to create and show the SearchResultUI
-                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
-                    @Override
-                    protected Void doInBackground() throws Exception {
-                        s = searchPanel.getSearchBarText();
-                        SearchResultUI searchResultUI = new SearchResultUI(s);
-                        // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
-                        searchResultUI.setVisible(true);
-                        ScreenHistory.getInstance().pushScreen(frame);
-                        return null;
-                    }
-
-                    @Override
-                    protected void done() {
-                        // Remove the "please wait" message
-                        contentPane.remove(pleaseWaitLabel);
-                        contentPane.revalidate();
-                        contentPane.repaint();
-
-                        // Dispose the current frame
-                        dispose();
-                    }
-                };
-                worker.execute();
+                // create instance of SearchResultUI
+                new SearchResultUI(searchPanel.getSearchBarText()).setVisible(true);
+                
+                // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
+                ScreenHistory.getInstance().pushScreen(frame);
+                dispose();
             }
         };
 
@@ -313,49 +271,3 @@ class SearchAndSuggestionPanel extends JPanel {
     }
 }
 
-// This class will display the result after search, can be used in menu aswell
-// with consideration, contact me for more infomation
-
-// class SearchResult extends JScrollPane {
-// private JPanel searchResult = new JPanel(new BorderLayout());
-// private JPanel searchResult_Center;
-// private JButton seeMoreButton = new JButton("See more!");
-
-// public SearchResult() {
-// setPreferredSize(new Dimension(1440, 2000));
-// setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-// getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-// setVisible(true);
-
-// Font font30 = new Font("Arial", Font.PLAIN, 30);
-
-// seeMoreButton.setFont(font30);
-
-// searchResult.setPreferredSize(new Dimension(1280, 1500));
-// searchResult.setLayout(new BorderLayout());
-// searchResult_Center = new JPanel();
-// searchResult_Center.setLayout(new GridLayout(6, 2, 175, 0));
-// searchResult_Center.setPreferredSize(new Dimension(1280, 1500));
-
-// searchResult.add(searchResult_Center, BorderLayout.NORTH);
-// searchResult.add(seeMoreButton, BorderLayout.SOUTH);
-
-// setViewportView(searchResult);
-// }
-
-// public void seeMoreActionListeners(ActionListener e) {
-// seeMoreButton.addActionListener(e);
-// }
-
-// public void addArticle(JPanel p) {
-// searchResult_Center.add(p);
-// revalidate();
-// }
-
-// public void setLayoutAndSize(int n) {
-// searchResult.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
-// searchResult_Center.setLayout(new GridLayout(6 + 3 * n, 2, 175, 0));
-// searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
-// }
-
-// }
