@@ -64,44 +64,49 @@ public class SearchUI extends JFrame {
         // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính acticalNameJSON
         ActionListener searchListener = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {               
+            public void actionPerformed(ActionEvent e) {    
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
+                SearchResultUI searchResultUI = new SearchResultUI();
+                searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
+                ScreenHistory.getInstance().pushScreen(frame);
+                dispose();           
+                // JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
         
-                // Hide the catePanel
-                catePanel.setVisible(false);
+                // // Hide the catePanel
+                // catePanel.setVisible(false);
                 
-                // Display "please wait" message
-                JLabel pleaseWaitLabel = new JLabel("Please wait...");
-                pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
-                pleaseWaitLabel.setVerticalAlignment(JLabel.CENTER);
-                pleaseWaitLabel.setFont(new Font("Arial", Font.BOLD, 24));
-                contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
-                contentPane.revalidate();
-                contentPane.repaint();
+                // // Display "please wait" message
+                // JLabel pleaseWaitLabel = new JLabel("Please wait...");
+                // pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
+                // pleaseWaitLabel.setVerticalAlignment(JLabel.CENTER);
+                // pleaseWaitLabel.setFont(new Font("Arial", Font.BOLD, 24));
+                // contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
+                // contentPane.revalidate();
+                // contentPane.repaint();
                 
-                // Use SwingWorker to create and show the SearchResultUI
-                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
-                    @Override
-                    protected Void doInBackground() throws Exception {
-                        SearchResultUI searchResultUI = new SearchResultUI();
-                        searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
-                        searchResultUI.setVisible(true);
-                        ScreenHistory.getInstance().pushScreen(frame);
-                        return null;
-                    }
+                // // Use SwingWorker to create and show the SearchResultUI
+                // SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+                //     @Override
+                //     protected Void doInBackground() throws Exception {
+                //         SearchResultUI searchResultUI = new SearchResultUI();
+                //         searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
+                //         searchResultUI.setVisible(true);
+                //         ScreenHistory.getInstance().pushScreen(frame);
+                //         return null;
+                //     }
 
-                    @Override
-                    protected void done() {
-                        // Remove the "please wait" message
-                        contentPane.remove(pleaseWaitLabel);
-                        contentPane.revalidate();
-                        contentPane.repaint();
+                //     @Override
+                //     protected void done() {
+                //         // Remove the "please wait" message
+                //         contentPane.remove(pleaseWaitLabel);
+                //         contentPane.revalidate();
+                //         contentPane.repaint();
                         
-                        // Dispose the current frame
-                        dispose();
-                    }
-                };
-                worker.execute();
+                //         // Dispose the current frame
+                //         dispose();
+                //     }
+                // };
+                // worker.execute();
             }    
         };
 
