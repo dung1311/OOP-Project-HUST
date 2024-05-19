@@ -31,16 +31,6 @@ class Header extends JPanel{
         menuRight.setBackground(BLACK_menu);
         menuRight.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
-        // Thêm các nút vào menuLeft
-       
-        // ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
-        // menuButton.setIcon(menuIcon);
-        // menuButton.setPreferredSize(new Dimension(50,50));
-        // menuButton.setBorderPainted(false);
-        // menuButton.setFocusPainted(false);
-        // menuButton.setContentAreaFilled(false);
-        // menuLeft.add(menuButton);
-
         ImageIcon backIcon = new ImageIcon("news-aggregator\\resource\\assets\\backIcon.png");
         backButton.setIcon(backIcon);
         backButton.setPreferredSize(new Dimension(50, 50));
@@ -90,6 +80,7 @@ class Header extends JPanel{
     public void addButtonForSearchUI() {
         menuLeft.add(backButton);
         menuLeft.add(homeButton);
+        menuRight.add(searchButton);
         menuRight.add(userButton);
     }
 

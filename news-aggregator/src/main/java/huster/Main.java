@@ -6,8 +6,6 @@ package huster;
 
 import huster.gui.Menu;
 import huster.gui.MenuHistory;
-import huster.gui.SearchUI;
-import huster.gui.SearchUIHistory;
 
 import java.io.IOException;
 
@@ -38,8 +36,6 @@ class MyRunnable {
     }
 
     public void display() {
-        SearchUI searchUI = new SearchUI();
-        SearchUIHistory.getInstance().pushScreen(searchUI);
         Menu menu = new Menu();
         menu.setVisible(true);
         MenuHistory.getInstance().pushScreen(menu);

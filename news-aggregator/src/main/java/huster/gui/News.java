@@ -76,10 +76,9 @@ public class News extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
-                SearchUI previousScreen = SearchUIHistory.getInstance().peekScreen();
-                previousScreen.setVisible(true);
+                new SearchUI().setVisible(true);
                 ScreenHistory.getInstance().pushScreen(frame);
-                dispose();;
+                dispose();
             }
         });
 
@@ -103,12 +102,10 @@ public class News extends JFrame {
         setAuthor(nameAuthor);
         setPostingDate(postingDate);
         setLink(link);
-
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
         JPanel jPanel_news_source = new JPanel();
         jPanel_news_source.setLayout(new GridLayout(3, 1));
         
-        // JPanel jPanel_news_source = new JPanel(new GridLayout(3, 1));
         jPanel_news_source.add(jTextArea_news_author);
         jPanel_news_source.add(jTextArea_news_postingDate);
         jPanel_news_source.add(new JHyperlink("Link: " + link, link, "click here"));
