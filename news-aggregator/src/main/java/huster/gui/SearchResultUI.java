@@ -23,7 +23,7 @@ public class SearchResultUI extends JFrame {
     private String postingDate;
 
 
-    public SearchResultUI() {
+    public SearchResultUI(String barContent) {
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(false);
@@ -74,16 +74,18 @@ public class SearchResultUI extends JFrame {
 
         // TODO
         SearchResult hihi = new SearchResult(); 
+
+        // TODO
+        List<JPanel> listJPanels = new SearchData().search(barContent);
+        for(int i = 0; i < 10; i++) {
+            hihi.addArticle(listJPanels.get(i));
+        }
         
         // tìm kiếm
         contentPane.add(hihi, BorderLayout.CENTER);// Thay bằng class SearchResult
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         
-        // TODO
-        List<JPanel> listJPanels = new SearchData().search("bitcoin");
-        for(int i = 0; i < 10; i++) {
-            hihi.addArticle(listJPanels.get(i));
-        }
+        
     }
 
 

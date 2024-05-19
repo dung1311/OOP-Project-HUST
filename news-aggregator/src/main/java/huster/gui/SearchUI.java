@@ -14,7 +14,7 @@ public class SearchUI extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
-
+    public String s;////////////////////////////////////////////////////////
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
 
 
@@ -83,8 +83,9 @@ public class SearchUI extends JFrame {
                 SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
                     @Override
                     protected Void doInBackground() throws Exception {
-                        SearchResultUI searchResultUI = new SearchResultUI();
-                        searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
+                        s = searchPanel.getSearchBarText();
+                        SearchResultUI searchResultUI = new SearchResultUI(s);
+                        // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
                         searchResultUI.setVisible(true);
                         ScreenHistory.getInstance().pushScreen(frame);
                         return null;
