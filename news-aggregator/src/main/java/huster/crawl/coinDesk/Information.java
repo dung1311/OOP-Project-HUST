@@ -8,14 +8,14 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Link {
+public class Information {
     private String link;
     
-    public Link() {
+    public Information() {
 
     }
 
-    public Link(String link) {
+    public Information(String link) {
         this.link = link;
     }
 
@@ -58,10 +58,10 @@ public class Link {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
             Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");
             if(summaryTitle == null && summaryElements == null) return "unknown";
-            summary = summaryTitle.attr("content") + "\n";
+            summary = summaryTitle.attr("content") + "\n" + "\n";
             for(Element summaryElement : summaryElements)
             {
-                summary = summary + summaryElement.text() + "\n";
+                summary = summary + summaryElement.text() + "\n" + "\n";
             }
         } catch(Exception e) {
             e.printStackTrace();
@@ -90,7 +90,7 @@ public class Link {
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n";
+                content = content + contentElement.text().replaceAll("�", "\'") + "\n" + "\n";
             }
         } catch (Exception e) {
             e.printStackTrace();

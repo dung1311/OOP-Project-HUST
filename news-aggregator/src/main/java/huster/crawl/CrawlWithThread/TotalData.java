@@ -15,7 +15,7 @@ public class TotalData {
 
     public void setDataList() {
         DataList runnableToGeDataList = new DataList();
-        CountDownLatch latch = new CountDownLatch(2);
+        CountDownLatch latch = new CountDownLatch(3);
         Thread crawlFromCoinDeskThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -41,7 +41,7 @@ public class TotalData {
         });
 
         crawlFromCoinDeskThread.start();
-        // crawlFromTheBlockThread.start();
+        crawlFromTheBlockThread.start();
         crawlFromNewsBTCThread.start();
         try {
             latch.await(); 

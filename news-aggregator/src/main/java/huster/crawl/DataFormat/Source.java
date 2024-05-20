@@ -1,4 +1,4 @@
-package huster.crawl.coinDesk;
+package huster.crawl.DataFormat;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -47,7 +47,7 @@ public class Source {
 
             for(Element link : linkElements)
             {
-                String linkNextPage = url + link.attr("href");
+                String linkNextPage = "https://www.coindesk.com" + link.attr("href");
                 tempLinks.add(linkNextPage);
             }
             List<String> links = new ArrayList<>(tempLinks);
@@ -60,3 +60,4 @@ public class Source {
 
     
 }
+

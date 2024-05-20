@@ -18,21 +18,22 @@ public class DataList {
     public void crawlFromCoinDesk() 
     {
         DataFromCoinDesk file = new DataFromCoinDesk();
-        if(file.getDataList("https://www.coindesk.com/") != null)
-        this.dataList.addAll(file.getDataList("https://www.coindesk.com/"));
+        if(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link") != null)
+            this.dataList.addAll(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link"));
     }
 
     public void crawlTheBlock()
     {
         DataFromTheBlock file = new DataFromTheBlock();
-        this.dataList.addAll(file.getDataList("https://www.theblock.co/"));
+        if(file.getDataList("https://www.theblock.co/") != null)
+            this.dataList.addAll(file.getDataList("https://www.theblock.co/"));
     }
 
     public void crawlNewsBTC() 
     {
         DataFromNewsBTC file = new DataFromNewsBTC();
         if(file.getDataList("https://www.newsbtc.com/") != null)
-        this.dataList.addAll(file.getDataList("https://www.newsbtc.com/"));
+            this.dataList.addAll(file.getDataList("https://www.newsbtc.com/"));
     }
 
 }

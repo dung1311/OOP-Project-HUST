@@ -1,27 +1,51 @@
 package huster.crawl.coinDesk;
 
-import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 import huster.crawl.DataFormat.Data;
 public class DataFromCoinDesk {
-    public List<Data> getDataList(String url)
+    private String url;
+    private String innerLinkClass;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getInnerLinkClass() {
+        return innerLinkClass;
+    }
+
+    public void setInnerLinkClass(String innerLinkClass) {
+        this.innerLinkClass = innerLinkClass;
+    }
+
+
+    public DataFromCoinDesk() {
+    }
+
+    public DataFromCoinDesk(String url, String innerLinkClass) {
+        this.url = url;
+        this.innerLinkClass = innerLinkClass;
+    }
+
+    public List<Data> getDataList(String url, String innerLinkClass)
     {
         try {
             List<Data> dataList = new ArrayList<>();
             Source source = new Source();
-            List<String> linkList = source.getLinks(url);
+            List<String> linkList = source.getLinks(url,innerLinkClass);
             for(int i = 0; i < linkList.size(); i++)
             {
                 Data item = new Data();
-                Link itemLink = new Link();
+                Information itemLink = new Information();
                 itemLink.setLink(linkList.get(i));
                 Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
                 item.setUrl(itemLink.getLink());
@@ -45,5 +69,8 @@ public class DataFromCoinDesk {
             return null;
         }
     }
+
+
+
 }
 

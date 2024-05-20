@@ -56,8 +56,8 @@ public class Link {
         String summary = null;
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
-            if(summaryTitle == null) return "unknown";
-            summary = summaryTitle.attr("content") + "\n";
+            if(summaryTitle == null) return "Article";
+            summary = summaryTitle.attr("content") + "\n" + "\n";
         }catch(Exception e) {
             e.printStackTrace();
         }   
@@ -86,7 +86,7 @@ public class Link {
             for(Element contentElement : contentElements) 
             {
 
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n" ;
+                content = content + contentElement.text().replaceAll("�", "\'") + "\n" + "\n";
             }
         } catch (Exception e) {
             e.printStackTrace();
