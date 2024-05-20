@@ -9,7 +9,7 @@ import org.jsoup.nodes.Document;
 
 import huster.crawl.DataFormat.Data;
 public class DataFromCoinDesk {
-    public List<Data> writeOnJsonFile(String url)
+    public List<Data> getDataList(String url)
     {
         try {
             List<Data> dataList = new ArrayList<>();
@@ -25,9 +25,6 @@ public class DataFromCoinDesk {
                 item.setLink(itemLink.getLink());
                 item.setTitle(itemLink.getTitle(doc));
                 item.setType(itemLink.getType(doc));
-                if(item.getType().equals("unknownType")){
-                    continue;
-                }
                 item.setSummary(itemLink.getSummary(doc));
                 item.setContent(itemLink.getContent(doc));
                 item.setCategory(itemLink.getCategory(doc));
@@ -35,18 +32,11 @@ public class DataFromCoinDesk {
                 item.setTag(itemLink.getTag(doc));
                 item.setAuthor(itemLink.getAuthor(doc));
                 item.setLinkImage(itemLink.getLinkImage(doc));   
-                dataList.add(item);                 
+                if(item.isDataFormat(item))
+                    dataList.add(item);                 
             }
             if(dataList.isEmpty()) return null;
             else return dataList;
-            // Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            // String json = gson.toJson(dataList);
-        
-            // FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/dataCoinDesk.json");
-            // if(json != null) fileWriter.write(json);
-            // fileWriter.close();
-
-            // System.out.println("Write on JsonFile successful");
         } catch (Exception e) {
             e.printStackTrace();
             return null;

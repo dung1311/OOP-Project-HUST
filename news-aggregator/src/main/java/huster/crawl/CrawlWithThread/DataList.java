@@ -18,19 +18,21 @@ public class DataList {
     public void crawlFromCoinDesk() 
     {
         DataFromCoinDesk file = new DataFromCoinDesk();
-        this.dataList.addAll(file.writeOnJsonFile("https://www.coindesk.com/"));
+        if(file.getDataList("https://www.coindesk.com/") != null)
+        this.dataList.addAll(file.getDataList("https://www.coindesk.com/"));
     }
 
     public void crawlTheBlock()
     {
         DataFromTheBlock file = new DataFromTheBlock();
-        this.dataList.addAll(file.writeOnJsonFile("https://www.theblock.co/"));
+        this.dataList.addAll(file.getDataList("https://www.theblock.co/"));
     }
 
     public void crawlNewsBTC() 
     {
         DataFromNewsBTC file = new DataFromNewsBTC();
-        this.dataList.addAll(file.writeOnJsonFile("https://www.newsbtc.com/"));
+        if(file.getDataList("https://www.newsbtc.com/") != null)
+        this.dataList.addAll(file.getDataList("https://www.newsbtc.com/"));
     }
 
 }
