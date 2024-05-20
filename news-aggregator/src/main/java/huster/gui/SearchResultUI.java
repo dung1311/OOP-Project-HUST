@@ -22,6 +22,11 @@ public class SearchResultUI extends JFrame {
     private String articleTitle;
     private String postingDate;
 
+    private int seeMoreButtonClickedCount = 0;
+
+    // private JPanel searchResult = new JPanel(new BorderLayout());
+    // private JPanel searchResult_Center;
+    // private JButton seeMoreButton = new JButton("See more!");
 
     public SearchResultUI(String findText) {
         Container contentPane = getContentPane();
@@ -73,17 +78,29 @@ public class SearchResultUI extends JFrame {
 
 
         // TODO
-        SearchResult resPanel = new SearchResult(); 
-
+        SearchResult resPanel = new SearchResult();
         // TODO
         List<JPanel> listJPanels = new SearchData().search(findText);
         for(int i = 0; i < 12; i++) {
             resPanel.addArticle(listJPanels.get(i));
         }
         
+        resPanel.seeMoreActionListeners(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                seeMoreButtonClickedCount += 1;
+                resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
+                for(int i = 0; i < 6; i++) {
+                    resPanel.addArticle(listJPanels.get(i + 12 + (seeMoreButtonClickedCount - 1)*6));
+                }
+            }
+        });
+        
+       
         // tìm kiếm
-        contentPane.add(resPanel, BorderLayout.CENTER);// Thay bằng class SearchResult
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
+        contentPane.add(resPanel, BorderLayout.CENTER);// Thay bằng class SearchResult
+        resPanel.setVisible();
         revalidate();
         repaint();
     }
@@ -122,28 +139,6 @@ public class SearchResultUI extends JFrame {
     }
 }
 
-class ArticlePanel extends JPanel {
-    public ArticlePanel(String a, String b) {
-        setPreferredSize(new Dimension(465, 170));
-        setLayout(new BorderLayout());
-        String content = "<html><body>" + a + "<br>" + b + "</body></html>";
-        JLabel articleName = new JLabel(content);
-        add(articleName, BorderLayout.SOUTH);
-
-    }
-}
-
-class ArticleButton extends JButton {
-    public void articleButton() {
-        setPreferredSize(new Dimension(465, 132));
-        setBackground(Color.WHITE);
-        setHorizontalTextPosition(SwingConstants.CENTER);
-        setVerticalTextPosition(SwingConstants.BOTTOM);
-        setBorderPainted(false);
-
-    }
-}
-
 
 // This class will display the result after search, can be used in menu aswell
 // with consideration, contact me for more infomation
@@ -169,11 +164,15 @@ class SearchResult extends JScrollPane {
         searchResult_Center.setLayout(new GridLayout(6, 2, 175, 0));
         searchResult_Center.setPreferredSize(new Dimension(1280, 1500));
 
-        searchResult.add(searchResult_Center, BorderLayout.NORTH);
+        searchResult.add(searchResult_Center, BorderLayout.CENTER);
         searchResult.add(seeMoreButton, BorderLayout.SOUTH);
 
         // add(searchResult);
         setViewportView(searchResult);
+    }
+
+    public void setVisible(){
+        searchResult_Center.setVisible(true);
     }
 
     public void seeMoreActionListeners(ActionListener e) {
@@ -185,8 +184,8 @@ class SearchResult extends JScrollPane {
     }
 
     public void setLayoutAndSize(int n) {
-        searchResult.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
+        searchResult.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
         searchResult_Center.setLayout(new GridLayout(6 + 3 * n, 2, 175, 0));
-        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
+        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
     }
 }
