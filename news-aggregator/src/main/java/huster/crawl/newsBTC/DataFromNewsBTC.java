@@ -12,7 +12,7 @@ import com.google.gson.GsonBuilder;
 
 import huster.crawl.DataFormat.Data;
 public class DataFromNewsBTC {
-    public List<Data> writeOnJsonFile(String url)
+    public List<Data> getDataList(String url)
     {
         try {
             List<Data> dataList = new ArrayList<>();
@@ -34,22 +34,13 @@ public class DataFromNewsBTC {
                 item.setDatetimeCreation(itemLink.getDateTimeCreation(doc));
                 item.setTag(itemLink.getTag(doc));
                 item.setAuthor(itemLink.getAuthor(doc));
-                if(item.getAuthor().equals("unknownAuthor")){
-                    continue;
-                }
-                item.setLinkImage(itemLink.getLinkImage(doc));   
-                dataList.add(item);                 
+                item.setLinkImage(itemLink.getLinkImage(doc));
+                if(item.isDataFormat(item))   
+                    dataList.add(item);                 
             }
             if(dataList.isEmpty()) return null;
             else return dataList;
-            // Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            // String json = gson.toJson(dataList);
-        
-            // FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/dataNewsBTC.json");
-            // if(json != null) fileWriter.write(json);
-            // fileWriter.close();
 
-            // System.out.println("Write on JsonFile successful");
         } catch (Exception e) {
             e.printStackTrace();
             return null;
