@@ -15,9 +15,7 @@ import com.google.gson.JsonObject;
 public class GetData {
 
     private List<JsonObject> newsElements = new ArrayList<>(10);
-    // private String dataFilePath =
-    // "news-aggregator\\resource\\data\\totalData.json";
-    private String dataFilePath = "news-aggregator\\resource\\data\\dataCoinDesk.json";
+    private String dataFilePath = "news-aggregator\\resource\\data\\totalData.json";
     private List<newsObject> newsObjectsList = new ArrayList<>(10);
     // store news from database
     private JsonArray newsArray = new JsonArray();
@@ -53,10 +51,11 @@ public class GetData {
         Set<Integer> randomSet = new HashSet<>();
         Random random = new Random();
         // get radom index from newsArray
-        while (randomSet.size() < 30) {
-            // random number
-            int randomNumber = random.nextInt(45);
-            randomSet.add(randomNumber);
+        while (randomSet.size() < 50) {
+            // random number from 0 to 100
+            int randomNumber = random.nextInt(100);
+            
+                randomSet.add(randomNumber);
         }
         // add news Elements into list
         for (int i : randomSet) {

@@ -30,15 +30,8 @@ public class NewsElement {
         JPanel containerJPanel = new JPanel();
         containerJPanel.setLayout(new BoxLayout(containerJPanel, BoxLayout.Y_AXIS));
 
-        // JButton ImageButton = new JButton();
-
-
         return null;
     }
     
-
-    public void test(){
-        System.out.println(dataJsonObjects.get(0).toString());
-    }
 }
 

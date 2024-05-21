@@ -3,20 +3,23 @@ package huster.gui;
 import javax.swing.*;
 import javax.swing.event.*;
 
-
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
 public class SearchUI extends JFrame {
+
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
-
+    public String articalNameJSON;
+    private ImageIcon articleIcon;
+    private String articleTitle;
+    private String postingDate;
+    public String s;////////////////////////////////////////////////////////
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
-
 
     public SearchUI() {
         Container contentPane = getContentPane();
@@ -30,7 +33,7 @@ public class SearchUI extends JFrame {
 
         Header menuAndSearchPanel = new Header();
         menuAndSearchPanel.addButtonForSearchUI();
-       
+
         menuAndSearchPanel.addBackButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -46,7 +49,7 @@ public class SearchUI extends JFrame {
 
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 Menu previousScreen = MenuHistory.getInstance().peekScreen();
                 previousScreen.setVisible(true);
@@ -57,11 +60,12 @@ public class SearchUI extends JFrame {
         });
 
         menuAndSearchPanel.add(searchPanel);
-        
+
+        // TODO
         ListOfCate catePanel = new ListOfCate();
 
-
-        // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính acticalNameJSON
+        // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính
+        // acticalNameJSON
         ActionListener searchListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {    
@@ -116,9 +120,37 @@ public class SearchUI extends JFrame {
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         contentPane.add(catePanel, BorderLayout.CENTER);
+
+    }
+
+    public String getarticalNameJSON() {
+        return articalNameJSON;
+    }
+
+    public String getTitle() {
+        return articleTitle;
+    }
+
+    public void setArticleTitle(String s) {
+        this.articleTitle = s;
+    }
+
+    public String getPostingDate() {
+        return postingDate;
+    }
+
+    public void setPostingDate(String s) {
+        this.postingDate = s;
+    }
+
+    public ImageIcon getArticleIcon() {
+        return articleIcon;
+    }
+
+    public void setArticleIcon(ImageIcon articleIcon) {
+        this.articleIcon = articleIcon;
     }
 }
-
 
 class SearchBar extends JTextField {
     public SearchBar(int columns) {
@@ -273,3 +305,4 @@ class SearchAndSuggestionPanel extends JPanel {
         suggestionPanel.setVisible(false);
     }
 }
+

@@ -15,6 +15,7 @@ public class GeneralHandle {
         try {
             image = ImageIO.read(new URL(urlString));
         } catch (Exception e) {
+            System.out.println("cannot read image from URL");
             e.printStackTrace();
         }
         Image newImage = image.getScaledInstance(600, 268, Image.SCALE_SMOOTH);
@@ -28,6 +29,7 @@ public class GeneralHandle {
         try {
             decodeURL = URLDecoder.decode(urlString, "UTF-8");
         } catch (Exception e) {
+            System.out.println("cannot decode URL string");
             e.printStackTrace();
         }
 

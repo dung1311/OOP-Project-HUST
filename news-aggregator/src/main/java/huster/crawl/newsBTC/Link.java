@@ -43,12 +43,12 @@ public class Link {
         String title = null;
         try {
             Element titleElement = doc.selectFirst("meta[property=og:title]");
-            if(titleElement == null) return null;
+            if(titleElement == null) return "unknown";
             title = titleElement.attr("content");
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return title;
+        return title.replaceAll("�", "\'");
     }
 
     public String getSummary(Document doc)
@@ -56,12 +56,12 @@ public class Link {
         String summary = null;
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
-            if(summaryTitle == null) return null;
+            if(summaryTitle == null) return "unknown";
             summary = summaryTitle.attr("content") + "\n";
         }catch(Exception e) {
             e.printStackTrace();
         }   
-        return summary;
+        return summary.replaceAll("�", "\'");
     }
 
     public String getType(Document doc)
@@ -69,12 +69,12 @@ public class Link {
         String type = null;
         try {
             Element typeElement = doc.selectFirst("meta[property=article:section]");
-            if(typeElement == null) return "The website do not provide type of article";
+            if(typeElement == null) return "unknownType";
             type = typeElement.attr("content");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return type;
+        return type.replaceAll("�", "\'");
     }
 
     public String getContent(Document doc)
@@ -82,15 +82,16 @@ public class Link {
         String content = "";
         try {
             Elements contentElements = doc.select(".content-inner");
+            if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
 
-                content = content + contentElement.text() + "\n" ;
+                content = content + contentElement.text().replaceAll("�", "\'") + "\n" ;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return content;
+        return content.replaceAll("�", "\'");
     } 
 
     public String getCategory(Document doc)
@@ -98,12 +99,12 @@ public class Link {
         String category = null;
         try {
             Element categoryElement = doc.selectFirst("meta[property=og:type]");
-            if(categoryElement == null) return "unknownCategory";
+            if(categoryElement == null) return "unknown";
             category = categoryElement.attr("content");
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return category;
+        return category.replaceAll("�", "\'");
     }
 
     public String getDateTimeCreation(Document doc)
@@ -111,12 +112,12 @@ public class Link {
         String dateTimeCreation = null;
         try {
             Element dateTimeElement = doc.selectFirst("meta[property=article:published_time]");
-            if(dateTimeElement == null) return "unknownDateTimeCreation";
+            if(dateTimeElement == null) return "unknown";
             dateTimeCreation = dateTimeElement.attr("content");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return dateTimeCreation;
+        return dateTimeCreation.replaceAll("�", "\'");
     }
 
     public List<String> getTag(Document doc)
@@ -176,12 +177,12 @@ public class Link {
         String author = "";
         try {
             Element authorName = doc.selectFirst("meta[name=author]");
-            if(authorName == null) return "unknownAuthor";
+            if(authorName == null) return "unknown";
             author = authorName.attr("content");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author;
+        return author.replaceAll("�", "\'");
     }
     
     public String getLinkImage(Document doc)
@@ -189,11 +190,11 @@ public class Link {
         String linkImage = "";
         try {
             Element linkImageElement = doc.selectFirst("meta[property=og:image]");
-            if(linkImageElement == null) return null;
+            if(linkImageElement == null) return "unknown";
             linkImage = linkImageElement.attr("content");
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return linkImage;
+        return linkImage.replaceAll("�", "\'");
     }
 }

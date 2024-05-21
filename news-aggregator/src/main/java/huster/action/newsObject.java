@@ -7,16 +7,20 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
+import javax.swing.event.AncestorListener;
 
 import com.google.gson.JsonObject;
 
 import huster.gui.News;
 import huster.gui.ScreenHistory;
 
+import java.awt.Cursor;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class newsObject {
     
@@ -26,6 +30,7 @@ public class newsObject {
     private String linkImage;
     private String title;
     private String summary;
+    private String postingDate;
 
 
     public newsObject(JsonObject jsonObject){
@@ -35,8 +40,12 @@ public class newsObject {
         this.linkImage = jsonObject.get("linkImage").getAsString();
         this.title = jsonObject.get("title").getAsString();
         this.summary = jsonObject.get("summary").getAsString();
+        this.postingDate = jsonObject.get("datetimeCreation").getAsString();
     }
 
+    public String getPostingDate() {
+        return postingDate;
+    }
 
     public String getAuthorName() {
         return authorName;
@@ -71,10 +80,9 @@ public class newsObject {
         articleJButton.setContentAreaFilled(false);
         articleJButton.setBorderPainted(false);
         articleJButton.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-                News news = new News(getAuthorName(), "posting date", getLink(), getContent(), getTitle());
+                News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
                 news.setHeader(getTitle());
                 news.setVisible(true);
                 
@@ -97,6 +105,23 @@ public class newsObject {
         jPanel.setVisible(true);
         jPanel.add(articleJButton);
         jPanel.add(articleLable);
+        jPanel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
+                news.setHeader(getTitle());
+                news.setVisible(true);
+                
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(articleJButton);
+                ScreenHistory.getInstance().pushScreen(frame);
+                frame.dispose();
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                jPanel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            }
+        });
 
         return jPanel;
     }
