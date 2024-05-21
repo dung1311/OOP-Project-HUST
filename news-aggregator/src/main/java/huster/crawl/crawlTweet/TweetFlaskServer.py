@@ -12,7 +12,7 @@ matplotlib.use('Agg')
 app = Flask(__name__)
 
 
-# Tạo một phiên bản của Nitter bên ngoài hàm crawl_tweet
+# Tạo một phiên bản của Nitter lưu vào cache
 @lru_cache(maxsize=None)
 def create_nitter():
     return Nitter(log_level=1, skip_instance_check=False)
@@ -109,16 +109,16 @@ def json_analyst():
 
     data_list_pd = pd.DataFrame(
         data_list, columns=['LinkTweet', 'Content', 'Time', 'Comment', 'Retweet', 'Quote', 'Like'])
-    max_interaction_tweet = data_list_pd.loc[data_list_pd[[
+    highest_interaction_tweet = data_list_pd.loc[data_list_pd[[
         'Comment', 'Retweet', 'Quote', 'Like']].sum(axis=1).idxmax()]
-    min_interaction_tweet = data_list_pd.loc[data_list_pd[[
+    lowest_interaction_tweet = data_list_pd.loc[data_list_pd[[
         'Comment', 'Retweet', 'Quote', 'Like']].sum(axis=1).idxmin()]
-    result = {
-        'maxTweet': max_interaction_tweet.to_json(),
-        'minTweet': min_interaction_tweet.to_json()
+    response = {
+        'highestInteractionTweet': highest_interaction_tweet.to_dict(),
+        'lowestInteractionTweet': lowest_interaction_tweet.to_dict()
     }
 
-    return jsonify(result)
+    return jsonify(response)
 
 
 @app.route('/shutdown', methods=['POST'])

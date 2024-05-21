@@ -62,7 +62,22 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 SearchUI searchUI = new SearchUI();
                 searchUI.setVisible(true);
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+                ScreenHistory.getInstance().pushScreen(frame);
                 dispose();
+            }
+        });
+
+        menu.addBackButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!ScreenHistory.getInstance().isEmpty()) {
+                    JFrame previousScreen = ScreenHistory.getInstance().popScreen();
+                    previousScreen.setVisible(true);
+                    JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+                    ScreenHistory.getInstance().pushScreen(frame);
+                    dispose();
+                }
             }
         });
 
@@ -89,6 +104,7 @@ public class Menu extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 News news = new News("null", "null", "null", "null", "null");
                 news.setVisible(true);
+                ScreenHistory.getInstance().pushScreen(frame);
                 dispose();
             }
         });
@@ -154,6 +170,7 @@ public class Menu extends JFrame {
         
     }
 
+<<<<<<< HEAD
     // tao bang tin
     public void createNews(){
         List<JsonObject> _JsonObjects = new GetData().getNewsElements();
@@ -164,12 +181,32 @@ public class Menu extends JFrame {
             
             newsList.add(_JPanel);
         }
+=======
+    public void createSmall_articlePanel(int numberOfRows) {
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < numberOfRows; j++) {
+                articleButton = new JButton(articleIcon);
+                // articleButton.setBackground(GREY_menu);
+                articleButton.setContentAreaFilled(false);
+                articleButton.setBorderPainted(false);
+                articleButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        News news = new News();
+                        news.setVisible(true);
+                        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+                        ScreenHistory.getInstance().pushScreen(frame);
+                        dispose();
+                    }
+                });
+>>>>>>> origin/Chien
 
         for(int i = 0; i < number_News; i++){
             articlePanel.add(newsList.get(i));
         }
 
     }
+<<<<<<< HEAD
     
 
 
@@ -275,3 +312,12 @@ class Header extends JPanel{
         menuButton.addActionListener(listener);
     }
 }
+=======
+
+    public void addBackButton(){
+        menu.addBackButtonForMenu();
+    }
+}
+
+
+>>>>>>> origin/Chien
