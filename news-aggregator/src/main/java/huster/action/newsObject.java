@@ -21,7 +21,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class newsObject {
     
@@ -80,7 +79,19 @@ public class newsObject {
 
         articleJButton.setContentAreaFilled(false);
         articleJButton.setBorderPainted(false);
-    
+        articleJButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
+                news.setHeader(getTitle());
+                news.setVisible(true);
+                
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(articleJButton);
+                ScreenHistory.getInstance().pushScreen(frame);
+                frame.dispose();
+            }
+        });
+
         try {
             Image image =  GeneralHandle.resizeImage(this.getLinkImage());
             articleJButton.setIcon(new ImageIcon(image));

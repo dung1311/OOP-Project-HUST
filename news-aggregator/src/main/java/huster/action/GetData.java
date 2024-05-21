@@ -54,10 +54,7 @@ public class GetData {
         while (randomSet.size() < 50) {
             // random number from 0 to 100
             int randomNumber = random.nextInt(100);
-            String invalid  = newsArray.get(randomNumber).getAsJsonObject().toString();
-            if(invalid.contains("linkImage") == false)
-                randomNumber = random.nextInt(100);
-            else
+            
                 randomSet.add(randomNumber);
         }
         // add news Elements into list

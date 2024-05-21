@@ -26,6 +26,15 @@ public class Main {
         });
 
         displayThread.start();
+
+        // Thread crawlThread = new Thread(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         myRunnable.crawl();                
+        //     }
+        // });
+
+        // crawlThread.start();
     }
 }
 
