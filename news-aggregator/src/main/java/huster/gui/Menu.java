@@ -15,12 +15,9 @@ public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
-    public static final int ORIGIN_X = 100;
-    public static final int ORIGIN_Y = 100;
     
     public int number_News = 12;
     private int seeMoreButtonClickedCount = 0;
-    private static JPanel articlePanel;
 
     // luu tru bai viet
     private List<JPanel> newsList = new ArrayList<>();
@@ -100,10 +97,6 @@ public class Menu extends JFrame {
         toparticleLabel_title.setVerticalAlignment(JLabel.CENTER);
         toparticlePanel.add(topArticleButton,BorderLayout.NORTH);
         toparticlePanel.add(toparticleLabel_title,BorderLayout.CENTER);
-
-        articlePanel = new JPanel();
-        articlePanel.setPreferredSize(new Dimension(1280, 1500));
-        articlePanel.setLayout(new GridLayout(6,2,175,0));
         
         news_ScrollPane.seeMoreActionListeners(new ActionListener() {
             @Override
@@ -122,7 +115,7 @@ public class Menu extends JFrame {
         contentPane.add(menu, BorderLayout.NORTH);
         contentPane.add(news_ScrollPane,BorderLayout.CENTER);  
         //Creates and displays news
-        articlePanel.setVisible(true);
+        news_ScrollPane.setVisible();
         createNews();
         addNews();
         

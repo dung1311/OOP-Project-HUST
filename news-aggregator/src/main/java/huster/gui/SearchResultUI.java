@@ -15,10 +15,10 @@ public class SearchResultUI extends JFrame {
 
     private int seeMoreButtonClickedCount = 0;
     private int number_News = 12;
-    private List<JPanel> listJPanels;
+    private static List<JPanel> listJPanels;
     private SearchResult resPanel = new SearchResult();
 
-    public SearchResultUI(String findText) {
+    public SearchResultUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(false);
@@ -68,13 +68,16 @@ public class SearchResultUI extends JFrame {
             }
         });
 
-
         
-        // TODO
-        // listJPanels = new SearchData().search(findText);
         
-        createNews(findText);
-        addNews();
+        // createNews(findText);
+        if(listJPanels.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Mời bạn điền lại");
+        }
+        else{
+            addNews();
+        }
+        
         
         resPanel.seeMoreActionListeners(new ActionListener(){
             @Override
@@ -88,14 +91,22 @@ public class SearchResultUI extends JFrame {
         });
         
        
-        // tìm kiếm
+        // Add components to the frame
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-        contentPane.add(resPanel, BorderLayout.CENTER);// Thay bằng class SearchResult
+        contentPane.add(resPanel, BorderLayout.CENTER);
         resPanel.setVisible();
         revalidate();
         repaint();
     }
-    public void createNews(String s){
+
+    public static boolean listPanelIsNull(){
+        if(listJPanels.equals(null)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    public static void createNews(String s){
         listJPanels = new SearchData().search(s);
     }
 
@@ -109,7 +120,6 @@ public class SearchResultUI extends JFrame {
 
 // This class will display the result after search, can be used in menu aswell
 // with consideration, contact me for more infomation
-
 class SearchResult extends JScrollPane {
     private JPanel searchResult = new JPanel(new BorderLayout());
     private JPanel searchResult_Center;

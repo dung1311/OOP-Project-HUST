@@ -16,7 +16,7 @@ public class SearchUI extends JFrame {
     public static final int ORIGIN_Y = 0;
    
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
-
+    private ListOfCate catePanel = new ListOfCate();
     public SearchUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
@@ -59,9 +59,6 @@ public class SearchUI extends JFrame {
 
         menuAndSearchPanel.add(searchPanel);
 
-        // TODO
-        ListOfCate catePanel = new ListOfCate();
-
         // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính
         // acticalNameJSON
         ActionListener searchListener = new ActionListener() {
@@ -69,12 +66,19 @@ public class SearchUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
                 // create instance of SearchResultUI
-                new SearchResultUI(searchPanel.getSearchBarText()).setVisible(true);
+                SearchResultUI.createNews(searchPanel.getSearchBarText());
+                if(SearchResultUI.listPanelIsNull()){
+                    JOptionPane.showMessageDialog(null, "We don't have that article!!!");
+                }
+                else{
+                    new SearchResultUI().setVisible(true);
+                    ScreenHistory.getInstance().pushScreen(frame);
+                    // dispose();
+                    SearchUI.this.setVisible(false);
+                }
                 
                 // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
-                ScreenHistory.getInstance().pushScreen(frame);
-                // dispose();
-                SearchUI.this.setVisible(false);
+                
             }
         };
 
@@ -91,9 +95,7 @@ class SearchBar extends JTextField {
     public SearchBar(int columns) {
         super(columns);
         setupSearchBar();
-
     }
-
     private void setupSearchBar() {
         // Cấu hình các thuộc tính cho searchBar ở đây
         Font font = new Font("Arial", Font.PLAIN, 30);
@@ -189,6 +191,20 @@ class SearchAndSuggestionPanel extends JPanel {
             }
         });
 
+        suggestionList.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    selectedSuggestion = suggestionList.getSelectedValue();
+                    if (selectedSuggestion != null) {
+                        searchBar.setText(selectedSuggestion);
+                        searchBar.requestFocusInWindow();
+                        suggestionPanel.setVisible(false);
+                    }
+                }
+            }
+        });
+
         add(searchBar);
         add(suggestionPanel);
     }
@@ -229,4 +245,3 @@ class SearchAndSuggestionPanel extends JPanel {
         suggestionPanel.setVisible(false);
     }
 }
-
