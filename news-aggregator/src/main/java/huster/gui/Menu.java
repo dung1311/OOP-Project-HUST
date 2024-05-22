@@ -24,6 +24,7 @@ public class Menu extends JFrame {
 
     // luu tru bai viet
     private List<JPanel> newsList = new ArrayList<>();
+    private SearchResult news_ScrollPane = new SearchResult();
    
     Header menu = new Header();
 
@@ -32,7 +33,7 @@ public class Menu extends JFrame {
     }
 
     public Menu() {
-        Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
+        Container contentPane = getContentPane(); 
         menu.addButtonForMenu();
 
         setSize(X, Y);
@@ -54,7 +55,8 @@ public class Menu extends JFrame {
                 new SearchUI().setVisible(true);
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                 ScreenHistory.getInstance().pushScreen(frame);
-                dispose();
+                // dispose();
+                Menu.this.setVisible(false);
             }
         });
 
@@ -66,12 +68,11 @@ public class Menu extends JFrame {
                     previousScreen.setVisible(true);
                     JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                     ScreenHistory.getInstance().pushScreen(frame);
-                    dispose();
+                    // dispose();
+                    Menu.this.setVisible(false);
                 }
             }
         });
-
-        Font font30 = new Font("ARIAL",Font.PLAIN,30);
         ImageIcon toparticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
         JPanel toparticlePanel = new JPanel();
@@ -104,54 +105,31 @@ public class Menu extends JFrame {
         articlePanel.setPreferredSize(new Dimension(1280, 1500));
         articlePanel.setLayout(new GridLayout(6,2,175,0));
         
-        JPanel fullarticlePanel = new JPanel();
-        fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
-        fullarticlePanel.setLayout(new BorderLayout());
-        fullarticlePanel.add(toparticlePanel,BorderLayout.NORTH);
-        fullarticlePanel.add(articlePanel,BorderLayout.CENTER);
-
-
-        JButton seeMoreButton = new JButton("MORE");
-        seeMoreButton.setFont(font30);
-        seeMoreButton.addActionListener(new ActionListener() {
+        news_ScrollPane.seeMoreActionListeners(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(seeMoreButtonClickedCount == 2) {
-                    seeMoreButton.setVisible(false);
-                    return ;
-                }
                 
-                seeMoreButtonClickedCount++;
                 number_News += 6;
-                fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1000 * seeMoreButtonClickedCount));
-                articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1000 * seeMoreButtonClickedCount));
-                articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
-                // createNews();
+                seeMoreButtonClickedCount++;
+                news_ScrollPane.setLayoutAndSize(seeMoreButtonClickedCount);
                 addNews();
                 revalidate();
+                hideSeeMoreBtn();
             }
         });
-        fullarticlePanel.add(seeMoreButton, BorderLayout.SOUTH);
 
-        JScrollPane scrollPane_suggested = new JScrollPane(fullarticlePanel);
-        scrollPane_suggested.setPreferredSize(new Dimension(1280, 800));
-        scrollPane_suggested.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane_suggested.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scrollPane_suggested.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-
-        // contentPane.setBackground(GREY_menu);
         this.setBackground(GREY_menu);
         contentPane.add(menu, BorderLayout.NORTH);
-        // contentPane.add(toparticlePanel, BorderLayout.CENTER);
-
-        contentPane.add(scrollPane_suggested,BorderLayout.CENTER);  
-        // tao bang tin
+        contentPane.add(news_ScrollPane,BorderLayout.CENTER);  
+        //Creates and displays news
         articlePanel.setVisible(true);
         createNews();
         addNews();
+        
+        revalidate();
     }
 
-    // tao bang tin
+    //Method to generates newsList
     public List<JPanel> createNews(){
         List<JsonObject> _JsonObjects = new GetData().getNewsElements();
         
@@ -167,14 +145,21 @@ public class Menu extends JFrame {
         return newsList;
     }
 
+    //Method to help display news
     public void addNews(){
         for(int i = 0; i < number_News; i++){
-            articlePanel.add(newsList.get(i));
+            news_ScrollPane.addArticleCenter(newsList.get(i));
         }
     }
 
     public void addBackButton() {
         menu.addBackButtonForMenu();
+    }
+
+    public void hideSeeMoreBtn() {
+        if(seeMoreButtonClickedCount == 2) {
+            news_ScrollPane.hideSeeMoreBtn();
+        }
     }
 }
 

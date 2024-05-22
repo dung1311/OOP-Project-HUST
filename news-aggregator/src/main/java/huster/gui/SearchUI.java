@@ -14,11 +14,7 @@ public class SearchUI extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
-    public String articalNameJSON;
-    private ImageIcon articleIcon;
-    private String articleTitle;
-    private String postingDate;
-    public String s;////////////////////////////////////////////////////////
+   
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
 
     public SearchUI() {
@@ -42,7 +38,8 @@ public class SearchUI extends JFrame {
                     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
                     ScreenHistory.getInstance().pushScreen(frame);
-                    frame.dispose();
+                    // frame.dispose();
+                    SearchUI.this.setVisible(false);
                 }
             }
         });
@@ -55,7 +52,8 @@ public class SearchUI extends JFrame {
                 previousScreen.setVisible(true);
                 previousScreen.addBackButton();
                 ScreenHistory.getInstance().pushScreen(frame);
-                frame.dispose();
+                // frame.dispose();
+                SearchUI.this.setVisible(false);
             }
         });
 
@@ -75,7 +73,8 @@ public class SearchUI extends JFrame {
                 
                 // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
                 ScreenHistory.getInstance().pushScreen(frame);
-                dispose();
+                // dispose();
+                SearchUI.this.setVisible(false);
             }
         };
 
@@ -85,37 +84,8 @@ public class SearchUI extends JFrame {
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         contentPane.add(catePanel, BorderLayout.CENTER);
-
     }
-
-    public String getarticalNameJSON() {
-        return articalNameJSON;
-    }
-
-    public String getTitle() {
-        return articleTitle;
-    }
-
-    public void setArticleTitle(String s) {
-        this.articleTitle = s;
-    }
-
-    public String getPostingDate() {
-        return postingDate;
-    }
-
-    public void setPostingDate(String s) {
-        this.postingDate = s;
-    }
-
-    public ImageIcon getArticleIcon() {
-        return articleIcon;
-    }
-
-    public void setArticleIcon(ImageIcon articleIcon) {
-        this.articleIcon = articleIcon;
-    }
-}
+}    
 
 class SearchBar extends JTextField {
     public SearchBar(int columns) {
@@ -211,21 +181,10 @@ class SearchAndSuggestionPanel extends JPanel {
                     for (String suggestion : suggestions) {
                         listModel.addElement(suggestion);
                     }
-                }
-            }
-        });
-
-        searchBar.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // Kiểm tra nếu suggestionPanel đang hiển thị thì ẩn nó đi, ngược lại thì hiển
-                // thị
-                if (isSuggestionPanelVisible) {
-                    suggestionPanel.setVisible(false);
-                    isSuggestionPanelVisible = false;
-                } else {
                     suggestionPanel.setVisible(true);
-                    isSuggestionPanelVisible = true;
+                }
+                else{
+                    suggestionPanel.setVisible(false);
                 }
             }
         });

@@ -12,21 +12,11 @@ public class SearchResultUI extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
-    public static final int ORIGIN_X = 0;
-    public static final int ORIGIN_Y = 0;
-
-    // TODO
-    public String articalNameJSON;
-    private ImageIcon articleIcon;
-
-    private String articleTitle;
-    private String postingDate;
 
     private int seeMoreButtonClickedCount = 0;
-
-    // private JPanel searchResult = new JPanel(new BorderLayout());
-    // private JPanel searchResult_Center;
-    // private JButton seeMoreButton = new JButton("See more!");
+    private int number_News = 12;
+    private List<JPanel> listJPanels;
+    private SearchResult resPanel = new SearchResult();
 
     public SearchResultUI(String findText) {
         Container contentPane = getContentPane();
@@ -49,7 +39,8 @@ public class SearchResultUI extends JFrame {
                     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
                     ScreenHistory.getInstance().pushScreen(frame);
-                    frame.dispose();
+                    // frame.dispose();
+                    frame.setVisible(false);
                 }
             }
         });
@@ -62,7 +53,8 @@ public class SearchResultUI extends JFrame {
                 previousScreen.setVisible(true);
                 previousScreen.addBackButton();
                 ScreenHistory.getInstance().pushScreen(frame);
-                frame.dispose();
+                // frame.dispose();
+                frame.setVisible(false);
             }
         });
 
@@ -77,22 +69,21 @@ public class SearchResultUI extends JFrame {
         });
 
 
+        
         // TODO
-        SearchResult resPanel = new SearchResult();
-        // TODO
-        List<JPanel> listJPanels = new SearchData().search(findText);
-        for(int i = 0; i < 12; i++) {
-            resPanel.addArticle(listJPanels.get(i));
-        }
+        // listJPanels = new SearchData().search(findText);
+        
+        createNews(findText);
+        addNews();
         
         resPanel.seeMoreActionListeners(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 seeMoreButtonClickedCount += 1;
+                number_News += 6;
                 resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
-                for(int i = 0; i < 6; i++) {
-                    resPanel.addArticle(listJPanels.get(i + 12 + (seeMoreButtonClickedCount - 1)*6));
-                }
+                addNews();
+                revalidate();
             }
         });
         
@@ -104,38 +95,14 @@ public class SearchResultUI extends JFrame {
         revalidate();
         repaint();
     }
-
-
-    public String getArticalNameJSON() {
-        return articalNameJSON;
+    public void createNews(String s){
+        listJPanels = new SearchData().search(s);
     }
 
-    public void setArticalNameJSON(String articalNameJSON) {
-        this.articalNameJSON = articalNameJSON;
-    }
-
-    public String getTitle() {
-        return articleTitle;
-    }
-
-    public void setArticleTitle(String s) {
-        this.articleTitle = s;
-    }
-
-    public String getPostingDate() {
-        return postingDate;
-    }
-
-    public void setPostingDate(String s) {
-        this.postingDate = s;
-    }
-
-    public ImageIcon getArticleIcon() {
-        return articleIcon;
-    }
-
-    public void setArticleIcon(ImageIcon articleIcon) {
-        this.articleIcon = articleIcon;
+    public void addNews(){
+        for(int i = 0; i < number_News; i++) {
+            resPanel.addArticleCenter(listJPanels.get(i));
+        }
     }
 }
 
@@ -179,13 +146,17 @@ class SearchResult extends JScrollPane {
         seeMoreButton.addActionListener(e);
     }
 
-    public void addArticle(JPanel p) {
+    public void hideSeeMoreBtn(){
+        seeMoreButton.setVisible(false);
+    }
+
+    public void addArticleCenter(JPanel p) {
         searchResult_Center.add(p);
     }
 
     public void setLayoutAndSize(int n) {
-        searchResult.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
+        searchResult.setPreferredSize(new Dimension(1280, 2500 + 1200 * n));
         searchResult_Center.setLayout(new GridLayout(6 + 3 * n, 2, 175, 0));
-        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
+        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
     }
 }
