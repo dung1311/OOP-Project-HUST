@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 
 import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.DataListFormat;
-import huster.crawl.dataFormat.Source;
+import huster.crawl.sourceFromWebSite.SourceFromNewsBTC;
 public class DataFromNewsBTC extends DataListFormat{
 
     @Override
@@ -185,7 +185,7 @@ public class DataFromNewsBTC extends DataListFormat{
     public List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr) {
         try {
             List<Data> dataList = new ArrayList<>();
-            Source source = new Source();
+            SourceFromNewsBTC source = new SourceFromNewsBTC();
             List<String> linkList = source.getLinks(url,innerLinkClass,innerLinkAttr);
             for(int i = 0; i < linkList.size(); i++)
             {

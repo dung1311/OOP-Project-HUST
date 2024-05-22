@@ -10,7 +10,7 @@ import org.jsoup.select.Elements;
 
 import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.DataListFormat;
-import huster.crawl.dataFormat.Source;
+import huster.crawl.sourceFromWebSite.SourceFromCoinDesk;
 public class DataFromCoinDesk extends DataListFormat {
     
     @Override
@@ -175,7 +175,7 @@ public class DataFromCoinDesk extends DataListFormat {
     {
         try {
             List<Data> dataList = new ArrayList<>();
-            Source source = new Source();
+            SourceFromCoinDesk source = new SourceFromCoinDesk();
             List<String> linkList = source.getLinks(url,innerLinkClass,innerLinkAttr);
             for(int i = 0; i < linkList.size(); i++)
             {

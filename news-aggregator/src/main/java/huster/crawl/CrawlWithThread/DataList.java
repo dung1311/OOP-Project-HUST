@@ -52,23 +52,5 @@ public class DataList {
             this.dataList.addAll(dataList);
     }
 
-    // public void crawlFromCoinDesk() 
-    // {
-    //     DataFromCoinDesk file = new DataFromCoinDesk();
-    //     if(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href") != null)
-    //         this.dataList.addAll(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href"));
-    // }
-
-    // public void crawlNewsBTC() 
-    // {
-    //     DataFromNewsBTC file = new DataFromNewsBTC();
-    //     if(file.getDataList("https://www.newsbtc.com","pageable-container","data-page") != null)
-    //         this.dataList.addAll(file.getDataList("https://www.newsbtc.com","pageable-container","data-page"));
-    // }
-
-    
-
-    
-
 }
 
