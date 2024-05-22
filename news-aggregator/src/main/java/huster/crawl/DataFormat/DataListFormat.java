@@ -1,16 +1,25 @@
-package huster.crawl.DataFormat;
+package huster.crawl.dataFormat;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
-import huster.crawl.coinDesk.Information;
+public abstract class DataListFormat {
+    protected String url;
+    protected String innerLinkClass;
+    protected String innerLinkAttr;
+    protected String link;
 
-public class DataListFormat {
-    private String url;
-    private String innerLinkClass;
+    public DataListFormat() {
+    }
+
+    public DataListFormat(String url, String innerLinkClass, String innerLinkAttr) {
+        this.url = url;
+        this.innerLinkClass = innerLinkClass;
+        this.innerLinkAttr = innerLinkAttr;
+    }
 
     public String getUrl() {
         return url;
@@ -27,49 +36,119 @@ public class DataListFormat {
     public void setInnerLinkClass(String innerLinkClass) {
         this.innerLinkClass = innerLinkClass;
     }
-
-
-    public DataListFormat() {
+    
+    public String getInnerLinkAttr() {
+        return innerLinkAttr;
     }
 
-    public DataListFormat(String url, String innerLinkClass) {
-        this.url = url;
-        this.innerLinkClass = innerLinkClass;
+    public void setInnerLinkAttr(String innerLinkAttr) {
+        this.innerLinkAttr = innerLinkAttr;
     }
-    public List<Data> getDataList(String url,String innerLinkClass)
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public Document getDocument(String link)
     {
         try {
-            List<Data> dataList = new ArrayList<>();
-            Source source = new Source();
-            List<String> linkList = source.getLinks(url,innerLinkClass);
-            for(int i = 0; i < linkList.size(); i++)
-            {
-                Data item = new Data();
-                Information itemLink = new Information();
-                itemLink.setLink(linkList.get(i));
-                Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
-                item.setUrl(itemLink.getLink());
-                item.setLink(itemLink.getLink());
-                item.setTitle(itemLink.getTitle(doc));
-                item.setType(itemLink.getType(doc));
-                item.setSummary(itemLink.getSummary(doc));
-                item.setContent(itemLink.getContent(doc));
-                item.setCategory(itemLink.getCategory(doc));
-                item.setDatetimeCreation(itemLink.getDateTimeCreation(doc));
-                item.setTag(itemLink.getTag(doc));
-                item.setAuthor(itemLink.getAuthor(doc));
-                item.setLinkImage(itemLink.getLinkImage(doc));
-                if(item.isDataFormat(item))   
-                    dataList.add(item);                 
-            }
-            if(dataList.isEmpty()) return null;
-            else return dataList;
-
-        } catch (Exception e) {
+            Document doc = Jsoup.connect(link).get();
+            return doc;
+        } catch(Exception e){
             e.printStackTrace();
             return null;
         }
     }
+
+    public String getTitle(Document doc)
+    {
+        String title = null;
+        try {
+            Element titleElement = doc.selectFirst("meta[property=og:title]");
+            if(titleElement == null) return "unknown";
+            title = titleElement.attr("content");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }   
+        return title.replaceAll("�", "\'");
+    }
+
+    public abstract String getSummary(Document doc) ;
+
+    public String getType(Document doc)
+    {
+        String type = null;
+        try {
+            Element typeElement = doc.selectFirst("meta[property=article:section]");
+            if(typeElement == null) return "unknown";
+            type = typeElement.attr("content");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return type.replaceAll("�", "\'");
+    }
+
+    public abstract String getContent(Document doc) ;
+
+    public String getCategory(Document doc)
+    {
+        String category = null;
+        try {
+            Element categoryElement = doc.selectFirst("meta[property=og:type]");
+            if(categoryElement == null) return "unknown";
+            category = categoryElement.attr("content");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }   
+        return category.replaceAll("�", "\'");
+    }
+
+    public String getDateTimeCreation(Document doc)
+    {
+        String dateTimeCreation = null;
+        try {
+            Element dateTimeElement = doc.selectFirst("meta[property=article:published_time]");
+            if(dateTimeElement == null) return "unknown";
+            dateTimeCreation = dateTimeElement.attr("content");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dateTimeCreation.replaceAll("�", "\'");
+    }
+
+    public abstract List<String> getTag(Document doc) ;
+    
+    public String getAuthor(Document doc)
+    {
+        String author = "";
+        try {
+            Element authorName = doc.selectFirst("meta[property=article:author]");
+            if(authorName == null) return "unknown";
+            author = authorName.attr("content");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return author.replaceAll("�", "\'");
+    }
+
+    public String getLinkImage(Document doc)
+    {
+        String linkImage = "";
+        try {
+            Element linkImageElement = doc.selectFirst("meta[property=og:image]");
+            if(linkImageElement == null) return "unknown";
+            linkImage = linkImageElement.attr("content");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return linkImage.replaceAll("�", "\'");
+    }
+
+    public abstract List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr);
 }
 
 

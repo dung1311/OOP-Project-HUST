@@ -1,4 +1,4 @@
-package huster.crawl.newsBTC;
+package huster.crawl.dataFromWebsite;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,36 +8,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class Link {
-    private String link;
-    
-    public Link() {
+import huster.crawl.dataFormat.Data;
+import huster.crawl.dataFormat.DataListFormat;
+import huster.crawl.dataFormat.Source;
+public class DataFromNewsBTC extends DataListFormat{
 
-    }
-
-    public Link(String link) {
-        this.link = link;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public Document getDocument(String link)
-    {
-        try {
-            Document doc = Jsoup.connect(link).get();
-            return doc;
-        } catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
+    @Override
     public String getTitle(Document doc)
     {
         String title = null;
@@ -51,6 +27,7 @@ public class Link {
         return title.replaceAll("�", "\'");
     }
 
+    @Override
     public String getSummary(Document doc)
     {
         String summary = null;
@@ -64,6 +41,7 @@ public class Link {
         return summary.replaceAll("�", "\'");
     }
 
+    @Override
     public String getType(Document doc)
     {
         String type = null;
@@ -77,6 +55,7 @@ public class Link {
         return type.replaceAll("�", "\'");
     }
 
+    @Override
     public String getContent(Document doc)
     {
         String content = "";
@@ -107,6 +86,7 @@ public class Link {
         return category.replaceAll("�", "\'");
     }
 
+    @Override
     public String getDateTimeCreation(Document doc)
     {
         String dateTimeCreation = null;
@@ -120,6 +100,7 @@ public class Link {
         return dateTimeCreation.replaceAll("�", "\'");
     }
 
+    @Override
     public List<String> getTag(Document doc)
     {
         List<String> tag = new ArrayList<>();
@@ -172,6 +153,7 @@ public class Link {
         return tag;
     }
 
+    @Override
     public String getAuthor(Document doc)
     {
         String author = "";
@@ -185,6 +167,7 @@ public class Link {
         return author.replaceAll("�", "\'");
     }
     
+    @Override
     public String getLinkImage(Document doc)
     {
         String linkImage = "";
@@ -197,4 +180,30 @@ public class Link {
         }
         return linkImage.replaceAll("�", "\'");
     }
+
+    @Override
+    public List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr) {
+        try {
+            List<Data> dataList = new ArrayList<>();
+            Source source = new Source();
+            List<String> linkList = source.getLinks(url,innerLinkClass,innerLinkAttr);
+            for(int i = 0; i < linkList.size(); i++)
+            {
+                Data item = new Data();
+                DataFromNewsBTC itemLink = new DataFromNewsBTC();
+                itemLink.setLink(linkList.get(i));
+                Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
+                item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
+                if(item.isDataFormat(item))   
+                    dataList.add(item);                 
+            }
+            if(dataList.isEmpty()) return null;
+            else return dataList;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
+

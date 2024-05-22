@@ -1,4 +1,4 @@
-package huster.crawl.DataFormat;
+package huster.crawl.dataFormat;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -11,22 +11,15 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 public class Source {
-    private String url;
-    private String innerLinkClass;
+    protected String url;
+    protected String innerLinkClass;
+    protected String innerLinkAttr;
 
     public Source() {
     }
 
     public Source(String url, String innerLinkClass) {
         this.url = url;
-        this.innerLinkClass = innerLinkClass;
-    }
-
-    public String getInnerLinkClass() {
-        return innerLinkClass;
-    }
-
-    public void setInnerLinkClass(String innerLinkClass) {
         this.innerLinkClass = innerLinkClass;
     }
 
@@ -38,17 +31,54 @@ public class Source {
         this.url = url;
     }
 
-    public List<String> getLinks(String url, String innerLinkClass)
+    public String getInnerLinkClass() {
+        return innerLinkClass;
+    }
+
+    public void setInnerLinkClass(String innerLinkClass) {
+        this.innerLinkClass = innerLinkClass;
+    }
+
+    public String getInnerLinkAttr() {
+        return innerLinkAttr;
+    }
+
+    public void setInnerLinkAttr(String innerLinkAttr) {
+        this.innerLinkAttr = innerLinkAttr;
+    }
+
+    public List<String> getLinks(String url, String innerLinkClass, String innerLinkAttr)
     {
         try{
             Document doc = Jsoup.connect(url).ignoreHttpErrors(true).get();
-            Elements linkElements = doc.select(innerLinkClass);
+            Elements linkElementsGetByClass = doc.getElementsByClass(innerLinkClass);
+            Elements linkElementsSelect = doc.select(innerLinkClass);
             Set<String> tempLinks = new HashSet<>();
-
-            for(Element link : linkElements)
-            {
-                String linkNextPage = "https://www.coindesk.com" + link.attr("href");
-                tempLinks.add(linkNextPage);
+            if(linkElementsGetByClass != null) {
+                for(Element link : linkElementsGetByClass)
+                {
+                    String linkNextPage = link.attr(innerLinkAttr);
+                    String[] parts = linkNextPage.split("/"); 
+                    if(linkNextPage.equals("")) 
+                        continue;
+                    if(parts[0].equals("https:") == false && parts[0].equals("http:") == false) {
+                        linkNextPage = url + linkNextPage;
+                    }
+                    tempLinks.add(linkNextPage);
+                }
+            }
+            if (linkElementsSelect != null) {
+                for(Element link : linkElementsSelect)
+                {
+                    String linkNextPage = link.attr(innerLinkAttr);
+                    String[] parts = linkNextPage.split("/"); 
+                    if(linkNextPage.equals("")) 
+                        continue;
+                    if(parts[0].equals("https:") == false && parts[0].equals("http:") == false) {
+                        linkNextPage = url + linkNextPage;
+                    }
+                    tempLinks.add(linkNextPage);
+                }
             }
             List<String> links = new ArrayList<>(tempLinks);
             return links;

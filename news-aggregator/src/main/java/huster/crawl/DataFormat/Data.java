@@ -1,4 +1,4 @@
-package huster.crawl.DataFormat;
+package huster.crawl.dataFormat;
 
 import java.util.List;
 
@@ -85,6 +85,20 @@ public class Data {
         if(isContain(linkImage,'�') == false)
             this.linkImage = linkImage;
         else this.linkImage = "unknown";
+    }
+
+    public void setData(String url, String link, String title, String type, String summary, String content, String category, String datetimeCreation, List<String> tag, String author, String linkImage) {
+        this.url = url;
+        this.link = link;
+        this.title = title;
+        this.type = type;
+        this.summary = summary;
+        this.content = content;
+        this.category = category;
+        this.datetimeCreation = datetimeCreation;
+        this.tag = tag;
+        this.author = author;
+        this.linkImage = linkImage;
     }
 
     public boolean isContain(String s, char c) {

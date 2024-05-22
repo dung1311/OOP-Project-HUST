@@ -1,39 +1,74 @@
-package huster.crawl.CrawlWithThread;
+package huster.crawl.crawlWithThread;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import huster.crawl.DataFormat.Data;
-import huster.crawl.coinDesk.DataFromCoinDesk;
-import huster.crawl.newsBTC.DataFromNewsBTC;
-import huster.crawl.theBlock.DataFromTheBlock;
+import huster.crawl.dataFormat.Data;
+import huster.crawl.dataFormat.DataListFormat;
+
 
 public class DataList {
     private List<Data> dataList = new ArrayList<>();
+    private String url;
+    private String innerLinkClass;
+    private String innerLinkAttr;
     
     public List<Data> getDataList() {
         return dataList;
     }
 
-    public void crawlFromCoinDesk() 
-    {
-        DataFromCoinDesk file = new DataFromCoinDesk();
-        if(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link") != null)
-            this.dataList.addAll(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link"));
+    public void setDataList(List<Data> dataList) {
+        this.dataList = dataList;
     }
 
-    public void crawlTheBlock()
-    {
-        DataFromTheBlock file = new DataFromTheBlock();
-        if(file.getDataList("https://www.theblock.co/") != null)
-            this.dataList.addAll(file.getDataList("https://www.theblock.co/"));
+    public String getUrl() {
+        return url;
     }
 
-    public void crawlNewsBTC() 
-    {
-        DataFromNewsBTC file = new DataFromNewsBTC();
-        if(file.getDataList("https://www.newsbtc.com/") != null)
-            this.dataList.addAll(file.getDataList("https://www.newsbtc.com/"));
+    public void setUrl(String url) {
+        this.url = url;
     }
+
+    public String getInnerLinkClass() {
+        return innerLinkClass;
+    }
+
+    public void setInnerLinkClass(String innerLinkClass) {
+        this.innerLinkClass = innerLinkClass;
+    }
+
+    public String getInnerLinkAttr() {
+        return innerLinkAttr;
+    }
+
+    public void setInnerLinkAttr(String innerLinkAttr) {
+        this.innerLinkAttr = innerLinkAttr;
+    }
+
+    public void addNewsCrawlThread(DataListFormat dataListFormat, String url, String innerLinkClass, String innerLinkAttr) 
+    {
+        List<Data> dataList = dataListFormat.getDataList(url,innerLinkClass,innerLinkAttr);
+        if( dataList != null)
+            this.dataList.addAll(dataList);
+    }
+
+    // public void crawlFromCoinDesk() 
+    // {
+    //     DataFromCoinDesk file = new DataFromCoinDesk();
+    //     if(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href") != null)
+    //         this.dataList.addAll(file.getDataList("https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href"));
+    // }
+
+    // public void crawlNewsBTC() 
+    // {
+    //     DataFromNewsBTC file = new DataFromNewsBTC();
+    //     if(file.getDataList("https://www.newsbtc.com","pageable-container","data-page") != null)
+    //         this.dataList.addAll(file.getDataList("https://www.newsbtc.com","pageable-container","data-page"));
+    // }
+
+    
+
+    
 
 }
+
