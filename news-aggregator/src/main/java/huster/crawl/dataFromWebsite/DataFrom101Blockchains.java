@@ -11,20 +11,17 @@ import org.jsoup.select.Elements;
 import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.DataListFormat;
 import huster.crawl.sourceFromWebSite.SourceFromCoinDesk;
-public class DataFromCoinDesk extends DataListFormat {
-    
+
+public class DataFrom101Blockchains extends DataListFormat {
+
     @Override
-    public String getSummary(Document doc) {
+    public String getSummary(Document doc)
+    {
         String summary = null;
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
-            Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");
-            if(summaryTitle == null && summaryElements == null) return "unknown";
+            if(summaryTitle == null) return "unknown";
             summary = summaryTitle.attr("content") + "\n" + "\n";
-            for(Element summaryElement : summaryElements)
-            {
-                summary = summary + summaryElement.text() + "\n" + "\n";
-            }
         } catch(Exception e) {
             e.printStackTrace();
         }   
@@ -32,10 +29,15 @@ public class DataFromCoinDesk extends DataListFormat {
     }
 
     @Override
+    public String getType(Document doc) {
+        return "blog";
+    }
+
+    @Override
     public String getContent(Document doc) {
         String content = "";
         try {
-            Elements contentElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal at-text");
+            Elements contentElements = doc.getElementsByClass("post-content description ");
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
@@ -45,19 +47,45 @@ public class DataFromCoinDesk extends DataListFormat {
             e.printStackTrace();
         }
         return content.replaceAll("�", "\'");
-    } 
+    }
+
+    @Override
+    public String getCategory(Document doc) {
+        String category = null;
+        try {
+            Elements categoryElement = doc.select("a.blog-category-green");
+            if(categoryElement == null) return "unknown";
+            category = categoryElement.get(0).text();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }   
+        return category.replaceAll("�", "\'");
+    }
+
+    @Override
+    public String getAuthor(Document doc) {
+        String author = "";
+        try {
+            Element authorName = doc.selectFirst("meta[name=twitter:data1]");
+            if(authorName == null) return "unknown";
+            author = authorName.attr("content");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return author.replaceAll("�", "\'");
+    }
 
     @Override
     public List<String> getTag(Document doc) {
         List<String> tag = new ArrayList<>();
         String tagString = "";
         try {
-            Element metaTag = doc.selectFirst("meta[property=article:tag]");
+            Elements metaTag = doc.select("a.blog-category-green");
             if(metaTag == null)
             {
                 return tag;
             }
-            tagString = metaTag.attr("content");
+            tagString = metaTag.text();
             String tagName = "#";
             for(int i = 0; i < tagString.length(); i++)
             {
@@ -92,7 +120,7 @@ public class DataFromCoinDesk extends DataListFormat {
             for(int i = 0; i < linkList.size(); i++)
             {
                 Data item = new Data();
-                DataFromCoinDesk itemLink = new DataFromCoinDesk();
+                DataFrom101Blockchains itemLink = new DataFrom101Blockchains();
                 itemLink.setLink(linkList.get(i));
                 Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
                 item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
@@ -108,4 +136,3 @@ public class DataFromCoinDesk extends DataListFormat {
         }
     }
 }
-

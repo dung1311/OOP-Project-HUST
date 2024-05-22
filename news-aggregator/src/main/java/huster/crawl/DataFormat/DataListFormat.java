@@ -53,8 +53,7 @@ public abstract class DataListFormat {
         this.link = link;
     }
 
-    public Document getDocument(String link)
-    {
+    public Document getDocument(String link) {
         try {
             Document doc = Jsoup.connect(link).get();
             return doc;
@@ -64,8 +63,7 @@ public abstract class DataListFormat {
         }
     }
 
-    public String getTitle(Document doc)
-    {
+    public String getTitle(Document doc) {
         String title = null;
         try {
             Element titleElement = doc.selectFirst("meta[property=og:title]");
@@ -79,8 +77,7 @@ public abstract class DataListFormat {
 
     public abstract String getSummary(Document doc) ;
 
-    public String getType(Document doc)
-    {
+    public String getType(Document doc) {
         String type = null;
         try {
             Element typeElement = doc.selectFirst("meta[property=og:type]");
@@ -94,8 +91,7 @@ public abstract class DataListFormat {
 
     public abstract String getContent(Document doc) ;
 
-    public String getCategory(Document doc)
-    {
+    public String getCategory(Document doc) {
         String category = null;
         try {
             Element categoryElement = doc.selectFirst("meta[property=article:section]");
@@ -122,8 +118,7 @@ public abstract class DataListFormat {
 
     public abstract List<String> getTag(Document doc) ;
     
-    public String getAuthor(Document doc)
-    {
+    public String getAuthor(Document doc) {
         String author = "";
         try {
             Element authorName = doc.selectFirst("meta[property=article:author]");

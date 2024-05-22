@@ -39,8 +39,8 @@ public class TotalData {
         Thread crawlFromCoinDeskThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                DataFromCoinDesk dataFromCoinDesk = new DataFromCoinDesk();
-                runnableToGeDataList.addNewsCrawlThread(dataFromCoinDesk,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
+                DataFromCoinDesk data = new DataFromCoinDesk();
+                runnableToGeDataList.addNewsCrawlThread(data,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
                 latch.countDown();
             }
         });
@@ -48,14 +48,24 @@ public class TotalData {
         Thread crawlFromNewsBTCThread = new Thread(new Runnable() {
             @Override
             public void run() {
-                DataFromNewsBTC dataFromNewsBTC = new DataFromNewsBTC();
-                runnableToGeDataList.addNewsCrawlThread(dataFromNewsBTC,"https://www.newsbtc.com","pageable-container","data-page");
+                DataFromNewsBTC data = new DataFromNewsBTC();
+                runnableToGeDataList.addNewsCrawlThread(data,"https://www.newsbtc.com","pageable-container","data-page");
+                latch.countDown();
+            }
+        });
+
+        Thread crawlFrom101Blockchains = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DataFrom101Blockchains data = new DataFrom101Blockchains();
+                runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/","a[rel=bookmark]","href");
                 latch.countDown();
             }
         });
 
         crawlFromCoinDeskThread.start();
         crawlFromNewsBTCThread.start();
+        crawlFrom101Blockchains.start();
         try {
             latch.await(); 
         } catch (InterruptedException e) {

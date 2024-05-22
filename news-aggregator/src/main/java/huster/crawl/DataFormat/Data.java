@@ -88,7 +88,8 @@ public class Data {
     }
 
     public void setData(String url, String link, String title, String type, String summary, String content, String category, String datetimeCreation, List<String> tag, String author, String linkImage) {
-        this.url = url;
+        String[] parts = url.split("/");
+        this.url = parts[0] + "//" + parts[1] + parts[2] + "/";
         this.link = link;
         this.title = title;
         this.type = type;

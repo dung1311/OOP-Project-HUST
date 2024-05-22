@@ -6,7 +6,7 @@ public class MainTest {
     public static void main(String[] args) {
         try{
             ReadJsonFile reader = new ReadJsonFile();
-            JsonArray jsonArray = reader.read("news-aggregator/resource/data/data.json");
+            JsonArray jsonArray = reader.read("news-aggregator/resource/data/totaldata.json");
             // Tag curTag = new Tag();
             // curTag.setCurrentTagList(jsonArray.get(1));
             // System.out.println(curTag.getCurrentTagList());
