@@ -10,7 +10,7 @@ import huster.crawl.dataFormat.Data;
 
 public class TotalData {
     private List<Data> totalData = new ArrayList<>();
-    private static int COUNT_SOURCE = 0;
+    public static int COUNT_SOURCE = 0;
 
     public List<Data> getDataList() {
         return totalData;

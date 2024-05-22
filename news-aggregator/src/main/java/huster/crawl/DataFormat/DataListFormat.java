@@ -83,7 +83,7 @@ public abstract class DataListFormat {
     {
         String type = null;
         try {
-            Element typeElement = doc.selectFirst("meta[property=article:section]");
+            Element typeElement = doc.selectFirst("meta[property=og:type]");
             if(typeElement == null) return "unknown";
             type = typeElement.attr("content");
         } catch (Exception e) {
@@ -98,7 +98,7 @@ public abstract class DataListFormat {
     {
         String category = null;
         try {
-            Element categoryElement = doc.selectFirst("meta[property=og:type]");
+            Element categoryElement = doc.selectFirst("meta[property=article:section]");
             if(categoryElement == null) return "unknown";
             category = categoryElement.attr("content");
         } catch(Exception e) {

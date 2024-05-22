@@ -14,20 +14,6 @@ import huster.crawl.sourceFromWebSite.SourceFromNewsBTC;
 public class DataFromNewsBTC extends DataListFormat{
 
     @Override
-    public String getTitle(Document doc)
-    {
-        String title = null;
-        try {
-            Element titleElement = doc.selectFirst("meta[property=og:title]");
-            if(titleElement == null) return "unknown";
-            title = titleElement.attr("content");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }   
-        return title.replaceAll("�", "\'");
-    }
-
-    @Override
     public String getSummary(Document doc)
     {
         String summary = null;
@@ -39,20 +25,6 @@ public class DataFromNewsBTC extends DataListFormat{
             e.printStackTrace();
         }   
         return summary.replaceAll("�", "\'");
-    }
-
-    @Override
-    public String getType(Document doc)
-    {
-        String type = null;
-        try {
-            Element typeElement = doc.selectFirst("meta[property=article:section]");
-            if(typeElement == null) return "unknownType";
-            type = typeElement.attr("content");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return type.replaceAll("�", "\'");
     }
 
     @Override
@@ -73,31 +45,18 @@ public class DataFromNewsBTC extends DataListFormat{
         return content.replaceAll("�", "\'");
     } 
 
+    @Override
     public String getCategory(Document doc)
     {
-        String category = null;
+        String type = null;
         try {
-            Element categoryElement = doc.selectFirst("meta[property=og:type]");
-            if(categoryElement == null) return "unknown";
-            category = categoryElement.attr("content");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }   
-        return category.replaceAll("�", "\'");
-    }
-
-    @Override
-    public String getDateTimeCreation(Document doc)
-    {
-        String dateTimeCreation = null;
-        try {
-            Element dateTimeElement = doc.selectFirst("meta[property=article:published_time]");
-            if(dateTimeElement == null) return "unknown";
-            dateTimeCreation = dateTimeElement.attr("content");
+            String[] parts = this.getLink().split("/");
+            if(parts.length < 4 ) return "unknown";
+            type = parts[3];
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return dateTimeCreation.replaceAll("�", "\'");
+        return type.replaceAll("�", "\'");
     }
 
     @Override
@@ -152,7 +111,7 @@ public class DataFromNewsBTC extends DataListFormat{
         }
         return tag;
     }
-
+    
     @Override
     public String getAuthor(Document doc)
     {
@@ -166,15 +125,19 @@ public class DataFromNewsBTC extends DataListFormat{
         }
         return author.replaceAll("�", "\'");
     }
-    
+
     @Override
     public String getLinkImage(Document doc)
     {
         String linkImage = "";
         try {
-            Element linkImageElement = doc.selectFirst("meta[property=og:image]");
-            if(linkImageElement == null) return "unknown";
-            linkImage = linkImageElement.attr("content");
+            Element linkImageElement_1 = doc.selectFirst("meta[property=og:image]");
+            Element linkImageElement_2 = doc.selectFirst("meta[name=twitter:image]");
+            if(linkImageElement_1 == null && linkImageElement_2 == null) return "unknown";
+            if(linkImageElement_1 != null) 
+                linkImage = linkImageElement_1.attr("content");
+            if(linkImageElement_2 != null)
+                linkImage = linkImageElement_2.attr("content");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -199,7 +162,6 @@ public class DataFromNewsBTC extends DataListFormat{
             }
             if(dataList.isEmpty()) return null;
             else return dataList;
-
         } catch (Exception e) {
             e.printStackTrace();
             return null;

@@ -54,6 +54,8 @@ public class Source {
             Elements linkElementsGetByClass = doc.getElementsByClass(innerLinkClass);
             Elements linkElementsSelect = doc.select(innerLinkClass);
             Set<String> tempLinks = new HashSet<>();
+            String[] partUrls = url.split("/");
+            String urlSource = partUrls[0] + "//" + partUrls[1] + partUrls[2];
             if(linkElementsGetByClass != null) {
                 for(Element link : linkElementsGetByClass)
                 {
@@ -62,7 +64,7 @@ public class Source {
                     if(linkNextPage.equals("")) 
                         continue;
                     if(parts[0].equals("https:") == false && parts[0].equals("http:") == false) {
-                        linkNextPage = url + linkNextPage;
+                        linkNextPage = urlSource + linkNextPage;
                     }
                     tempLinks.add(linkNextPage);
                 }
@@ -75,7 +77,7 @@ public class Source {
                     if(linkNextPage.equals("")) 
                         continue;
                     if(parts[0].equals("https:") == false && parts[0].equals("http:") == false) {
-                        linkNextPage = url + linkNextPage;
+                        linkNextPage = urlSource + linkNextPage;
                     }
                     tempLinks.add(linkNextPage);
                 }

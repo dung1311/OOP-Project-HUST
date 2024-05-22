@@ -16,7 +16,7 @@ public class MainTest {
             System.out.println(Tag.getTag());
         } catch(Exception e) {
             e.printStackTrace();
-
+            
         }
     }
 }

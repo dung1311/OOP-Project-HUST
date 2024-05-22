@@ -14,20 +14,6 @@ import huster.crawl.sourceFromWebSite.SourceFromCoinDesk;
 public class DataFromCoinDesk extends DataListFormat {
     
     @Override
-    public String getTitle(Document doc)
-    {
-        String title = null;
-        try {
-            Element titleElement = doc.selectFirst("meta[property=og:title]");
-            if(titleElement == null) return "unknown";
-            title = titleElement.attr("content");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }   
-        return title.replaceAll("�", "\'");
-    }
-
-    @Override
     public String getSummary(Document doc)
     {
         String summary = null;
@@ -47,20 +33,6 @@ public class DataFromCoinDesk extends DataListFormat {
     }
 
     @Override
-    public String getType(Document doc)
-    {
-        String type = null;
-        try {
-            Element typeElement = doc.selectFirst("meta[property=article:section]");
-            if(typeElement == null) return "unknown";
-            type = typeElement.attr("content");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return type.replaceAll("�", "\'");
-    }
-
-    @Override
     public String getContent(Document doc)
     {
         String content = "";
@@ -76,34 +48,6 @@ public class DataFromCoinDesk extends DataListFormat {
         }
         return content.replaceAll("�", "\'");
     } 
-
-    @Override
-    public String getCategory(Document doc)
-    {
-        String category = null;
-        try {
-            Element categoryElement = doc.selectFirst("meta[property=og:type]");
-            if(categoryElement == null) return "unknown";
-            category = categoryElement.attr("content");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }   
-        return category.replaceAll("�", "\'");
-    }
-
-    @Override
-    public String getDateTimeCreation(Document doc)
-    {
-        String dateTimeCreation = null;
-        try {
-            Element dateTimeElement = doc.selectFirst("meta[property=article:published_time]");
-            if(dateTimeElement == null) return "unknown";
-            dateTimeCreation = dateTimeElement.attr("content");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return dateTimeCreation.replaceAll("�", "\'");
-    }
 
     @Override
     public List<String> getTag(Document doc)
@@ -140,34 +84,6 @@ public class DataFromCoinDesk extends DataListFormat {
             e.printStackTrace();
         }
         return tag;
-    }
-    
-    @Override
-    public String getAuthor(Document doc)
-    {
-        String author = "";
-        try {
-            Element authorName = doc.selectFirst("meta[property=article:author]");
-            if(authorName == null) return "unknown";
-            author = authorName.attr("content");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return author.replaceAll("�", "\'");
-    }
-
-    @Override
-    public String getLinkImage(Document doc)
-    {
-        String linkImage = "";
-        try {
-            Element linkImageElement = doc.selectFirst("meta[property=og:image]");
-            if(linkImageElement == null) return "unknown";
-            linkImage = linkImageElement.attr("content");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return linkImage.replaceAll("�", "\'");
     }
 
     @Override
