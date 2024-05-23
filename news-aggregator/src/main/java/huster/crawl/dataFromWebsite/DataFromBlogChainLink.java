@@ -10,9 +10,11 @@ import org.jsoup.select.Elements;
 
 import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.DataListFormat;
+import huster.crawl.sourceFromWebSite.SourceFrom101Blockchains;
+import huster.crawl.sourceFromWebSite.SourceFromBlogChainLink;
 import huster.crawl.sourceFromWebSite.SourceFromCoinDesk;
 
-public class DataFrom101Blockchains extends DataListFormat {
+public class DataFromBlogChainLink extends DataListFormat {
 
     @Override
     public String getType(Document doc) {
@@ -23,11 +25,12 @@ public class DataFrom101Blockchains extends DataListFormat {
     public String getContent(Document doc) {
         String content = "";
         try {
-            Elements contentElements = doc.getElementsByClass("post-content-right");
+            Elements contentElements = doc.select(".post-editor-content");
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n" + "\n";
+                content = content + contentElement.text().replaceAll("�", "\'");
+                if(content.charAt(content.length()-1) == '.') content += "\n" + "\n" ;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,12 +38,12 @@ public class DataFrom101Blockchains extends DataListFormat {
         return content.replaceAll("�", "\'");
     }
 
-    @Override
+    @Override 
     public String getCategory(Document doc) {
         String category = null;
         try {
-            Elements categoryElement = doc.select("a.blog-category-green");
-            if(categoryElement == null) return "unknown";
+            Elements categoryElement = doc.select("a[rel=category tag]");
+            if(categoryElement == null || categoryElement.size() == 0) return "unknown";
             category = categoryElement.get(0).text();
         } catch(Exception e) {
             e.printStackTrace();
@@ -61,17 +64,20 @@ public class DataFrom101Blockchains extends DataListFormat {
         return author.replaceAll("�", "\'");
     }
 
-    @Override
+    @Override 
     public List<String> getTag(Document doc) {
         List<String> tag = new ArrayList<>();
         String tagString = "";
         try {
-            Elements metaTag = doc.select("a.blog-category-green");
-            if(metaTag == null)
-            {
+            Elements metaTag = doc.select("a[style=font-size: 10px;]");
+            if(metaTag == null) {
                 return tag;
             }
-            tagString = metaTag.text();
+            else {
+                for(Element tagCloud : metaTag) {
+                    tagString += tagCloud.text() + ", ";
+                }
+            }
             String tagName = "#";
             for(int i = 0; i < tagString.length(); i++)
             {
@@ -97,16 +103,15 @@ public class DataFrom101Blockchains extends DataListFormat {
         return tag;
     }
 
-    @Override
     public List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr) {
         try {
             List<Data> dataList = new ArrayList<>();
-            SourceFromCoinDesk source = new SourceFromCoinDesk();
+            SourceFromBlogChainLink source = new SourceFromBlogChainLink();
             List<String> linkList = source.getLinks(url,innerLinkClass,innerLinkAttr);
             for(int i = 0; i < linkList.size(); i++)
             {
                 Data item = new Data();
-                DataFrom101Blockchains itemLink = new DataFrom101Blockchains();
+                DataFromBlogChainLink itemLink = new DataFromBlogChainLink();
                 itemLink.setLink(linkList.get(i));
                 Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
                 item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));

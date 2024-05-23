@@ -12,24 +12,6 @@ import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.DataListFormat;
 import huster.crawl.sourceFromWebSite.SourceFromCoinDesk;
 public class DataFromCoinDesk extends DataListFormat {
-    
-    @Override
-    public String getSummary(Document doc) {
-        String summary = null;
-        try {
-            Element summaryTitle = doc.selectFirst("meta[property=og:description]");
-            Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");
-            if(summaryTitle == null && summaryElements == null) return "unknown";
-            summary = summaryTitle.attr("content") + "\n" + "\n";
-            for(Element summaryElement : summaryElements)
-            {
-                summary = summary + summaryElement.text() + "\n" + "\n";
-            }
-        } catch(Exception e) {
-            e.printStackTrace();
-        }   
-        return summary.replaceAll("�", "\'");
-    }
 
     @Override
     public String getContent(Document doc) {

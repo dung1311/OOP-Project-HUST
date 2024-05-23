@@ -68,14 +68,25 @@ public abstract class DataListFormat {
         try {
             Element titleElement = doc.selectFirst("meta[property=og:title]");
             if(titleElement == null) return "unknown";
-            title = titleElement.attr("content");
+            title = titleElement.attr("content") + "\n" + "\n";
         } catch(Exception e) {
             e.printStackTrace();
         }   
         return title.replaceAll("�", "\'");
     }
 
-    public abstract String getSummary(Document doc) ;
+    public String getSummary(Document doc)
+    {
+        String summary = null;
+        try {
+            Element summaryTitle = doc.selectFirst("meta[property=og:description]");
+            if(summaryTitle == null) return "unknown";
+            summary = summaryTitle.attr("content") + "\n" + "\n";
+        } catch(Exception e) {
+            e.printStackTrace();
+        }   
+        return summary.replaceAll("�", "\'");
+    }
 
     public String getType(Document doc) {
         String type = null;
@@ -143,7 +154,7 @@ public abstract class DataListFormat {
         return linkImage.replaceAll("�", "\'");
     }
 
-    public abstract List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr);
+    public abstract List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr) ;
 }
 
 

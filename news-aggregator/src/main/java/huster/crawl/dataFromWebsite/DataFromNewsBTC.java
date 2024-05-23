@@ -14,20 +14,6 @@ import huster.crawl.sourceFromWebSite.SourceFromNewsBTC;
 public class DataFromNewsBTC extends DataListFormat{
 
     @Override
-    public String getSummary(Document doc)
-    {
-        String summary = null;
-        try {
-            Element summaryTitle = doc.selectFirst("meta[property=og:description]");
-            if(summaryTitle == null) return "Article";
-            summary = summaryTitle.attr("content") + "\n" + "\n";
-        }catch(Exception e) {
-            e.printStackTrace();
-        }   
-        return summary.replaceAll("�", "\'");
-    }
-
-    @Override
     public String getContent(Document doc)
     {
         String content = "";
@@ -36,7 +22,6 @@ public class DataFromNewsBTC extends DataListFormat{
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
-
                 content = content + contentElement.text().replaceAll("�", "\'") + "\n" + "\n";
             }
         } catch (Exception e) {

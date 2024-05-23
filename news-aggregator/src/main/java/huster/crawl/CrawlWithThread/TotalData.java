@@ -54,18 +54,58 @@ public class TotalData {
             }
         });
 
-        Thread crawlFrom101Blockchains = new Thread(new Runnable() {
+        Thread crawlFromBlogChainLink = new Thread(new Runnable() {
             @Override
             public void run() {
-                DataFrom101Blockchains data = new DataFrom101Blockchains();
-                runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/","a[rel=bookmark]","href");
+                DataFromBlogChainLink data = new DataFromBlogChainLink();
+                runnableToGeDataList.addNewsCrawlThread(data,"https://blog.chain.link/","post-card-href", "href");
                 latch.countDown();
             }
         });
 
+        ArrayList<Thread> threads = new ArrayList<>();
+        for(int i = 1; i < 4; i++ ) {
+            int j = i;
+            Thread crawlFrom101Blockchains = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    DataFrom101Blockchains data = new DataFrom101Blockchains();
+                    String pageNumber = String.valueOf(j);
+                    runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
+                    if(j == 3)    
+                        latch.countDown();
+                }
+            });
+            threads.add(crawlFrom101Blockchains);
+        }
+
+        // Thread crawlFrom101Blockchains_page_2 = new Thread(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         DataFrom101Blockchains data = new DataFrom101Blockchains();
+        //         runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/page/2/","a[rel=bookmark]","href");
+        //     }
+        // });
+
+        // Thread crawlFrom101Blockchains_page_3 = new Thread(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         DataFrom101Blockchains data = new DataFrom101Blockchains();
+        //         runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/page/3","a[rel=bookmark]","href");
+        //         latch.countDown();
+        //     }
+        // });
+
         crawlFromCoinDeskThread.start();
         crawlFromNewsBTCThread.start();
-        crawlFrom101Blockchains.start();
+        crawlFromBlogChainLink.start();
+        for(int j = 0; j < 3; j++) {
+            threads.get(j).start();
+        }
+        
+        // crawlFrom101Blockchains_page_1.start();
+        // crawlFrom101Blockchains_page_2.start();
+        // crawlFrom101Blockchains_page_3.start();
         try {
             latch.await(); 
         } catch (InterruptedException e) {
