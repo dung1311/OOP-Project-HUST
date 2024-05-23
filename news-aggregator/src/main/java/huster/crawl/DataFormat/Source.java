@@ -60,9 +60,11 @@ public class Source {
                 for(Element link : linkElementsGetByClass)
                 {
                     String linkNextPage = link.attr(innerLinkAttr);
-                    String[] parts = linkNextPage.split("/"); 
+                    if(linkNextPage.length() < 15) 
+                        continue; 
                     if(linkNextPage.equals("")) 
                         continue;
+                        String[] parts = linkNextPage.split("/");
                     if(parts[0].equals("https:") == false && parts[0].equals("http:") == false) {
                         linkNextPage = urlSource + linkNextPage;
                     }
@@ -73,9 +75,11 @@ public class Source {
                 for(Element link : linkElementsSelect)
                 {
                     String linkNextPage = link.attr(innerLinkAttr);
-                    String[] parts = linkNextPage.split("/"); 
+                    if(linkNextPage.length() < 15) 
+                        continue;
                     if(linkNextPage.equals("")) 
                         continue;
+                    String[] parts = linkNextPage.split("/");
                     if(parts[0].equals("https:") == false && parts[0].equals("http:") == false) {
                         linkNextPage = urlSource + linkNextPage;
                     }

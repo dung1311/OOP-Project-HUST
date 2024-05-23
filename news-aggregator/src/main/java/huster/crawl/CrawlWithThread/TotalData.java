@@ -79,13 +79,14 @@ public class TotalData {
             threads.add(crawlFrom101Blockchains);
         }
 
-        // Thread crawlFrom101Blockchains_page_2 = new Thread(new Runnable() {
-        //     @Override
-        //     public void run() {
-        //         DataFrom101Blockchains data = new DataFrom101Blockchains();
-        //         runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/page/2/","a[rel=bookmark]","href");
-        //     }
-        // });
+        Thread crawlFromSouthChinaMorningPost = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DataFromSouthChinaMorningPost data = new DataFromSouthChinaMorningPost();
+                runnableToGeDataList.addNewsCrawlThread(data,"https://www.scmp.com/topics/blockchain","a.e1whfq0b2.css-8ug9pk.ef1hf1w0","href");
+                latch.countDown();
+            }
+        });
 
         // Thread crawlFrom101Blockchains_page_3 = new Thread(new Runnable() {
         //     @Override
@@ -99,6 +100,7 @@ public class TotalData {
         crawlFromCoinDeskThread.start();
         crawlFromNewsBTCThread.start();
         crawlFromBlogChainLink.start();
+        crawlFromSouthChinaMorningPost.start();
         for(int j = 0; j < 3; j++) {
             threads.get(j).start();
         }
