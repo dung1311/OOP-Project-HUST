@@ -43,7 +43,7 @@ public class Menu extends JFrame {
 
         System.setProperty("BLACK_menu", "0x222222");
         // Color BLACK_menu = Color.getColor("BLACK_menu");
-        System.setProperty("GREY_menu", "0xFFFFFF");
+        System.setProperty("GREY_menu", "0x000000");
         Color GREY_menu = Color.getColor("GREY_menu");
         
         menu.addSearchButtonListener(new ActionListener() {

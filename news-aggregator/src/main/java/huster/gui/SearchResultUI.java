@@ -67,18 +67,9 @@ public class SearchResultUI extends JFrame {
                 frame.dispose();
             }
         });
-
         
-        
-        // createNews(findText);
-        if(listJPanels.isEmpty()){
-            JOptionPane.showMessageDialog(null, "Mời bạn điền lại");
-        }
-        else{
-            addNews();
-        }
-        
-        
+        addNews();
+    
         resPanel.seeMoreActionListeners(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -100,11 +91,8 @@ public class SearchResultUI extends JFrame {
     }
 
     public static boolean listPanelIsNull(){
-        if(listJPanels.equals(null)){
-            return false;
-        }else{
-            return true;
-        }
+        return listJPanels.size() == 0;
+            
     }
     public static void createNews(String s){
         listJPanels = new SearchData().search(s);
