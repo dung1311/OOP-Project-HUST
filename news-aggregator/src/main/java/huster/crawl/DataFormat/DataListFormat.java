@@ -1,12 +1,14 @@
 package huster.crawl.dataFormat;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-public abstract class DataListFormat {
+
+public class DataListFormat {
     protected String url;
     protected String innerLinkClass;
     protected String innerLinkAttr;
@@ -26,7 +28,8 @@ public abstract class DataListFormat {
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        String[] parts = url.split("/");
+        this.url = parts[0] + "//" + parts[1] + parts[2] + "/";
     }
 
     public String getInnerLinkClass() {
@@ -68,7 +71,7 @@ public abstract class DataListFormat {
         try {
             Element titleElement = doc.selectFirst("meta[property=og:title]");
             if(titleElement == null) return "unknown";
-            title = titleElement.attr("content") + "\n" + "\n";
+            title = titleElement.attr("content") + "\n\n";
         } catch(Exception e) {
             e.printStackTrace();
         }   
@@ -77,11 +80,11 @@ public abstract class DataListFormat {
 
     public String getSummary(Document doc)
     {
-        String summary = null;
+        String summary = "KEY TAKEAWAYS" + "\n\n";
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
             if(summaryTitle == null) return "unknown";
-            summary = summaryTitle.attr("content") + "\n" + "\n";
+            summary += summaryTitle.attr("content") + "\n\n";
         } catch(Exception e) {
             e.printStackTrace();
         }   
@@ -100,7 +103,9 @@ public abstract class DataListFormat {
         return type.replaceAll("�", "\'");
     }
 
-    public abstract String getContent(Document doc) ;
+    public String getContent(Document doc) {
+        return "unknown";
+    }
 
     public String getCategory(Document doc) {
         String category = null;
@@ -127,7 +132,9 @@ public abstract class DataListFormat {
         return dateTimeCreation.replaceAll("�", "\'");
     }
 
-    public abstract List<String> getTag(Document doc) ;
+    public List<String> getTag(Document doc) {
+        return null;
+    }
     
     public String getAuthor(Document doc) {
         String author = "";
@@ -154,7 +161,28 @@ public abstract class DataListFormat {
         return linkImage.replaceAll("�", "\'");
     }
 
-    public abstract List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr) ;
+    public List<Data> getDataList(DataListFormat itemLink,String url, String innerLinkClass, String innerLinkAttr) {
+        try {
+            List<Data> dataList = new ArrayList<>();
+            Source source = new Source();
+            List<String> linkList = source.getLinks(url,innerLinkClass,innerLinkAttr);
+            for(int i = 0; i < linkList.size(); i++)
+            {
+                Data item = new Data();
+                itemLink.setLink(linkList.get(i));
+                Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
+                item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
+                if(item.isDataFormat(item))   
+                    dataList.add(item);                 
+            }
+            if(dataList.isEmpty()) return null;
+            else return dataList;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
 
 

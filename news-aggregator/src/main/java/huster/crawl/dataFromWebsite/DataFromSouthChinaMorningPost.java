@@ -3,16 +3,11 @@ package huster.crawl.dataFromWebsite;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.DataListFormat;
-import huster.crawl.dataFormat.Source;
-import huster.crawl.sourceFromWebSite.SourceFromNewsBTC;
-import huster.crawl.sourceFromWebSite.SourceFromSouthChinaMorningPost;
 
 public class DataFromSouthChinaMorningPost extends DataListFormat{
 
@@ -24,7 +19,7 @@ public class DataFromSouthChinaMorningPost extends DataListFormat{
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n" + "\n";
+                content = content + contentElement.text().replaceAll("�", "\'") + "\n\n";
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -81,28 +76,5 @@ public class DataFromSouthChinaMorningPost extends DataListFormat{
         return author.replaceAll("�", "\'");
     }
 
-    @Override
-    public List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr) {
-        try {
-            List<Data> dataList = new ArrayList<>();
-            SourceFromSouthChinaMorningPost source = new SourceFromSouthChinaMorningPost();
-            List<String> linkList = source.getLinks(url,innerLinkClass,innerLinkAttr);
-            for(int i = 0; i < linkList.size(); i++)
-            {
-                Data item = new Data();
-                DataFromSouthChinaMorningPost itemLink = new DataFromSouthChinaMorningPost();
-                itemLink.setLink(linkList.get(i));
-                Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
-                item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
-                if(item.isDataFormat(item))   
-                    dataList.add(item);                 
-            }
-            if(dataList.isEmpty()) return null;
-            else return dataList;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 
 }

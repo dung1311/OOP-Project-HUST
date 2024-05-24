@@ -3,15 +3,32 @@ package huster.crawl.dataFromWebsite;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.DataListFormat;
-import huster.crawl.sourceFromWebSite.SourceFromCoinDesk;
 public class DataFromCoinDesk extends DataListFormat {
+
+    @Override
+    public String getSummary(Document doc)
+    {
+        String summary = "KEY TAKEAWAYS" + "\n\n";
+        try {
+            Element summaryTitle = doc.selectFirst("meta[property=og:description]");
+            Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");
+            if(summaryTitle == null) return "unknown";
+            if(summaryElements.text().equals(null)) return "unknown";
+            summary = summaryTitle.attr("content") + "\n\n";
+            for(Element summaryElement : summaryElements)
+            {
+                summary = summary + summaryElement.text() + "\n\n";
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }   
+        return summary.replaceAll("�", "\'");
+    }
 
     @Override
     public String getContent(Document doc) {
@@ -21,7 +38,7 @@ public class DataFromCoinDesk extends DataListFormat {
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n" + "\n";
+                content = content + contentElement.text().replaceAll("�", "\'") + "\n\n";
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -65,29 +82,6 @@ public class DataFromCoinDesk extends DataListFormat {
         return tag;
     }
 
-    @Override
-    public List<Data> getDataList(String url, String innerLinkClass, String innerLinkAttr) {
-        try {
-            List<Data> dataList = new ArrayList<>();
-            SourceFromCoinDesk source = new SourceFromCoinDesk();
-            List<String> linkList = source.getLinks(url,innerLinkClass,innerLinkAttr);
-            for(int i = 0; i < linkList.size(); i++)
-            {
-                Data item = new Data();
-                DataFromCoinDesk itemLink = new DataFromCoinDesk();
-                itemLink.setLink(linkList.get(i));
-                Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
-                item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
-                if(item.isDataFormat(item))   
-                    dataList.add(item);                 
-            }
-            if(dataList.isEmpty()) return null;
-            else return dataList;
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
 }
 

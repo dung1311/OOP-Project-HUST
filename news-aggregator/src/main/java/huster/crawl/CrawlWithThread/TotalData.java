@@ -33,9 +33,9 @@ public class TotalData {
         }
     }
 
-    public void addNewsCrawlThread(DataListFormat dataListFormat, String url, String innerLinkClass, String innerLinkAttr) 
+    public void addNewsCrawlThread(DataListFormat dataListFormat, DataListFormat itemLink, String url, String innerLinkClass, String innerLinkAttr) 
     {
-        List<Data> dataList = dataListFormat.getDataList(url,innerLinkClass,innerLinkAttr);
+        List<Data> dataList = dataListFormat.getDataList(itemLink, url,innerLinkClass,innerLinkAttr);
         if( dataList != null)
             this.totalData.addAll(dataList);
     }
@@ -48,7 +48,8 @@ public class TotalData {
             @Override
             public void run() {
                 DataFromCoinDesk data = new DataFromCoinDesk();
-                runnableToGetDataList.addNewsCrawlThread(data,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
+                DataFromCoinDesk itemLink = new DataFromCoinDesk();
+                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
                 latch.countDown();
             }
         });
@@ -57,7 +58,8 @@ public class TotalData {
             @Override
             public void run() {
                 DataFromNewsBTC data = new DataFromNewsBTC();
-                runnableToGetDataList.addNewsCrawlThread(data,"https://www.newsbtc.com","pageable-container","data-page");
+                DataFromNewsBTC itemLink = new DataFromNewsBTC();
+                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.newsbtc.com","pageable-container","data-page");
                 latch.countDown();
             }
         });
@@ -66,51 +68,65 @@ public class TotalData {
             @Override
             public void run() {
                 DataFromBlogChainLink data = new DataFromBlogChainLink();
-                runnableToGetDataList.addNewsCrawlThread(data,"https://blog.chain.link/","post-card-href", "href");
+                DataFromBlogChainLink itemLink = new DataFromBlogChainLink();
+                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://blog.chain.link/","post-card-href", "href");
                 latch.countDown();
             }
         });
 
-        ArrayList<Thread> threads = new ArrayList<>();
+        ArrayList<Thread> threadsFrom101Blockchains = new ArrayList<>();
         for(int i = 1; i < 4; i++ ) {
             int j = i;
             Thread crawlFrom101Blockchains = new Thread(new Runnable() {
                 @Override
                 public void run() {
                     DataFrom101Blockchains data = new DataFrom101Blockchains();
+                    DataFrom101Blockchains itemLink = new DataFrom101Blockchains();
                     String pageNumber = String.valueOf(j);
-                    runnableToGetDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
+                    runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
                     if(j == 3)    
                         latch.countDown();
                 }
             });
-            threads.add(crawlFrom101Blockchains);
+            threadsFrom101Blockchains.add(crawlFrom101Blockchains);
+        }
+
+        ArrayList<Thread> threadsFromInvestopedia = new ArrayList<>();
+        for(int i = 1; i < 4; i++ ) {
+            int j = i-1;
+            Thread crawlFromInvestopedia = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    DataFromInvestopedia data = new DataFromInvestopedia();
+                    DataFromInvestopedia itemLink = new DataFromInvestopedia();
+                    String pageNumber = String.valueOf(10*j);
+                    runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.investopedia.com/search?q=blockchain&offset=" + pageNumber,"a[class=search-results__link mntl-text-link ]","href");
+                    if(j == 2)    
+                        latch.countDown();
+                }
+            });
+            threadsFromInvestopedia.add(crawlFromInvestopedia);
         }
 
         Thread crawlFromSouthChinaMorningPost = new Thread(new Runnable() {
             @Override
             public void run() {
                 DataFromSouthChinaMorningPost data = new DataFromSouthChinaMorningPost();
-                runnableToGetDataList.addNewsCrawlThread(data,"https://www.scmp.com/topics/blockchain","a.e1whfq0b2.css-8ug9pk.ef1hf1w0","href");
+                DataFromSouthChinaMorningPost itemLink = new DataFromSouthChinaMorningPost();
+                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.scmp.com/topics/blockchain","a.e1whfq0b2.css-8ug9pk.ef1hf1w0","href");
                 latch.countDown();
             }
         });
-
-        // Thread crawlFrom101Blockchains_page_3 = new Thread(new Runnable() {
-        //     @Override
-        //     public void run() {
-        //         DataFrom101Blockchains data = new DataFrom101Blockchains();
-        //         runnableToGetDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/page/3","a[rel=bookmark]","href");
-        //         latch.countDown();
-        //     }
-        // });
 
         crawlFromCoinDeskThread.start();
         crawlFromNewsBTCThread.start();
         crawlFromBlogChainLink.start();
         crawlFromSouthChinaMorningPost.start();
+        for(int i = 0; i < 3; i++) {
+            threadsFromInvestopedia.get(i).start();
+        }
         for(int j = 0; j < 3; j++) {
-            threads.get(j).start();
+            threadsFrom101Blockchains.get(j).start();
         }
         
         // crawlFrom101Blockchains_page_1.start();
