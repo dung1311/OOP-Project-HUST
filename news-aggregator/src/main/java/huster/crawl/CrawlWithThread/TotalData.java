@@ -7,6 +7,7 @@ import java.util.concurrent.CountDownLatch;
 
 import huster.crawl.dataFromWebsite.*;
 import huster.crawl.dataFormat.Data;
+import huster.crawl.dataFormat.DataListFormat;
 
 public class TotalData {
     private List<Data> totalData = new ArrayList<>();
@@ -32,15 +33,22 @@ public class TotalData {
         }
     }
 
+    public void addNewsCrawlThread(DataListFormat dataListFormat, String url, String innerLinkClass, String innerLinkAttr) 
+    {
+        List<Data> dataList = dataListFormat.getDataList(url,innerLinkClass,innerLinkAttr);
+        if( dataList != null)
+            this.totalData.addAll(dataList);
+    }
+
     public void setDataList() {
-        DataList runnableToGeDataList = new DataList();
+        TotalData runnableToGetDataList = new TotalData();
         TotalData.setCOUNT_SOURCE("news-aggregator/src/main/java/huster/crawl/dataFromWebsite");
         CountDownLatch latch = new CountDownLatch(COUNT_SOURCE);
         Thread crawlFromCoinDeskThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 DataFromCoinDesk data = new DataFromCoinDesk();
-                runnableToGeDataList.addNewsCrawlThread(data,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
+                runnableToGetDataList.addNewsCrawlThread(data,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
                 latch.countDown();
             }
         });
@@ -49,7 +57,7 @@ public class TotalData {
             @Override
             public void run() {
                 DataFromNewsBTC data = new DataFromNewsBTC();
-                runnableToGeDataList.addNewsCrawlThread(data,"https://www.newsbtc.com","pageable-container","data-page");
+                runnableToGetDataList.addNewsCrawlThread(data,"https://www.newsbtc.com","pageable-container","data-page");
                 latch.countDown();
             }
         });
@@ -58,7 +66,7 @@ public class TotalData {
             @Override
             public void run() {
                 DataFromBlogChainLink data = new DataFromBlogChainLink();
-                runnableToGeDataList.addNewsCrawlThread(data,"https://blog.chain.link/","post-card-href", "href");
+                runnableToGetDataList.addNewsCrawlThread(data,"https://blog.chain.link/","post-card-href", "href");
                 latch.countDown();
             }
         });
@@ -71,7 +79,7 @@ public class TotalData {
                 public void run() {
                     DataFrom101Blockchains data = new DataFrom101Blockchains();
                     String pageNumber = String.valueOf(j);
-                    runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
+                    runnableToGetDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
                     if(j == 3)    
                         latch.countDown();
                 }
@@ -83,7 +91,7 @@ public class TotalData {
             @Override
             public void run() {
                 DataFromSouthChinaMorningPost data = new DataFromSouthChinaMorningPost();
-                runnableToGeDataList.addNewsCrawlThread(data,"https://www.scmp.com/topics/blockchain","a.e1whfq0b2.css-8ug9pk.ef1hf1w0","href");
+                runnableToGetDataList.addNewsCrawlThread(data,"https://www.scmp.com/topics/blockchain","a.e1whfq0b2.css-8ug9pk.ef1hf1w0","href");
                 latch.countDown();
             }
         });
@@ -92,7 +100,7 @@ public class TotalData {
         //     @Override
         //     public void run() {
         //         DataFrom101Blockchains data = new DataFrom101Blockchains();
-        //         runnableToGeDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/page/3","a[rel=bookmark]","href");
+        //         runnableToGetDataList.addNewsCrawlThread(data,"https://101blockchains.com/blog/page/3","a[rel=bookmark]","href");
         //         latch.countDown();
         //     }
         // });
@@ -113,7 +121,7 @@ public class TotalData {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        totalData.addAll(runnableToGeDataList.getDataList());
+        totalData.addAll(runnableToGetDataList.getDataList());
     }
 
 }
