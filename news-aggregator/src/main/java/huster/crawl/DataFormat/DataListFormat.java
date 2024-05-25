@@ -9,10 +9,10 @@ import org.jsoup.nodes.Element;
 
 
 public class DataListFormat {
-    protected String url;
-    protected String innerLinkClass;
-    protected String innerLinkAttr;
-    protected String link;
+    protected String url; //This string is the path to the source page, where blockchain-related information is found on that website
+    protected String innerLinkClass; //This string is a tag in html of source page that contains attributes related to the links of the articles or the blogs, it is used by select() or getElementsByClass() method
+    protected String innerLinkAttr; //This string is a attributes which you can get links, it is use by Element.attr() or Elements.attr() method
+    protected String link; //this link is the path of article or blog
 
     public DataListFormat() {
     }
@@ -55,17 +55,11 @@ public class DataListFormat {
     public void setLink(String link) {
         this.link = link;
     }
+    /*Due to the variation in HTML tags used by different websites to display information, 
+    overriding the method is necessary to extract this information effectively. But some method is still right without override like
+    getTitle, getType, getSummary, getCategory, getDatetimeCreation, getAuthor, getLinkImage */
 
-    public Document getDocument(String link) {
-        try {
-            Document doc = Jsoup.connect(link).get();
-            return doc;
-        } catch(Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
+    //This method extracts the title of an article from a Document linked to a URL
     public String getTitle(Document doc) {
         String title = null;
         try {
@@ -78,6 +72,7 @@ public class DataListFormat {
         return title.replaceAll("�", "\'");
     }
 
+    //This method extracts the summary of an article from a Document linked to a URL
     public String getSummary(Document doc)
     {
         String summary = "KEY TAKEAWAYS" + "\n\n";
@@ -91,6 +86,7 @@ public class DataListFormat {
         return summary.replaceAll("�", "\'");
     }
 
+    //This method extracts the type of an article from a Document linked to a URL
     public String getType(Document doc) {
         String type = null;
         try {
@@ -103,10 +99,12 @@ public class DataListFormat {
         return type.replaceAll("�", "\'");
     }
 
+    //This method must be overrode; After that, it extracts the content of an article from a Document linked to a URL 
     public String getContent(Document doc) {
         return "unknown";
     }
 
+    //This method extracts the title of an article from a Document linked to a URL
     public String getCategory(Document doc) {
         String category = null;
         try {
@@ -119,6 +117,7 @@ public class DataListFormat {
         return category.replaceAll("�", "\'");
     }
 
+    //This method extracts the dateCreation of an article from a Document linked to a URL.
     public String getDateTimeCreation(Document doc)
     {
         String dateTimeCreation = null;
@@ -132,10 +131,12 @@ public class DataListFormat {
         return dateTimeCreation.replaceAll("�", "\'");
     }
 
+    //This method must be overrode; After that, it extracts the list of tag of an article from a Document linked to a URL 
     public List<String> getTag(Document doc) {
         return null;
     }
     
+    //This method extracts the author of an article from a Document linked to a URL.
     public String getAuthor(Document doc) {
         String author = "";
         try {
@@ -148,6 +149,7 @@ public class DataListFormat {
         return author.replaceAll("�", "\'");
     }
 
+    //This method extracts the link image of an article from a Document linked to a URL.
     public String getLinkImage(Document doc)
     {
         String linkImage = "";
@@ -161,6 +163,7 @@ public class DataListFormat {
         return linkImage.replaceAll("�", "\'");
     }
 
+    //This method returns a list of elements with data type Data. It is fully inherited
     public List<Data> getDataList(DataListFormat itemLink,String url, String innerLinkClass, String innerLinkAttr) {
         try {
             List<Data> dataList = new ArrayList<>();

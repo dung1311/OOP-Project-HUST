@@ -1,4 +1,4 @@
-package huster.crawl.crawlWithThread;
+package huster.crawl.dataFormat;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -6,11 +6,9 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 import huster.crawl.dataFromWebsite.*;
-import huster.crawl.dataFormat.Data;
-import huster.crawl.dataFormat.DataListFormat;
 
 public class TotalData {
-    private List<Data> totalData = new ArrayList<>();
+    private List<Data> totalData = new ArrayList<>(); //One List which save data in every website that is crawled
     public static int COUNT_SOURCE = 0;
 
     public List<Data> getDataList() {
@@ -20,7 +18,7 @@ public class TotalData {
     public void setTotalData(List<Data> totalData) {
         this.totalData = totalData;
     }
-
+    //This method set a quantity of java file in the folder which pointed to by the path to COUNT_SOURCE
     public static void setCOUNT_SOURCE(String path) { 
         File packageDir = new File(path);
         if (packageDir.exists() && packageDir.isDirectory()) {
@@ -33,6 +31,7 @@ public class TotalData {
         }
     }
 
+    //This method appends a stream with the task of adding an element of data type Data to a list
     public void addNewsCrawlThread(DataListFormat dataListFormat, DataListFormat itemLink, String url, String innerLinkClass, String innerLinkAttr) 
     {
         List<Data> dataList = dataListFormat.getDataList(itemLink, url,innerLinkClass,innerLinkAttr);
@@ -40,10 +39,11 @@ public class TotalData {
             this.totalData.addAll(dataList);
     }
 
+    //This method invokes parallel streams to append elements of data type Data to a list
     public void setDataList() {
         TotalData runnableToGetDataList = new TotalData();
         TotalData.setCOUNT_SOURCE("news-aggregator/src/main/java/huster/crawl/dataFromWebsite");
-        CountDownLatch latch = new CountDownLatch(COUNT_SOURCE);
+        CountDownLatch latch = new CountDownLatch(COUNT_SOURCE);//
         Thread crawlFromCoinDeskThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -128,15 +128,12 @@ public class TotalData {
         for(int j = 0; j < 3; j++) {
             threadsFrom101Blockchains.get(j).start();
         }
-        
-        // crawlFrom101Blockchains_page_1.start();
-        // crawlFrom101Blockchains_page_2.start();
-        // crawlFrom101Blockchains_page_3.start();
+
         try {
             latch.await(); 
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        } //Waiting for all of stream finish
         totalData.addAll(runnableToGetDataList.getDataList());
     }
 
