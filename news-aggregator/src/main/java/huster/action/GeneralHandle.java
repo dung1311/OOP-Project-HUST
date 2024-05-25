@@ -17,7 +17,7 @@ public class GeneralHandle {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Image newImage = image.getScaledInstance(476, 268, Image.SCALE_SMOOTH);
+        Image newImage = image.getScaledInstance(600, 268, Image.SCALE_SMOOTH);
 
         return newImage;
     }

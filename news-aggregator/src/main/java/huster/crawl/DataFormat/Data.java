@@ -26,7 +26,9 @@ public class Data {
         return link;
     }
     public void setLink(String link) {
-        this.link = link;
+        if(isContain(link, '�') == false)
+            this.link = link;
+        else this.link = "unknown";
     }
     public String getTitle() {
         return title;
@@ -80,7 +82,23 @@ public class Data {
         return linkImage;
     }
     public void setLinkImage(String linkImage) {
-        this.linkImage = linkImage;
+        if(isContain(linkImage,'�') == false)
+            this.linkImage = linkImage;
+        else this.linkImage = "unknown";
     }
 
+    public boolean isContain(String s, char c) {
+        if(s == null) return false;
+        for(int i = 0; i < s.length(); i++)
+        {
+            if(s.charAt(i) == c) return true; 
+        }
+        return false;
+    }
+
+    public boolean isDataFormat(Data item) {
+        if(item.getLink() == "unknown" || item.getAuthor() == "unknown" || item.getCategory() == "unknown" || item.getContent() == "unknown" || item.getDatetimeCreation() == "unknown" || item.getLink() == "unknown" || item.getLinkImage() == "unknown" || item.getSummary() == "unknown" || item.getTag() == null || item.getTitle() == "unknown" || item.getType() == "unknown") 
+            return false;
+        return true;
+    }
 }
