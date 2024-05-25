@@ -23,7 +23,7 @@ public class SearchUI extends JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         // setLocation(ORIGIN_X, ORIGIN_Y);
-        setTitle("UI_TIM_KIEM");
+        setTitle("SearchPanel");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -149,7 +149,6 @@ class SearchAndSuggestionPanel extends JPanel {
     private DefaultListModel<String> listModel;
     public String selectedSuggestion;
     private JPanel suggestionPanel;
-    private  String[] suggestions;
 
     public SearchAndSuggestionPanel() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

@@ -49,11 +49,11 @@ public class Menu extends JFrame {
         menu.addTrendButtonListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[] options = {"Web", "Tweet"};
+                String[] options = {"Tweet"};
                 int choice = JOptionPane.showOptionDialog(
                     Menu.this,
-                    "Chọn một tùy chọn để crawl:",
-                    "Lựa chọn",
+                    "Click the button to crawl",
+                    "Crawl Tweet",
                     JOptionPane.DEFAULT_OPTION,
                     JOptionPane.INFORMATION_MESSAGE,
                     null,
@@ -62,10 +62,8 @@ public class Menu extends JFrame {
                 );
 
                 if (choice == 0) {
-                    handleWebChoice();
-                } else if (choice == 1) {
-                   handleTweetChoice();
-                }
+                    handleTweetChoice();
+                } 
             }
         });
         
@@ -179,21 +177,15 @@ public class Menu extends JFrame {
             news_ScrollPane.hideSeeMoreBtn();
         }
     }
-
-    private void handleWebChoice() {
-        // A
-        JOptionPane.showMessageDialog(this, "Bạn đã chọn Web!");
-        // Thêm xử lý cụ thể cho Web tại đây
-    }
     
     private void handleTweetChoice() {
-        String keyword = JOptionPane.showInputDialog(this, "Nhập từ khóa để crawl:");
+        String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Bạn đã nhập: " + keyword);
+            
             // Add handling for the tweet keyword here, for example:
             // searchTweets(keyword);
         } else {
-            JOptionPane.showMessageDialog(this, "Không có từ khóa nào được nhập.");
+            JOptionPane.showMessageDialog(this, "Please input something !!!");
         }
     }
 }
