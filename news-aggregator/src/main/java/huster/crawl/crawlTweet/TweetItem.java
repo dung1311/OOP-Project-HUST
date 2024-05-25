@@ -24,6 +24,7 @@ public class TweetItem {
 
     public TweetItem(String name) {
         this.name = name;
+        fileJsonName = name;
     }
 
     public String getName() {
@@ -80,12 +81,12 @@ public class TweetItem {
         }
     }
 
-    public void crawlTweetFirst(String fileJsonName) throws IOException {
+    public void crawlTweetFirst() throws IOException {
 
         JsonObject data = new JsonObject();
         data.addProperty("name", name);
         data.addProperty("mode", "user");
-        data.addProperty("amount", 800);
+        data.addProperty("amount", 20);
         data.addProperty("file_name", fileJsonName);
         try {
             serverClient.sendRequestWithResponse("/crawl_tweet", data);
@@ -108,9 +109,9 @@ public class TweetItem {
     }
 
     @SuppressWarnings("deprecation")
-    public void crawlTweet(String fileJsonName) {
+    public void crawlTweet() {
         try {
-            crawlTweetFirst(fileJsonName);
+            crawlTweetFirst();
             boolean isEmptyArray = true;
 
             do {
@@ -124,7 +125,7 @@ public class TweetItem {
                 }
 
                 if (isEmptyArray) {
-                    crawlTweetFirst(fileJsonName);
+                    crawlTweetFirst();
                 }
 
             } while (isEmptyArray);
@@ -142,20 +143,6 @@ public class TweetItem {
         data.addProperty("file_json_name", fileJsonName);
         data.addProperty("file_pictures_name", filePicturesName);
         serverClient.sendRequestWithResponse("/draw_chart", data);
-    }
-
-    public static void main(String[] args) {
-        String fileJsonName = "dataEthTweet";
-        String filePicturesName = "picturesEthTweet";
-        TweetItem eth = new TweetItem("SpaceX");
-        try {
-            eth.crawlTweet(fileJsonName);
-            eth.drawChart(fileJsonName, filePicturesName);
-
-        } catch (Exception e) {
-            System.err.println("Server Flask not running");
-        }
-        System.out.println(eth.getHighestInteractionTweet());
     }
 
 }

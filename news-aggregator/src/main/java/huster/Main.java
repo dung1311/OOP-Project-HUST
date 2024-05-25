@@ -1,5 +1,6 @@
 package huster;
 
+import huster.crawl.crawlTweet.ServerClient;
 import huster.crawl.dataFormat.Data;
 
 import huster.gui.Menu;
@@ -40,5 +41,6 @@ class MyRunnable {
         Menu menu = new Menu();
         menu.setVisible(true);
         MenuHistory.getInstance().pushScreen(menu);
+        ServerClient.runServer();
     }
 }
