@@ -18,6 +18,7 @@ public class TweetItem {
     private static String serverUrl = "http://127.0.0.1:5000";
     private static ServerClient serverClient = new ServerClient(serverUrl);
     private String name;
+    private String fileJsonName;
     private JsonObject highestInteractionTweet;
     private JsonObject lowestInteractionTweet;
 
@@ -31,6 +32,14 @@ public class TweetItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setFileJsonName(String fileJsonName) {
+        this.fileJsonName = fileJsonName;
+    }
+
+    public String getFileJsonName() {
+        return fileJsonName;
     }
 
     public JsonObject getHighestInteractionTweet() {
@@ -138,7 +147,7 @@ public class TweetItem {
     public static void main(String[] args) {
         String fileJsonName = "dataEthTweet";
         String filePicturesName = "picturesEthTweet";
-        TweetItem eth = new TweetItem("ethereum");
+        TweetItem eth = new TweetItem("SpaceX");
         try {
             eth.crawlTweet(fileJsonName);
             eth.drawChart(fileJsonName, filePicturesName);

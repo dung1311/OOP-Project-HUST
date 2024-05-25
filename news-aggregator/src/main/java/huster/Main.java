@@ -2,8 +2,6 @@ package huster;
 
 import huster.crawl.dataFormat.Data;
 
-//import java.io.FileWriter;
-
 import huster.gui.Menu;
 import huster.gui.MenuHistory;
 
