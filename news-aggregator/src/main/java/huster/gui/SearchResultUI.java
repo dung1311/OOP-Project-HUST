@@ -76,10 +76,17 @@ public class SearchResultUI extends JFrame {
                 seeMoreButtonClickedCount += 1;
                 number_News += 6;
                 resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
+                if(seeMoreButtonClickedCount > 2){
+                    resPanel.hideSeeMoreBtn();
+                }
                 addNews();
                 revalidate();
             }
         });
+
+        if(listJPanels.size() <= 12){
+            resPanel.hideSeeMoreBtn();
+        }
         
        
         // Add components to the frame
@@ -99,7 +106,11 @@ public class SearchResultUI extends JFrame {
     }
 
     public void addNews(){
-        for(int i = 0; i < number_News; i++) {
+        int n;
+        if(listJPanels.size() < 12){
+            n = listJPanels.size();
+        }else{n = number_News;}
+        for(int i = 0; i < n; i++) {
             resPanel.addArticleCenter(listJPanels.get(i));
         }
     }

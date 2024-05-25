@@ -108,6 +108,7 @@ public class newsObject {
         jPanel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                
                 News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
                 news.setHeader(getTitle());
                 news.setVisible(true);

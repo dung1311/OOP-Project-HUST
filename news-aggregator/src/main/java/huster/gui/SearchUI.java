@@ -100,6 +100,7 @@ class SearchBar extends JTextField {
         // Cấu hình các thuộc tính cho searchBar ở đây
         Font font = new Font("Arial", Font.PLAIN, 30);
         setFont(font);
+        setSize(1440, 60);
         setPreferredSize(new Dimension(1440, 60));
     }
 
@@ -134,6 +135,10 @@ class ListOfCate extends JPanel {
             });
         }
     }
+
+    public void addTag(){
+        
+    }
 }
 
 // This class basically creates the searchbar with some suggestion for users
@@ -144,6 +149,7 @@ class SearchAndSuggestionPanel extends JPanel {
     private DefaultListModel<String> listModel;
     public String selectedSuggestion;
     private JPanel suggestionPanel;
+    private  String[] suggestions;
 
     public SearchAndSuggestionPanel() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));

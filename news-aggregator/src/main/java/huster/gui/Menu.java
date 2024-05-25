@@ -46,6 +46,29 @@ public class Menu extends JFrame {
         System.setProperty("GREY_menu", "0x000000");
         Color GREY_menu = Color.getColor("GREY_menu");
         
+        menu.addTrendButtonListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] options = {"Web", "Tweet"};
+                int choice = JOptionPane.showOptionDialog(
+                    Menu.this,
+                    "Chọn một tùy chọn để crawl:",
+                    "Lựa chọn",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    options,
+                    options[0]
+                );
+
+                if (choice == 0) {
+                    handleWebChoice();
+                } else if (choice == 1) {
+                   handleTweetChoice();
+                }
+            }
+        });
+        
         menu.addSearchButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -122,6 +145,8 @@ public class Menu extends JFrame {
         revalidate();
     }
 
+    
+
     //Method to generates newsList
     public List<JPanel> createNews(){
         List<JsonObject> _JsonObjects = new GetData().getNewsElements();
@@ -154,6 +179,25 @@ public class Menu extends JFrame {
             news_ScrollPane.hideSeeMoreBtn();
         }
     }
+
+    private void handleWebChoice() {
+        // A
+        JOptionPane.showMessageDialog(this, "Bạn đã chọn Web!");
+        // Thêm xử lý cụ thể cho Web tại đây
+    }
+    
+    private void handleTweetChoice() {
+        String keyword = JOptionPane.showInputDialog(this, "Nhập từ khóa để crawl:");
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Bạn đã nhập: " + keyword);
+            // Add handling for the tweet keyword here, for example:
+            // searchTweets(keyword);
+        } else {
+            JOptionPane.showMessageDialog(this, "Không có từ khóa nào được nhập.");
+        }
+    }
 }
+
+
 
 
