@@ -31,7 +31,7 @@ class Header extends JPanel{
         headerRight.setBackground(BLACK_menu);
         headerRight.setLayout(new FlowLayout(FlowLayout.RIGHT));
 
-        ImageIcon trendIcon = new ImageIcon("news-aggregator\\resource\\assets\\trendIcon.png");
+        ImageIcon trendIcon = new ImageIcon("news-aggregator\\resource\\assets\\tweetIcon.png");
         trendButton.setIcon(trendIcon);
         trendButton.setPreferredSize(new Dimension(50, 50));
         trendButton.setBorderPainted(false);
