@@ -8,6 +8,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import huster.crawl.dataFormat.DataListFormat;
+//this is base class extends DataListFormat
 public class DataFromNewsBTC extends DataListFormat{
 
     @Override
