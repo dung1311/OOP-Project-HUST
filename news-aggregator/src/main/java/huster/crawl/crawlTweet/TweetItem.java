@@ -148,14 +148,15 @@ public class TweetItem {
     public static void main(String[] args) {
         String fileJsonName = "dataEthTweet";
         String filePicturesName = "picturesEthTweet";
-        TweetItem bitcoin = new TweetItem("ethereum", 800);
+        TweetItem eth = new TweetItem("ethereum", 800);
         try {
-            bitcoin.crawlTweet(fileJsonName);
-            bitcoin.drawChart(fileJsonName, filePicturesName);
+            eth.crawlTweet(fileJsonName);
+            eth.drawChart(fileJsonName, filePicturesName);
+
         } catch (Exception e) {
             System.err.println("Server Flask not running");
         }
-
+        System.out.println(eth.getHighestInteractionTweet());
     }
 
 }
