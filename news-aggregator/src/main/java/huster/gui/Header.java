@@ -89,7 +89,7 @@ class Header extends JPanel{
     public void addButtonForSearchUI() {
         headerLeft.add(backButton);
         headerLeft.add(homeButton);
-        headerRight.add(searchButton);
+        //headerRight.add(searchButton);
         headerRight.add(userButton);
     }
 

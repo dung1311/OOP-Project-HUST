@@ -9,6 +9,7 @@ import huster.gui.MenuHistory;
 
 import java.io.IOException;
 
+<<<<<<< HEAD
 import huster.crawl.CrawlWithThread.Crawl;
 
 
@@ -47,5 +48,15 @@ class MyRunnable {
         Menu menu = new Menu();
         menu.setVisible(true);
         MenuHistory.getInstance().pushScreen(menu);
+=======
+import huster.crawl.crawlWithThread.Crawl;
+public class Main {
+    public static void main(String[] args) throws IOException{
+        long startTime = System.currentTimeMillis(); 
+        new Crawl().crawl();
+        long endTime = System.currentTimeMillis();
+        long runTime = endTime - startTime;
+        System.out.println("Running Time: " + runTime); 
+>>>>>>> hung
     }
 }
