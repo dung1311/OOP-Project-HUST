@@ -1,14 +1,46 @@
 package huster;
 
+import huster.crawl.dataFormat.Data;
+
+//import java.io.FileWriter;
+
+import huster.gui.Menu;
+import huster.gui.MenuHistory;
+
 import java.io.IOException;
 
-import huster.crawl.dataFormat.Data;
 public class Main {
-    public static void main(String[] args) throws IOException{
-        long startTime = System.currentTimeMillis(); 
+    public static void main(String[] args) throws IOException {
+
+        MyRunnable myRunnable = new MyRunnable();
+        Thread displayThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myRunnable.display();
+            }
+        });
+
+        displayThread.start();
+
+        // Thread crawlThread = new Thread(new Runnable() {
+        // @Override
+        // public void run() {
+        // myRunnable.crawl();
+        // }
+        // });
+
+        // crawlThread.start();
+    }
+}
+
+class MyRunnable {
+    public void crawl() {
         new Data().crawl();
-        long endTime = System.currentTimeMillis();
-        long runTime = endTime - startTime;
-        System.out.println("Running Time: " + runTime); 
+    }
+
+    public void display() {
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        MenuHistory.getInstance().pushScreen(menu);
     }
 }
