@@ -12,23 +12,13 @@ public class SearchResultUI extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
-    public static final int ORIGIN_X = 0;
-    public static final int ORIGIN_Y = 0;
-
-    public String articalNameJSON;
-    private ImageIcon articleIcon;
-
-    private String articleTitle;
-    private String postingDate;
 
     private int seeMoreButtonClickedCount = 0;
+    private int number_News = 12;
+    private static List<JPanel> listJPanels;
     private SearchResult resPanel = new SearchResult();
 
-    // private JPanel searchResult = new JPanel(new BorderLayout());
-    // private JPanel searchResult_Center;
-    // private JButton seeMoreButton = new JButton("See more!");
-
-    public SearchResultUI(String findText) {
+    public SearchResultUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(false);
@@ -39,8 +29,8 @@ public class SearchResultUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Header menuAndSearchPanel = new Header();
-        menuAndSearchPanel.addButtonForSearchUI();
-
+        menuAndSearchPanel.addButtonForNews();
+       
         menuAndSearchPanel.addBackButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,7 +39,8 @@ public class SearchResultUI extends JFrame {
                     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
                     ScreenHistory.getInstance().pushScreen(frame);
-                    frame.dispose();
+                    // frame.dispose();
+                    frame.setVisible(false);
                 }
             }
         });
@@ -62,7 +53,8 @@ public class SearchResultUI extends JFrame {
                 previousScreen.setVisible(true);
                 previousScreen.addBackButton();
                 ScreenHistory.getInstance().pushScreen(frame);
-                frame.dispose();
+                // frame.dispose();
+                frame.setVisible(false);
             }
         });
 
@@ -75,67 +67,57 @@ public class SearchResultUI extends JFrame {
                 frame.dispose();
             }
         });
-
-        List<JPanel> listJPanels = new SearchData().search(findText);
-        for (int i = 0; i < 12; i++) {
-            resPanel.addArticle(listJPanels.get(i));
-        }
-
-        resPanel.seeMoreActionListeners(new ActionListener() {
+        
+        addNews();
+    
+        resPanel.seeMoreActionListeners(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 seeMoreButtonClickedCount += 1;
+                number_News += 6;
                 resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
-                for (int i = 0; i < 6; i++) {
-                    resPanel.addArticle(listJPanels.get(i + 12 + (seeMoreButtonClickedCount - 1) * 6));
+                if(seeMoreButtonClickedCount > 2){
+                    resPanel.hideSeeMoreBtn();
                 }
+                addNews();
+                revalidate();
             }
         });
 
-        // tìm kiếm
+        if(listJPanels.size() <= 12){
+            resPanel.hideSeeMoreBtn();
+        }
+        
+       
+        // Add components to the frame
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-        contentPane.add(resPanel, BorderLayout.CENTER);// Thay bằng class SearchResult
+        contentPane.add(resPanel, BorderLayout.CENTER);
         resPanel.setVisible();
         revalidate();
         repaint();
     }
 
-    public String getArticalNameJSON() {
-        return articalNameJSON;
+    public static boolean listPanelIsNull(){
+        return listJPanels.size() == 0;
+            
+    }
+    public static void createNews(String s){
+        listJPanels = new SearchData().search(s);
     }
 
-    public void setArticalNameJSON(String articalNameJSON) {
-        this.articalNameJSON = articalNameJSON;
-    }
-
-    public String getTitle() {
-        return articleTitle;
-    }
-
-    public void setArticleTitle(String s) {
-        this.articleTitle = s;
-    }
-
-    public String getPostingDate() {
-        return postingDate;
-    }
-
-    public void setPostingDate(String s) {
-        this.postingDate = s;
-    }
-
-    public ImageIcon getArticleIcon() {
-        return articleIcon;
-    }
-
-    public void setArticleIcon(ImageIcon articleIcon) {
-        this.articleIcon = articleIcon;
+    public void addNews(){
+        int n;
+        if(listJPanels.size() < 12){
+            n = listJPanels.size();
+        }else{n = number_News;}
+        for(int i = 0; i < n; i++) {
+            resPanel.addArticleCenter(listJPanels.get(i));
+        }
     }
 }
 
 // This class will display the result after search, can be used in menu aswell
 // with consideration, contact me for more infomation
-
 class SearchResult extends JScrollPane {
     private JPanel searchResult = new JPanel(new BorderLayout());
     private JPanel searchResult_Center;
@@ -172,13 +154,17 @@ class SearchResult extends JScrollPane {
         seeMoreButton.addActionListener(e);
     }
 
-    public void addArticle(JPanel p) {
+    public void hideSeeMoreBtn(){
+        seeMoreButton.setVisible(false);
+    }
+
+    public void addArticleCenter(JPanel p) {
         searchResult_Center.add(p);
     }
 
     public void setLayoutAndSize(int n) {
-        searchResult.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
+        searchResult.setPreferredSize(new Dimension(1280, 2500 + 1200 * n));
         searchResult_Center.setLayout(new GridLayout(6 + 3 * n, 2, 175, 0));
-        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1000 * n));
+        searchResult_Center.setPreferredSize(new Dimension(1280, 1500 + 1200 * n));
     }
 }

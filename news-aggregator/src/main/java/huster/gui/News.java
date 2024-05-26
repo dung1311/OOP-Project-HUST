@@ -15,9 +15,9 @@ public class News extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 100;
     public static final int ORIGIN_Y = 100;
-    // header of news UI
-    Header menu = new Header();
-
+    //Adds header of news UI
+    Header menu = new Header(); 
+    
     private JLabel jLabel_news_header;
     private JTextArea jTextArea_news_header;
     private JTextArea jTextArea_news_center;
@@ -26,6 +26,7 @@ public class News extends JFrame {
     private JTextArea jTextArea_news_link;
     private JPanel jPanel_news;
 
+    //Constructor to create the Article
     public News(String nameAuthor, String postingDate, String link, String textContent, String title) {
         ScreenHistory.getInstance();
         ScreenHistory.getInstance().pushScreen(this);
@@ -79,7 +80,7 @@ public class News extends JFrame {
             }
         });
 
-        // create centre panel
+        // Creates centre panel
         jPanel_news = new JPanel();
         jPanel_news.setLayout(new BorderLayout());
 

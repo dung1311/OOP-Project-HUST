@@ -6,10 +6,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 class Header extends JPanel{
-    private JPanel menu = new JPanel();
-    private JPanel menuLeft = new JPanel();
-    private JPanel menuRight = new JPanel();
-    public JButton closeButton = new JButton();
+    private JPanel header = new JPanel();
+    private JPanel headerLeft = new JPanel();
+    private JPanel headerRight = new JPanel();
+    public JButton trendButton = new JButton();
     public JButton homeButton = new JButton();
     public JButton searchButton = new JButton();
     public JButton userButton = new JButton();
@@ -21,15 +21,22 @@ class Header extends JPanel{
 
         System.setProperty("BLACK_menu", "0x222222");
         Color BLACK_menu = Color.getColor("BLACK_menu");
-        menu.setLayout(new BorderLayout());
-        menu.setSize(1440, 101);
-        menu.setBackground(BLACK_menu);
+        header.setLayout(new BorderLayout());
+        header.setSize(1440, 101);
+        header.setBackground(BLACK_menu);
 
-        menuLeft.setBackground(BLACK_menu);
-        menuLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
+        headerLeft.setBackground(BLACK_menu);
+        headerLeft.setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        menuRight.setBackground(BLACK_menu);
-        menuRight.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        headerRight.setBackground(BLACK_menu);
+        headerRight.setLayout(new FlowLayout(FlowLayout.RIGHT));
+
+        ImageIcon trendIcon = new ImageIcon("news-aggregator\\resource\\assets\\tweetIcon.png");
+        trendButton.setIcon(trendIcon);
+        trendButton.setPreferredSize(new Dimension(50, 50));
+        trendButton.setBorderPainted(false);
+        trendButton.setFocusPainted(false);
+        trendButton.setContentAreaFilled(false);
 
         ImageIcon backIcon = new ImageIcon("news-aggregator\\resource\\assets\\backIcon.png");
         backButton.setIcon(backIcon);
@@ -60,32 +67,37 @@ class Header extends JPanel{
         userButton.setFocusPainted(false);
         userButton.setContentAreaFilled(false);
         
-        menu.add(menuLeft, BorderLayout.WEST);
-        menu.add(menuRight, BorderLayout.EAST);
-        this.add(menu);
+        header.add(headerLeft, BorderLayout.WEST);
+        header.add(headerRight, BorderLayout.EAST);
+
+        this.add(header);
     }
 
     public void addButtonForNews() {
-        menuLeft.add(backButton);
-        menuLeft.add(homeButton);
-        menuRight.add(searchButton);
-        menuRight.add(userButton);
+        headerLeft.add(backButton);
+        headerLeft.add(homeButton);
+        headerRight.add(searchButton);
+        headerRight.add(userButton);
     }
 
     public void addButtonForMenu() {
-        menuRight.add(searchButton);
-        menuRight.add(userButton);
+        headerRight.add(trendButton);
+        headerRight.add(searchButton);
+        headerRight.add(userButton);
     }
 
     public void addButtonForSearchUI() {
-        menuLeft.add(backButton);
-        menuLeft.add(homeButton);
-        menuRight.add(searchButton);
-        menuRight.add(userButton);
+        headerLeft.add(backButton);
+        headerLeft.add(homeButton);
+        headerRight.add(userButton);
     }
 
     public void addBackButtonForMenu() {
-        menuLeft.add(backButton);
+        headerLeft.add(backButton);
+    }
+
+    public void addTrendButtonListener(ActionListener listener) {
+        trendButton.addActionListener(listener);
     }
     
     public void addHomeButtonListener(ActionListener listener) {

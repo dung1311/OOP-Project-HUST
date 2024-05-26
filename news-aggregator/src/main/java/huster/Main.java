@@ -18,7 +18,6 @@ public class Main {
  
         
         MyRunnable myRunnable = new MyRunnable();
-
         Thread displayThread = new Thread(new Runnable() {
             @Override
             public void run() {

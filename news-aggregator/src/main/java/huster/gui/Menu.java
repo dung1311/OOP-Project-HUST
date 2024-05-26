@@ -15,15 +15,13 @@ public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
-    public static final int ORIGIN_X = 100;
-    public static final int ORIGIN_Y = 100;
     
     public int number_News = 12;
     private int seeMoreButtonClickedCount = 0;
-    private static JPanel articlePanel;
 
     // luu tru bai viet
     private List<JPanel> newsList = new ArrayList<>();
+    private SearchResult news_ScrollPane = new SearchResult();
    
     Header menu = new Header();
 
@@ -32,7 +30,7 @@ public class Menu extends JFrame {
     }
 
     public Menu() {
-        Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
+        Container contentPane = getContentPane(); 
         menu.addButtonForMenu();
 
         setSize(X, Y);
@@ -45,8 +43,29 @@ public class Menu extends JFrame {
 
         System.setProperty("BLACK_menu", "0x222222");
         // Color BLACK_menu = Color.getColor("BLACK_menu");
-        System.setProperty("GREY_menu", "0xFFFFFF");
+        System.setProperty("GREY_menu", "0x000000");
         Color GREY_menu = Color.getColor("GREY_menu");
+        
+        menu.addTrendButtonListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String[] options = {"Tweet"};
+                int choice = JOptionPane.showOptionDialog(
+                    Menu.this,
+                    "Click the button to crawl",
+                    "Crawl Tweet",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,
+                    null,
+                    options,
+                    options[0]
+                );
+
+                if (choice == 0) {
+                    handleTweetChoice();
+                } 
+            }
+        });
         
         menu.addSearchButtonListener(new ActionListener() {
             @Override
@@ -54,7 +73,8 @@ public class Menu extends JFrame {
                 new SearchUI().setVisible(true);
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                 ScreenHistory.getInstance().pushScreen(frame);
-                dispose();
+                // dispose();
+                Menu.this.setVisible(false);
             }
         });
 
@@ -66,12 +86,11 @@ public class Menu extends JFrame {
                     previousScreen.setVisible(true);
                     JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                     ScreenHistory.getInstance().pushScreen(frame);
-                    dispose();
+                    // dispose();
+                    Menu.this.setVisible(false);
                 }
             }
         });
-
-        Font font30 = new Font("ARIAL",Font.PLAIN,30);
         ImageIcon toparticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
         JPanel toparticlePanel = new JPanel();
@@ -99,59 +118,34 @@ public class Menu extends JFrame {
         toparticleLabel_title.setVerticalAlignment(JLabel.CENTER);
         toparticlePanel.add(topArticleButton,BorderLayout.NORTH);
         toparticlePanel.add(toparticleLabel_title,BorderLayout.CENTER);
-
-        articlePanel = new JPanel();
-        articlePanel.setPreferredSize(new Dimension(1280, 1500));
-        articlePanel.setLayout(new GridLayout(6,2,175,0));
         
-        JPanel fullarticlePanel = new JPanel();
-        fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
-        fullarticlePanel.setLayout(new BorderLayout());
-        fullarticlePanel.add(toparticlePanel,BorderLayout.NORTH);
-        fullarticlePanel.add(articlePanel,BorderLayout.CENTER);
-
-
-        JButton seeMoreButton = new JButton("MORE");
-        seeMoreButton.setFont(font30);
-        seeMoreButton.addActionListener(new ActionListener() {
+        news_ScrollPane.seeMoreActionListeners(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(seeMoreButtonClickedCount == 2) {
-                    seeMoreButton.setVisible(false);
-                    return ;
-                }
                 
-                seeMoreButtonClickedCount++;
                 number_News += 6;
-                fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1000 * seeMoreButtonClickedCount));
-                articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1000 * seeMoreButtonClickedCount));
-                articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
-                // createNews();
+                seeMoreButtonClickedCount++;
+                news_ScrollPane.setLayoutAndSize(seeMoreButtonClickedCount);
                 addNews();
                 revalidate();
+                hideSeeMoreBtn();
             }
         });
-        fullarticlePanel.add(seeMoreButton, BorderLayout.SOUTH);
 
-        JScrollPane scrollPane_suggested = new JScrollPane(fullarticlePanel);
-        scrollPane_suggested.setPreferredSize(new Dimension(1280, 800));
-        scrollPane_suggested.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane_suggested.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scrollPane_suggested.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-
-        // contentPane.setBackground(GREY_menu);
         this.setBackground(GREY_menu);
         contentPane.add(menu, BorderLayout.NORTH);
-        // contentPane.add(toparticlePanel, BorderLayout.CENTER);
-
-        contentPane.add(scrollPane_suggested,BorderLayout.CENTER);  
-        // tao bang tin
-        articlePanel.setVisible(true);
+        contentPane.add(news_ScrollPane,BorderLayout.CENTER);  
+        //Creates and displays news
+        news_ScrollPane.setVisible();
         createNews();
         addNews();
+        
+        revalidate();
     }
 
-    // tao bang tin
+    
+
+    //Method to generates newsList
     public List<JPanel> createNews(){
         List<JsonObject> _JsonObjects = new GetData().getNewsElements();
         
@@ -167,15 +161,35 @@ public class Menu extends JFrame {
         return newsList;
     }
 
+    //Method to help display news
     public void addNews(){
         for(int i = 0; i < number_News; i++){
-            articlePanel.add(newsList.get(i));
+            news_ScrollPane.addArticleCenter(newsList.get(i));
         }
     }
 
     public void addBackButton() {
         menu.addBackButtonForMenu();
     }
+
+    public void hideSeeMoreBtn() {
+        if(seeMoreButtonClickedCount == 2) {
+            news_ScrollPane.hideSeeMoreBtn();
+        }
+    }
+    
+    private void handleTweetChoice() {
+        String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
+        if (keyword != null && !keyword.trim().isEmpty()) {
+            
+            // Add handling for the tweet keyword here, for example:
+            // searchTweets(keyword);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please input something !!!");
+        }
+    }
 }
+
+
 
 

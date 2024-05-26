@@ -14,19 +14,16 @@ public class SearchUI extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
-    public String articalNameJSON;
-    private ImageIcon articleIcon;
-    private String articleTitle;
-    private String postingDate;
-    public String s;
+   
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
-
+    private JButton randomSearchButton = new JButton();
     public SearchUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
-        setTitle("UI_TIM_KIEM");
+        // setLocation(ORIGIN_X, ORIGIN_Y);
+        setTitle("SearchPanel");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -41,7 +38,8 @@ public class SearchUI extends JFrame {
                     JFrame previousScreen = ScreenHistory.getInstance().popScreen();
                     previousScreen.setVisible(true);
                     ScreenHistory.getInstance().pushScreen(frame);
-                    frame.dispose();
+                    // frame.dispose();
+                    SearchUI.this.setVisible(false);
                 }
             }
         });
@@ -54,14 +52,12 @@ public class SearchUI extends JFrame {
                 previousScreen.setVisible(true);
                 previousScreen.addBackButton();
                 ScreenHistory.getInstance().pushScreen(frame);
-                frame.dispose();
+                // frame.dispose();
+                SearchUI.this.setVisible(false);
             }
         });
 
         menuAndSearchPanel.add(searchPanel);
-
-        // TODO
-        ListOfCate catePanel = new ListOfCate();
 
         // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính
         // acticalNameJSON
@@ -69,127 +65,81 @@ public class SearchUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
-
-                // Hide the catePanel
-                catePanel.setVisible(false);
-
-                // Display "please wait" message
-                JLabel pleaseWaitLabel = new JLabel("Please wait...");
-                pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
-                pleaseWaitLabel.setVerticalAlignment(JLabel.CENTER);
-                pleaseWaitLabel.setFont(new Font("Arial", Font.BOLD, 24));
-                contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
-                contentPane.revalidate();
-                contentPane.repaint();
-
-                // Use SwingWorker to create and show the SearchResultUI
-                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
-                    @Override
-                    protected Void doInBackground() throws Exception {
-                        new SearchResultUI(searchPanel.getSearchBarText()).setVisible(true);
-                        ScreenHistory.getInstance().pushScreen(frame);
-                        return null;
-                    }
-
-                    @Override
-                    protected void done() {
-                        // Remove the "please wait" message
-                        contentPane.remove(pleaseWaitLabel);
-                        contentPane.revalidate();
-                        contentPane.repaint();
-
-                        // Dispose the current frame
-                        dispose();
-                    }
-                };
-                worker.execute();
+                // create instance of SearchResultUI
+                SearchResultUI.createNews(searchPanel.getSearchBarText());
+                if(SearchResultUI.listPanelIsNull()){
+                    JOptionPane.showMessageDialog(null, "We don't have that article!!!");
+                }
+                else{
+                    new SearchResultUI().setVisible(true);
+                    ScreenHistory.getInstance().pushScreen(frame);
+                    // dispose();
+                    SearchUI.this.setVisible(false);
+                }
+                
+                // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
+                
             }
         };
 
         // tìm kiếm
         searchPanel.addSearchBarActionListenner(searchListener);
-        menuAndSearchPanel.addSearchButtonListener(searchListener);
+        randomSearchButton.addActionListener(searchListener);
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-        contentPane.add(catePanel, BorderLayout.CENTER);
-
+        contentPane.add(randomSearchButton, BorderLayout.CENTER);
     }
-
-    public String getarticalNameJSON() {
-        return articalNameJSON;
-    }
-
-    public String getTitle() {
-        return articleTitle;
-    }
-
-    public void setArticleTitle(String s) {
-        this.articleTitle = s;
-    }
-
-    public String getPostingDate() {
-        return postingDate;
-    }
-
-    public void setPostingDate(String s) {
-        this.postingDate = s;
-    }
-
-    public ImageIcon getArticleIcon() {
-        return articleIcon;
-    }
-
-    public void setArticleIcon(ImageIcon articleIcon) {
-        this.articleIcon = articleIcon;
-    }
-}
+}    
 
 class SearchBar extends JTextField {
     public SearchBar(int columns) {
         super(columns);
         setupSearchBar();
-
     }
-
     private void setupSearchBar() {
-        // Cấu hình các thuộc tính cho searchBar ở đây
+        // This code customize the search bar
         Font font = new Font("Arial", Font.PLAIN, 30);
         setFont(font);
+        setSize(1440, 60);
         setPreferredSize(new Dimension(1440, 60));
     }
 
 }
 
-// This contains the categories about BlockChain topics
-class ListOfCate extends JPanel {
-    public ListOfCate() {
-        System.setProperty("BLACK_menu", "0x222222");
-        Color BLACK_menu = Color.getColor("BLACK_menu");
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setPreferredSize(new Dimension(1440, 620));
-        setBackground(BLACK_menu);
-        setFont(new Font("Arial", Font.PLAIN, 14));
+// // This contains the categories about BlockChain topics
+// class ListOfCate extends JPanel {
+//     public ListOfCate() {
+//         System.setProperty("BLACK_menu", "0x222222");
+//         Color BLACK_menu = Color.getColor("BLACK_menu");
+//         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+//         setPreferredSize(new Dimension(1440, 620));
+//         setBackground(BLACK_menu);
+//         setFont(new Font("Arial", Font.PLAIN, 14));
 
-        for (int i = 0; i < 10; i++) {
-            JLabel label1 = new JLabel("Blockchain" + i);
-            label1.setForeground(Color.WHITE);
+//         for (int i = 0; i < 10; i++) {
+//             JLabel label1 = new JLabel("Blockchain" + i);
+//             label1.setForeground(Color.WHITE);
 
-            Font font = new Font("Arial", Font.BOLD, 14);
-            label1.setFont(font);
-            label1.setAlignmentX(Component.LEFT_ALIGNMENT);
-            add(label1);
+//             Font font = new Font("Arial", Font.BOLD, 14);
+//             label1.setFont(font);
+//             label1.setAlignmentX(Component.LEFT_ALIGNMENT);
+//             add(label1);
 
-            // Gắn sự kiện cho các dòng chữ
-            label1.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    // Xử lý sự kiện khi dòng chữ được click
-                    System.out.println("Bạn đã click vào Blockchain.");
-                }
-            });
-        }
-    }
-}
+//             // Gắn sự kiện cho các dòng chữ
+//             label1.addMouseListener(new MouseAdapter() {
+//                 @Override
+//                 public void mouseClicked(MouseEvent e) {
+//                     // Xử lý sự kiện khi dòng chữ được click
+//                     System.out.println("Bạn đã click vào Blockchain.");
+//                 }
+//             });
+//         }
+//     }
+
+//     public void addTag(){
+        
+//     }
+// }
 
 // This class basically creates the searchbar with some suggestion for users
 class SearchAndSuggestionPanel extends JPanel {
@@ -238,21 +188,24 @@ class SearchAndSuggestionPanel extends JPanel {
                     for (String suggestion : suggestions) {
                         listModel.addElement(suggestion);
                     }
+                    suggestionPanel.setVisible(true);
+                }
+                else{
+                    suggestionPanel.setVisible(false);
                 }
             }
         });
 
-        searchBar.addMouseListener(new MouseAdapter() {
+        suggestionList.addListSelectionListener(new ListSelectionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                // Kiểm tra nếu suggestionPanel đang hiển thị thì ẩn nó đi, ngược lại thì hiển
-                // thị
-                if (isSuggestionPanelVisible) {
-                    suggestionPanel.setVisible(false);
-                    isSuggestionPanelVisible = false;
-                } else {
-                    suggestionPanel.setVisible(true);
-                    isSuggestionPanelVisible = true;
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    selectedSuggestion = suggestionList.getSelectedValue();
+                    if (selectedSuggestion != null) {
+                        searchBar.setText(selectedSuggestion);
+                        searchBar.requestFocusInWindow();
+                        suggestionPanel.setVisible(false);
+                    }
                 }
             }
         });
@@ -264,7 +217,8 @@ class SearchAndSuggestionPanel extends JPanel {
     // Dungx cho các tên bài báo vào đây ở dạng String
     private String[] searchSuggestions(String searchText) {
         // Dữ liệu gợi ý
-        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency" };
+        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency", "Crypto", "DAO", "API", "CoinDesk", "ETFS", "Dogecoin", 
+        "", "", "", "", "", "", "", "", };
         // Danh sách chứa các gợi ý phù hợp
         ArrayList<String> relatedSuggestions = new ArrayList<>();
 
