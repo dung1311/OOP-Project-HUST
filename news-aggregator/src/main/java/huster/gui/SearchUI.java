@@ -18,7 +18,7 @@ public class SearchUI extends JFrame {
     private ImageIcon articleIcon;
     private String articleTitle;
     private String postingDate;
-    public String s;////////////////////////////////////////////////////////
+    public String s;
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
 
     public SearchUI() {
@@ -26,7 +26,6 @@ public class SearchUI extends JFrame {
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
-        // setLocation(ORIGIN_X, ORIGIN_Y);
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -68,15 +67,43 @@ public class SearchUI extends JFrame {
         // acticalNameJSON
         ActionListener searchListener = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {       
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
-                // create instance of SearchResultUI
-                new SearchResultUI(searchPanel.getSearchBarText()).setVisible(true);
+        
+                // Hide the catePanel
+                catePanel.setVisible(false);
                 
-                // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
-                ScreenHistory.getInstance().pushScreen(frame);
-                dispose();
-            }
+                // Display "please wait" message
+                JLabel pleaseWaitLabel = new JLabel("Please wait...");
+                pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
+                pleaseWaitLabel.setVerticalAlignment(JLabel.CENTER);
+                pleaseWaitLabel.setFont(new Font("Arial", Font.BOLD, 24));
+                contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
+                contentPane.revalidate();
+                contentPane.repaint();
+                
+                // Use SwingWorker to create and show the SearchResultUI
+                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        new SearchResultUI(searchPanel.getSearchBarText()).setVisible(true);
+                        ScreenHistory.getInstance().pushScreen(frame);
+                        return null;
+                    }
+
+                    @Override
+                    protected void done() {
+                        // Remove the "please wait" message
+                        contentPane.remove(pleaseWaitLabel);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+                        
+                        // Dispose the current frame
+                        dispose();
+                    }
+                };
+                worker.execute();
+            }    
         };
 
         // tìm kiếm
