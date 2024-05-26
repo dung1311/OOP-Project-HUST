@@ -104,10 +104,9 @@ public class Data {
     }
 
     public void setLinkImage(String linkImage) {
-        if (isContain(linkImage, '�') == false)
-            this.linkImage = linkImage;
-        else
+        if(linkImage.contains("·") || linkImage.contains("–"))
             this.linkImage = "unknown";
+        else this.linkImage = linkImage;
     }
 
     public void setData(String url, String link, String title, String type, String summary, String content,
@@ -123,7 +122,9 @@ public class Data {
         this.datetimeCreation = datetimeCreation;
         this.tag = tag;
         this.author = author;
-        this.linkImage = linkImage;
+        if(linkImage.contains("·") || linkImage.contains("–"))
+            this.linkImage = "unknown";
+        else this.linkImage = linkImage;
     }
 
     public boolean isContain(String s, char c) {

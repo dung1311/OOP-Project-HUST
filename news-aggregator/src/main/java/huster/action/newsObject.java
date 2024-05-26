@@ -39,7 +39,6 @@ public class newsObject {
         this.link = jsonObject.get("link").getAsString();
         
         try {
-            //TODO
             this.linkImage = URLDecoder.decode(jsonObject.get("linkImage").getAsString(), "UTF-8");
         } catch (Exception e) {
             e.printStackTrace();

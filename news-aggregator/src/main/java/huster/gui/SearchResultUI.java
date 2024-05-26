@@ -145,7 +145,6 @@ public class SearchResultUI extends JFrame {
 class SearchResult extends JScrollPane {
     private JPanel searchResult = new JPanel(new BorderLayout());
     private JPanel searchResult_Center;
-    private JPanel searchResultTweet;
     private JButton seeMoreButton = new JButton("See more!");
 
     public SearchResult() {

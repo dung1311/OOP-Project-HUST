@@ -5,26 +5,21 @@ import huster.crawl.dataFormat.TotalData;
 
 //import java.io.FileWriter;
 
-
-
 import huster.gui.Menu;
 import huster.gui.MenuHistory;
 
 import java.io.IOException;
 
-
-
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException{
- 
-        
+    public static void main(String[] args) throws IOException, InterruptedException {
+
         MyRunnable myRunnable = new MyRunnable();
 
         // Thread crawlThread = new Thread(new Runnable() {
-        //     @Override
-        //     public void run() {
-        //         myRunnable.crawl();                
-        //     }
+        // @Override
+        // public void run() {
+        // myRunnable.crawl();
+        // }
         // });
 
         // crawlThread.start();
