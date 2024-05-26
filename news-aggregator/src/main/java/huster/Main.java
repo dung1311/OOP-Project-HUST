@@ -17,16 +17,16 @@ public class Main {
         
         MyRunnable myRunnable = new MyRunnable();
 
-        Thread crawlThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                myRunnable.crawl();                
-            }
-        });
+        // Thread crawlThread = new Thread(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         myRunnable.crawl();                
+        //     }
+        // });
 
-        crawlThread.start();
-
-        crawlThread.join();
+        // crawlThread.start();
+        // //
+        // crawlThread.join();
         Thread displayThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -36,7 +36,14 @@ public class Main {
 
         displayThread.start();
 
-        
+        Thread runServer = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myRunnable.runServer();
+            }
+        });
+
+        runServer.start();
     }
 }
 

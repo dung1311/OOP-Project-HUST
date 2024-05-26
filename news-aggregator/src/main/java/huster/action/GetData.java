@@ -2,6 +2,7 @@ package huster.action;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -40,7 +41,8 @@ public class GetData {
         JsonArray m_newsArray = new JsonArray();
         // read data and asgin to newsArray
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(dataFilePath));
+            BufferedReader bufferedReader = new BufferedReader(
+                new FileReader(dataFilePath, Charset.forName("UTF-8")));
 
             m_newsArray = new Gson().fromJson(bufferedReader, JsonArray.class);
             newsArray = m_newsArray;

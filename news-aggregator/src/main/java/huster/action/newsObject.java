@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.net.URLDecoder;
+
 
 public class newsObject {
 
@@ -35,7 +37,13 @@ public class newsObject {
         this.authorName = jsonObject.get("author").getAsString();
         this.content = jsonObject.get("content").getAsString();
         this.link = jsonObject.get("link").getAsString();
-        this.linkImage = jsonObject.get("linkImage").getAsString();
+        
+        try {
+            //TODO
+            this.linkImage = URLDecoder.decode(jsonObject.get("linkImage").getAsString(), "UTF-8");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.title = jsonObject.get("title").getAsString();
         this.summary = jsonObject.get("summary").getAsString();
         this.postingDate = jsonObject.get("datetimeCreation").getAsString();

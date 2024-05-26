@@ -13,10 +13,17 @@ public class GeneralHandle {
     public static Image resizeImage(String urlString) {
         Image image = null;
         try {
+            //TODO
+            urlString = URLDecoder.decode(urlString, "UTF-8");
             image = ImageIO.read(new URL(urlString));
         } catch (Exception e) {
-            System.out.println("cannot read image from URL");
-            e.printStackTrace();
+            // System.out.println("cannot read image from URL: " + urlString);
+            // e.printStackTrace();
+            try {
+                image = ImageIO.read(new URL("https://www.newsbtc.com/wp-content/uploads/2024/05/image_2024-05-21_13-17-21.png?fit=1600%2C1200"));
+            } catch (Exception eve) {
+                eve.printStackTrace();
+            }
         }
         Image newImage = image.getScaledInstance(600, 268, Image.SCALE_SMOOTH);
 
