@@ -14,9 +14,10 @@ public class SearchUI extends JFrame {
     public static final int Y = 1024;
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
-   
+
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
     private JButton randomSearchButton = new JButton();
+
     public SearchUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
@@ -57,40 +58,72 @@ public class SearchUI extends JFrame {
             }
         });
 
-        // This listener helps display search result 
+        menuAndSearchPanel.add(searchPanel);
+
+        // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính
+        // acticalNameJSON
         ActionListener searchListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
-                // create instance of SearchResultUI
-                SearchResultUI.createNews(searchPanel.getSearchBarText());
-                if(SearchResultUI.listPanelIsNull()){
-                    JOptionPane.showMessageDialog(null, "We don't have that article!!!");
-                }
-                else{
-                    new SearchResultUI().setVisible(true);
-                    ScreenHistory.getInstance().pushScreen(frame);
-                    // dispose();
-                    SearchUI.this.setVisible(false);
-                }
+
+                // Display "please wait" message
+                JLabel pleaseWaitLabel = new JLabel("Please wait...");
+                pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
+                pleaseWaitLabel.setVerticalAlignment(JLabel.CENTER);
+                pleaseWaitLabel.setFont(new Font("Arial", Font.BOLD, 24));
+                contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
+                contentPane.revalidate();
+                contentPane.repaint();
+
+                // Use SwingWorker to create and show the SearchResultUI
+                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        ScreenHistory.getInstance().pushScreen(frame);
+                        return null;
+                    }
+
+                    @Override
+                    protected void done() {
+                        // Remove the "please wait" message
+                        contentPane.remove(pleaseWaitLabel);
+                        contentPane.revalidate();
+                        contentPane.repaint();
+
+                        SearchResultUI.createNews(searchPanel.getSearchBarText());
+                        if (SearchResultUI.listPanelIsNull()) {
+                            JOptionPane.showMessageDialog(null, "We don't have that article!!!");
+                        } else {
+                            new SearchResultUI().setVisible(true);
+                            ScreenHistory.getInstance().pushScreen(frame);
+                            // dispose();
+                            SearchUI.this.setVisible(false);
+                        }
+
+                    }
+                };
+                worker.execute();
+
             }
         };
 
         // tìm kiếm
         searchPanel.addSearchBarActionListenner(searchListener);
         randomSearchButton.addActionListener(searchListener);
-        menuAndSearchPanel.add(searchPanel);
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-        contentPane.add(randomSearchButton, BorderLayout.CENTER);
+        // contentPane.add(randomSearchButton, BorderLayout.CENTER);
     }
-}    
+}
 
 class SearchBar extends JTextField {
     public SearchBar(int columns) {
         super(columns);
         setupSearchBar();
     }
+
     private void setupSearchBar() {
         // This code customize the search bar
         Font font = new Font("Arial", Font.PLAIN, 30);
@@ -149,8 +182,7 @@ class SearchAndSuggestionPanel extends JPanel {
                         listModel.addElement(suggestion);
                     }
                     suggestionPanel.setVisible(true);
-                }
-                else{
+                } else {
                     suggestionPanel.setVisible(false);
                 }
             }
@@ -177,8 +209,9 @@ class SearchAndSuggestionPanel extends JPanel {
     // Dungx cho các tên bài báo vào đây ở dạng String
     private String[] searchSuggestions(String searchText) {
         // Dữ liệu gợi ý
-        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency", "Crypto", "DAO", "API", "CoinDesk", "ETFS", "Dogecoin", 
-        "BTC", "ETH", "Company", "meme", "Trading", "Invest", "Binance", "Solana"};
+        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency", "Crypto", "DAO", "API",
+                "CoinDesk", "ETFS", "Dogecoin",
+                "", "", "", "", "", "", "", "", };
         // Danh sách chứa các gợi ý phù hợp
         ArrayList<String> relatedSuggestions = new ArrayList<>();
 

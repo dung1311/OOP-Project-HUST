@@ -47,7 +47,7 @@ public class SearchResultUI extends JFrame {
 
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 Menu previousScreen = MenuHistory.getInstance().peekScreen();
                 previousScreen.setVisible(true);
@@ -60,7 +60,7 @@ public class SearchResultUI extends JFrame {
 
         menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 new SearchUI().setVisible(true);
                 ScreenHistory.getInstance().pushScreen(frame);
@@ -72,7 +72,7 @@ public class SearchResultUI extends JFrame {
     
         resPanel.seeMoreActionListeners(new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 seeMoreButtonClickedCount += 1;
                 number_News += 6;
                 resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
@@ -102,7 +102,7 @@ public class SearchResultUI extends JFrame {
             
     }
     public static void createNews(String s){
-        listJPanels = new SearchData().search(s);
+        listJPanels = new SearchData("news-aggregator\\resource\\data\\totalData.json").search(s);
     }
 
     public void addNews(){
@@ -115,7 +115,6 @@ public class SearchResultUI extends JFrame {
         }
     }
 }
-
 
 // This class will display the result after search, can be used in menu aswell
 // with consideration, contact me for more infomation
@@ -147,7 +146,7 @@ class SearchResult extends JScrollPane {
         setViewportView(searchResult);
     }
 
-    public void setVisible(){
+    public void setVisible() {
         searchResult_Center.setVisible(true);
     }
 

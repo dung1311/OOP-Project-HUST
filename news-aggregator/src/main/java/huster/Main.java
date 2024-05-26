@@ -1,5 +1,7 @@
 package huster;
 
+import huster.crawl.dataFormat.Data;
+
 //import java.io.FileWriter;
 
 
@@ -9,7 +11,6 @@ import huster.gui.MenuHistory;
 
 import java.io.IOException;
 
-import huster.crawl.CrawlWithThread.Crawl;
 
 
 public class Main {
@@ -40,7 +41,7 @@ public class Main {
 
 class MyRunnable {
     public void crawl() {
-        Crawl.crawl();
+        new Data().crawl();
     }
 
     public void display() {

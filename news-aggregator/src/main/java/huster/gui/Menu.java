@@ -22,7 +22,7 @@ public class Menu extends JFrame {
     // luu tru bai viet
     private List<JPanel> newsList = new ArrayList<>();
     private SearchResult news_ScrollPane = new SearchResult();
-   
+    
     Header menu = new Header();
 
     public int getNumberNews() {
@@ -75,6 +75,14 @@ public class Menu extends JFrame {
                 ScreenHistory.getInstance().pushScreen(frame);
                 // dispose();
                 Menu.this.setVisible(false);
+            }
+        });
+
+        menu.addUserButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // TODO
+                System.out.println("clicked!!");
             }
         });
 

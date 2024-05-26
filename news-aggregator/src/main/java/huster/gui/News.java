@@ -4,12 +4,10 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import huster.action.GeneralHandle;
-// import huster.action.JHyperlink;
+import huster.action.JHyperlink;
 
 import java.awt.*;
 import java.awt.event.*;
-
 
 public class News extends JFrame {
     private static final long serialVersionUID = 1L;
@@ -32,7 +30,7 @@ public class News extends JFrame {
     public News(String nameAuthor, String postingDate, String link, String textContent, String title) {
         ScreenHistory.getInstance();
         ScreenHistory.getInstance().pushScreen(this);
-        
+
         setSize(X, Y);
         setResizable(false);
         setLocationRelativeTo(null);
@@ -49,7 +47,7 @@ public class News extends JFrame {
 
         menu.addHomeButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
                 Menu previousScreen = MenuHistory.getInstance().peekScreen();
                 previousScreen.setVisible(true);
@@ -86,7 +84,6 @@ public class News extends JFrame {
         jPanel_news = new JPanel();
         jPanel_news.setLayout(new BorderLayout());
 
-
         jLabel_news_header = new JLabel(title, JLabel.CENTER);
         jLabel_news_header.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jLabel_news_header.setFont(font30B);
@@ -105,15 +102,15 @@ public class News extends JFrame {
         JPanel jPanel_news_center = new JPanel(new BorderLayout());
         JPanel jPanel_news_source = new JPanel();
         jPanel_news_source.setLayout(new GridLayout(3, 1));
-        
+
         jPanel_news_source.add(jTextArea_news_author);
         jPanel_news_source.add(jTextArea_news_postingDate);
-        // jPanel_news_source.add(new JHyperlink("Link: " + link, link, "click here"));
+        jPanel_news_source.add(new JHyperlink("Link: " + link, link, "click here"));
 
         jTextArea_news_center = new JTextArea(textContent);
         jTextArea_news_center.setBorder(BorderFactory.createCompoundBorder(
-            new LineBorder(Color.BLACK), // Lề ngoài
-            new EmptyBorder(10, 0, 0, 0) // Lề bên trong
+                new LineBorder(Color.BLACK), // Lề ngoài
+                new EmptyBorder(10, 0, 0, 0) // Lề bên trong
         ));
         jTextArea_news_center.setFont(font20);
         jTextArea_news_center.setLineWrap(true);
@@ -123,18 +120,13 @@ public class News extends JFrame {
         jPanel_news_center.add(jPanel_news_source, BorderLayout.NORTH);
         jPanel_news_center.add(jTextArea_news_center, BorderLayout.CENTER);
 
-
         jPanel_news.add(jLabel_news_header, BorderLayout.NORTH);
         jPanel_news.add(jPanel_news_center, BorderLayout.CENTER);
-
-
 
         JScrollPane scrollPane_News = new JScrollPane(jPanel_news);
         scrollPane_News.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane_News.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane_News.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-
-
 
         // add into this
         this.setLayout(new BorderLayout());
@@ -143,10 +135,9 @@ public class News extends JFrame {
     }
 
     public void setHeader(String s) {
-        if(s.length() < 86) {
+        if (s.length() < 86) {
             jLabel_news_header.setText(s);
-        }
-        else {
+        } else {
             jPanel_news.remove(jLabel_news_header);
             jPanel_news.add(jTextArea_news_header, BorderLayout.NORTH);
             jTextArea_news_header.setText(s);
@@ -172,7 +163,7 @@ public class News extends JFrame {
     }
 
     public void setLink(String link) {
-        jTextArea_news_link = new JTextArea(GeneralHandle.clickableLink(link));
+        jTextArea_news_link = new JTextArea(link);
         jTextArea_news_link.setBackground(jLabel_news_header.getBackground());
         jTextArea_news_link.setFont(new Font("Arial", Font.ITALIC, 15));
         jTextArea_news_link.setEditable(false);
@@ -184,5 +175,3 @@ public class News extends JFrame {
         jTextArea_news_center.setText(s);
     }
 }
-
-

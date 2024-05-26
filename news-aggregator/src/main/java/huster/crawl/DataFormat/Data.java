@@ -1,6 +1,10 @@
-package huster.crawl.DataFormat;
+package huster.crawl.dataFormat;
 
+import java.io.FileWriter;
 import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class Data {
     private String url;
@@ -87,6 +91,21 @@ public class Data {
         else this.linkImage = "unknown";
     }
 
+    public void setData(String url, String link, String title, String type, String summary, String content, String category, String datetimeCreation, List<String> tag, String author, String linkImage) {
+        String[] parts = url.split("/");
+        this.url = parts[0] + "//" + parts[1] + parts[2] + "/";
+        this.link = link;
+        this.title = title;
+        this.type = type;
+        this.summary = summary;
+        this.content = content;
+        this.category = category;
+        this.datetimeCreation = datetimeCreation;
+        this.tag = tag;
+        this.author = author;
+        this.linkImage = linkImage;
+    }
+
     public boolean isContain(String s, char c) {
         if(s == null) return false;
         for(int i = 0; i < s.length(); i++)
@@ -101,4 +120,22 @@ public class Data {
             return false;
         return true;
     }
+
+    public void crawl() {
+        try{
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            TotalData dataList = new TotalData();
+            dataList.setDataList();
+            String json = gson.toJson(dataList.getDataList());
+    
+            FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/totalData.json");
+            fileWriter.write(json);
+            fileWriter.close();
+            System.out.println("Successful!!");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
+
 }
