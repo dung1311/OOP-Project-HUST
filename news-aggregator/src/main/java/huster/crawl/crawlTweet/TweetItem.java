@@ -60,15 +60,17 @@ public class TweetItem {
     }
 
     public static void replaceJsonFile(String fileJsonName) {
-        String dataPath = "news-aggregator\\resource\\data\\" + fileJsonName + ".json";
+        String dataPath = "news-aggregator\\resource\\data\\tweetData\\"+ fileJsonName + ".json";
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath))) {
             JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
 
             String modifiedJsonString = jsonArray.toString();
-            modifiedJsonString = modifiedJsonString.replace("date", "PostingDate");
-            modifiedJsonString = modifiedJsonString.replace("text", "Content");
-            modifiedJsonString = modifiedJsonString.replace("link", "LinkTweet");
+            modifiedJsonString = modifiedJsonString.replace("LinkTweet", "link");
+            modifiedJsonString = modifiedJsonString.replace("date", "datetimeCreation");
+            modifiedJsonString = modifiedJsonString.replace("text", "title");
+            modifiedJsonString = modifiedJsonString.replace("user", "author");
+            modifiedJsonString = modifiedJsonString.replace("LinkImage", "linkImage");
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             jsonArray = new Gson().fromJson(modifiedJsonString, JsonArray.class);
@@ -93,7 +95,7 @@ public class TweetItem {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        File file = new File("news-aggregator/resource/data/" + fileJsonName + ".json");
+        File file = new File("news-aggregator/resource/data/tweetData/" + fileJsonName + ".json");
         if (!file.exists()) {
             throw new IOException("File not created");
         }
@@ -117,7 +119,7 @@ public class TweetItem {
             do {
                 JsonParser parser = new JsonParser();
                 JsonElement readJson = parser
-                        .parse(new FileReader("news-aggregator\\resource\\data\\" + fileJsonName + ".json"));
+                        .parse(new FileReader("news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json"));
 
                 JsonArray jsonArray = readJson.getAsJsonArray();
                 if (jsonArray.size() != 0) {
@@ -125,7 +127,7 @@ public class TweetItem {
                 }
 
                 if (isEmptyArray) {
-                    crawlTweetFirst();
+                    crawlTweetFromNitter();
                 }
 
             } while (isEmptyArray);
@@ -138,11 +140,21 @@ public class TweetItem {
         }
     }
 
+    public void crawlTweetFromNitter() throws IOException{
+        JsonObject data = new JsonObject();
+        data.addProperty("user_name", name);
+        serverClient.sendRequestWithResponse("/crawl_nitter", data);
+    }
+
     public void drawChart(String fileJsonName, String filePicturesName) throws IOException {
         JsonObject data = new JsonObject();
         data.addProperty("file_json_name", fileJsonName);
         data.addProperty("file_pictures_name", filePicturesName);
         serverClient.sendRequestWithResponse("/draw_chart", data);
     }
-
+    
+    public static void main(String[] args) {
+        TweetItem test = new TweetItem("Bitcoin");
+        test.crawlTweet();
+    }
 }

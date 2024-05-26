@@ -8,6 +8,7 @@ import json
 from functools import lru_cache
 import matplotlib.pyplot as plt
 matplotlib.use('Agg')
+import CrawlTweetFromNitter
 
 app = Flask(__name__)
 
@@ -32,7 +33,7 @@ def crawl_tweet_route():
     list_tweet = scraper.get_tweets(
         name, mode=mode, number=amount, max_retries=100)
 
-    with open('news-aggregator\\resource\\data\\' + file_name + '.json', mode='w') as file_json:
+    with open('news-aggregator\\resource\\data\\tweetData\\' + file_name + '.json', mode='w') as file_json:
         json.dump(list_tweet['tweets'], file_json)
 
     return jsonify({"message": "Success"})
@@ -45,7 +46,7 @@ def draw_chart_route():
     file_pictures_name = request.json['file_pictures_name']
 
     # Tạo đường dẫn tương đối đến thư mục chứa dữ liệu
-    data_directory = 'news-aggregator/resource/data'
+    data_directory = 'news-aggregator/resource/data/tweetData'
     file_path = os.path.join(data_directory, file_json_name + '.json')
     image_path = os.path.join(data_directory, file_pictures_name + '.png')
 
@@ -94,7 +95,7 @@ def draw_chart_route():
 @app.route('/json_analyst', methods=['POST'])
 def json_analyst():
     file_json_name = request.json['file_json_name']
-    data_directory = 'news-aggregator/resource/data'
+    data_directory = 'news-aggregator/resource/data/tweetData'
     file_path = os.path.join(data_directory, file_json_name + '.json')
     list_tweet = pd.read_json(path_or_buf=file_path)
     data_list = []
@@ -119,6 +120,19 @@ def json_analyst():
     }
 
     return jsonify(response)
+
+@app.route('/crawl_nitter', methods=['POST'])
+def crawl_nitter():
+    data = request.json
+    user_name = data.get('user_name')
+    if not user_name:
+        return jsonify({"error": "Missing user_name"}), 400
+    
+    try:
+        result = CrawlTweetFromNitter.main(user_name)
+        return jsonify({"status": "success", "data": result}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route('/shutdown', methods=['POST'])
