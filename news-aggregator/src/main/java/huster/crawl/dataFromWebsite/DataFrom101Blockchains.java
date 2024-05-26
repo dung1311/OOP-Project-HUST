@@ -9,6 +9,7 @@ import org.jsoup.select.Elements;
 
 import huster.crawl.dataFormat.DataListFormat;
 
+//this is base class extends DataListFormat
 public class DataFrom101Blockchains extends DataListFormat {
 
     @Override
