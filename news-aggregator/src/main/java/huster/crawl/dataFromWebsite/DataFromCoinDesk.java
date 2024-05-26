@@ -20,7 +20,7 @@ public class DataFromCoinDesk extends DataListFormat {
             Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");
             if(summaryTitle == null) return "unknown";
             if(summaryElements.text().equals(null)) return "unknown";
-            summary = summaryTitle.attr("content") + "\n\n";
+            summary += summaryTitle.attr("content") + "\n\n";
             for(Element summaryElement : summaryElements)
             {
                 summary = summary + summaryElement.text() + "\n\n";

@@ -1,6 +1,7 @@
 package huster;
 
-import huster.crawl.DataFormat.Data;
+import huster.crawl.dataFormat.Data;
+import huster.crawl.dataFormat.TotalData;
 
 //import java.io.FileWriter;
 
@@ -41,7 +42,7 @@ public class Main {
 
 class MyRunnable {
     public void crawl() {
-        new Data().crawl();
+        new TotalData().crawl();
     }
 
     public void display() {

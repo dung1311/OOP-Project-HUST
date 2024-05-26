@@ -23,7 +23,6 @@ public class SearchData {
         init(dataPath);
     }
 
-
     public void init(String dataPath) {
         JsonArray m_newsArray = new JsonArray();
         // read data and asgin to newsArray
@@ -57,12 +56,37 @@ public class SearchData {
             }
         }
 
-        for(int i = 0; i < result.size(); i++) {
+        for (int i = 0; i < result.size(); i++) {
             JPanel jPanel = new newsObject(result.get(i)).setAsJPanel();
             jPanels.add(jPanel);
         }
 
         return jPanels;
+    }
+
+    public List<String> searchAsLink(String findText) {
+        int length = get_JsonArray().size();
+        List<String> links = new ArrayList<>();
+
+        List<JsonObject> s_JsonObjects = new ArrayList<>();
+        for (int i = 0; i < length; i++) {
+            s_JsonObjects.add(_JsonArray.get(i).getAsJsonObject());
+        }
+
+        for (int i = 0; i < s_JsonObjects.size(); i++) {
+            String jsonString = new String();
+            jsonString = s_JsonObjects.get(i).toString();
+            if (jsonString.contains(findText)) {
+                result.add(s_JsonObjects.get(i));
+            }
+        }
+
+        for (int i = 0; i < result.size(); i++) {
+            String link = new newsObject(result.get(i)).getLink();
+            links.add(link);
+        }
+
+        return links;
     }
 
 }
