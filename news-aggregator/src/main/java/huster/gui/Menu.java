@@ -67,7 +67,11 @@ public class Menu extends JFrame {
                 if (choice == 0) {
                     handleHistory();
                 } else{
-                    handleCrawlChoice();
+                    try {
+                        handleCrawlChoice();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             }
         });
@@ -191,41 +195,49 @@ public class Menu extends JFrame {
         }
     }
     
-    private void handleCrawlChoice() {
+    private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
+
+            // TweetItem tweet = new TweetItem(keyword);
+            // tweet.crawlTweet();
+            // tweet.drawChart();
+
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
             ScreenHistory.getInstance().pushScreen(frame);
-            SearchResultUI.createNews(" ", "news-aggregator\\resource\\data\\cihan0xeth.json");
+
+
+            SearchResultUI.createLinks("cihan0xeth", "news-aggregator\\resource\\data\\cihan0xeth.json");
             SearchResultUI searchTweet = new SearchResultUI();
+            searchTweet.setUpTweet();
+            searchTweet.addLinks();
             
-            searchTweet.addNews(12);
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
-            JPanel imagePanel = new JPanel() {
-                private static final long serialVersionUID = 1L;
-                private Image image;
+            // JPanel imagePanel = new JPanel() {
+            //     private static final long serialVersionUID = 1L;
+            //     private Image image;
 
-                {
-                    try {
-                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\picturesBitcoinTweet.png"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+            //     {
+            //         try {
+            //             image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\" + keyword + ".png"));
+            //         } catch (IOException e) {
+            //             e.printStackTrace();
+            //         }
+            //     }
 
-                @Override
-                protected void paintComponent(Graphics g) {
-                    super.paintComponent(g);
-                    if (image != null) {
-                        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-                    }
-                }
-            };
-            imagePanel.setPreferredSize(new Dimension(800, 600));
+            //     @Override
+            //     protected void paintComponent(Graphics g) {
+            //         super.paintComponent(g);
+            //         if (image != null) {
+            //             g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            //         }
+            //     }
+            // };
+            // imagePanel.setPreferredSize(new Dimension(1200, 900));
             
-            // Display news statistics
-            JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result", JOptionPane.PLAIN_MESSAGE);
+            // // Display news statistics
+            // JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result", JOptionPane.PLAIN_MESSAGE);
             
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");

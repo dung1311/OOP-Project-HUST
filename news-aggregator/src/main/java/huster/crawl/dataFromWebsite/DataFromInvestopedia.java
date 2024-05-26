@@ -7,7 +7,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import huster.crawl.DataFormat.DataListFormat;
+import huster.crawl.dataFormat.DataListFormat;
 //this is base class extends DataListFormat
 public class DataFromInvestopedia extends DataListFormat{
 
