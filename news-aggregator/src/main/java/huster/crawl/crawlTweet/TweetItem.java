@@ -19,12 +19,13 @@ public class TweetItem {
     private static ServerClient serverClient = new ServerClient(serverUrl);
     private String name;
     private String fileJsonName;
+    private String filePicturesName;
     private JsonObject highestInteractionTweet;
-    private JsonObject lowestInteractionTweet;
 
     public TweetItem(String name) {
         this.name = name;
-        fileJsonName = name;
+        this.fileJsonName = name;
+        this.filePicturesName = name;
     }
 
     public String getName() {
@@ -51,16 +52,8 @@ public class TweetItem {
         this.highestInteractionTweet = highestInteractionTweet;
     }
 
-    public JsonObject getLowestInteractionTweet() {
-        return lowestInteractionTweet;
-    }
-
-    public void setLowestInteractionTweet(JsonObject lowestInteractionTweet) {
-        this.lowestInteractionTweet = lowestInteractionTweet;
-    }
-
     public static void replaceJsonFile(String fileJsonName) {
-        String dataPath = "news-aggregator\\resource\\data\\tweetData\\"+ fileJsonName + ".json";
+        String dataPath = "news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json";
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath))) {
             JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
@@ -101,13 +94,17 @@ public class TweetItem {
         }
     }
 
+    public void crawlTweetFromNitter() throws IOException {
+        JsonObject data = new JsonObject();
+        data.addProperty("user_name", name);
+        serverClient.sendRequestWithResponse("/crawl_nitter", data);
+    }
+
     public void jsonAnalyst(String fileJsonName) throws IOException {
         JsonObject data = new JsonObject();
         data.addProperty("file_json_name", fileJsonName);
         JsonObject responseData = serverClient.sendRequestWithResponse("/json_analyst", data);
         this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
-        this.lowestInteractionTweet = responseData.getAsJsonObject("lowestInteractionTweet");
-
     }
 
     @SuppressWarnings("deprecation")
@@ -140,21 +137,17 @@ public class TweetItem {
         }
     }
 
-    public void crawlTweetFromNitter() throws IOException{
-        JsonObject data = new JsonObject();
-        data.addProperty("user_name", name);
-        serverClient.sendRequestWithResponse("/crawl_nitter", data);
-    }
-
-    public void drawChart(String fileJsonName, String filePicturesName) throws IOException {
+    public void drawChart() throws IOException {
         JsonObject data = new JsonObject();
         data.addProperty("file_json_name", fileJsonName);
         data.addProperty("file_pictures_name", filePicturesName);
         serverClient.sendRequestWithResponse("/draw_chart", data);
     }
-    
-    public static void main(String[] args) {
+
+    public static void main(String[] args) throws IOException {
         TweetItem test = new TweetItem("Bitcoin");
         test.crawlTweet();
+        test.drawChart();
+        System.out.println(test.getHighestInteractionTweet());
     }
 }

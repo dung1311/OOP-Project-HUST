@@ -1,8 +1,7 @@
 package huster;
 
 import huster.crawl.crawlTweet.ServerClient;
-import huster.crawl.dataFormat.Data;
-
+import huster.crawl.dataFormat.TotalData;
 import huster.gui.Menu;
 import huster.gui.MenuHistory;
 
@@ -12,29 +11,29 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         MyRunnable myRunnable = new MyRunnable();
-        Thread displayThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                myRunnable.display();
-            }
-        });
-
-        displayThread.start();
-
-        // Thread crawlThread = new Thread(new Runnable() {
-        // @Override
-        // public void run() {
-        // myRunnable.crawl();
-        // }
+        // Thread displayThread = new Thread(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         myRunnable.display();
+        //     }
         // });
 
-        // crawlThread.start();
+        // displayThread.start();
+
+        Thread crawlThread = new Thread(new Runnable() {
+        @Override
+        public void run() {
+        myRunnable.crawl();
+        }
+        });
+
+        crawlThread.start();
     }
 }
 
 class MyRunnable {
     public void crawl() {
-        new Data().crawl();
+        new TotalData().crawl();
     }
 
     public void display() {

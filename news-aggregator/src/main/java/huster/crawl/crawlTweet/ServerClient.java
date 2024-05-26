@@ -9,6 +9,7 @@ import java.net.URL;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
 
 public class ServerClient {
     private String serverUrl;
@@ -37,25 +38,36 @@ public class ServerClient {
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoOutput(true);
 
-        OutputStream os = connection.getOutputStream();
-        os.write(data.toString().getBytes());
-        os.flush();
-        os.close();
+        try (OutputStream os = connection.getOutputStream()) {
+            os.write(data.toString().getBytes());
+            os.flush();
+        }
 
         int responseCode = connection.getResponseCode();
-        if (responseCode == HttpURLConnection.HTTP_OK) {
-            BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String inputLine;
-            StringBuilder response = new StringBuilder();
+        StringBuilder response = new StringBuilder();
 
+        try (BufferedReader in = new BufferedReader(new InputStreamReader(
+                responseCode == HttpURLConnection.HTTP_OK ? connection.getInputStream()
+                        : connection.getErrorStream()))) {
+            String inputLine;
             while ((inputLine = in.readLine()) != null) {
                 response.append(inputLine);
             }
-            in.close();
+        }
 
-            return JsonParser.parseString(response.toString()).getAsJsonObject();
+        System.out.println("Response Code: " + responseCode);
+        System.out.println("Response Body: " + response.toString());
+
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            try {
+                return JsonParser.parseString(response.toString()).getAsJsonObject();
+            } catch (JsonSyntaxException e) {
+                System.err.println("Failed to parse JSON response: " + e.getMessage());
+                throw new IOException("Failed to parse JSON response", e);
+            }
         } else {
-            throw new IOException("Request failed with response code: " + responseCode);
+            throw new IOException(
+                    "Request failed with response code: " + responseCode + " and message: " + response.toString());
         }
     }
 
