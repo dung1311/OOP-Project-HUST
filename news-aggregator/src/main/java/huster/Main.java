@@ -1,9 +1,7 @@
 package huster;
 
-import huster.crawl.dataFormat.Data;
 import huster.crawl.dataFormat.TotalData;
 
-//import java.io.FileWriter;
 
 
 
@@ -15,10 +13,21 @@ import java.io.IOException;
 
 
 public class Main {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException, InterruptedException{
  
         
         MyRunnable myRunnable = new MyRunnable();
+
+        Thread crawlThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myRunnable.crawl();                
+            }
+        });
+
+        crawlThread.start();
+
+        crawlThread.join();
         Thread displayThread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -28,14 +37,7 @@ public class Main {
 
         displayThread.start();
 
-        // Thread crawlThread = new Thread(new Runnable() {
-        //     @Override
-        //     public void run() {
-        //         myRunnable.crawl();                
-        //     }
-        // });
-
-        // crawlThread.start();
+        
     }
 }
 

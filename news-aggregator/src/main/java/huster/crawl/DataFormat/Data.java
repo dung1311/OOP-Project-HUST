@@ -1,11 +1,6 @@
 package huster.crawl.dataFormat;
 
-import java.io.FileWriter;
-import java.nio.charset.Charset;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class Data {
     private String url;
