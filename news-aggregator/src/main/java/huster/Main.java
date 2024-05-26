@@ -11,23 +11,24 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         MyRunnable myRunnable = new MyRunnable();
-        // Thread displayThread = new Thread(new Runnable() {
-        //     @Override
-        //     public void run() {
-        //         myRunnable.display();
-        //     }
+       
+        // Thread crawlThread = new Thread(new Runnable() {
+        // @Override
+        // public void run() {
+        // myRunnable.crawl();
+        // }
         // });
 
-        // displayThread.start();
+        // crawlThread.start();
 
-        Thread crawlThread = new Thread(new Runnable() {
-        @Override
-        public void run() {
-        myRunnable.crawl();
-        }
+        Thread displayThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myRunnable.display();
+            }
         });
 
-        crawlThread.start();
+        displayThread.start();
     }
 }
 
