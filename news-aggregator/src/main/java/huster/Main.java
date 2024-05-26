@@ -1,6 +1,6 @@
 package huster;
 
-import huster.crawl.dataFormat.Data;
+import huster.crawl.DataFormat.Data;
 
 //import java.io.FileWriter;
 

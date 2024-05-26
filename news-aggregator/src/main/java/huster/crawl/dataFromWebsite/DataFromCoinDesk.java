@@ -7,7 +7,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import huster.crawl.dataFormat.DataListFormat;
+import huster.crawl.DataFormat.DataListFormat;
 //this is base class extends DataListFormat
 public class DataFromCoinDesk extends DataListFormat {
 

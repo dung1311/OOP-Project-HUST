@@ -1,4 +1,4 @@
-package huster.crawl.dataFormat;
+package huster.crawl.DataFormat;
 
 import java.io.File;
 import java.util.ArrayList;
