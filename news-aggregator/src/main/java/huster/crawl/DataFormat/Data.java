@@ -1,6 +1,7 @@
 package huster.crawl.dataFormat;
 
 import java.io.FileWriter;
+import java.nio.charset.Charset;
 import java.util.List;
 
 import com.google.gson.Gson;
@@ -121,21 +122,5 @@ public class Data {
         return true;
     }
 
-    public void crawl() {
-        try{
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            TotalData dataList = new TotalData();
-            dataList.setDataList();
-            String json = gson.toJson(dataList.getDataList());
-    
-            FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/totalData.json");
-            fileWriter.write(json);
-            fileWriter.close();
-            System.out.println("Successful!!");
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        
-    }
 
 }
