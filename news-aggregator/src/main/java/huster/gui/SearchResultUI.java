@@ -15,7 +15,6 @@ public class SearchResultUI extends JFrame {
     public static final int ORIGIN_X = 0;
     public static final int ORIGIN_Y = 0;
 
-    // TODO
     public String articalNameJSON;
     private ImageIcon articleIcon;
 
@@ -23,6 +22,7 @@ public class SearchResultUI extends JFrame {
     private String postingDate;
 
     private int seeMoreButtonClickedCount = 0;
+    private SearchResult resPanel = new SearchResult();
 
     // private JPanel searchResult = new JPanel(new BorderLayout());
     // private JPanel searchResult_Center;
@@ -40,7 +40,7 @@ public class SearchResultUI extends JFrame {
 
         Header menuAndSearchPanel = new Header();
         menuAndSearchPanel.addButtonForSearchUI();
-       
+
         menuAndSearchPanel.addBackButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,7 +56,7 @@ public class SearchResultUI extends JFrame {
 
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 Menu previousScreen = MenuHistory.getInstance().peekScreen();
                 previousScreen.setVisible(true);
@@ -68,7 +68,7 @@ public class SearchResultUI extends JFrame {
 
         menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 new SearchUI().setVisible(true);
                 ScreenHistory.getInstance().pushScreen(frame);
@@ -76,27 +76,22 @@ public class SearchResultUI extends JFrame {
             }
         });
 
-
-        // TODO
-        SearchResult resPanel = new SearchResult();
-        // TODO
         List<JPanel> listJPanels = new SearchData().search(findText);
-        for(int i = 0; i < 12; i++) {
+        for (int i = 0; i < 12; i++) {
             resPanel.addArticle(listJPanels.get(i));
         }
-        
-        resPanel.seeMoreActionListeners(new ActionListener(){
+
+        resPanel.seeMoreActionListeners(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 seeMoreButtonClickedCount += 1;
                 resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
-                for(int i = 0; i < 6; i++) {
-                    resPanel.addArticle(listJPanels.get(i + 12 + (seeMoreButtonClickedCount - 1)*6));
+                for (int i = 0; i < 6; i++) {
+                    resPanel.addArticle(listJPanels.get(i + 12 + (seeMoreButtonClickedCount - 1) * 6));
                 }
             }
         });
-        
-       
+
         // tìm kiếm
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         contentPane.add(resPanel, BorderLayout.CENTER);// Thay bằng class SearchResult
@@ -104,7 +99,6 @@ public class SearchResultUI extends JFrame {
         revalidate();
         repaint();
     }
-
 
     public String getArticalNameJSON() {
         return articalNameJSON;
@@ -139,7 +133,6 @@ public class SearchResultUI extends JFrame {
     }
 }
 
-
 // This class will display the result after search, can be used in menu aswell
 // with consideration, contact me for more infomation
 
@@ -171,7 +164,7 @@ class SearchResult extends JScrollPane {
         setViewportView(searchResult);
     }
 
-    public void setVisible(){
+    public void setVisible() {
         searchResult_Center.setVisible(true);
     }
 

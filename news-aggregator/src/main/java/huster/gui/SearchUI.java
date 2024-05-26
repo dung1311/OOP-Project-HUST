@@ -67,12 +67,12 @@ public class SearchUI extends JFrame {
         // acticalNameJSON
         ActionListener searchListener = new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {       
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(searchPanel);
-        
+
                 // Hide the catePanel
                 catePanel.setVisible(false);
-                
+
                 // Display "please wait" message
                 JLabel pleaseWaitLabel = new JLabel("Please wait...");
                 pleaseWaitLabel.setHorizontalAlignment(JLabel.CENTER);
@@ -81,7 +81,7 @@ public class SearchUI extends JFrame {
                 contentPane.add(pleaseWaitLabel, BorderLayout.CENTER);
                 contentPane.revalidate();
                 contentPane.repaint();
-                
+
                 // Use SwingWorker to create and show the SearchResultUI
                 SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
                     @Override
@@ -97,13 +97,13 @@ public class SearchUI extends JFrame {
                         contentPane.remove(pleaseWaitLabel);
                         contentPane.revalidate();
                         contentPane.repaint();
-                        
+
                         // Dispose the current frame
                         dispose();
                     }
                 };
                 worker.execute();
-            }    
+            }
         };
 
         // tìm kiếm
@@ -297,4 +297,3 @@ class SearchAndSuggestionPanel extends JPanel {
         suggestionPanel.setVisible(false);
     }
 }
-
