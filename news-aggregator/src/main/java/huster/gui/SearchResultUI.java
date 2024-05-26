@@ -102,7 +102,7 @@ public class SearchResultUI extends JFrame {
             
     }
     public static void createNews(String s){
-        listJPanels = new SearchData().search(s);
+        listJPanels = new SearchData("news-aggregator\\resource\\data\\totalData.json").search(s);
     }
 
     public void addNews(){

@@ -15,7 +15,7 @@ import com.google.gson.JsonObject;
 public class GetData {
 
     private List<JsonObject> newsElements = new ArrayList<>(10);
-    private String dataFilePath = "news-aggregator\\resource\\data\\dataCoinDesk.json";
+    private String dataFilePath = "news-aggregator\\resource\\data\\totalData.json";
     private List<newsObject> newsObjectsList = new ArrayList<>(10);
     // store news from database
     private JsonArray newsArray = new JsonArray();
