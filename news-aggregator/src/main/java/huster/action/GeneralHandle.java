@@ -54,8 +54,4 @@ public class GeneralHandle {
         return decodeURL;
     }
 
-    public static String clickableLink(String link) {
-        return "<html><a href='https://www.codejava.net/java-se/swing/how-to-create-hyperlink-with-jlabel-in-java-swing'>click here</a></html>";
-    }
-
 }

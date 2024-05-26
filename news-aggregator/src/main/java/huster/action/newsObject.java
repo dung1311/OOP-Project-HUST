@@ -95,7 +95,7 @@ public class newsObject {
             e.printStackTrace();
         }
 
-        JLabel articleLable = new JLabel(this.getSummary());
+        JLabel articleLable = new JLabel(this.getTitle());
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
         jPanel.setPreferredSize(new Dimension(477, 268));
         jPanel.setVisible(true);

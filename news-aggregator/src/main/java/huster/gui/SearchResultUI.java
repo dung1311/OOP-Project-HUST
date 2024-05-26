@@ -47,7 +47,7 @@ public class SearchResultUI extends JFrame {
 
         menuAndSearchPanel.addHomeButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 Menu previousScreen = MenuHistory.getInstance().peekScreen();
                 previousScreen.setVisible(true);
@@ -60,26 +60,24 @@ public class SearchResultUI extends JFrame {
 
         menuAndSearchPanel.addSearchButtonListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menuAndSearchPanel);
                 new SearchUI().setVisible(true);
                 ScreenHistory.getInstance().pushScreen(frame);
                 frame.dispose();
             }
         });
-        
-        addNews();
     
         resPanel.seeMoreActionListeners(new ActionListener(){
             @Override
-            public void actionPerformed(ActionEvent e){
+            public void actionPerformed(ActionEvent e) {
                 seeMoreButtonClickedCount += 1;
                 number_News += 6;
                 resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
-                if(seeMoreButtonClickedCount > 2){
+                if(seeMoreButtonClickedCount > listJPanels.size() / 12 + 1){
                     resPanel.hideSeeMoreBtn();
                 }
-                addNews();
+                addNews(number_News);
                 revalidate();
             }
         });
@@ -101,21 +99,27 @@ public class SearchResultUI extends JFrame {
         return listJPanels.size() == 0;
             
     }
-    public static void createNews(String s){
-        listJPanels = new SearchData().search(s);
+    public static void createNews(String s, String link){
+        listJPanels = new SearchData(link).search(s);
     }
 
-    public void addNews(){
-        int n;
+    public void add(JPanel pic){
+        resPanel.addArticleCenter(pic);
+    }
+
+    public void addNews(int n){
         if(listJPanels.size() < 12){
             n = listJPanels.size();
-        }else{n = number_News;}
-        for(int i = 0; i < n; i++) {
-            resPanel.addArticleCenter(listJPanels.get(i));
+            for(int i = 0; i < n; i++) {
+                resPanel.addArticleCenter(listJPanels.get(i));
+            }
+        }else{
+            for(int i = 0; i < n; i++) {
+                resPanel.addArticleCenter(listJPanels.get(i));
+            }
         }
     }
 }
-
 
 // This class will display the result after search, can be used in menu aswell
 // with consideration, contact me for more infomation
@@ -147,7 +151,7 @@ class SearchResult extends JScrollPane {
         setViewportView(searchResult);
     }
 
-    public void setVisible(){
+    public void setVisible() {
         searchResult_Center.setVisible(true);
     }
 

@@ -53,7 +53,7 @@ public class GetData {
         // get radom index from newsArray
         while (randomSet.size() < 32) {
             // random number from 0 to 100
-            int randomNumber = random.nextInt(40);
+            int randomNumber = random.nextInt(225);
             
                 randomSet.add(randomNumber);
         }

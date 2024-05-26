@@ -13,22 +13,22 @@ import com.google.gson.JsonObject;
 
 public class SearchData {
     // store value of json file
-    String DATAPATH = "news-aggregator\\resource\\data\\dataBitcoinTweet.json";
     private JsonArray _JsonArray = new JsonArray();
 
     public JsonArray get_JsonArray() {
         return _JsonArray;
     }
 
-    public SearchData() {
-        init();
+    public SearchData(String dataPath) {
+        init(dataPath);
     }
 
-    public void init() {
+
+    public void init(String dataPath) {
         JsonArray m_newsArray = new JsonArray();
         // read data and asgin to newsArray
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(DATAPATH));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath));
 
             m_newsArray = new Gson().fromJson(bufferedReader, JsonArray.class);
             _JsonArray = m_newsArray;
