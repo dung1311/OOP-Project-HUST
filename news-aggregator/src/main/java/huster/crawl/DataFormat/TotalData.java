@@ -1,17 +1,22 @@
 package huster.crawl.dataFormat;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import huster.crawl.dataFromWebsite.*;
 
 public class TotalData {
-    private List<Data> totalData = new ArrayList<>(); //One List which save data in every website that is crawled
+    private List<Data> totalData = new ArrayList<>(); //One List which save data in every website which crawled
     public static int COUNT_SOURCE = 0;
 
-    public List<Data> getDataList() {
+    public List<Data> getTotalData() {
         return totalData;
     }
 
@@ -19,7 +24,7 @@ public class TotalData {
         this.totalData = totalData;
     }
     //This method set a quantity of java file in the folder which pointed to by the path to COUNT_SOURCE
-    public static void setCOUNT_SOURCE(String path) { 
+    private static void setCOUNT_SOURCE(String path) { 
         File packageDir = new File(path);
         if (packageDir.exists() && packageDir.isDirectory()) {
             for (File file : packageDir.listFiles()) {
@@ -32,7 +37,7 @@ public class TotalData {
     }
 
     //This method appends a stream with the task of adding an element of data type Data to a list
-    public void addNewsCrawlThread(DataListFormat dataListFormat, DataListFormat itemLink, String url, String innerLinkClass, String innerLinkAttr) 
+    public void addDataList(DataListFormat dataListFormat, DataListFormat itemLink, String url, String innerLinkClass, String innerLinkAttr) 
     {
         List<Data> dataList = dataListFormat.getDataList(itemLink, url,innerLinkClass,innerLinkAttr);
         if( dataList != null)
@@ -49,7 +54,7 @@ public class TotalData {
             public void run() {
                 DataFromCoinDesk data = new DataFromCoinDesk();
                 DataFromCoinDesk itemLink = new DataFromCoinDesk();
-                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
+                runnableToGetDataList.addDataList(data,itemLink,"https://www.coindesk.com","a.card-titlestyles__CardTitleWrapper-sc-1ptmy9y-0.junCw.card-title-link","href");
                 latch.countDown();
             }
         });
@@ -59,7 +64,7 @@ public class TotalData {
             public void run() {
                 DataFromNewsBTC data = new DataFromNewsBTC();
                 DataFromNewsBTC itemLink = new DataFromNewsBTC();
-                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.newsbtc.com","pageable-container","data-page");
+                runnableToGetDataList.addDataList(data,itemLink,"https://www.newsbtc.com","pageable-container","data-page");
                 latch.countDown();
             }
         });
@@ -69,7 +74,7 @@ public class TotalData {
             public void run() {
                 DataFromBlogChainLink data = new DataFromBlogChainLink();
                 DataFromBlogChainLink itemLink = new DataFromBlogChainLink();
-                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://blog.chain.link/","post-card-href", "href");
+                runnableToGetDataList.addDataList(data,itemLink,"https://blog.chain.link/","post-card-href", "href");
                 latch.countDown();
             }
         });
@@ -83,7 +88,7 @@ public class TotalData {
                     DataFrom101Blockchains data = new DataFrom101Blockchains();
                     DataFrom101Blockchains itemLink = new DataFrom101Blockchains();
                     String pageNumber = String.valueOf(j);
-                    runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
+                    runnableToGetDataList.addDataList(data,itemLink,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
                     if(j == 3)    
                         latch.countDown();
                 }
@@ -100,7 +105,7 @@ public class TotalData {
                     DataFromInvestopedia data = new DataFromInvestopedia();
                     DataFromInvestopedia itemLink = new DataFromInvestopedia();
                     String pageNumber = String.valueOf(10*j);
-                    runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.investopedia.com/search?q=blockchain&offset=" + pageNumber,"a[class=search-results__link mntl-text-link ]","href");
+                    runnableToGetDataList.addDataList(data,itemLink,"https://www.investopedia.com/search?q=blockchain&offset=" + pageNumber,"a[class=search-results__link mntl-text-link ]","href");
                     if(j == 2)    
                         latch.countDown();
                 }
@@ -113,7 +118,7 @@ public class TotalData {
             public void run() {
                 DataFromSouthChinaMorningPost data = new DataFromSouthChinaMorningPost();
                 DataFromSouthChinaMorningPost itemLink = new DataFromSouthChinaMorningPost();
-                runnableToGetDataList.addNewsCrawlThread(data,itemLink,"https://www.scmp.com/topics/blockchain","a.e1whfq0b2.css-8ug9pk.ef1hf1w0","href");
+                runnableToGetDataList.addDataList(data,itemLink,"https://www.scmp.com/topics/blockchain","a.e1whfq0b2.css-8ug9pk.ef1hf1w0","href");
                 latch.countDown();
             }
         });
@@ -134,8 +139,23 @@ public class TotalData {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } //Waiting for all of stream finish
-        totalData.addAll(runnableToGetDataList.getDataList());
+        totalData.addAll(runnableToGetDataList.getTotalData());
     }
 
+    public void crawl() {
+        try{
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            TotalData dataList = new TotalData();
+            dataList.setDataList();
+            String json = gson.toJson(dataList.getTotalData());
+    
+            FileWriter fileWriter = new FileWriter("news-aggregator/resource/data/totalData.json",Charset.forName("UTF-8"));
+            fileWriter.write(json);
+            fileWriter.close();
+            System.out.println("Successful!!");
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+    }   
 }
 
