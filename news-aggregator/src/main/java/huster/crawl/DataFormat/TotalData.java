@@ -28,7 +28,7 @@ public class TotalData {
         File packageDir = new File(path);
         if (packageDir.exists() && packageDir.isDirectory()) {
             for (File file : packageDir.listFiles()) {
-                System.out.println(file.getName());
+                //System.out.println(file.getName());
                 if (file.isFile() && file.getName().endsWith(".java")) {
                     COUNT_SOURCE++;
                 }

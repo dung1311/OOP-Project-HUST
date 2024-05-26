@@ -83,7 +83,7 @@ class Header extends JPanel{
     public void addButtonForMenu() {
         headerRight.add(trendButton);
         headerRight.add(searchButton);
-        headerRight.add(userButton);
+       // headerRight.add(userButton);
     }
 
     public void addButtonForSearchUI() {

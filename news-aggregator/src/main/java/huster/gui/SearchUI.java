@@ -92,11 +92,14 @@ public class SearchUI extends JFrame {
                         contentPane.revalidate();
                         contentPane.repaint();
 
-                        SearchResultUI.createNews(searchPanel.getSearchBarText());
+                        SearchResultUI.createNews(searchPanel.getSearchBarText(), "news-aggregator\\resource\\data\\totalData.json");
                         if (SearchResultUI.listPanelIsNull()) {
                             JOptionPane.showMessageDialog(null, "We don't have that article!!!");
                         } else {
-                            new SearchResultUI().setVisible(true);
+                            SearchResultUI searchResult = new SearchResultUI();
+                            searchResult.addNews(12);
+                            searchResult.revalidate();
+                            searchResult.setVisible(true);
                             ScreenHistory.getInstance().pushScreen(frame);
                             // dispose();
                             SearchUI.this.setVisible(false);
@@ -210,8 +213,7 @@ class SearchAndSuggestionPanel extends JPanel {
     private String[] searchSuggestions(String searchText) {
         // Dữ liệu gợi ý
         String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency", "Crypto", "DAO", "API",
-                "CoinDesk", "ETFS", "Dogecoin",
-                "", "", "", "", "", "", "", "", };
+                "CoinDesk", "ETFS", "Dogecoin", "meme", "", "", "", "", "", "", "", };
         // Danh sách chứa các gợi ý phù hợp
         ArrayList<String> relatedSuggestions = new ArrayList<>();
 

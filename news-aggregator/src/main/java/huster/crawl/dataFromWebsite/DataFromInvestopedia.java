@@ -13,14 +13,14 @@ public class DataFromInvestopedia extends DataListFormat{
 
     @Override
     public String getSummary(Document doc) {
-        String summary = "KEY TAKEAWAYS\n";
+        String summary = "";
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
             if(summaryTitle == null) return "unknown";
-            summary += summaryTitle.attr("content") + "\n";
+            summary += summaryTitle.attr("content") + "\n\n";
             Elements summaryBody = doc.select("div[class=comp mntl-sc-block-callout-body mntl-text-block]");
             for(Element summaryBodyContent : summaryBody) {
-                summary += summaryBodyContent.text() + "\n" ;
+                summary += summaryBodyContent.text() + "\n\n" ;
             }
         } catch(Exception e) {
             e.printStackTrace();

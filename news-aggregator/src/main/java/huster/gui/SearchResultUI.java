@@ -29,7 +29,7 @@ public class SearchResultUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Header menuAndSearchPanel = new Header();
-        menuAndSearchPanel.addButtonForNews();
+        menuAndSearchPanel.addButtonForSearchUI();
        
         menuAndSearchPanel.addBackButtonListener(new ActionListener() {
             @Override
@@ -67,8 +67,6 @@ public class SearchResultUI extends JFrame {
                 frame.dispose();
             }
         });
-        
-        addNews();
     
         resPanel.seeMoreActionListeners(new ActionListener(){
             @Override
@@ -76,10 +74,10 @@ public class SearchResultUI extends JFrame {
                 seeMoreButtonClickedCount += 1;
                 number_News += 6;
                 resPanel.setLayoutAndSize(seeMoreButtonClickedCount);
-                if(seeMoreButtonClickedCount > 2){
+                if(seeMoreButtonClickedCount > listJPanels.size() / 12 + 1){
                     resPanel.hideSeeMoreBtn();
                 }
-                addNews();
+                addNews(number_News);
                 revalidate();
             }
         });
@@ -101,17 +99,24 @@ public class SearchResultUI extends JFrame {
         return listJPanels.size() == 0;
             
     }
-    public static void createNews(String s){
-        listJPanels = new SearchData("news-aggregator\\resource\\data\\totalData.json").search(s);
+    public static void createNews(String s, String link){
+        listJPanels = new SearchData(link).search(s);
     }
 
-    public void addNews(){
-        int n;
+    public void add(JPanel pic){
+        resPanel.addArticleCenter(pic);
+    }
+
+    public void addNews(int n){
         if(listJPanels.size() < 12){
             n = listJPanels.size();
-        }else{n = number_News;}
-        for(int i = 0; i < n; i++) {
-            resPanel.addArticleCenter(listJPanels.get(i));
+            for(int i = 0; i < n; i++) {
+                resPanel.addArticleCenter(listJPanels.get(i));
+            }
+        }else{
+            for(int i = 0; i < n; i++) {
+                resPanel.addArticleCenter(listJPanels.get(i));
+            }
         }
     }
 }

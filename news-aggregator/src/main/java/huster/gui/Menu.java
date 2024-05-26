@@ -1,14 +1,18 @@
 package huster.gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import com.google.gson.JsonObject;
 
 import huster.action.GetData;
 import huster.action.newsObject;
+import huster.crawl.crawlTweet.TweetItem;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 public class Menu extends JFrame {
@@ -19,7 +23,7 @@ public class Menu extends JFrame {
     public int number_News = 12;
     private int seeMoreButtonClickedCount = 0;
 
-    // luu tru bai viet
+    // Stores and displays article 
     private List<JPanel> newsList = new ArrayList<>();
     private SearchResult news_ScrollPane = new SearchResult();
     
@@ -49,7 +53,7 @@ public class Menu extends JFrame {
         menu.addTrendButtonListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                String[] options = {"Tweet"};
+                String[] options = {"History", "Crawl"};
                 int choice = JOptionPane.showOptionDialog(
                     Menu.this,
                     "Click the button to crawl",
@@ -62,8 +66,14 @@ public class Menu extends JFrame {
                 );
 
                 if (choice == 0) {
-                    handleTweetChoice();
-                } 
+                    handleHistory();
+                } else{
+                    try {
+                        handleCrawlChoice();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
         });
         
@@ -186,18 +196,58 @@ public class Menu extends JFrame {
         }
     }
     
-    private void handleTweetChoice() {
+    private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
+
+            TweetItem tweet = new TweetItem(keyword);
+            tweet.crawlTweet();
+            tweet.drawChart();
+
+            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+            ScreenHistory.getInstance().pushScreen(frame);
+
+
+            SearchResultUI.createNews(" ", "news-aggregator\\resource\\data\\tweetData\\" + keyword + ".json");
+            SearchResultUI searchTweet = new SearchResultUI();
             
-            // Add handling for the tweet keyword here, for example:
-            // searchTweets(keyword);
+            searchTweet.addNews(12);
+            Menu.this.setVisible(false);
+            searchTweet.setVisible(true);
+            JPanel imagePanel = new JPanel() {
+                private static final long serialVersionUID = 1L;
+                private Image image;
+
+                {
+                    try {
+                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\" + keyword + ".png"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                protected void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    if (image != null) {
+                        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+                    }
+                }
+            };
+            imagePanel.setPreferredSize(new Dimension(1200, 900));
+            
+            // Display news statistics
+            JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result", JOptionPane.PLAIN_MESSAGE);
+            
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");
         }
     }
+
+    private void handleHistory() {
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+        ScreenHistory.getInstance().pushScreen(frame);
+        new SearchResultUI().setVisible(true);
+        Menu.this.setVisible(false);
+    }
 }
-
-
-
-

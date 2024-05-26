@@ -14,7 +14,7 @@ public class DataFromCoinDesk extends DataListFormat {
     @Override
     public String getSummary(Document doc)
     {
-        String summary = "KEY TAKEAWAYS" + "\n\n";
+        String summary = "";
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
             Elements summaryElements = doc.getElementsByClass("typography__StyledTypography-sc-owin6q-0 eycWal");

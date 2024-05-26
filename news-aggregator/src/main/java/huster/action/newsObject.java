@@ -22,7 +22,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class newsObject {
-    
+
     private String authorName;
     private String link;
     private String content;
@@ -31,8 +31,7 @@ public class newsObject {
     private String summary;
     private String postingDate;
 
-
-    public newsObject(JsonObject jsonObject){
+    public newsObject(JsonObject jsonObject) {
         this.authorName = jsonObject.get("author").getAsString();
         this.content = jsonObject.get("content").getAsString();
         this.link = jsonObject.get("link").getAsString();
@@ -50,7 +49,6 @@ public class newsObject {
         return authorName;
     }
 
- 
     public String getLink() {
         return link;
     }
@@ -75,7 +73,6 @@ public class newsObject {
         JPanel jPanel = new JPanel();
         JButton articleJButton = new JButton();
 
-
         articleJButton.setContentAreaFilled(false);
         articleJButton.setBorderPainted(false);
         articleJButton.addActionListener(new ActionListener() {
@@ -84,7 +81,7 @@ public class newsObject {
                 News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
                 news.setHeader(getTitle());
                 news.setVisible(true);
-                
+
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(articleJButton);
                 ScreenHistory.getInstance().pushScreen(frame);
                 frame.dispose();
@@ -92,13 +89,13 @@ public class newsObject {
         });
 
         try {
-            Image image =  GeneralHandle.resizeImage(this.getLinkImage());
+            Image image = GeneralHandle.resizeImage(this.getLinkImage());
             articleJButton.setIcon(new ImageIcon(image));
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        JLabel articleLable = new JLabel(this.getSummary());
+        JLabel articleLable = new JLabel(this.getTitle());
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
         jPanel.setPreferredSize(new Dimension(477, 268));
         jPanel.setVisible(true);
@@ -111,7 +108,7 @@ public class newsObject {
                 News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
                 news.setHeader(getTitle());
                 news.setVisible(true);
-                
+
                 JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(articleJButton);
                 ScreenHistory.getInstance().pushScreen(frame);
                 frame.dispose();

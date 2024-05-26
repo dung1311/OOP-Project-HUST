@@ -123,7 +123,7 @@ public class DataListFormat {
     //This method extracts the summary of an article from a Document linked to a URL
     public String getSummary(Document doc)
     {
-        String summary = "KEY TAKEAWAYS" + "\n\n";
+        String summary = "";
         try {
             Element summaryTitle = doc.selectFirst("meta[property=og:description]");
             if(summaryTitle == null) return "unknown";
