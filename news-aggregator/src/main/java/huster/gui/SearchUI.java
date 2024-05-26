@@ -57,10 +57,7 @@ public class SearchUI extends JFrame {
             }
         });
 
-        menuAndSearchPanel.add(searchPanel);
-
-        // Click searhButton thì hiển thị SearchResultUI và set giá trị của thuộc tính
-        // acticalNameJSON
+        // This listener helps display search result 
         ActionListener searchListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,15 +73,13 @@ public class SearchUI extends JFrame {
                     // dispose();
                     SearchUI.this.setVisible(false);
                 }
-                
-                // searchResultUI.setArticalNameJSON(searchPanel.getSearchBarText());
-                
             }
         };
 
         // tìm kiếm
         searchPanel.addSearchBarActionListenner(searchListener);
         randomSearchButton.addActionListener(searchListener);
+        menuAndSearchPanel.add(searchPanel);
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
         contentPane.add(randomSearchButton, BorderLayout.CENTER);
@@ -105,41 +100,6 @@ class SearchBar extends JTextField {
     }
 
 }
-
-// // This contains the categories about BlockChain topics
-// class ListOfCate extends JPanel {
-//     public ListOfCate() {
-//         System.setProperty("BLACK_menu", "0x222222");
-//         Color BLACK_menu = Color.getColor("BLACK_menu");
-//         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-//         setPreferredSize(new Dimension(1440, 620));
-//         setBackground(BLACK_menu);
-//         setFont(new Font("Arial", Font.PLAIN, 14));
-
-//         for (int i = 0; i < 10; i++) {
-//             JLabel label1 = new JLabel("Blockchain" + i);
-//             label1.setForeground(Color.WHITE);
-
-//             Font font = new Font("Arial", Font.BOLD, 14);
-//             label1.setFont(font);
-//             label1.setAlignmentX(Component.LEFT_ALIGNMENT);
-//             add(label1);
-
-//             // Gắn sự kiện cho các dòng chữ
-//             label1.addMouseListener(new MouseAdapter() {
-//                 @Override
-//                 public void mouseClicked(MouseEvent e) {
-//                     // Xử lý sự kiện khi dòng chữ được click
-//                     System.out.println("Bạn đã click vào Blockchain.");
-//                 }
-//             });
-//         }
-//     }
-
-//     public void addTag(){
-        
-//     }
-// }
 
 // This class basically creates the searchbar with some suggestion for users
 class SearchAndSuggestionPanel extends JPanel {
@@ -218,7 +178,7 @@ class SearchAndSuggestionPanel extends JPanel {
     private String[] searchSuggestions(String searchText) {
         // Dữ liệu gợi ý
         String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency", "Crypto", "DAO", "API", "CoinDesk", "ETFS", "Dogecoin", 
-        "", "", "", "", "", "", "", "", };
+        "BTC", "ETH", "Company", "meme", "Trading", "Invest", "Binance", "Solana"};
         // Danh sách chứa các gợi ý phù hợp
         ArrayList<String> relatedSuggestions = new ArrayList<>();
 
