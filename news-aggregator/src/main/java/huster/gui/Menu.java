@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 
 import huster.action.GetData;
 import huster.action.newsObject;
+import huster.crawl.crawlTweet.TweetItem;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -194,9 +195,16 @@ public class Menu extends JFrame {
     private void handleCrawlChoice() {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
+
+            TweetItem tweet = new TweetItem(keyword);
+            tweet.crawlTweet();
+
+
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
             ScreenHistory.getInstance().pushScreen(frame);
-            SearchResultUI.createNews(" ", "news-aggregator\\resource\\data\\cihan0xeth.json");
+
+
+            SearchResultUI.createNews(" ", "news-aggregator\\resource\\data\\tweetData\\" + keyword + ".json");
             SearchResultUI searchTweet = new SearchResultUI();
             
             searchTweet.addNews(12);
@@ -208,7 +216,7 @@ public class Menu extends JFrame {
 
                 {
                     try {
-                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\picturesBitcoinTweet.png"));
+                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\" + keyword + ".png"));
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -222,7 +230,7 @@ public class Menu extends JFrame {
                     }
                 }
             };
-            imagePanel.setPreferredSize(new Dimension(800, 600));
+            imagePanel.setPreferredSize(new Dimension(1200, 900));
             
             // Display news statistics
             JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result", JOptionPane.PLAIN_MESSAGE);

@@ -71,26 +71,18 @@ class DataScraper:
 
 
     def _get_tweet_media(self, tweet, is_encrypted):
-     
         pictures, videos, gifs = [], [], []
-        if tweet.find("div", class_="tweet-body").find(
-            "div", class_="attachments", recursive=False
-        ):
+        if tweet.find("div", class_="tweet-body").find("div", class_="attachments", recursive=False):
             if is_encrypted:
                 pictures = [
                     "https://pbs.twimg.com/"
-                    + b64decode(img["src"].split("/")[-1].encode("utf-8"))
-                    .decode("utf-8")
-                    .split("?")[0]
+                    + b64decode(img["src"].split("/")[-1].encode("utf-8")).decode("utf-8").split("?")[0]
                     for img in tweet.find("div", class_="tweet-body")
-                   
                     .find("div", class_="attachments", recursive=False)
                     .find_all("img")
                 ]
                 videos = [
-                    b64decode(video["data-url"].split("/")[-1].encode("utf-8")).decode(
-                        "utf-8"
-                    )
+                    b64decode(video["data-url"].split("/")[-1].encode("utf-8")).decode("utf-8")
                     if "data-url" in video.attrs
                     else video.find("source")["src"]
                     for video in tweet.find("div", class_="tweet-body")
@@ -99,9 +91,7 @@ class DataScraper:
                 ]
                 gifs = [
                     "https://"
-                    + b64decode(
-                        gif.source["src"].split("/")[-1].encode("utf-8")
-                    ).decode("utf-8")
+                    + b64decode(gif.source["src"].split("/")[-1].encode("utf-8")).decode("utf-8")
                     for gif in tweet.find("div", class_="tweet-body")
                     .find("div", class_="attachments", recursive=False)
                     .find_all("video", class_="gif")
@@ -128,12 +118,11 @@ class DataScraper:
                     .find("div", class_="attachments", recursive=False)
                     .find_all("video", class_="gif")
                 ]
-                
-            if not pictures:
-                pictures = DEFAULT_PICTURE
-            elif isinstance(pictures, list) and len(pictures) > 0:
-                pictures = pictures[0]
-                
+
+        pictures = ', '.join(pictures) if pictures else DEFAULT_PICTURE
+        videos = ', '.join(videos)
+        gifs = ', '.join(gifs)
+
         return pictures, videos, gifs
 
     def get_tweet_reaction(self, tweet):
