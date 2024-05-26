@@ -63,7 +63,7 @@ def draw_chart_route():
             data = [
                 tweet["link"],
                 tweet["content"],
-                tweet["datetimeCreationtimeCreation"],
+                tweet["datetimeCreation"],
                 tweet["comments"],
                 tweet["retweets"],
                 tweet["quotes"],
@@ -124,7 +124,7 @@ def json_analyst():
             data = [
                 tweet["link"],
                 tweet["content"],
-                tweet["datetimeCreationtimeCreation"],
+                tweet["datetimeCreation"],
                 tweet["comments"],
                 tweet["retweets"],
                 tweet["quotes"],

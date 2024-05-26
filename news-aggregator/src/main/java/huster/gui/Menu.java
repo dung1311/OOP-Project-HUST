@@ -68,7 +68,11 @@ public class Menu extends JFrame {
                 if (choice == 0) {
                     handleHistory();
                 } else{
-                    handleCrawlChoice();
+                    try {
+                        handleCrawlChoice();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                 }
             }
         });
@@ -192,13 +196,13 @@ public class Menu extends JFrame {
         }
     }
     
-    private void handleCrawlChoice() {
+    private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
 
             TweetItem tweet = new TweetItem(keyword);
             tweet.crawlTweet();
-
+            tweet.drawChart();
 
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
             ScreenHistory.getInstance().pushScreen(frame);
