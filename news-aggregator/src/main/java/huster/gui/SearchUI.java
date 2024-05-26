@@ -16,7 +16,7 @@ public class SearchUI extends JFrame {
     public static final int ORIGIN_Y = 0;
    
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
-    private ListOfCate catePanel = new ListOfCate();
+    private JButton randomSearchButton = new JButton();
     public SearchUI() {
         Container contentPane = getContentPane();
         setSize(X, Y);
@@ -84,10 +84,10 @@ public class SearchUI extends JFrame {
 
         // tìm kiếm
         searchPanel.addSearchBarActionListenner(searchListener);
-        menuAndSearchPanel.addSearchButtonListener(searchListener);
+        randomSearchButton.addActionListener(searchListener);
 
         contentPane.add(menuAndSearchPanel, BorderLayout.NORTH);
-        contentPane.add(catePanel, BorderLayout.CENTER);
+        contentPane.add(randomSearchButton, BorderLayout.CENTER);
     }
 }    
 
@@ -97,7 +97,7 @@ class SearchBar extends JTextField {
         setupSearchBar();
     }
     private void setupSearchBar() {
-        // Cấu hình các thuộc tính cho searchBar ở đây
+        // This code customize the search bar
         Font font = new Font("Arial", Font.PLAIN, 30);
         setFont(font);
         setSize(1440, 60);
@@ -106,40 +106,40 @@ class SearchBar extends JTextField {
 
 }
 
-// This contains the categories about BlockChain topics
-class ListOfCate extends JPanel {
-    public ListOfCate() {
-        System.setProperty("BLACK_menu", "0x222222");
-        Color BLACK_menu = Color.getColor("BLACK_menu");
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-        setPreferredSize(new Dimension(1440, 620));
-        setBackground(BLACK_menu);
-        setFont(new Font("Arial", Font.PLAIN, 14));
+// // This contains the categories about BlockChain topics
+// class ListOfCate extends JPanel {
+//     public ListOfCate() {
+//         System.setProperty("BLACK_menu", "0x222222");
+//         Color BLACK_menu = Color.getColor("BLACK_menu");
+//         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+//         setPreferredSize(new Dimension(1440, 620));
+//         setBackground(BLACK_menu);
+//         setFont(new Font("Arial", Font.PLAIN, 14));
 
-        for (int i = 0; i < 10; i++) {
-            JLabel label1 = new JLabel("Blockchain" + i);
-            label1.setForeground(Color.WHITE);
+//         for (int i = 0; i < 10; i++) {
+//             JLabel label1 = new JLabel("Blockchain" + i);
+//             label1.setForeground(Color.WHITE);
 
-            Font font = new Font("Arial", Font.BOLD, 14);
-            label1.setFont(font);
-            label1.setAlignmentX(Component.LEFT_ALIGNMENT);
-            add(label1);
+//             Font font = new Font("Arial", Font.BOLD, 14);
+//             label1.setFont(font);
+//             label1.setAlignmentX(Component.LEFT_ALIGNMENT);
+//             add(label1);
 
-            // Gắn sự kiện cho các dòng chữ
-            label1.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    // Xử lý sự kiện khi dòng chữ được click
-                    System.out.println("Bạn đã click vào Blockchain.");
-                }
-            });
-        }
-    }
+//             // Gắn sự kiện cho các dòng chữ
+//             label1.addMouseListener(new MouseAdapter() {
+//                 @Override
+//                 public void mouseClicked(MouseEvent e) {
+//                     // Xử lý sự kiện khi dòng chữ được click
+//                     System.out.println("Bạn đã click vào Blockchain.");
+//                 }
+//             });
+//         }
+//     }
 
-    public void addTag(){
+//     public void addTag(){
         
-    }
-}
+//     }
+// }
 
 // This class basically creates the searchbar with some suggestion for users
 class SearchAndSuggestionPanel extends JPanel {
@@ -217,7 +217,8 @@ class SearchAndSuggestionPanel extends JPanel {
     // Dungx cho các tên bài báo vào đây ở dạng String
     private String[] searchSuggestions(String searchText) {
         // Dữ liệu gợi ý
-        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency" };
+        String[] suggestions = { "Bitcoin", "Ethereum", "Blockchain", "Cryptocurrency", "Crypto", "DAO", "API", "CoinDesk", "ETFS", "Dogecoin", 
+        "", "", "", "", "", "", "", "", };
         // Danh sách chứa các gợi ý phù hợp
         ArrayList<String> relatedSuggestions = new ArrayList<>();
 

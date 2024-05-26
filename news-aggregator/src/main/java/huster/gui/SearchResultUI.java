@@ -29,7 +29,7 @@ public class SearchResultUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Header menuAndSearchPanel = new Header();
-        menuAndSearchPanel.addButtonForSearchUI();
+        menuAndSearchPanel.addButtonForNews();
        
         menuAndSearchPanel.addBackButtonListener(new ActionListener() {
             @Override
