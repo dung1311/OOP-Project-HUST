@@ -1,15 +1,19 @@
 package huster.crawl.crawlTweet;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
+import com.google.gson.stream.JsonReader;
 
 public class ServerClient {
     private String serverUrl;
@@ -30,7 +34,6 @@ public class ServerClient {
     }
 
     public JsonObject sendRequestWithResponse(String endPoint, JsonObject data) throws IOException {
-        @SuppressWarnings("deprecation")
         URL url = new URL(serverUrl + endPoint);
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -38,36 +41,51 @@ public class ServerClient {
         connection.setRequestProperty("Content-Type", "application/json");
         connection.setDoOutput(true);
 
-        try (OutputStream os = connection.getOutputStream()) {
-            os.write(data.toString().getBytes());
-            os.flush();
-        }
+        OutputStream os = connection.getOutputStream();
+        os.write(data.toString().getBytes());
+        os.flush();
+        os.close();
 
-        int responseCode = connection.getResponseCode();
-        StringBuilder response = new StringBuilder();
+        String contentType = connection.getContentType();
 
-        try (BufferedReader in = new BufferedReader(new InputStreamReader(
-                responseCode == HttpURLConnection.HTTP_OK ? connection.getInputStream()
-                        : connection.getErrorStream()))) {
-            String inputLine;
-            while ((inputLine = in.readLine()) != null) {
-                response.append(inputLine);
+        if (contentType != null && contentType.startsWith("application/json")) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            StringBuilder response = new StringBuilder();
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                response.append(line);
             }
-        }
+            br.close();
 
-        System.out.println("Response Code: " + responseCode);
-        System.out.println("Response Body: " + response.toString());
+            connection.disconnect();
 
-        if (responseCode == HttpURLConnection.HTTP_OK) {
+            JsonReader reader = new JsonReader(new StringReader(response.toString()));
+            reader.setLenient(true); // Set lenient mode
             try {
-                return JsonParser.parseString(response.toString()).getAsJsonObject();
+                return JsonParser.parseReader(reader).getAsJsonObject();
             } catch (JsonSyntaxException e) {
-                System.err.println("Failed to parse JSON response: " + e.getMessage());
                 throw new IOException("Failed to parse JSON response", e);
             }
+        } else if (contentType != null && contentType.startsWith("image/png")) {
+            InputStream in = connection.getInputStream();
+            FileOutputStream out = new FileOutputStream("output.png");
+
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = in.read(buffer)) != -1) {
+                out.write(buffer, 0, bytesRead);
+            }
+
+            in.close();
+            out.close();
+            connection.disconnect();
+
+            // Return an empty JsonObject to indicate success
+            return new JsonObject();
         } else {
-            throw new IOException(
-                    "Request failed with response code: " + responseCode + " and message: " + response.toString());
+            connection.disconnect();
+            throw new IOException("Unsupported content type: " + contentType);
         }
     }
 

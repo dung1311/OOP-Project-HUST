@@ -176,13 +176,16 @@ class DataScraper:
             
             tweet_stats = self.get_tweet_reaction(tweet)
             
+            tweet_stats['url'] = 'https://x.com/' + tweet_user['name']
             tweet_stats['link'] = tweet_link
             tweet_stats['content'] = tweet_text
+            tweet_stats['summary'] = 'null'
+            tweet_stats['title'] = tweet_user['username']
             tweet_stats['datetimeCreation'] = tweet_date
             tweet_stats['author'] = tweet_user['name']
             tweet_stats['authorID'] = tweet_user['username']
             tweet_stats['authorAvatar'] = tweet_user['avatar']
-            tweet_stats['picture'] = tweet_media[0]
+            tweet_stats['linkImage'] = tweet_media[0]
             tweet_stats['video'] = tweet_media[1]
             tweet_stats['gif'] = tweet_media[2]
            
@@ -194,31 +197,31 @@ def main(user_name):
     scraper = DataScraper(user_name)
     data = scraper.get_data()  
     
-    sorted_data = []
-    for tweet in data:
-        sorted_tweet = {
-            'url': 'https://x.com/' + user_name,
-            'link': tweet['link'],
-            'title': tweet['author'],
-            'summary': 'null',
-            'content': tweet['content'],
-            'type': 'Twitter',
-            'datetimeCreation': tweet['datetimeCreation'],
-            'author': tweet['author'],
-            'authorID': tweet['authorID'],
-            'authorAvatar': tweet['authorAvatar'],
-            'linkImage': tweet['picture'],
-            'video': tweet['video'],
-            'gif': tweet['gif'],
-            'comments': tweet['comments'],
-            'retweets': tweet['retweets'],
-            'quotes': tweet['quotes'],
-            'likes': tweet['likes']
-        }
-        sorted_data.append(sorted_tweet)
+    # sorted_data = []
+    # for tweet in data:
+    #     sorted_tweet = {
+    #         'url': 'https://x.com/' + user_name,
+    #         'link': tweet['link'],
+    #         'title': tweet['author'],
+    #         'summary': 'null',
+    #         'content': tweet['content'],
+    #         'type': 'Twitter',
+    #         'datetimeCreation': tweet['datetimeCreation'],
+    #         'author': tweet['author'],
+    #         'authorID': tweet['authorID'],
+    #         'authorAvatar': tweet['authorAvatar'],
+    #         'linkImage': tweet['picture'],
+    #         'video': tweet['video'],
+    #         'gif': tweet['gif'],
+    #         'comments': tweet['comments'],
+    #         'retweets': tweet['retweets'],
+    #         'quotes': tweet['quotes'],
+    #         'likes': tweet['likes']
+    #     }
+    #     sorted_data.append(sorted_tweet)
         
     with open(f'news-aggregator\\resource\\data\\tweetData\\{user_name}.json', 'w') as file:
-        json.dump(sorted_data, file, indent=4)
+        json.dump(data, file, indent=4)
 
 # if __name__ == "__main__":
 #     main('cihan0xeth')

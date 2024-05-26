@@ -130,7 +130,7 @@ public class TweetItem {
             } while (isEmptyArray);
 
             replaceJsonFile(fileJsonName);
-            //jsonAnalyst(fileJsonName);
+            jsonAnalyst(fileJsonName);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -147,5 +147,7 @@ public class TweetItem {
     public static void main(String[] args) throws IOException {
         TweetItem test = new TweetItem("Bitcoin");
         test.crawlTweet();
+        test.drawChart();
+        System.out.println(test.getHighestInteractionTweet());
     }
 }
