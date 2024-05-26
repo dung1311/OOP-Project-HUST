@@ -2,6 +2,7 @@ package huster.gui;
 
 import javax.swing.*;
 
+import huster.action.JHyperlink;
 import huster.action.SearchData;
 
 import java.awt.*;
@@ -16,6 +17,9 @@ public class SearchResultUI extends JFrame {
     private int seeMoreButtonClickedCount = 0;
     private int number_News = 12;
     private static List<JPanel> listJPanels;
+    private static List<String> listLinks;
+
+    private JPanel tweetPanel = new JPanel();
     private SearchResult resPanel = new SearchResult();
 
     public SearchResultUI() {
@@ -27,6 +31,9 @@ public class SearchResultUI extends JFrame {
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        tweetPanel.setPreferredSize(new Dimension(1280, 2500));
+        tweetPanel.setLayout(new BoxLayout(tweetPanel, BoxLayout.Y_AXIS));
 
         Header menuAndSearchPanel = new Header();
         menuAndSearchPanel.addButtonForSearchUI();
@@ -82,9 +89,9 @@ public class SearchResultUI extends JFrame {
             }
         });
 
-        if(listJPanels.size() <= 12){
-            resPanel.hideSeeMoreBtn();
-        }
+        // // if(listJPanels.size() <= 12){
+        //     resPanel.hideSeeMoreBtn();
+        // }
         
        
         // Add components to the frame
@@ -102,9 +109,9 @@ public class SearchResultUI extends JFrame {
     public static void createNews(String s, String link){
         listJPanels = new SearchData(link).search(s);
     }
-
-    public void add(JPanel pic){
-        resPanel.addArticleCenter(pic);
+    
+    public static void createLinks(String s, String path){
+        listLinks = new SearchData(path).searchAsLink(s);
     }
 
     public void addNews(int n){
@@ -119,6 +126,18 @@ public class SearchResultUI extends JFrame {
             }
         }
     }
+
+    public void setUpTweet(){
+        this.remove(resPanel);
+        this.add(tweetPanel);
+    }
+
+    public void addLinks(){
+        for(int i = 0; i < 20; i++){
+            JLabel label = new JHyperlink(listLinks.get(i), listLinks.get(i), "Click here");
+            tweetPanel.add(label);
+        }
+    }
 }
 
 // This class will display the result after search, can be used in menu aswell
@@ -126,6 +145,7 @@ public class SearchResultUI extends JFrame {
 class SearchResult extends JScrollPane {
     private JPanel searchResult = new JPanel(new BorderLayout());
     private JPanel searchResult_Center;
+    private JPanel searchResultTweet;
     private JButton seeMoreButton = new JButton("See more!");
 
     public SearchResult() {
@@ -137,6 +157,8 @@ class SearchResult extends JScrollPane {
         Font font30 = new Font("Arial", Font.PLAIN, 30);
 
         seeMoreButton.setFont(font30);
+        // searchResultTweet = new JPanel();
+        // searchResultTweet.setLayout(new BoxLayout(searchResultTweet,BoxLayout.Y_AXIS ));
 
         searchResult.setPreferredSize(new Dimension(1280, 2500));
         searchResult.setLayout(new BorderLayout());
