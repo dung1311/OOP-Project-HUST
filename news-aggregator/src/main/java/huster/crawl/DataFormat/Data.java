@@ -29,10 +29,7 @@ public class Data {
     }
 
     public void setLink(String link) {
-        if (isContain(link, '�') == false)
-            this.link = link;
-        else
-            this.link = "unknown";
+        this.link = link;
     }
 
     public String getTitle() {
@@ -104,9 +101,10 @@ public class Data {
     }
 
     public void setLinkImage(String linkImage) {
-        if(linkImage.contains("·") || linkImage.contains("–"))
+        if (linkImage.contains("·") || linkImage.contains("–"))
             this.linkImage = "unknown";
-        else this.linkImage = linkImage;
+        else
+            this.linkImage = linkImage;
     }
 
     public void setData(String url, String link, String title, String type, String summary, String content,
@@ -122,19 +120,10 @@ public class Data {
         this.datetimeCreation = datetimeCreation;
         this.tag = tag;
         this.author = author;
-        if(linkImage.contains("·") || linkImage.contains("–"))
+        if (linkImage.contains("·") || linkImage.contains("–"))
             this.linkImage = "unknown";
-        else this.linkImage = linkImage;
-    }
-
-    public boolean isContain(String s, char c) {
-        if (s == null)
-            return false;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == c)
-                return true;
-        }
-        return false;
+        else
+            this.linkImage = linkImage;
     }
 
     public boolean isDataFormat(Data item) {

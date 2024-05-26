@@ -52,21 +52,59 @@ public class TweetItem {
         this.highestInteractionTweet = highestInteractionTweet;
     }
 
-    public static void replaceJsonFile(String fileJsonName) {
+    public void replaceJsonFile(String fileJsonName) {
         String dataPath = "news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json";
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath))) {
             JsonArray jsonArray = new Gson().fromJson(bufferedReader, JsonArray.class);
 
-            String modifiedJsonString = jsonArray.toString();
-            modifiedJsonString = modifiedJsonString.replace("LinkTweet", "link");
-            modifiedJsonString = modifiedJsonString.replace("datetimeCreationtimeCreation", "datetimeCreation");
-            modifiedJsonString = modifiedJsonString.replace("text", "title");
-            modifiedJsonString = modifiedJsonString.replace("user", "author");
-            modifiedJsonString = modifiedJsonString.replace("LinkImage", "linkImage");
+            for (int i = 0; i < jsonArray.size(); i++) {
+                JsonObject tweetObject = jsonArray.get(i).getAsJsonObject();
 
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            jsonArray = new Gson().fromJson(modifiedJsonString, JsonArray.class);
+                // Tách thông tin về tác giả
+                JsonObject authorObject = tweetObject.getAsJsonObject("user");
+                String authorName = authorObject.get("name").getAsString();
+                String authorUsername = authorObject.get("username").getAsString();
+                String authorAvatar = authorObject.get("avatar").getAsString();
+
+                // Tách thông tin thống kê
+                JsonObject statsObject = tweetObject.getAsJsonObject("stats");
+                int comments = statsObject.get("comments").getAsInt();
+                int retweets = statsObject.get("retweets").getAsInt();
+                int quotes = statsObject.get("quotes").getAsInt();
+                int likes = statsObject.get("likes").getAsInt();
+
+                // Tách đối tượng hình ảnh, video, gif
+                JsonArray picturesArray = tweetObject.getAsJsonArray("pictures");
+                JsonArray videosArray = tweetObject.getAsJsonArray("videos");
+                JsonArray gifsArray = tweetObject.getAsJsonArray("gifs");
+
+                // Đổi các trường thành chuỗi
+                tweetObject.addProperty("title", "[]");
+                tweetObject.addProperty("summary", "[]");
+                tweetObject.addProperty("url", "https://x.com/" + authorName);
+                tweetObject.addProperty("content", tweetObject.get("text").getAsString());
+                tweetObject.addProperty("datetimeCreation", tweetObject.get("date").getAsString());
+                tweetObject.addProperty("author", authorName);
+                tweetObject.addProperty("authorUsername", authorUsername);
+                tweetObject.addProperty("authorAvatar", authorAvatar);
+                tweetObject.addProperty("comments", comments);
+                tweetObject.addProperty("retweets", retweets);
+                tweetObject.addProperty("quotes", quotes);
+                tweetObject.addProperty("likes", likes);
+                tweetObject.addProperty("linkImage", picturesArray.toString());
+                tweetObject.addProperty("videos", videosArray.toString());
+                tweetObject.addProperty("gifs", gifsArray.toString());
+
+                // Xóa các trường không cần thiết
+                tweetObject.remove("text");
+                tweetObject.remove("date");
+                tweetObject.remove("user");
+                tweetObject.remove("stats");
+                tweetObject.remove("pictures");
+            }
+
+            Gson gson = new Gson();
 
             try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(dataPath))) {
                 gson.toJson(jsonArray, bufferedWriter);
@@ -144,10 +182,8 @@ public class TweetItem {
         serverClient.sendRequestWithResponse("/draw_chart", data);
     }
 
-    public static void main(String[] args) throws IOException {
-        TweetItem test = new TweetItem("Bitcoin");
-        test.crawlTweet();
-        test.drawChart();
-        System.out.println(test.getHighestInteractionTweet());
+    public static void main(String[] args) {
+        TweetItem t = new TweetItem("SpaceX");
+        t.replaceJsonFile("Bitcoin");
     }
 }

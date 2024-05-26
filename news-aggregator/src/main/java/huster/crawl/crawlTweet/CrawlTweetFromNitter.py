@@ -4,7 +4,6 @@ import logging
 from base64 import b64decode
 from urllib.parse import unquote
 import json
-import re
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 DEFAULT_PICTURE = 'news-aggregator\\resource\\assets\\minhchung.png'
