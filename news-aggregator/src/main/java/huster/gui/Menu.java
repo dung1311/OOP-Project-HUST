@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu extends JFrame {
+public class Menu extends SearchResultUI {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
@@ -136,7 +136,9 @@ public class Menu extends JFrame {
                 news_ScrollPane.setLayoutAndSize(seeMoreButtonClickedCount);
                 addNews();
                 revalidate();
-                hideSeeMoreBtn();
+                if (seeMoreButtonClickedCount == 2) {
+                    news_ScrollPane.hideSeeMoreBtn();
+                }
             }
         });
 
@@ -160,10 +162,6 @@ public class Menu extends JFrame {
             newsList.add(_JPanel);
         }
 
-        // for(int i = 0; i < number_News; i++){
-        // articlePanel.add(newsList.get(i));
-        // }
-
         return newsList;
     }
 
@@ -176,12 +174,6 @@ public class Menu extends JFrame {
 
     public void addBackButton() {
         menu.addBackButtonForMenu();
-    }
-
-    public void hideSeeMoreBtn() {
-        if (seeMoreButtonClickedCount == 2) {
-            news_ScrollPane.hideSeeMoreBtn();
-        }
     }
 
     private void handleCrawlChoice() throws IOException {
@@ -228,10 +220,7 @@ public class Menu extends JFrame {
             // Display news statistics
             JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
             JOptionPane.PLAIN_MESSAGE);
-
-            //Add handling for the tweet keyword here, for example:
-            //searchTweets(keyword);
-
+            
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");
         }
