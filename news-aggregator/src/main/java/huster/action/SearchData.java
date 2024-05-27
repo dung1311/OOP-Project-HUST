@@ -25,7 +25,7 @@ public class SearchData {
 
     public void init(String dataPath) {
         JsonArray m_newsArray = new JsonArray();
-        // read data and asgin to newsArray
+        // read data and a sign to newsArray
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath));
 
@@ -50,7 +50,9 @@ public class SearchData {
 
         for (int i = 0; i < s_JsonObjects.size(); i++) {
             String jsonString = new String();
-            jsonString = s_JsonObjects.get(i).toString();
+            jsonString = s_JsonObjects.get(i).get("title").toString();
+            jsonString += s_JsonObjects.get(i).get("summary").toString();
+            jsonString += s_JsonObjects.get(i).get("tag").toString();
             if (jsonString.contains(findText)) {
                 result.add(s_JsonObjects.get(i));
             }

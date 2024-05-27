@@ -25,7 +25,7 @@ public class DataFromInvestopedia extends DataListFormat{
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return summary.replaceAll("�", "\'");
+        return summary;
     }
 
     @Override
@@ -37,20 +37,20 @@ public class DataFromInvestopedia extends DataListFormat{
                 String numberOfContentClass = String.valueOf(i);
                 Element contentHeading = contentElementBody.selectFirst("h2[id=mntl-sc-block_"+ numberOfContentClass +"-0]");
                 if(contentHeading != null) {
-                    content += contentHeading.text().replaceAll("�", "\'") + "\n\n";
+                    content += contentHeading.text() + "\n\n";
                 }
                 else {
                     Element contentBody = contentElementBody.selectFirst("p[id=mntl-sc-block_"+ numberOfContentClass +"-0]");
                     if(contentBody == null) 
                         continue;
-                    content += contentBody.text().replaceAll("�", "\'");
+                    content += contentBody.text();
                     if(content.charAt(content.length()-1) == '.') content += "\n\n";
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return content.replaceAll("�", "\'");
+        return content;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class DataFromInvestopedia extends DataListFormat{
             e.printStackTrace();
         }   
         if(category == null) return "unknown";
-        return category.replaceAll("�", "\'");
+        return category;
     }
 
     @Override
@@ -82,7 +82,7 @@ public class DataFromInvestopedia extends DataListFormat{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return dateTimeCreation.replaceAll("�", "\'");
+        return dateTimeCreation;
     }
 
     @Override
@@ -130,6 +130,6 @@ public class DataFromInvestopedia extends DataListFormat{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author.replaceAll("�", "\'");
+        return author;
     }
 }
