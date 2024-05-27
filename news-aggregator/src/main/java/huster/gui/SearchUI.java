@@ -3,6 +3,8 @@ package huster.gui;
 import javax.swing.*;
 import javax.swing.event.*;
 
+import huster.crawl.crawlTweet.ServerClient;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -10,23 +12,27 @@ import java.util.ArrayList;
 public class SearchUI extends JFrame {
 
     private static final long serialVersionUID = 1L;
-    public static final int X = 1440;
-    public static final int Y = 1024;
-    public static final int ORIGIN_X = 0;
-    public static final int ORIGIN_Y = 0;
 
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
     private JButton randomSearchButton = new JButton();
 
     public SearchUI() {
         Container contentPane = getContentPane();
-        setSize(X, Y);
+        setSize(1440, 1024);
         setResizable(false);
         setLocationRelativeTo(null);
         // setLocation(ORIGIN_X, ORIGIN_Y);
         setTitle("SearchPanel");
         contentPane.setLayout(new BorderLayout());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ServerClient.shutDownServer();
+                System.out.println("Close Search window");
+                dispose();
+            }
+        });
 
         Header menuAndSearchPanel = new Header();
         menuAndSearchPanel.addButtonForSearchUI();

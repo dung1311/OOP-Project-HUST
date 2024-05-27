@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import huster.action.JHyperlink;
 import huster.action.SearchData;
+import huster.crawl.crawlTweet.ServerClient;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -11,8 +12,6 @@ import java.util.List;
 
 public class SearchResultUI extends JFrame {
     private static final long serialVersionUID = 1L;
-    public static final int X = 1440;
-    public static final int Y = 1024;
 
     private int seeMoreButtonClickedCount = 0;
     private int number_News = 12;
@@ -24,13 +23,21 @@ public class SearchResultUI extends JFrame {
 
     public SearchResultUI() {
         Container contentPane = getContentPane();
-        setSize(X, Y);
+        setSize(1440, 1024);
         setResizable(false);
         setLocationRelativeTo(null);
         // setLocation(ORIGIN_X, ORIGIN_Y);
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ServerClient.shutDownServer();
+                System.out.println("Close SearchResult window");
+                dispose();
+            }
+        });
 
         tweetPanel.setPreferredSize(new Dimension(1280, 2500));
         tweetPanel.setLayout(new BoxLayout(tweetPanel, BoxLayout.Y_AXIS));
@@ -136,6 +143,7 @@ public class SearchResultUI extends JFrame {
         for(int i = 0; i < 20; i++){
             JLabel label = new JHyperlink(listLinks.get(i), listLinks.get(i), "Click here");
             tweetPanel.add(label);
+            
         }
     }
 }
@@ -145,7 +153,7 @@ public class SearchResultUI extends JFrame {
 class SearchResult extends JScrollPane {
     private JPanel searchResult = new JPanel(new BorderLayout());
     private JPanel searchResult_Center;
-    private JButton seeMoreButton = new JButton("See more!");
+    private JButton seeMoreButton = new JButton("SHOW MORE");
 
     public SearchResult() {
         setPreferredSize(new Dimension(1440, 2000));

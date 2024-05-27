@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 
 import huster.action.GetData;
 import huster.action.newsObject;
+import huster.crawl.crawlTweet.ServerClient;
 import huster.crawl.crawlTweet.TweetItem;
 
 import java.awt.*;
@@ -16,10 +17,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu extends JFrame {
+public class Menu extends SearchResultUI {
     private static final long serialVersionUID = 1L;
-    public static final int X = 1440;
-    public static final int Y = 1024;
 
     public int number_News = 12;
     private int seeMoreButtonClickedCount = 0;
@@ -38,13 +37,21 @@ public class Menu extends JFrame {
         Container contentPane = getContentPane();
         menu.addButtonForMenu();
 
-        setSize(X, Y);
+        setSize(1440, 1024);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
         contentPane.setLayout(new BorderLayout());
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) { // when closing app
+                ServerClient.shutDownServer();
+                System.out.println("Close Menu window");
+                dispose();
+            }
+        });
 
         System.setProperty("BLACK_menu", "0x222222");
         // Color BLACK_menu = Color.getColor("BLACK_menu");
@@ -66,11 +73,17 @@ public class Menu extends JFrame {
                         options[0]);
 
                 if (choice == 0) {
-                    try {
-                        handleCrawlChoice();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+                    Thread crawlTweetThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                handleCrawlChoice();
+                            } catch (IOException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                    });
+                    crawlTweetThread.start();
                 }
             }
         });
@@ -99,33 +112,6 @@ public class Menu extends JFrame {
                 }
             }
         });
-        ImageIcon toparticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
-
-        JPanel toparticlePanel = new JPanel();
-        toparticlePanel.setPreferredSize(new Dimension(1280, 440));
-        toparticlePanel.setLayout(new BorderLayout());
-
-        JButton topArticleButton = new JButton(toparticleIcon);
-        topArticleButton.setBackground(GREY_menu);
-        topArticleButton.setOpaque(false);
-        topArticleButton.setContentAreaFilled(false);
-        topArticleButton.setBorderPainted(false);
-        topArticleButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(topArticleButton);
-
-                News news = new News("null", "null", "null", "null", "null");
-                news.setVisible(true);
-                ScreenHistory.getInstance().pushScreen(frame);
-                dispose();
-            }
-        });
-        JLabel toparticleLabel_title = new JLabel("null");
-        toparticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
-        toparticleLabel_title.setVerticalAlignment(JLabel.CENTER);
-        toparticlePanel.add(topArticleButton, BorderLayout.NORTH);
-        toparticlePanel.add(toparticleLabel_title, BorderLayout.CENTER);
 
         news_ScrollPane.seeMoreActionListeners(new ActionListener() {
             @Override
@@ -136,7 +122,9 @@ public class Menu extends JFrame {
                 news_ScrollPane.setLayoutAndSize(seeMoreButtonClickedCount);
                 addNews();
                 revalidate();
-                hideSeeMoreBtn();
+                if (seeMoreButtonClickedCount == 2) {
+                    news_ScrollPane.hideSeeMoreBtn();
+                }
             }
         });
 
@@ -160,10 +148,6 @@ public class Menu extends JFrame {
             newsList.add(_JPanel);
         }
 
-        // for(int i = 0; i < number_News; i++){
-        // articlePanel.add(newsList.get(i));
-        // }
-
         return newsList;
     }
 
@@ -178,16 +162,10 @@ public class Menu extends JFrame {
         menu.addBackButtonForMenu();
     }
 
-    public void hideSeeMoreBtn() {
-        if (seeMoreButtonClickedCount == 2) {
-            news_ScrollPane.hideSeeMoreBtn();
-        }
-    }
-
     private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
-
+            JOptionPane.showMessageDialog(null, "The process will take several minutes. \nRelax and enjoy another of our articles. You can close this window but not Menu window");
             TweetItem tweet = new TweetItem(keyword);
             tweet.crawlTweet();
             tweet.drawChart();
@@ -202,35 +180,33 @@ public class Menu extends JFrame {
 
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
+            
             JPanel imagePanel = new JPanel() {
-            private static final long serialVersionUID = 1L;
-            private Image image;
+                private static final long serialVersionUID = 1L;
+                private Image image;
 
-            {
-            try {
-            image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
-            + keyword + ".png"));
-            } catch (IOException e) {
-            e.printStackTrace();
-            }
-            }
+                {
+                    try {
+                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
+                                + keyword + ".png"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
 
-            @Override
-            protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            if (image != null) {
-            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-            }
-            }
+                @Override
+                protected void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    if (image != null) {
+                        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+                    }
+                }
             };
             imagePanel.setPreferredSize(new Dimension(1200, 900));
 
             // Display news statistics
             JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
-            JOptionPane.PLAIN_MESSAGE);
-
-            //Add handling for the tweet keyword here, for example:
-            //searchTweets(keyword);
+                    JOptionPane.PLAIN_MESSAGE);
 
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");

@@ -35,18 +35,18 @@ public class Main {
                     }
                 });
 
-                crawlThread.start();
+                // crawlThread.start();
 
                 // check status before call crawlThread.join
                 while (true) {
                     if (!isNetworkAvailable.get()) {
-                        JOptionPane.showMessageDialog(null, "Error: Không có kết nối mạng", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Error: No internet connection!", "Error", JOptionPane.ERROR_MESSAGE);
                         System.exit(1);
                     }
                     try {
-                        crawlThread.join(1000); // Thử join với thời gian ngắn để kiểm tra định kỳ trạng thái mạng
+                        crawlThread.join(1000); // check internet connection status every 1000ms
                         if (!crawlThread.isAlive()) {
-                            break; // Thoát khỏi vòng lặp nếu crawlThread đã kết thúc
+                            break; 
                         }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -92,11 +92,11 @@ public class Main {
         public void run() {
             while (true) {
                 if (!isInternetAvailable(TEST_URL)) {
-                    isNetworkAvailable.set(false); // Cập nhật trạng thái mạng
-                    JOptionPane.showMessageDialog(null, "Error: Không có kết nối mạng", "Error", JOptionPane.ERROR_MESSAGE);
+                    isNetworkAvailable.set(false); // Update internet status
+                    JOptionPane.showMessageDialog(null, "Error: No internet connection!", "Error", JOptionPane.ERROR_MESSAGE);
                     System.exit(1);
                 } else {
-                    isNetworkAvailable.set(true); // Cập nhật trạng thái mạng
+                    isNetworkAvailable.set(true); // Update internet status
                 }
                 try {
                     Thread.sleep(CHECK_INTERVAL);

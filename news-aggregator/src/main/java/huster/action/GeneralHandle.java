@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 
 public class GeneralHandle {
 
+    @SuppressWarnings("deprecation")
     public static Image resizeImage(String urlString) {
         Image image = null;
         try {
