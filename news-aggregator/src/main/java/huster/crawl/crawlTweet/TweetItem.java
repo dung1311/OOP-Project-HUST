@@ -61,25 +61,21 @@ public class TweetItem {
             for (int i = 0; i < jsonArray.size(); i++) {
                 JsonObject tweetObject = jsonArray.get(i).getAsJsonObject();
 
-                // Tách thông tin về tác giả
                 JsonObject authorObject = tweetObject.getAsJsonObject("user");
                 String authorName = authorObject.get("name").getAsString();
                 String authorUsername = authorObject.get("username").getAsString();
                 String authorAvatar = authorObject.get("avatar").getAsString();
 
-                // Tách thông tin thống kê
                 JsonObject statsObject = tweetObject.getAsJsonObject("stats");
                 int comments = statsObject.get("comments").getAsInt();
                 int retweets = statsObject.get("retweets").getAsInt();
                 int quotes = statsObject.get("quotes").getAsInt();
                 int likes = statsObject.get("likes").getAsInt();
 
-                // Tách đối tượng hình ảnh, video, gif
                 JsonArray picturesArray = tweetObject.getAsJsonArray("pictures");
                 JsonArray videosArray = tweetObject.getAsJsonArray("videos");
                 JsonArray gifsArray = tweetObject.getAsJsonArray("gifs");
 
-                // Đổi các trường thành chuỗi
                 tweetObject.addProperty("title", "[]");
                 tweetObject.addProperty("summary", "[]");
                 tweetObject.addProperty("url", "https://x.com/" + authorName);
@@ -96,7 +92,6 @@ public class TweetItem {
                 tweetObject.addProperty("videos", videosArray.toString());
                 tweetObject.addProperty("gifs", gifsArray.toString());
 
-                // Xóa các trường không cần thiết
                 tweetObject.remove("text");
                 tweetObject.remove("date");
                 tweetObject.remove("user");
@@ -104,7 +99,7 @@ public class TweetItem {
                 tweetObject.remove("pictures");
             }
 
-            Gson gson = new Gson();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
             try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(dataPath))) {
                 gson.toJson(jsonArray, bufferedWriter);
@@ -119,7 +114,7 @@ public class TweetItem {
         JsonObject data = new JsonObject();
         data.addProperty("name", name);
         data.addProperty("mode", "user");
-        data.addProperty("amount", 20);
+        data.addProperty("amount", 800);
         data.addProperty("file_name", fileJsonName);
         try {
             serverClient.sendRequestWithResponse("/crawl_tweet", data);
@@ -128,7 +123,7 @@ public class TweetItem {
         }
         File file = new File("news-aggregator/resource/data/tweetData/" + fileJsonName + ".json");
         if (!file.exists()) {
-            throw new IOException("File not created");
+            throw new IOException("Tweet Flask server is not running.");
         }
     }
 
@@ -146,32 +141,58 @@ public class TweetItem {
     }
 
     @SuppressWarnings("deprecation")
-    public void crawlTweet() {
-        try {
-            crawlTweetFirst();
-            boolean isEmptyArray = true;
+    private boolean isFileEmpty() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonElement readJson;
 
-            do {
-                JsonParser parser = new JsonParser();
-                JsonElement readJson = parser
-                        .parse(new FileReader("news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json"));
+        try (FileReader fileReader = new FileReader(
+                "news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json")) {
+            readJson = parser.parse(fileReader);
+        }
 
-                JsonArray jsonArray = readJson.getAsJsonArray();
-                if (jsonArray.size() != 0) {
-                    isEmptyArray = false;
+        JsonArray jsonArray = readJson.getAsJsonArray();
+        return jsonArray.size() == 0;
+    }
+
+    public void crawlTweet() throws IOException {
+        int totalAttempts = 0;
+        boolean isEmptyArray = true;
+
+        while (isEmptyArray && totalAttempts < 10) {
+            for (int i = 0; i < 3 && isEmptyArray; i++) {
+                crawlTweetFirst();
+                totalAttempts++;
+
+                isEmptyArray = isFileEmpty();
+                if (!isEmptyArray) {
+                    replaceJsonFile(fileJsonName);
+                    break;
                 }
+            }
 
-                if (isEmptyArray) {
-                    crawlTweetFromNitter();
+            if (isEmptyArray) {
+                crawlTweetFromNitter();
+                totalAttempts++;
+
+                isEmptyArray = isFileEmpty();
+                if (!isEmptyArray) {
+                    replaceJsonFile(fileJsonName);
+                    break;
                 }
+            }
+        }
 
-            } while (isEmptyArray);
-
-            replaceJsonFile(fileJsonName);
+        if (isEmptyArray) {
+            File file = new File("news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json");
+            if (file.exists()) {
+                if (!file.delete()) {
+                    throw new IOException("Failed to delete the empty file.");
+                }
+            }
+            throw new IOException(
+                    "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
+        } else {
             jsonAnalyst(fileJsonName);
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -182,8 +203,9 @@ public class TweetItem {
         serverClient.sendRequestWithResponse("/draw_chart", data);
     }
 
-    public static void main(String[] args) {
-        TweetItem t = new TweetItem("SpaceX");
-        t.replaceJsonFile("Bitcoin");
+    public static void main(String[] args) throws IOException {
+        TweetItem t = new TweetItem("Bităeg");
+        t.crawlTweet();
+        t.drawChart();
     }
 }
