@@ -136,6 +136,7 @@ public class SearchResultUI extends JFrame {
         for(int i = 0; i < 20; i++){
             JLabel label = new JHyperlink(listLinks.get(i), listLinks.get(i), "Click here");
             tweetPanel.add(label);
+            
         }
     }
 }

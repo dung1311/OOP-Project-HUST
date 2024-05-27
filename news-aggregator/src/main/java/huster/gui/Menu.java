@@ -1,5 +1,6 @@
 package huster.gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import com.google.gson.JsonObject;
@@ -10,11 +11,12 @@ import huster.crawl.crawlTweet.TweetItem;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu extends JFrame {
+public class Menu extends SearchResultUI {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
@@ -134,7 +136,9 @@ public class Menu extends JFrame {
                 news_ScrollPane.setLayoutAndSize(seeMoreButtonClickedCount);
                 addNews();
                 revalidate();
-                hideSeeMoreBtn();
+                if (seeMoreButtonClickedCount == 2) {
+                    news_ScrollPane.hideSeeMoreBtn();
+                }
             }
         });
 
@@ -158,10 +162,6 @@ public class Menu extends JFrame {
             newsList.add(_JPanel);
         }
 
-        // for(int i = 0; i < number_News; i++){
-        // articlePanel.add(newsList.get(i));
-        // }
-
         return newsList;
     }
 
@@ -176,12 +176,6 @@ public class Menu extends JFrame {
         menu.addBackButtonForMenu();
     }
 
-    public void hideSeeMoreBtn() {
-        if (seeMoreButtonClickedCount == 2) {
-            news_ScrollPane.hideSeeMoreBtn();
-        }
-    }
-
     private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
@@ -193,42 +187,40 @@ public class Menu extends JFrame {
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
             ScreenHistory.getInstance().pushScreen(frame);
 
-            SearchResultUI.createLinks("cihan0xeth", "news-aggregator\\resource\\data\\cihan0xeth.json");
+            SearchResultUI.createLinks(keyword, "news-aggregator\\resource\\data\\tweetData" + keyword + ".json");
             SearchResultUI searchTweet = new SearchResultUI();
             searchTweet.setUpTweet();
             searchTweet.addLinks();
 
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
-            // JPanel imagePanel = new JPanel() {
-            // private static final long serialVersionUID = 1L;
-            // private Image image;
+            JPanel imagePanel = new JPanel() {
+            private static final long serialVersionUID = 1L;
+            private Image image;
 
-            // {
-            // try {
-            // image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
-            // + keyword + ".png"));
-            // } catch (IOException e) {
-            // e.printStackTrace();
-            // }
-            // }
+            {
+            try {
+            image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
+            + keyword + ".png"));
+            } catch (IOException e) {
+            e.printStackTrace();
+            }
+            }
 
-            // @Override
-            // protected void paintComponent(Graphics g) {
-            // super.paintComponent(g);
-            // if (image != null) {
-            // g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-            // }
-            // }
-            // };
-            // imagePanel.setPreferredSize(new Dimension(1200, 900));
+            @Override
+            protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            if (image != null) {
+            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+            }
+            };
+            imagePanel.setPreferredSize(new Dimension(1200, 900));
 
-            // // Display news statistics
-            // JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
-            // JOptionPane.PLAIN_MESSAGE);
-
-            // Add handling for the tweet keyword here, for example:
-            // searchTweets(keyword);
+            // Display news statistics
+            JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
+            JOptionPane.PLAIN_MESSAGE);
+            
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");
         }
