@@ -55,6 +55,7 @@ class MyRunnable {
         Menu menu = new Menu();
         menu.setVisible(true);
         MenuHistory.getInstance().pushScreen(menu);
+        
     }
 
     public void runServer() {

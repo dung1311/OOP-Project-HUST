@@ -99,34 +99,7 @@ public class Menu extends SearchResultUI {
                 }
             }
         });
-        ImageIcon toparticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
-
-        JPanel toparticlePanel = new JPanel();
-        toparticlePanel.setPreferredSize(new Dimension(1280, 440));
-        toparticlePanel.setLayout(new BorderLayout());
-
-        JButton topArticleButton = new JButton(toparticleIcon);
-        topArticleButton.setBackground(GREY_menu);
-        topArticleButton.setOpaque(false);
-        topArticleButton.setContentAreaFilled(false);
-        topArticleButton.setBorderPainted(false);
-        topArticleButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(topArticleButton);
-
-                News news = new News("null", "null", "null", "null", "null");
-                news.setVisible(true);
-                ScreenHistory.getInstance().pushScreen(frame);
-                dispose();
-            }
-        });
-        JLabel toparticleLabel_title = new JLabel("null");
-        toparticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
-        toparticleLabel_title.setVerticalAlignment(JLabel.CENTER);
-        toparticlePanel.add(topArticleButton, BorderLayout.NORTH);
-        toparticlePanel.add(toparticleLabel_title, BorderLayout.CENTER);
-
+        
         news_ScrollPane.seeMoreActionListeners(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -176,7 +149,7 @@ public class Menu extends SearchResultUI {
         menu.addBackButtonForMenu();
     }
 
-    private void handleCrawlChoice() throws IOException {
+    public void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
 
