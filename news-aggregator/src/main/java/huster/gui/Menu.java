@@ -1,5 +1,6 @@
 package huster.gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import com.google.gson.JsonObject;
@@ -10,6 +11,7 @@ import huster.crawl.crawlTweet.TweetItem;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -193,42 +195,43 @@ public class Menu extends JFrame {
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
             ScreenHistory.getInstance().pushScreen(frame);
 
-            SearchResultUI.createLinks("cihan0xeth", "news-aggregator\\resource\\data\\cihan0xeth.json");
+            SearchResultUI.createLinks(keyword, "news-aggregator\\resource\\data\\tweetData\\" + keyword + ".json");
             SearchResultUI searchTweet = new SearchResultUI();
             searchTweet.setUpTweet();
             searchTweet.addLinks();
 
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
-            // JPanel imagePanel = new JPanel() {
-            // private static final long serialVersionUID = 1L;
-            // private Image image;
+            JPanel imagePanel = new JPanel() {
+            private static final long serialVersionUID = 1L;
+            private Image image;
 
-            // {
-            // try {
-            // image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
-            // + keyword + ".png"));
-            // } catch (IOException e) {
-            // e.printStackTrace();
-            // }
-            // }
+            {
+            try {
+            image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
+            + keyword + ".png"));
+            } catch (IOException e) {
+            e.printStackTrace();
+            }
+            }
 
-            // @Override
-            // protected void paintComponent(Graphics g) {
-            // super.paintComponent(g);
-            // if (image != null) {
-            // g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-            // }
-            // }
-            // };
-            // imagePanel.setPreferredSize(new Dimension(1200, 900));
+            @Override
+            protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            if (image != null) {
+            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            }
+            }
+            };
+            imagePanel.setPreferredSize(new Dimension(1200, 900));
 
-            // // Display news statistics
-            // JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
-            // JOptionPane.PLAIN_MESSAGE);
+            // Display news statistics
+            JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
+            JOptionPane.PLAIN_MESSAGE);
 
-            // Add handling for the tweet keyword here, for example:
-            // searchTweets(keyword);
+            //Add handling for the tweet keyword here, for example:
+            //searchTweets(keyword);
+
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");
         }
