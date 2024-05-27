@@ -99,57 +99,57 @@ def draw_chart_route():
     return send_file(image_path_absolute, mimetype="image/png")
 
 
-@app.route("/json_analyst", methods=["POST"])
-def json_analyst():
-    data = request.json
-    file_json_name = data.get("file_json_name")
-    if not file_json_name:
-        return jsonify({"error": "Missing file_json_name parameter"}), 400
+# @app.route("/json_analyst", methods=["POST"])
+# def json_analyst():
+#     data = request.json
+#     file_json_name = data.get("file_json_name")
+#     if not file_json_name:
+#         return jsonify({"error": "Missing file_json_name parameter"}), 400
 
-    data_directory = "news-aggregator/resource/data/tweetData"
-    file_path = os.path.join(data_directory, file_json_name + ".json")
+#     data_directory = "news-aggregator/resource/data/tweetData"
+#     file_path = os.path.join(data_directory, file_json_name + ".json")
 
-    if not os.path.exists(file_path):
-        return jsonify({"error": f"File {file_path} does not exist"}), 404
+#     if not os.path.exists(file_path):
+#         return jsonify({"error": f"File {file_path} does not exist"}), 404
 
-    try:
-        list_tweet = pd.read_json(path_or_buf=file_path)
-    except ValueError as e:
-        return jsonify({"error": f"Error reading JSON file: {e}"}), 500
+#     try:
+#         list_tweet = pd.read_json(path_or_buf=file_path)
+#     except ValueError as e:
+#         return jsonify({"error": f"Error reading JSON file: {e}"}), 500
 
-    data_list = []
+#     data_list = []
 
-    for index, tweet in list_tweet.iterrows():
-        try:
-            data = [
-                tweet["link"],
-                tweet["content"],
-                tweet["datetimeCreation"],
-                tweet["comments"],
-                tweet["retweets"],
-                tweet["quotes"],
-                tweet["likes"],
-            ]
-            data_list.append(data)
-        except KeyError as e:
-            print(f"KeyError: {e}. Skipping tweet at index {index}")
+#     for index, tweet in list_tweet.iterrows():
+#         try:
+#             data = [
+#                 tweet["link"],
+#                 tweet["content"],
+#                 tweet["datetimeCreation"],
+#                 tweet["comments"],
+#                 tweet["retweets"],
+#                 tweet["quotes"],
+#                 tweet["likes"],
+#             ]
+#             data_list.append(data)
+#         except KeyError as e:
+#             print(f"KeyError: {e}. Skipping tweet at index {index}")
 
-    if not data_list:
-        return jsonify({"error": "No valid tweet data found"}), 404
+#     if not data_list:
+#         return jsonify({"error": "No valid tweet data found"}), 404
 
-    data_list_pd = pd.DataFrame(
-        data_list,
-        columns=["link", "content", "time", "comment", "retweet", "quote", "like"],
-    )
+#     data_list_pd = pd.DataFrame(
+#         data_list,
+#         columns=["link", "content", "time", "comment", "retweet", "quote", "like"],
+#     )
 
-    highest_interaction_tweet = data_list_pd.loc[
-        data_list_pd[["comment", "retweet", "quote", "like"]].sum(axis=1).idxmax()
-    ]
-    response = {
-        "highestInteractionTweet": highest_interaction_tweet.to_dict(),
-    }
+#     highest_interaction_tweet = data_list_pd.loc[
+#         data_list_pd[["comment", "retweet", "quote", "like"]].sum(axis=1).idxmax()
+#     ]
+#     response = {
+#         "highestInteractionTweet": highest_interaction_tweet.to_dict(),
+#     }
 
-    return jsonify(response)
+#     return jsonify(response)
 
 
 @app.route("/crawl_nitter", methods=["POST"])

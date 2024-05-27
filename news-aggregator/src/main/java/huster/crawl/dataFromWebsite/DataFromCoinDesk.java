@@ -28,7 +28,7 @@ public class DataFromCoinDesk extends DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return summary.replaceAll("�", "\'");
+        return summary;
     }
 
     @Override
@@ -39,12 +39,12 @@ public class DataFromCoinDesk extends DataListFormat {
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n\n";
+                content = content + contentElement.text() + "\n\n";
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return content.replaceAll("�", "\'");
+        return content;
     } 
 
     @Override

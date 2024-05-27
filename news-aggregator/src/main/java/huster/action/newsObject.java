@@ -94,6 +94,24 @@ public class newsObject {
                 frame.dispose();
             }
         });
+        articleJButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                
+                News news = new News(getAuthorName(), getPostingDate(), getLink(), getContent(), getTitle());
+                news.setHeader(getTitle());
+                news.setVisible(true);
+
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(articleJButton);
+                ScreenHistory.getInstance().pushScreen(frame);
+                frame.dispose();
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                jPanel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            }
+        });
 
         try {
             Image image = GeneralHandle.resizeImage(this.getLinkImage());

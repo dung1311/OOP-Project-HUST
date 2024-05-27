@@ -16,10 +16,9 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.stream.JsonReader;
 
 public class ServerClient {
-    private String serverUrl;
+    private static String serverUrl = "http://127.0.0.1:5000";
 
-    public ServerClient(String serverUrl) {
-        this.serverUrl = serverUrl;
+    public ServerClient() {
     }
 
     public static void runServer() {
@@ -33,8 +32,8 @@ public class ServerClient {
         }
     }
 
-    @SuppressWarnings("deprecation")
-    public JsonObject sendRequestWithResponse(String endPoint, JsonObject data) throws IOException {
+    // @SuppressWarnings("deprecation")
+    public static JsonObject sendRequestWithResponse(String endPoint, JsonObject data) throws IOException {
         URL url = new URL(serverUrl + endPoint);
 
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
@@ -70,7 +69,7 @@ public class ServerClient {
             }
         } else if (contentType != null && contentType.startsWith("image/png")) {
             InputStream in = connection.getInputStream();
-            FileOutputStream out = new FileOutputStream("output.png");
+            FileOutputStream out = new FileOutputStream("news-aggregator\\resource\\data\\tweetData\\output.png");
 
             byte[] buffer = new byte[4096];
             int bytesRead;
@@ -90,11 +89,11 @@ public class ServerClient {
         }
     }
 
-    public void shutDownServer() {
+    public static void shutDownServer() {
         try {
             sendRequestWithResponse("/shutdown", new JsonObject());
         } catch (IOException e) {
-            e.printStackTrace();
+            //do not thing
         }
     }
 }

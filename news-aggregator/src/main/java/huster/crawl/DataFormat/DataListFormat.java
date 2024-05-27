@@ -16,6 +16,7 @@ public class DataListFormat {
     protected String innerLinkClass; //This string is a tag in html of source page that contains attributes related to the links of the articles or the blogs, it is used by select() or getElementsByClass() method
     protected String innerLinkAttr; //This string is a attributes which you can get links, it is use by Element.attr() or Elements.attr() method
     protected String link; //this link is the path of article or blog
+    protected List<Data> dataList = new ArrayList<>();
 
     public DataListFormat() {
     }
@@ -117,7 +118,7 @@ public class DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return title.replaceAll("�", "\'");
+        return title;
     }
 
     //This method extracts the summary of an article from a Document linked to a URL
@@ -131,7 +132,7 @@ public class DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return summary.replaceAll("�", "\'");
+        return summary;
     }
 
     //This method extracts the type of an article from a Document linked to a URL
@@ -144,7 +145,7 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return type.replaceAll("�", "\'");
+        return type;
     }
 
     //This method must be overrode; After that, it extracts the content of an article from a Document linked to a URL 
@@ -162,7 +163,7 @@ public class DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return category.replaceAll("�", "\'");
+        return category;
     }
 
     //This method extracts the dateCreation of an article from a Document linked to a URL.
@@ -176,7 +177,7 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return dateTimeCreation.replaceAll("�", "\'");
+        return dateTimeCreation;
     }
 
     //This method must be overrode; After that, it extracts the list of tag of an article from a Document linked to a URL 
@@ -194,7 +195,7 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author.replaceAll("�", "\'");
+        return author;
     }
 
     //This method extracts the link image of an article from a Document linked to a URL.
@@ -208,13 +209,12 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return linkImage.replaceAll("�", "\'");
+        return linkImage;
     }
 
     //This method returns a list of elements with data type Data. It is fully inherited
     public List<Data> getDataList(DataListFormat itemLink,String url, String innerLinkClass, String innerLinkAttr) {
         try {
-            List<Data> dataList = new ArrayList<>();
             List<String> linkList = itemLink.getLinks(url,innerLinkClass,innerLinkAttr);
             for(int i = 0; i < linkList.size(); i++)
             {
@@ -223,7 +223,7 @@ public class DataListFormat {
                 Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
                 item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
                 if(item.isDataFormat(item))   
-                    dataList.add(item);                 
+                    this.dataList.add(item);                 
             }
             if(dataList.isEmpty()) return null;
             else return dataList;

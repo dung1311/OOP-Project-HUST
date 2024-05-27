@@ -15,8 +15,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class TweetItem {
-    private static String serverUrl = "http://127.0.0.1:5000";
-    private static ServerClient serverClient = new ServerClient(serverUrl);
     private String name;
     private String fileJsonName;
     private String filePicturesName;
@@ -60,18 +58,23 @@ public class TweetItem {
 
             for (int i = 0; i < jsonArray.size(); i++) {
                 JsonObject tweetObject = jsonArray.get(i).getAsJsonObject();
-
+                String authorName = "", authorUsername = "", authorAvatar = "";
+                
                 JsonObject authorObject = tweetObject.getAsJsonObject("user");
-                String authorName = authorObject.get("name").getAsString();
-                String authorUsername = authorObject.get("username").getAsString();
-                String authorAvatar = authorObject.get("avatar").getAsString();
-
+                if(authorObject != null) {
+                    authorName = authorObject.get("name").getAsString();
+                    authorUsername = authorObject.get("username").getAsString();
+                    authorAvatar = authorObject.get("avatar").getAsString();
+                }
+                
+                int comments = 0,retweets = 0,quotes = 0,likes = 0;
                 JsonObject statsObject = tweetObject.getAsJsonObject("stats");
-                int comments = statsObject.get("comments").getAsInt();
-                int retweets = statsObject.get("retweets").getAsInt();
-                int quotes = statsObject.get("quotes").getAsInt();
-                int likes = statsObject.get("likes").getAsInt();
-
+                if(statsObject != null) {
+                    comments = statsObject.get("comments").getAsInt();
+                    retweets = statsObject.get("retweets").getAsInt();
+                    quotes = statsObject.get("quotes").getAsInt();
+                    likes = statsObject.get("likes").getAsInt();
+                }
                 JsonArray picturesArray = tweetObject.getAsJsonArray("pictures");
                 JsonArray videosArray = tweetObject.getAsJsonArray("videos");
                 JsonArray gifsArray = tweetObject.getAsJsonArray("gifs");
@@ -131,7 +134,7 @@ public class TweetItem {
         data.addProperty("amount", 800);
         data.addProperty("file_name", fileJsonName);
         try {
-            serverClient.sendRequestWithResponse("/crawl_tweet", data);
+            ServerClient.sendRequestWithResponse("/crawl_tweet", data);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -144,15 +147,15 @@ public class TweetItem {
     public void crawlTweetFromNitter() throws IOException {
         JsonObject data = new JsonObject();
         data.addProperty("user_name", name);
-        serverClient.sendRequestWithResponse("/crawl_nitter", data);
+        ServerClient.sendRequestWithResponse("/crawl_nitter", data);
     }
 
-    public void jsonAnalyst(String fileJsonName) throws IOException {
-        JsonObject data = new JsonObject();
-        data.addProperty("file_json_name", fileJsonName);
-        JsonObject responseData = serverClient.sendRequestWithResponse("/json_analyst", data);
-        this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
-    }
+    // public void jsonAnalyst(String fileJsonName) throws IOException {
+    //     JsonObject data = new JsonObject();
+    //     data.addProperty("file_json_name", fileJsonName);
+    //     JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
+    //     this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
+    // }
 
     public void crawlTweet() throws IOException {
         int totalAttempts = 0;
@@ -185,9 +188,9 @@ public class TweetItem {
                 throw new IOException("Failed to delete the empty file.");
             }
             throw new IOException(
-                    "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
+                "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
         }
-        jsonAnalyst(fileJsonName);
+        // jsonAnalyst(fileJsonName);
 
     }
 
@@ -195,7 +198,7 @@ public class TweetItem {
         JsonObject data = new JsonObject();
         data.addProperty("file_json_name", fileJsonName);
         data.addProperty("file_pictures_name", filePicturesName);
-        serverClient.sendRequestWithResponse("/draw_chart", data);
+        ServerClient.sendRequestWithResponse("/draw_chart", data);
     }
 
 }
