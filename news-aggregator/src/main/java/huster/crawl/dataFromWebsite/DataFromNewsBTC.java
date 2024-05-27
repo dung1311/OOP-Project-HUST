@@ -18,7 +18,8 @@ public class DataFromNewsBTC extends DataListFormat{
         try {
             Elements contentElements = doc.select(".content-inner");
             if(contentElements == null) return "unknown";
-            for(Element contentElement : contentElements) 
+            Elements contentParagraph = contentElements.select("p");
+            for(Element contentElement : contentParagraph) 
             {
                 content = content + contentElement.text().replaceAll("�", "\'") + "\n\n";
             }
