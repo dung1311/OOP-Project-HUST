@@ -22,7 +22,9 @@ public class DataFromBlogChainLink extends DataListFormat {
         try {
             Elements contentElements = doc.select(".post-editor-content");
             if(contentElements == null) return "unknown";
-            for(Element contentElement : contentElements) 
+            Elements contentParagraph = contentElements.select("p");
+            if(contentParagraph == null) return "unknown";
+            for(Element contentElement : contentParagraph) 
             {
                 content = content + contentElement.text();
                 if(content.charAt(content.length()-1) == '.') content += "\n\n" ;
