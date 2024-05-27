@@ -97,8 +97,4 @@ public class ServerClient {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        ServerClient.runServer();
-    }
 }

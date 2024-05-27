@@ -25,6 +25,7 @@ public class Main {
         // crawlThread.start();
         // //
         // crawlThread.join();
+        
         Thread displayThread = new Thread(new Runnable() {
             @Override
             public void run() {

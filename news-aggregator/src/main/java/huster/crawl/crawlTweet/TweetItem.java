@@ -109,6 +109,20 @@ public class TweetItem {
         }
     }
 
+    @SuppressWarnings("deprecation")
+    private boolean isFileEmpty() throws IOException {
+        JsonParser parser = new JsonParser();
+        JsonElement readJson;
+
+        try (FileReader fileReader = new FileReader(
+                "news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json")) {
+            readJson = parser.parse(fileReader);
+        }
+
+        JsonArray jsonArray = readJson.getAsJsonArray();
+        return jsonArray.size() == 0;
+    }
+
     public void crawlTweetFirst() throws IOException {
 
         JsonObject data = new JsonObject();
@@ -140,60 +154,41 @@ public class TweetItem {
         this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
     }
 
-    @SuppressWarnings("deprecation")
-    private boolean isFileEmpty() throws IOException {
-        JsonParser parser = new JsonParser();
-        JsonElement readJson;
-
-        try (FileReader fileReader = new FileReader(
-                "news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json")) {
-            readJson = parser.parse(fileReader);
-        }
-
-        JsonArray jsonArray = readJson.getAsJsonArray();
-        return jsonArray.size() == 0;
-    }
-
     public void crawlTweet() throws IOException {
         int totalAttempts = 0;
         boolean isEmptyArray = true;
 
-        while (isEmptyArray && totalAttempts < 10) {
-            for (int i = 0; i < 3 && isEmptyArray; i++) {
-                crawlTweetFirst();
-                totalAttempts++;
+        for (int i = 0; i < 3 && isEmptyArray; i++) {
+            crawlTweetFirst();
 
-                isEmptyArray = isFileEmpty();
-                if (!isEmptyArray) {
-                    replaceJsonFile(fileJsonName);
-                    break;
-                }
+            isEmptyArray = isFileEmpty();
+            if (!isEmptyArray) {
+                isEmptyArray = false;
+                replaceJsonFile(fileJsonName);
+                break;
             }
+        }
 
-            if (isEmptyArray) {
-                crawlTweetFromNitter();
-                totalAttempts++;
-
-                isEmptyArray = isFileEmpty();
-                if (!isEmptyArray) {
-                    replaceJsonFile(fileJsonName);
-                    break;
-                }
+        while (isEmptyArray && totalAttempts < 11) { 
+            crawlTweetFromNitter();
+            totalAttempts++;
+            isEmptyArray = isFileEmpty();
+            if (!isEmptyArray) {
+                isEmptyArray = false;
+                break;
             }
         }
 
         if (isEmptyArray) {
             File file = new File("news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json");
-            if (file.exists()) {
-                if (!file.delete()) {
-                    throw new IOException("Failed to delete the empty file.");
-                }
+            if (!file.delete()) {
+                throw new IOException("Failed to delete the empty file.");
             }
             throw new IOException(
                     "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
-        } else {
-            jsonAnalyst(fileJsonName);
         }
+        jsonAnalyst(fileJsonName);
+
     }
 
     public void drawChart() throws IOException {
@@ -203,9 +198,4 @@ public class TweetItem {
         serverClient.sendRequestWithResponse("/draw_chart", data);
     }
 
-    public static void main(String[] args) throws IOException {
-        TweetItem t = new TweetItem("Bităeg");
-        t.crawlTweet();
-        t.drawChart();
-    }
 }
