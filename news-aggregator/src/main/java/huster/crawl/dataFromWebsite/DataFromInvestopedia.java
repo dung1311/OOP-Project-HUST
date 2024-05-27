@@ -33,6 +33,7 @@ public class DataFromInvestopedia extends DataListFormat{
         String content = "";
         try {
             Element contentElementBody = doc.selectFirst("div[class=comp mntl-sc-page mntl-block article-body-content]");
+            if(contentElementBody == null) return "unknown";
             for(int i = 0; i < 100; i++) {
                 String numberOfContentClass = String.valueOf(i);
                 Element contentHeading = contentElementBody.selectFirst("h2[id=mntl-sc-block_"+ numberOfContentClass +"-0]");

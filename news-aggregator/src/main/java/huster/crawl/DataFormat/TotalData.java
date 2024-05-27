@@ -80,7 +80,7 @@ public class TotalData {
         });
 
         ArrayList<Thread> threadsFrom101Blockchains = new ArrayList<>();
-        for(int i = 1; i < 4; i++ ) {
+        for(int i = 1; i < 10; i++ ) {
             int j = i;
             Thread crawlFrom101Blockchains = new Thread(new Runnable() {
                 @Override
@@ -89,7 +89,7 @@ public class TotalData {
                     DataFrom101Blockchains itemLink = new DataFrom101Blockchains();
                     String pageNumber = String.valueOf(j);
                     runnableToGetDataList.addDataList(data,itemLink,"https://101blockchains.com/blog/page/" + pageNumber,"a[rel=bookmark]","href");
-                    if(j == 3)    
+                    if(j == 9)    
                         latch.countDown();
                 }
             });
@@ -97,7 +97,7 @@ public class TotalData {
         }
 
         ArrayList<Thread> threadsFromInvestopedia = new ArrayList<>();
-        for(int i = 1; i < 4; i++ ) {
+        for(int i = 1; i < 10; i++ ) {
             int j = i-1;
             Thread crawlFromInvestopedia = new Thread(new Runnable() {
                 @Override
@@ -106,7 +106,7 @@ public class TotalData {
                     DataFromInvestopedia itemLink = new DataFromInvestopedia();
                     String pageNumber = String.valueOf(10*j);
                     runnableToGetDataList.addDataList(data,itemLink,"https://www.investopedia.com/search?q=blockchain&offset=" + pageNumber,"a[class=search-results__link mntl-text-link ]","href");
-                    if(j == 2)    
+                    if(j == 8)    
                         latch.countDown();
                 }
             });
@@ -127,10 +127,10 @@ public class TotalData {
         crawlFromNewsBTCThread.start();
         crawlFromBlogChainLink.start();
         crawlFromSouthChinaMorningPost.start();
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < 9; i++) {
             threadsFromInvestopedia.get(i).start();
         }
-        for(int j = 0; j < 3; j++) {
+        for(int j = 0; j < 9; j++) {
             threadsFrom101Blockchains.get(j).start();
         }
 

@@ -16,6 +16,7 @@ public class DataListFormat {
     protected String innerLinkClass; //This string is a tag in html of source page that contains attributes related to the links of the articles or the blogs, it is used by select() or getElementsByClass() method
     protected String innerLinkAttr; //This string is a attributes which you can get links, it is use by Element.attr() or Elements.attr() method
     protected String link; //this link is the path of article or blog
+    protected List<Data> dataList = new ArrayList<>();
 
     public DataListFormat() {
     }
@@ -214,7 +215,6 @@ public class DataListFormat {
     //This method returns a list of elements with data type Data. It is fully inherited
     public List<Data> getDataList(DataListFormat itemLink,String url, String innerLinkClass, String innerLinkAttr) {
         try {
-            List<Data> dataList = new ArrayList<>();
             List<String> linkList = itemLink.getLinks(url,innerLinkClass,innerLinkAttr);
             for(int i = 0; i < linkList.size(); i++)
             {
@@ -223,7 +223,7 @@ public class DataListFormat {
                 Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
                 item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
                 if(item.isDataFormat(item))   
-                    dataList.add(item);                 
+                    this.dataList.add(item);                 
             }
             if(dataList.isEmpty()) return null;
             else return dataList;

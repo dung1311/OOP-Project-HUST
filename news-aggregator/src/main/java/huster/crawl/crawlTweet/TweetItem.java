@@ -185,7 +185,7 @@ public class TweetItem {
                 throw new IOException("Failed to delete the empty file.");
             }
             throw new IOException(
-                    "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
+                "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
         }
         jsonAnalyst(fileJsonName);
 
