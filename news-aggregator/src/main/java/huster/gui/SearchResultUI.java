@@ -140,7 +140,7 @@ public class SearchResultUI extends JFrame {
     }
 
     public void addLinks(){
-        for(int i = 0; i < 20; i++){
+        for(int i = 0; i < listLinks.size(); i++){
             JLabel label = new JHyperlink(listLinks.get(i), listLinks.get(i), "Click here");
             tweetPanel.add(label);
             

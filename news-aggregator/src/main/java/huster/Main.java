@@ -41,6 +41,7 @@ public class Main {
                 while (true) {
                     if (!isNetworkAvailable.get()) {
                         JOptionPane.showMessageDialog(null, "Error: No internet connection!", "Error", JOptionPane.ERROR_MESSAGE);
+                        ServerClient.shutDownServer();
                         System.exit(1);
                     }
                     try {

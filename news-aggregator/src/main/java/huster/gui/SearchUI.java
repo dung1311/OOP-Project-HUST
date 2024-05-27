@@ -3,7 +3,6 @@ package huster.gui;
 import javax.swing.*;
 import javax.swing.event.*;
 
-import huster.crawl.crawlTweet.ServerClient;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -28,7 +27,6 @@ public class SearchUI extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                ServerClient.shutDownServer();
                 System.out.println("Close Search window");
                 dispose();
             }

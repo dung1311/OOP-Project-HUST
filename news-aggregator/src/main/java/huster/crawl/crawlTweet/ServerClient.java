@@ -32,7 +32,7 @@ public class ServerClient {
         }
     }
 
-    @SuppressWarnings("deprecation")
+    // @SuppressWarnings("deprecation")
     public static JsonObject sendRequestWithResponse(String endPoint, JsonObject data) throws IOException {
         URL url = new URL(serverUrl + endPoint);
 

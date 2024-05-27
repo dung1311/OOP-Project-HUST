@@ -58,18 +58,23 @@ public class TweetItem {
 
             for (int i = 0; i < jsonArray.size(); i++) {
                 JsonObject tweetObject = jsonArray.get(i).getAsJsonObject();
-
+                String authorName = "", authorUsername = "", authorAvatar = "";
+                
                 JsonObject authorObject = tweetObject.getAsJsonObject("user");
-                String authorName = authorObject.get("name").getAsString();
-                String authorUsername = authorObject.get("username").getAsString();
-                String authorAvatar = authorObject.get("avatar").getAsString();
-
+                if(authorObject != null) {
+                    authorName = authorObject.get("name").getAsString();
+                    authorUsername = authorObject.get("username").getAsString();
+                    authorAvatar = authorObject.get("avatar").getAsString();
+                }
+                
+                int comments = 0,retweets = 0,quotes = 0,likes = 0;
                 JsonObject statsObject = tweetObject.getAsJsonObject("stats");
-                int comments = statsObject.get("comments").getAsInt();
-                int retweets = statsObject.get("retweets").getAsInt();
-                int quotes = statsObject.get("quotes").getAsInt();
-                int likes = statsObject.get("likes").getAsInt();
-
+                if(statsObject != null) {
+                    comments = statsObject.get("comments").getAsInt();
+                    retweets = statsObject.get("retweets").getAsInt();
+                    quotes = statsObject.get("quotes").getAsInt();
+                    likes = statsObject.get("likes").getAsInt();
+                }
                 JsonArray picturesArray = tweetObject.getAsJsonArray("pictures");
                 JsonArray videosArray = tweetObject.getAsJsonArray("videos");
                 JsonArray gifsArray = tweetObject.getAsJsonArray("gifs");
@@ -185,7 +190,7 @@ public class TweetItem {
             throw new IOException(
                 "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
         }
-        jsonAnalyst(fileJsonName);
+        // jsonAnalyst(fileJsonName);
 
     }
 

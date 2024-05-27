@@ -5,7 +5,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import huster.action.JHyperlink;
-import huster.crawl.crawlTweet.ServerClient;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -38,7 +37,6 @@ public class News extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                ServerClient.shutDownServer();
                 System.out.println("Close News window");
                 dispose();
             }

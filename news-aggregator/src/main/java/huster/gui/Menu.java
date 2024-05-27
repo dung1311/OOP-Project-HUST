@@ -1,6 +1,5 @@
 package huster.gui;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 
 import com.google.gson.JsonObject;
@@ -12,7 +11,6 @@ import huster.crawl.crawlTweet.TweetItem;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -79,7 +77,7 @@ public class Menu extends SearchResultUI {
                             try {
                                 handleCrawlChoice();
                             } catch (IOException e1) {
-                                e1.printStackTrace();
+                               // e1.printStackTrace();
                             }
                         }
                     });
@@ -165,10 +163,10 @@ public class Menu extends SearchResultUI {
     private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "The process will take several minutes. \nRelax and enjoy another of our articles. You can close this window but not Menu window");
+            JOptionPane.showMessageDialog(this, "The process will take several minutes. \nRelax and enjoy another of our articles. You can close this window but should not close Menu window \n(Because it will cause an interruption to the server connection.)","NOTICE", 1);
             TweetItem tweet = new TweetItem(keyword);
             tweet.crawlTweet();
-            tweet.drawChart();
+            // tweet.drawChart();
 
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
             ScreenHistory.getInstance().pushScreen(frame);
@@ -181,32 +179,32 @@ public class Menu extends SearchResultUI {
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
             
-            JPanel imagePanel = new JPanel() {
-                private static final long serialVersionUID = 1L;
-                private Image image;
+            // JPanel imagePanel = new JPanel() {
+            //     private static final long serialVersionUID = 1L;
+            //     private Image image;
 
-                {
-                    try {
-                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
-                                + keyword + ".png"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+            //     {
+            //         try {
+            //             image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
+            //                     + keyword + ".png"));
+            //         } catch (IOException e) {
+            //             e.printStackTrace();
+            //         }
+            //     }
 
-                @Override
-                protected void paintComponent(Graphics g) {
-                    super.paintComponent(g);
-                    if (image != null) {
-                        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-                    }
-                }
-            };
-            imagePanel.setPreferredSize(new Dimension(1200, 900));
+            //     @Override
+            //     protected void paintComponent(Graphics g) {
+            //         super.paintComponent(g);
+            //         if (image != null) {
+            //             g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            //         }
+            //     }
+            // };
+            // imagePanel.setPreferredSize(new Dimension(1200, 900));
 
-            // Display news statistics
-            JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
-                    JOptionPane.PLAIN_MESSAGE);
+            // // Display news statistics
+            // JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
+            //         JOptionPane.PLAIN_MESSAGE);
 
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");
