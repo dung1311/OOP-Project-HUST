@@ -48,7 +48,7 @@ public class Menu extends SearchResultUI {
             @Override
             public void windowClosing(WindowEvent e) { // when closing app
                 ServerClient.shutDownServer();
-                System.out.println("Close Menu window");
+                // System.out.println("Close Menu window");
                 dispose();
             }
         });
@@ -168,7 +168,7 @@ public class Menu extends SearchResultUI {
             JOptionPane.showMessageDialog(null, "The process will take several minutes. \nRelax and enjoy another of our articles. You can close this window but not Menu window");
             TweetItem tweet = new TweetItem(keyword);
             tweet.crawlTweet();
-            tweet.drawChart();
+            // tweet.drawChart();
 
             JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
             ScreenHistory.getInstance().pushScreen(frame);
@@ -181,32 +181,32 @@ public class Menu extends SearchResultUI {
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
             
-            JPanel imagePanel = new JPanel() {
-                private static final long serialVersionUID = 1L;
-                private Image image;
+            // JPanel imagePanel = new JPanel() {
+            //     private static final long serialVersionUID = 1L;
+            //     private Image image;
 
-                {
-                    try {
-                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
-                                + keyword + ".png"));
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
+            //     {
+            //         try {
+            //             image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
+            //                     + keyword + ".png"));
+            //         } catch (IOException e) {
+            //             e.printStackTrace();
+            //         }
+            //     }
 
-                @Override
-                protected void paintComponent(Graphics g) {
-                    super.paintComponent(g);
-                    if (image != null) {
-                        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-                    }
-                }
-            };
-            imagePanel.setPreferredSize(new Dimension(1200, 900));
+            //     @Override
+            //     protected void paintComponent(Graphics g) {
+            //         super.paintComponent(g);
+            //         if (image != null) {
+            //             g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            //         }
+            //     }
+            // };
+            // imagePanel.setPreferredSize(new Dimension(1200, 900));
 
-            // Display news statistics
-            JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
-                    JOptionPane.PLAIN_MESSAGE);
+            // // Display news statistics
+            // JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
+            //         JOptionPane.PLAIN_MESSAGE);
 
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");

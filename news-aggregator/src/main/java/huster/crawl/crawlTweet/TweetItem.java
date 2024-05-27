@@ -145,12 +145,12 @@ public class TweetItem {
         ServerClient.sendRequestWithResponse("/crawl_nitter", data);
     }
 
-    public void jsonAnalyst(String fileJsonName) throws IOException {
-        JsonObject data = new JsonObject();
-        data.addProperty("file_json_name", fileJsonName);
-        JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
-        this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
-    }
+    // public void jsonAnalyst(String fileJsonName) throws IOException {
+    //     JsonObject data = new JsonObject();
+    //     data.addProperty("file_json_name", fileJsonName);
+    //     JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
+    //     this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
+    // }
 
     public void crawlTweet() throws IOException {
         int totalAttempts = 0;
@@ -185,7 +185,7 @@ public class TweetItem {
             throw new IOException(
                 "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
         }
-        jsonAnalyst(fileJsonName);
+        // jsonAnalyst(fileJsonName);
 
     }
 

@@ -34,7 +34,7 @@ public class SearchResultUI extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) {
                 ServerClient.shutDownServer();
-                System.out.println("Close SearchResult window");
+                // System.out.println("Close SearchResult window");
                 dispose();
             }
         });
