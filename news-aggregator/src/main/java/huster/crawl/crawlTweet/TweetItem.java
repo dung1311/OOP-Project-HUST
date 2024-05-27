@@ -15,8 +15,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class TweetItem {
-    private static String serverUrl = "http://127.0.0.1:5000";
-    private static ServerClient serverClient = new ServerClient(serverUrl);
+    private static ServerClient serverClient = new ServerClient();
     private String name;
     private String fileJsonName;
     private String filePicturesName;
@@ -131,7 +130,7 @@ public class TweetItem {
         data.addProperty("amount", 800);
         data.addProperty("file_name", fileJsonName);
         try {
-            serverClient.sendRequestWithResponse("/crawl_tweet", data);
+            ServerClient.sendRequestWithResponse("/crawl_tweet", data);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -144,13 +143,13 @@ public class TweetItem {
     public void crawlTweetFromNitter() throws IOException {
         JsonObject data = new JsonObject();
         data.addProperty("user_name", name);
-        serverClient.sendRequestWithResponse("/crawl_nitter", data);
+        ServerClient.sendRequestWithResponse("/crawl_nitter", data);
     }
 
     public void jsonAnalyst(String fileJsonName) throws IOException {
         JsonObject data = new JsonObject();
         data.addProperty("file_json_name", fileJsonName);
-        JsonObject responseData = serverClient.sendRequestWithResponse("/json_analyst", data);
+        JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
         this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
     }
 
@@ -195,7 +194,12 @@ public class TweetItem {
         JsonObject data = new JsonObject();
         data.addProperty("file_json_name", fileJsonName);
         data.addProperty("file_pictures_name", filePicturesName);
-        serverClient.sendRequestWithResponse("/draw_chart", data);
+        ServerClient.sendRequestWithResponse("/draw_chart", data);
     }
 
+    public static void main(String[] args) throws IOException {
+        // TweetItem t = new TweetItem("SpaceX");
+        // t.crawlTweet();
+        ServerClient.shutDownServer();
+    }
 }

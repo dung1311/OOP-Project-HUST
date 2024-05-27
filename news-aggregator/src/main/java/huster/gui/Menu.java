@@ -66,11 +66,17 @@ public class Menu extends SearchResultUI {
                         options[0]);
 
                 if (choice == 0) {
-                    try {
-                        handleCrawlChoice();
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
+                    Thread crawlTweeThread = new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                handleCrawlChoice();
+                            } catch (IOException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                    });
+                    crawlTweeThread.start();
                 }
             }
         });
