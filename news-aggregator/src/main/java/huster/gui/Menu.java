@@ -178,6 +178,7 @@ public class Menu extends SearchResultUI {
 
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
+            }
             
             // JPanel imagePanel = new JPanel() {
             //     private static final long serialVersionUID = 1L;
@@ -206,7 +207,7 @@ public class Menu extends SearchResultUI {
             // JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
             //         JOptionPane.PLAIN_MESSAGE);
 
-        } else {
+        else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");
         }
     }

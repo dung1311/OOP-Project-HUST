@@ -1,0 +1,23 @@
+Đây là hướng dẫn sử dụng phần mềm.
+Để sử dụng phần mềm trước tiên cần đảm bảo:
+1. Máy đã được cài đặt python
+Nếu máy chưa có python hãy vào link sau để tải: https://www.python.org/downloads/
+2. Máy đã cài đặt pip
+Nếu chưa có pip hãy vào link sau để tải: https://pypi.org/project/pip/
+3. Đảm bảo đã cài đặt các thư viện sau:
+- pandas as
+- flask
+- matplotlib
+- ntscraper
+Để cài đặt thư viện sử dụng thực hiện lệnh: pip install + [tên thư viện]
+4. Đảm bảo trong máy đã có máy ảo Java
+
+Sau khi đã cài đặt đầy đủ các yếu tố cần, để chạy phần mềm vào file Main.java nhấn run.
+Trong lúc crawl dữ liệu có thể sẽ mất từ 30 - 50s để lưu kết quả crawl vào file totalData.json, sau khi crawl được dữ liệu sẽ có giao diện hiện ra.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Ở giao diện chính có 2 nút nhấn:
+- nút crawl Tweet
+- nút tìm kiếm
+Ấn vào nút Tweet ta có thể nhập tên tài khoản cần crawl và đợi khoảng 10s để có kết quả
+Ấn vào nút tìm kiếm rồi nhập tên từ khóa, hashTag để tìm kiếm trong bộ dữ liệu đã có. 
+Nhấn vào các bài viết, ta có thể đọc nội dung bài viết và truy cập vào bài viết gốc bằng cách nhấn vào link ở góc trên.

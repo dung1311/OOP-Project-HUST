@@ -37,7 +37,7 @@ public class News extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                System.out.println("Close News window");
+                // System.out.println("Close News window");
                 dispose();
             }
         });

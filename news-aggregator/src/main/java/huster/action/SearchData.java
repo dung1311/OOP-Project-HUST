@@ -28,9 +28,11 @@ public class SearchData {
         // read data and a sign to newsArray
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(dataPath));
-
-            m_newsArray = new Gson().fromJson(bufferedReader, JsonArray.class);
-            _JsonArray = m_newsArray;
+            if(bufferedReader != null){
+                m_newsArray = new Gson().fromJson(bufferedReader, JsonArray.class);
+                _JsonArray = m_newsArray;
+            }
+               
         } catch (Exception e) {
             e.printStackTrace();
         }

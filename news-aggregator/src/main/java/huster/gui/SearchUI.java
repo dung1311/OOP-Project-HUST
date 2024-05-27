@@ -27,7 +27,7 @@ public class SearchUI extends JFrame {
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                System.out.println("Close Search window");
+                // System.out.println("Close Search window");
                 dispose();
             }
         });

@@ -118,7 +118,8 @@ public class SearchResultUI extends JFrame {
     }
     
     public static void createLinks(String s, String path){
-        listLinks = new SearchData(path).searchAsLink(s);
+        if(new SearchData(path).searchAsLink(s) != null)
+            listLinks = new SearchData(path).searchAsLink(s);
     }
 
     public void addNews(int n){

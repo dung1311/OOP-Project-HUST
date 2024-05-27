@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -58,7 +60,7 @@ public class TweetItem {
 
             for (int i = 0; i < jsonArray.size(); i++) {
                 JsonObject tweetObject = jsonArray.get(i).getAsJsonObject();
-                String authorName = "", authorUsername = "", authorAvatar = "";
+                String authorName = "", authorUsername = "", authorAvatar = "";        
                 
                 JsonObject authorObject = tweetObject.getAsJsonObject("user");
                 if(authorObject != null) {
@@ -140,7 +142,7 @@ public class TweetItem {
         }
         File file = new File("news-aggregator/resource/data/tweetData/" + fileJsonName + ".json");
         if (!file.exists()) {
-            throw new IOException("Tweet Flask server is not running.");
+            JOptionPane.showMessageDialog(null, "Can not crawl tweet with this keyword","NOTICE", 0);
         }
     }
 
@@ -150,12 +152,12 @@ public class TweetItem {
         ServerClient.sendRequestWithResponse("/crawl_nitter", data);
     }
 
-    // public void jsonAnalyst(String fileJsonName) throws IOException {
-    //     JsonObject data = new JsonObject();
-    //     data.addProperty("file_json_name", fileJsonName);
-    //     JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
-    //     this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
-    // }
+    public void jsonAnalyst(String fileJsonName) throws IOException {
+        JsonObject data = new JsonObject();
+        data.addProperty("file_json_name", fileJsonName);
+        JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
+        this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
+    }
 
     public void crawlTweet() throws IOException {
         int totalAttempts = 0;
@@ -172,7 +174,7 @@ public class TweetItem {
             }
         }
 
-        while (isEmptyArray && totalAttempts < 11) { 
+        while (isEmptyArray && totalAttempts < 5) { 
             crawlTweetFromNitter();
             totalAttempts++;
             isEmptyArray = isFileEmpty();
@@ -184,11 +186,11 @@ public class TweetItem {
 
         if (isEmptyArray) {
             File file = new File("news-aggregator\\resource\\data\\tweetData\\" + fileJsonName + ".json");
-            if (!file.delete()) {
-                throw new IOException("Failed to delete the empty file.");
+            if (file.delete()) {
+                JOptionPane.showMessageDialog(null, "Can not crawl tweet with this keyword","NOTICE", 0);
             }
-            throw new IOException(
-                "Request timed out. Caused by non-existent username or server receiving too many requests. Please wait or try again later.");
+            else
+                throw new IOException("Failed to delete the empty file.");   
         }
         // jsonAnalyst(fileJsonName);
 
