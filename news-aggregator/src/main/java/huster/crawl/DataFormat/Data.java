@@ -1,11 +1,6 @@
 package huster.crawl.dataFormat;
 
-import java.io.FileWriter;
-import java.nio.charset.Charset;
 import java.util.List;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class Data {
     private String url;
@@ -87,9 +82,9 @@ public class Data {
         return linkImage;
     }
     public void setLinkImage(String linkImage) {
-        if(isContain(linkImage,'�') == false)
-            this.linkImage = linkImage;
-        else this.linkImage = "unknown";
+        if(linkImage.contains("·") || linkImage.contains("–"))
+            this.linkImage = "unknown";
+        else this.linkImage = linkImage;
     }
 
     public void setData(String url, String link, String title, String type, String summary, String content, String category, String datetimeCreation, List<String> tag, String author, String linkImage) {
@@ -104,7 +99,9 @@ public class Data {
         this.datetimeCreation = datetimeCreation;
         this.tag = tag;
         this.author = author;
-        this.linkImage = linkImage;
+        if(linkImage.contains("·") || linkImage.contains("–"))
+            this.linkImage = "unknown";
+        else this.linkImage = linkImage;
     }
 
     public boolean isContain(String s, char c) {
