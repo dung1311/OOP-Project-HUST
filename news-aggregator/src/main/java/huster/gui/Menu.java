@@ -84,7 +84,6 @@ public class Menu extends SearchResultUI {
                         }
                     });
                     crawlTweetThread.start();
-                    JOptionPane.showMessageDialog(null, "Crawl cai ditme m");
                 }
             }
         });
@@ -166,7 +165,7 @@ public class Menu extends SearchResultUI {
     private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
         if (keyword != null && !keyword.trim().isEmpty()) {
-
+            JOptionPane.showMessageDialog(null, "The process will take several minutes. \nRelax and enjoy another of our articles. You can close this window but not Menu window");
             TweetItem tweet = new TweetItem(keyword);
             tweet.crawlTweet();
             tweet.drawChart();
@@ -181,6 +180,7 @@ public class Menu extends SearchResultUI {
 
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
+            
             JPanel imagePanel = new JPanel() {
                 private static final long serialVersionUID = 1L;
                 private Image image;

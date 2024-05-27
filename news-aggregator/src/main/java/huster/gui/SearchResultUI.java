@@ -153,7 +153,7 @@ public class SearchResultUI extends JFrame {
 class SearchResult extends JScrollPane {
     private JPanel searchResult = new JPanel(new BorderLayout());
     private JPanel searchResult_Center;
-    private JButton seeMoreButton = new JButton("See more!");
+    private JButton seeMoreButton = new JButton("SHOW MORE");
 
     public SearchResult() {
         setPreferredSize(new Dimension(1440, 2000));
