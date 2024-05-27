@@ -15,7 +15,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class TweetItem {
-    private static ServerClient serverClient = new ServerClient();
     private String name;
     private String fileJsonName;
     private String filePicturesName;
@@ -197,9 +196,4 @@ public class TweetItem {
         ServerClient.sendRequestWithResponse("/draw_chart", data);
     }
 
-    public static void main(String[] args) throws IOException {
-        // TweetItem t = new TweetItem("SpaceX");
-        // t.crawlTweet();
-        ServerClient.shutDownServer();
-    }
 }
