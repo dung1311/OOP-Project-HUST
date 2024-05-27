@@ -2,30 +2,39 @@ package huster.gui;
 
 import javax.swing.*;
 
+import com.google.gson.JsonObject;
+
+import huster.action.GetData;
+import huster.action.newsObject;
+import huster.crawl.crawlTweet.TweetItem;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Menu extends JFrame {
     private static final long serialVersionUID = 1L;
     public static final int X = 1440;
     public static final int Y = 1024;
-    public static final int ORIGIN_X = 100;
-    public static final int ORIGIN_Y = 100;
-    JPanel menu = new JPanel();
 
+    public int number_News = 12;
     private int seeMoreButtonClickedCount = 0;
-    private JButton articleButton;
-    private JLabel articleLabel;
-    private JPanel small_articlePanel;
-    private JPanel labelPanel;
-    private JPanel articlePanel;
-    private ImageIcon articleIcon;
-    // private ScreenHistory historyStack;
+
+    // luu tru bai viet
+    private List<JPanel> newsList = new ArrayList<>();
+    private SearchResult news_ScrollPane = new SearchResult();
+
+    Header menu = new Header();
+
+    public int getNumberNews() {
+        return number_News;
+    }
 
     public Menu() {
-        ScreenHistory.getInstance();
-        ScreenHistory.getInstance().pushScreen(this);
-        Container contentPane = getContentPane(); // Sử dụng getContentPane() để lấy contentPane của JFrame
+        Container contentPane = getContentPane();
+        menu.addButtonForMenu();
 
         setSize(X, Y);
         setResizable(false);
@@ -36,201 +45,192 @@ public class Menu extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         System.setProperty("BLACK_menu", "0x222222");
-        Color BLACK_menu = Color.getColor("BLACK_menu");
-        System.setProperty("GREY_menu", "0xFFFFFF");
+        // Color BLACK_menu = Color.getColor("BLACK_menu");
+        System.setProperty("GREY_menu", "0x000000");
         Color GREY_menu = Color.getColor("GREY_menu");
-        
-        menu.setLayout(new FlowLayout(15));
-        menu.setSize(1440,101);
-        menu.setBackground(BLACK_menu);
 
-        ImageIcon menuIcon = new ImageIcon("news-aggregator\\\\resource\\\\assets\\\\menuIcon.png" );
-        JButton menuButton = new JButton(menuIcon);
-        menuButton.setPreferredSize(new Dimension(50,50));
-        menuButton.setBorderPainted(false);
-        menuButton.setFocusPainted(false);
-        menuButton.setContentAreaFilled(false);
-        menuButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-
-            }
-        });
-
-        menu.add(menuButton);
-
-        ImageIcon homeIcon = new ImageIcon("news-aggregator\\resource\\assets\\homeIcon.png");
-        JButton homeButton = new JButton(homeIcon);
-        homeButton.setPreferredSize(new Dimension(50,50));
-        homeButton.setBorderPainted(false);
-        homeButton.setFocusPainted(false);
-        homeButton.setContentAreaFilled(false);
-        homeButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                
-            }
-        });
-
-        ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
-        JButton userButton = new JButton(userIcon);
-        userButton.setPreferredSize(new Dimension(50,50));
-        userButton.setBorderPainted(false);
-        userButton.setFocusPainted(false);
-        userButton.setContentAreaFilled(false);
-        userButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e){
-                
-            }
-        });
-
-        ImageIcon searchIcon = new ImageIcon("news-aggregator\\resource\\assets\\searchIcon.png");
-        JButton searchButton = new JButton(searchIcon);
-        searchButton.setPreferredSize(new Dimension(50,50));
-        searchButton.setBorderPainted(false);
-        searchButton.setFocusPainted(false);
-        searchButton.setContentAreaFilled(false);
-        searchButton.addActionListener(new ActionListener() {
+        menu.addTrendButtonListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SearchUI searchUI = new SearchUI();
-                searchUI.setVisible(true);
-                dispose();
+                String[] options = { "Tweet" };
+                int choice = JOptionPane.showOptionDialog(
+                        Menu.this,
+                        "Click the button to crawl",
+                        "Crawl Tweet",
+                        JOptionPane.DEFAULT_OPTION,
+                        JOptionPane.INFORMATION_MESSAGE,
+                        null,
+                        options,
+                        options[0]);
+
+                if (choice == 0) {
+                    try {
+                        handleCrawlChoice();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
         });
 
-        menu.setLayout(new BorderLayout());
+        menu.addSearchButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new SearchUI().setVisible(true);
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+                ScreenHistory.getInstance().pushScreen(frame);
+                // dispose();
+                Menu.this.setVisible(false);
+            }
+        });
 
-        JPanel jPanel_left=new JPanel();
-        jPanel_left.setLayout(new FlowLayout(2));
-        jPanel_left.add(menuButton);
-        jPanel_left.add(homeButton);
-        jPanel_left.setBackground(BLACK_menu);
-        menu.add(jPanel_left,BorderLayout.WEST);
+        menu.addBackButtonListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!ScreenHistory.getInstance().isEmpty()) {
+                    JFrame previousScreen = ScreenHistory.getInstance().popScreen();
+                    previousScreen.setVisible(true);
+                    JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+                    ScreenHistory.getInstance().pushScreen(frame);
+                    // dispose();
+                    Menu.this.setVisible(false);
+                }
+            }
+        });
+        ImageIcon toparticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
 
-        JPanel jPanel_right=new JPanel();
-        jPanel_right.setLayout(new FlowLayout(2));
-        jPanel_right.add(searchButton);
-        jPanel_right.add(userButton);
-        jPanel_right.setBackground(BLACK_menu);
-
-        menu.add(jPanel_right,BorderLayout.EAST);
-
-        Font font40 = new Font("ARIAL",Font.PLAIN,40);
-
-        articleIcon = new ImageIcon("news-aggregator\\resource\\assets\\articleIcon.png");
-        ImageIcon BigarticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
-
-      
         JPanel toparticlePanel = new JPanel();
-        toparticlePanel.setPreferredSize(new Dimension(1280,625));
+        toparticlePanel.setPreferredSize(new Dimension(1280, 440));
         toparticlePanel.setLayout(new BorderLayout());
 
-        JPanel nothingPanel = new JPanel();
-        nothingPanel.setPreferredSize(new Dimension(1280,75));
-
-        JButton BigarticleButton = new JButton(BigarticleIcon);
-        BigarticleButton.setBackground(GREY_menu);
-        BigarticleButton.setOpaque(false);
-        BigarticleButton.setContentAreaFilled(false);
-        BigarticleButton.setBorderPainted(false);
-        BigarticleButton.addActionListener(new ActionListener() {
+        JButton topArticleButton = new JButton(toparticleIcon);
+        topArticleButton.setBackground(GREY_menu);
+        topArticleButton.setOpaque(false);
+        topArticleButton.setContentAreaFilled(false);
+        topArticleButton.setBorderPainted(false);
+        topArticleButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                News news = new News();
+                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(topArticleButton);
+
+                News news = new News("null", "null", "null", "null", "null");
                 news.setVisible(true);
+                ScreenHistory.getInstance().pushScreen(frame);
                 dispose();
             }
         });
-        JLabel BigarticleLabel_title = new JLabel("Be Xuan Mai");
-        BigarticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
-        BigarticleLabel_title.setVerticalAlignment(JLabel.CENTER);
-        toparticlePanel.add(BigarticleButton,BorderLayout.NORTH);
-        toparticlePanel.add(BigarticleLabel_title,BorderLayout.CENTER);
-        toparticlePanel.add(nothingPanel,BorderLayout.SOUTH);
+        JLabel toparticleLabel_title = new JLabel("null");
+        toparticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
+        toparticleLabel_title.setVerticalAlignment(JLabel.CENTER);
+        toparticlePanel.add(topArticleButton, BorderLayout.NORTH);
+        toparticlePanel.add(toparticleLabel_title, BorderLayout.CENTER);
 
-        articlePanel = new JPanel();
-        articlePanel.setPreferredSize(new Dimension(1280, 1500));
-        articlePanel.setLayout(new GridLayout(6,2,175,0));
-        createSmall_articlePanel(6);
-
-        
-        JPanel fullarticlePanel = new JPanel();
-        fullarticlePanel.setPreferredSize(new Dimension(1280,2500));
-        fullarticlePanel.setLayout(new BorderLayout());
-        fullarticlePanel.add(toparticlePanel,BorderLayout.NORTH);
-        fullarticlePanel.add(articlePanel,BorderLayout.CENTER);
-
-
-        JButton seeMoreButton = new JButton("See more!");
-        seeMoreButton.setFont(font40);
-        seeMoreButton.addActionListener(new ActionListener() {
+        news_ScrollPane.seeMoreActionListeners(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                number_News += 6;
                 seeMoreButtonClickedCount++;
-                fullarticlePanel.setPreferredSize(new Dimension(1280, 2500 + 1200 * seeMoreButtonClickedCount));
-                articlePanel.setPreferredSize(new Dimension(1280, 1500 + 1200 * seeMoreButtonClickedCount));
-                articlePanel.setLayout(new GridLayout(6 + 3 * seeMoreButtonClickedCount,2,175,0));
-                createSmall_articlePanel(3);
+                news_ScrollPane.setLayoutAndSize(seeMoreButtonClickedCount);
+                addNews();
                 revalidate();
+                hideSeeMoreBtn();
             }
         });
-        fullarticlePanel.add(seeMoreButton, BorderLayout.SOUTH);
 
-
-
-        JScrollPane scrollPane_suggested = new JScrollPane(fullarticlePanel);
-        scrollPane_suggested.setPreferredSize(new Dimension(1280, 800));
-        scrollPane_suggested.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollPane_suggested.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        scrollPane_suggested.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
-
-
-
-
-        // contentPane.setBackground(GREY_menu);
         this.setBackground(GREY_menu);
         contentPane.add(menu, BorderLayout.NORTH);
-        // contentPane.add(toparticlePanel, BorderLayout.CENTER);
+        contentPane.add(news_ScrollPane, BorderLayout.CENTER);
+        // Creates and displays news
+        news_ScrollPane.setVisible();
+        createNews();
+        addNews();
 
-        contentPane.add(scrollPane_suggested,BorderLayout.CENTER);  
-    
-        // this.pack();        
-        
+        revalidate();
     }
 
-    public void createSmall_articlePanel(int numberOfRows) {
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < numberOfRows; j++) {
-                articleButton = new JButton(articleIcon);
-                // articleButton.setBackground(GREY_menu);
-                articleButton.setContentAreaFilled(false);
-                articleButton.setBorderPainted(false);
-                articleButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        News news = new News();
-                        news.setVisible(true);
-                        dispose();
-                    }
-                });
+    // Method to generates newsList
+    public List<JPanel> createNews() {
+        List<JsonObject> _JsonObjects = new GetData().getNewsElements();
 
-                articleLabel = new JLabel("Be Xuan Mai");
-                articleLabel.setHorizontalAlignment(JLabel.CENTER);
-                articleLabel.setVerticalAlignment(JLabel.CENTER);
-
-                small_articlePanel = new JPanel();
-                small_articlePanel.setLayout(new BoxLayout(small_articlePanel, BoxLayout.Y_AXIS));
-                small_articlePanel.add(articleButton);
-
-                labelPanel = new JPanel();
-                labelPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-                labelPanel.add(articleLabel);
-                small_articlePanel.add(labelPanel);
-
-                small_articlePanel.setPreferredSize(new Dimension(465, 180));
-
-                articlePanel.add(small_articlePanel);
-            }
+        for (int i = 0; i < 30; i++) {
+            JPanel _JPanel = new newsObject(_JsonObjects.get(i)).setAsJPanel();
+            newsList.add(_JPanel);
         }
 
+        // for(int i = 0; i < number_News; i++){
+        // articlePanel.add(newsList.get(i));
+        // }
+
+        return newsList;
+    }
+
+    // Method to help display news
+    public void addNews() {
+        for (int i = 0; i < number_News; i++) {
+            news_ScrollPane.addArticleCenter(newsList.get(i));
+        }
+    }
+
+    public void addBackButton() {
+        menu.addBackButtonForMenu();
+    }
+
+    public void hideSeeMoreBtn() {
+        if (seeMoreButtonClickedCount == 2) {
+            news_ScrollPane.hideSeeMoreBtn();
+        }
+    }
+
+    private void handleCrawlChoice() throws IOException {
+        String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
+        if (keyword != null && !keyword.trim().isEmpty()) {
+
+            TweetItem tweet = new TweetItem(keyword);
+            tweet.crawlTweet();
+            tweet.drawChart();
+
+            JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(menu);
+            ScreenHistory.getInstance().pushScreen(frame);
+
+            SearchResultUI.createLinks("cihan0xeth", "news-aggregator\\resource\\data\\cihan0xeth.json");
+            SearchResultUI searchTweet = new SearchResultUI();
+            searchTweet.setUpTweet();
+            searchTweet.addLinks();
+
+            Menu.this.setVisible(false);
+            searchTweet.setVisible(true);
+            // JPanel imagePanel = new JPanel() {
+            // private static final long serialVersionUID = 1L;
+            // private Image image;
+
+            // {
+            // try {
+            // image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
+            // + keyword + ".png"));
+            // } catch (IOException e) {
+            // e.printStackTrace();
+            // }
+            // }
+
+            // @Override
+            // protected void paintComponent(Graphics g) {
+            // super.paintComponent(g);
+            // if (image != null) {
+            // g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+            // }
+            // }
+            // };
+            // imagePanel.setPreferredSize(new Dimension(1200, 900));
+
+            // // Display news statistics
+            // JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
+            // JOptionPane.PLAIN_MESSAGE);
+
+            // Add handling for the tweet keyword here, for example:
+            // searchTweets(keyword);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please input something !!!");
+        }
     }
 }

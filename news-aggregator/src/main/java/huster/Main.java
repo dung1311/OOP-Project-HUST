@@ -1,14 +1,63 @@
 package huster;
 
+import huster.crawl.crawlTweet.ServerClient;
+import huster.crawl.dataFormat.TotalData;
+
+//import java.io.FileWriter;
+
+import huster.gui.Menu;
+import huster.gui.MenuHistory;
+
 import java.io.IOException;
 
-import huster.crawl.dataFormat.TotalData;
 public class Main {
-    public static void main(String[] args) throws IOException{
-        long startTime = System.currentTimeMillis(); 
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        MyRunnable myRunnable = new MyRunnable();
+
+        // Thread crawlThread = new Thread(new Runnable() {
+        // @Override
+        // public void run() {
+        // myRunnable.crawl();
+        // }
+        // });
+
+        // crawlThread.start();
+        // //
+        // crawlThread.join();
+        
+        Thread displayThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myRunnable.display();
+            }
+        });
+
+        displayThread.start();
+
+        Thread runServer = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                myRunnable.runServer();
+            }
+        });
+
+        runServer.start();
+    }
+}
+
+class MyRunnable {
+    public void crawl() {
         new TotalData().crawl();
-        long endTime = System.currentTimeMillis();
-        long runTime = endTime - startTime;
-        System.out.println("Running Time: " + runTime); 
+    }
+
+    public void display() {
+        Menu menu = new Menu();
+        menu.setVisible(true);
+        MenuHistory.getInstance().pushScreen(menu);
+    }
+
+    public void runServer() {
+        ServerClient.runServer();
     }
 }
