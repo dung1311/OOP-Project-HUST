@@ -95,6 +95,7 @@ public class Main {
                 if (!isInternetAvailable(TEST_URL)) {
                     isNetworkAvailable.set(false); // Update internet status
                     JOptionPane.showMessageDialog(null, "Error: No internet connection!", "Error", JOptionPane.ERROR_MESSAGE);
+                    ServerClient.shutDownServer();
                     System.exit(1);
                 } else {
                     isNetworkAvailable.set(true); // Update internet status

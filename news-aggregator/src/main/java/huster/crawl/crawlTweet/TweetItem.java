@@ -150,12 +150,12 @@ public class TweetItem {
         ServerClient.sendRequestWithResponse("/crawl_nitter", data);
     }
 
-    public void jsonAnalyst(String fileJsonName) throws IOException {
-        JsonObject data = new JsonObject();
-        data.addProperty("file_json_name", fileJsonName);
-        JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
-        this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
-    }
+    // public void jsonAnalyst(String fileJsonName) throws IOException {
+    //     JsonObject data = new JsonObject();
+    //     data.addProperty("file_json_name", fileJsonName);
+    //     JsonObject responseData = ServerClient.sendRequestWithResponse("/json_analyst", data);
+    //     this.highestInteractionTweet = responseData.getAsJsonObject("highestInteractionTweet");
+    // }
 
     public void crawlTweet() throws IOException {
         int totalAttempts = 0;

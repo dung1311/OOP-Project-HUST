@@ -46,7 +46,7 @@ public class Menu extends SearchResultUI {
             @Override
             public void windowClosing(WindowEvent e) { // when closing app
                 ServerClient.shutDownServer();
-                System.out.println("Close Menu window");
+                // System.out.println("Close Menu window");
                 dispose();
             }
         });
