@@ -23,14 +23,16 @@ public class DataFrom101Blockchains extends DataListFormat {
         try {
             Elements contentElements = doc.getElementsByClass("post-content-right");
             if(contentElements == null) return "unknown";
-            for(Element contentElement : contentElements) 
+            Elements contentParagraph = contentElements.select("p");
+            if(contentParagraph == null) return "unknown";
+            for(Element contentElement : contentParagraph) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n\n";
+                content = content + contentElement.text() + "\n\n";
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return content.replaceAll("�", "\'");
+        return content;
     }
 
     @Override
@@ -44,7 +46,7 @@ public class DataFrom101Blockchains extends DataListFormat {
             e.printStackTrace();
         }   
         if(category == null) return "unknown";
-        return category.replaceAll("�", "\'");
+        return category;
     }
 
     @Override
@@ -57,7 +59,7 @@ public class DataFrom101Blockchains extends DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author.replaceAll("�", "\'");
+        return author;
     }
 
     @Override

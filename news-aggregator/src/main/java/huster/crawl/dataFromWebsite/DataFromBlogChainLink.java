@@ -22,15 +22,17 @@ public class DataFromBlogChainLink extends DataListFormat {
         try {
             Elements contentElements = doc.select(".post-editor-content");
             if(contentElements == null) return "unknown";
-            for(Element contentElement : contentElements) 
+            Elements contentParagraph = contentElements.select("p");
+            if(contentParagraph == null) return "unknown";
+            for(Element contentElement : contentParagraph) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'");
+                content = content + contentElement.text();
                 if(content.charAt(content.length()-1) == '.') content += "\n\n" ;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return content.replaceAll("�", "\'");
+        return content;
     }
 
     @Override 
@@ -43,7 +45,7 @@ public class DataFromBlogChainLink extends DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return category.replaceAll("�", "\'");
+        return category;
     }
 
     @Override
@@ -56,7 +58,7 @@ public class DataFromBlogChainLink extends DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author.replaceAll("�", "\'");
+        return author;
     }
 
     @Override 

@@ -18,14 +18,15 @@ public class DataFromNewsBTC extends DataListFormat{
         try {
             Elements contentElements = doc.select(".content-inner");
             if(contentElements == null) return "unknown";
-            for(Element contentElement : contentElements) 
+            Elements contentParagraph = contentElements.select("p");
+            for(Element contentElement : contentParagraph) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'") + "\n\n";
+                content = content + contentElement.text() + "\n\n";
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return content.replaceAll("�", "\'");
+        return content;
     } 
 
     @Override
@@ -39,7 +40,7 @@ public class DataFromNewsBTC extends DataListFormat{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return type.replaceAll("�", "\'");
+        return type;
     }
 
     @Override
@@ -106,7 +107,7 @@ public class DataFromNewsBTC extends DataListFormat{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author.replaceAll("�", "\'");
+        return author;
     }
 
     @Override
@@ -124,7 +125,7 @@ public class DataFromNewsBTC extends DataListFormat{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return linkImage.replaceAll("�", "\'");
+        return linkImage;
     }
 
 }
