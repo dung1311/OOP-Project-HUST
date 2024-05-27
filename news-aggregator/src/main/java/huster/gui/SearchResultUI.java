@@ -12,8 +12,6 @@ import java.util.List;
 
 public class SearchResultUI extends JFrame {
     private static final long serialVersionUID = 1L;
-    public static final int X = 1440;
-    public static final int Y = 1024;
 
     private int seeMoreButtonClickedCount = 0;
     private int number_News = 12;
@@ -25,7 +23,7 @@ public class SearchResultUI extends JFrame {
 
     public SearchResultUI() {
         Container contentPane = getContentPane();
-        setSize(X, Y);
+        setSize(1440, 1024);
         setResizable(false);
         setLocationRelativeTo(null);
         // setLocation(ORIGIN_X, ORIGIN_Y);

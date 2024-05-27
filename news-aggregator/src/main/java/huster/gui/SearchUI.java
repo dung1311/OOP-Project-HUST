@@ -12,17 +12,13 @@ import java.util.ArrayList;
 public class SearchUI extends JFrame {
 
     private static final long serialVersionUID = 1L;
-    public static final int X = 1440;
-    public static final int Y = 1024;
-    public static final int ORIGIN_X = 0;
-    public static final int ORIGIN_Y = 0;
 
     private SearchAndSuggestionPanel searchPanel = new SearchAndSuggestionPanel();
     private JButton randomSearchButton = new JButton();
 
     public SearchUI() {
         Container contentPane = getContentPane();
-        setSize(X, Y);
+        setSize(1440, 1024);
         setResizable(false);
         setLocationRelativeTo(null);
         // setLocation(ORIGIN_X, ORIGIN_Y);

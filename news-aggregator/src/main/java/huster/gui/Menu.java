@@ -19,8 +19,6 @@ import java.util.List;
 
 public class Menu extends SearchResultUI {
     private static final long serialVersionUID = 1L;
-    public static final int X = 1440;
-    public static final int Y = 1024;
 
     public int number_News = 12;
     private int seeMoreButtonClickedCount = 0;
@@ -39,7 +37,7 @@ public class Menu extends SearchResultUI {
         Container contentPane = getContentPane();
         menu.addButtonForMenu();
 
-        setSize(X, Y);
+        setSize(1440, 1024);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
@@ -75,7 +73,7 @@ public class Menu extends SearchResultUI {
                         options[0]);
 
                 if (choice == 0) {
-                    Thread crawlTweeThread = new Thread(new Runnable() {
+                    Thread crawlTweetThread = new Thread(new Runnable() {
                         @Override
                         public void run() {
                             try {
@@ -85,7 +83,8 @@ public class Menu extends SearchResultUI {
                             }
                         }
                     });
-                    crawlTweeThread.start();
+                    crawlTweetThread.start();
+                    JOptionPane.showMessageDialog(null, "Crawl cai ditme m");
                 }
             }
         });
@@ -114,33 +113,6 @@ public class Menu extends SearchResultUI {
                 }
             }
         });
-        ImageIcon toparticleIcon = new ImageIcon("news-aggregator\\resource\\assets\\BigarticleIcon.png");
-
-        JPanel toparticlePanel = new JPanel();
-        toparticlePanel.setPreferredSize(new Dimension(1280, 440));
-        toparticlePanel.setLayout(new BorderLayout());
-
-        JButton topArticleButton = new JButton(toparticleIcon);
-        topArticleButton.setBackground(GREY_menu);
-        topArticleButton.setOpaque(false);
-        topArticleButton.setContentAreaFilled(false);
-        topArticleButton.setBorderPainted(false);
-        topArticleButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(topArticleButton);
-
-                News news = new News("null", "null", "null", "null", "null");
-                news.setVisible(true);
-                ScreenHistory.getInstance().pushScreen(frame);
-                dispose();
-            }
-        });
-        JLabel toparticleLabel_title = new JLabel("null");
-        toparticleLabel_title.setHorizontalAlignment(JLabel.CENTER);
-        toparticleLabel_title.setVerticalAlignment(JLabel.CENTER);
-        toparticlePanel.add(topArticleButton, BorderLayout.NORTH);
-        toparticlePanel.add(toparticleLabel_title, BorderLayout.CENTER);
 
         news_ScrollPane.seeMoreActionListeners(new ActionListener() {
             @Override
@@ -210,32 +182,32 @@ public class Menu extends SearchResultUI {
             Menu.this.setVisible(false);
             searchTweet.setVisible(true);
             JPanel imagePanel = new JPanel() {
-            private static final long serialVersionUID = 1L;
-            private Image image;
+                private static final long serialVersionUID = 1L;
+                private Image image;
 
-            {
-            try {
-            image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
-            + keyword + ".png"));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            }
+                {
+                    try {
+                        image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
+                                + keyword + ".png"));
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
 
-            @Override
-            protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            if (image != null) {
-            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
-            }
-            }
+                @Override
+                protected void paintComponent(Graphics g) {
+                    super.paintComponent(g);
+                    if (image != null) {
+                        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+                    }
+                }
             };
             imagePanel.setPreferredSize(new Dimension(1200, 900));
 
             // Display news statistics
             JOptionPane.showMessageDialog(this, imagePanel, "Crawl Result",
-            JOptionPane.PLAIN_MESSAGE);
-            
+                    JOptionPane.PLAIN_MESSAGE);
+
         } else {
             JOptionPane.showMessageDialog(this, "Please input something !!!");
         }

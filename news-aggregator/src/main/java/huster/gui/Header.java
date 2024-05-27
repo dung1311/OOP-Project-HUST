@@ -5,18 +5,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-class Header extends JPanel{
+class Header extends JPanel {
     private JPanel header = new JPanel();
     private JPanel headerLeft = new JPanel();
     private JPanel headerRight = new JPanel();
     public JButton trendButton = new JButton();
     public JButton homeButton = new JButton();
     public JButton searchButton = new JButton();
-    public JButton userButton = new JButton();
     public JButton menuButton = new JButton();
     private JButton backButton = new JButton();
 
-    public Header(){
+    public Header() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         System.setProperty("BLACK_menu", "0x222222");
@@ -60,13 +59,6 @@ class Header extends JPanel{
         searchButton.setFocusPainted(false);
         searchButton.setContentAreaFilled(false);
 
-        ImageIcon userIcon = new ImageIcon("news-aggregator\\resource\\assets\\userIcon.png");
-        userButton.setIcon(userIcon);
-        userButton.setPreferredSize(new Dimension(50, 50));
-        userButton.setBorderPainted(false);
-        userButton.setFocusPainted(false);
-        userButton.setContentAreaFilled(false);
-        
         header.add(headerLeft, BorderLayout.WEST);
         header.add(headerRight, BorderLayout.EAST);
 
@@ -77,19 +69,19 @@ class Header extends JPanel{
         headerLeft.add(backButton);
         headerLeft.add(homeButton);
         headerRight.add(searchButton);
-        headerRight.add(userButton);
+
     }
 
     public void addButtonForMenu() {
         headerRight.add(trendButton);
         headerRight.add(searchButton);
-       // headerRight.add(userButton);
+        // headerRight.add(userButton);
     }
 
     public void addButtonForSearchUI() {
         headerLeft.add(backButton);
         headerLeft.add(homeButton);
-        headerRight.add(userButton);
+
     }
 
     public void addBackButtonForMenu() {
@@ -99,17 +91,13 @@ class Header extends JPanel{
     public void addTrendButtonListener(ActionListener listener) {
         trendButton.addActionListener(listener);
     }
-    
+
     public void addHomeButtonListener(ActionListener listener) {
         homeButton.addActionListener(listener);
     }
-    
+
     public void addSearchButtonListener(ActionListener listener) {
         searchButton.addActionListener(listener);
-    }
-    
-    public void addUserButtonListener(ActionListener listener) {
-        userButton.addActionListener(listener);
     }
 
     public void addMenuButtonListener(ActionListener listener) {

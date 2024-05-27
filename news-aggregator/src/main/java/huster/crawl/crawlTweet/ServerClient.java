@@ -69,7 +69,7 @@ public class ServerClient {
             }
         } else if (contentType != null && contentType.startsWith("image/png")) {
             InputStream in = connection.getInputStream();
-            FileOutputStream out = new FileOutputStream("output.png");
+            FileOutputStream out = new FileOutputStream("news-aggregator\\resource\\data\\tweetData\\output.png");
 
             byte[] buffer = new byte[4096];
             int bytesRead;

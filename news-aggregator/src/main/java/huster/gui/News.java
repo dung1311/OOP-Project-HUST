@@ -12,10 +12,7 @@ import java.awt.event.*;
 
 public class News extends JFrame {
     private static final long serialVersionUID = 1L;
-    public static final int X = 1440;
-    public static final int Y = 1024;
-    public static final int ORIGIN_X = 100;
-    public static final int ORIGIN_Y = 100;
+
     //Adds header of news UI
     Header menu = new Header(); 
     
@@ -32,7 +29,7 @@ public class News extends JFrame {
         ScreenHistory.getInstance();
         ScreenHistory.getInstance().pushScreen(this);
 
-        setSize(X, Y);
+        setSize(1440, 1024);
         setResizable(false);
         setLocationRelativeTo(null);
         setTitle("The MENU");
