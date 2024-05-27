@@ -93,7 +93,7 @@ public class ServerClient {
         try {
             sendRequestWithResponse("/shutdown", new JsonObject());
         } catch (IOException e) {
-            e.printStackTrace();
+            //do not thing
         }
     }
 }

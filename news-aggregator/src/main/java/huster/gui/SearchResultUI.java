@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import huster.action.JHyperlink;
 import huster.action.SearchData;
+import huster.crawl.crawlTweet.ServerClient;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -30,7 +31,15 @@ public class SearchResultUI extends JFrame {
         // setLocation(ORIGIN_X, ORIGIN_Y);
         setTitle("UI_TIM_KIEM");
         contentPane.setLayout(new BorderLayout());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ServerClient.shutDownServer();
+                System.out.println("Close SearchResult window");
+                dispose();
+            }
+        });
 
         tweetPanel.setPreferredSize(new Dimension(1280, 2500));
         tweetPanel.setLayout(new BoxLayout(tweetPanel, BoxLayout.Y_AXIS));

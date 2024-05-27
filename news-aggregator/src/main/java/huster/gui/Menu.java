@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 
 import huster.action.GetData;
 import huster.action.newsObject;
+import huster.crawl.crawlTweet.ServerClient;
 import huster.crawl.crawlTweet.TweetItem;
 
 import java.awt.*;
@@ -44,7 +45,15 @@ public class Menu extends SearchResultUI {
         setTitle("The MENU");
         contentPane.setLayout(new BorderLayout());
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) { // when closing app
+                ServerClient.shutDownServer();
+                System.out.println("Close Menu window");
+                dispose();
+            }
+        });
 
         System.setProperty("BLACK_menu", "0x222222");
         // Color BLACK_menu = Color.getColor("BLACK_menu");
@@ -209,7 +218,7 @@ public class Menu extends SearchResultUI {
             image = ImageIO.read(new File("news-aggregator\\resource\\data\\tweetData\\"
             + keyword + ".png"));
             } catch (IOException e) {
-            e.printStackTrace();
+                e.printStackTrace();
             }
             }
 
