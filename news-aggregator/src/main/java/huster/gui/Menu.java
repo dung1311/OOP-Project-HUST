@@ -162,6 +162,7 @@ public class Menu extends SearchResultUI {
 
     private void handleCrawlChoice() throws IOException {
         String keyword = JOptionPane.showInputDialog(this, "Input Tweet username for crawling:");
+        keyword = keyword.substring(0,1).toUpperCase() + keyword.substring(1);
         if (keyword != null && !keyword.trim().isEmpty()) {
             JOptionPane.showMessageDialog(this, "The process will take several minutes. \nRelax and enjoy another of our articles. You can close this window but should not close Menu window \n(Because it will cause an interruption to the server connection.)","NOTICE", 1);
             TweetItem tweet = new TweetItem(keyword);

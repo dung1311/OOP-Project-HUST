@@ -12,14 +12,12 @@ import java.net.URL;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import javax.swing.JOptionPane;
-
 public class Main {
     private static final String TEST_URL = "http://www.google.com";
     private static final int CHECK_INTERVAL = 5000;
     private static AtomicBoolean isNetworkAvailable = new AtomicBoolean(true); 
 
     public static void main(String[] args) {
-
         Thread networkCheckThread = new Thread(new NetworkChecker());
         networkCheckThread.setDaemon(true);
         networkCheckThread.start();
@@ -27,15 +25,15 @@ public class Main {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 MyRunnable myRunnable = new MyRunnable();
-
                 Thread crawlThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        System.out.println("Preparing infomation ...");
                         myRunnable.crawl();
                     }
                 });
 
-                // crawlThread.start();
+                crawlThread.start();
 
                 // check status before call crawlThread.join
                 while (true) {
@@ -53,7 +51,6 @@ public class Main {
                         e.printStackTrace();
                     }
                 }
-
                 Thread displayThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -62,7 +59,6 @@ public class Main {
                 });
 
                 displayThread.start();
-
                 Thread runServer = new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -87,7 +83,6 @@ public class Main {
             return false;
         }
     }
-
     static class NetworkChecker implements Runnable {
         @Override
         public void run() {
@@ -109,12 +104,11 @@ public class Main {
         }
     }
 }
-
 class MyRunnable {
     public void crawl() {
         new TotalData().crawl();
     }
-
+    
     public void display() {
         Menu menu = new Menu();
         menu.setVisible(true);

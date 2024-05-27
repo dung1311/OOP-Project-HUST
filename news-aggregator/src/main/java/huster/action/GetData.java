@@ -54,7 +54,7 @@ public class GetData {
         Random random = new Random();
         // get radom index from newsArray
         while (randomSet.size() < 50) {
-            // random number from 0 to 100
+            // random number from 0 to m_newsArray.size()-1
             int randomNumber = random.nextInt(m_newsArray.size()-1);
             
                 randomSet.add(randomNumber);
