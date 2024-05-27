@@ -88,7 +88,7 @@ public class TotalData {
                     DataFrom101Blockchains data = new DataFrom101Blockchains();
                     DataFrom101Blockchains itemLink = new DataFrom101Blockchains();
                     String pageNumber = String.valueOf(j);
-                    runnableToGetDataList.addDataList(data,itemLink,"https://101blockchains.com/blog/" + pageNumber,"a[rel=bookmark]","href");
+                    runnableToGetDataList.addDataList(data,itemLink,"https://101blockchains.com/blog/page/" + pageNumber,"a[rel=bookmark]","href");
                     if(j == 3)    
                         latch.countDown();
                 }

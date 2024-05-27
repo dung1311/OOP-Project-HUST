@@ -24,13 +24,13 @@ public class DataFromBlogChainLink extends DataListFormat {
             if(contentElements == null) return "unknown";
             for(Element contentElement : contentElements) 
             {
-                content = content + contentElement.text().replaceAll("�", "\'");
+                content = content + contentElement.text();
                 if(content.charAt(content.length()-1) == '.') content += "\n\n" ;
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return content.replaceAll("�", "\'");
+        return content;
     }
 
     @Override 
@@ -43,7 +43,7 @@ public class DataFromBlogChainLink extends DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return category.replaceAll("�", "\'");
+        return category;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class DataFromBlogChainLink extends DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author.replaceAll("�", "\'");
+        return author;
     }
 
     @Override 

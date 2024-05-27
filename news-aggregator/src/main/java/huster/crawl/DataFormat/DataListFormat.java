@@ -117,7 +117,7 @@ public class DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return title.replaceAll("�", "\'");
+        return title;
     }
 
     //This method extracts the summary of an article from a Document linked to a URL
@@ -131,7 +131,7 @@ public class DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return summary.replaceAll("�", "\'");
+        return summary;
     }
 
     //This method extracts the type of an article from a Document linked to a URL
@@ -144,7 +144,7 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return type.replaceAll("�", "\'");
+        return type;
     }
 
     //This method must be overrode; After that, it extracts the content of an article from a Document linked to a URL 
@@ -162,7 +162,7 @@ public class DataListFormat {
         } catch(Exception e) {
             e.printStackTrace();
         }   
-        return category.replaceAll("�", "\'");
+        return category;
     }
 
     //This method extracts the dateCreation of an article from a Document linked to a URL.
@@ -176,7 +176,7 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return dateTimeCreation.replaceAll("�", "\'");
+        return dateTimeCreation;
     }
 
     //This method must be overrode; After that, it extracts the list of tag of an article from a Document linked to a URL 
@@ -194,7 +194,7 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return author.replaceAll("�", "\'");
+        return author;
     }
 
     //This method extracts the link image of an article from a Document linked to a URL.
@@ -208,7 +208,7 @@ public class DataListFormat {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return linkImage.replaceAll("�", "\'");
+        return linkImage;
     }
 
     //This method returns a list of elements with data type Data. It is fully inherited
