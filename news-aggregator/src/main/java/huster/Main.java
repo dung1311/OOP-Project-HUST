@@ -33,7 +33,7 @@ public class Main {
                     }
                 });
 
-                crawlThread.start();
+                // crawlThread.start();
 
                 // check status before call crawlThread.join
                 while (true) {

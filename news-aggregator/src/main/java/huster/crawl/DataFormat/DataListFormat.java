@@ -215,13 +215,16 @@ public class DataListFormat {
     //This method returns a list of elements with data type Data. It is fully inherited
     public List<Data> getDataList(DataListFormat itemLink,String url, String innerLinkClass, String innerLinkAttr) {
         try {
-            List<String> linkList = itemLink.getLinks(url,innerLinkClass,innerLinkAttr);
+            if(itemLink.getLinks(url,innerLinkClass,innerLinkAttr) == null) return null;
+                List<String> linkList = itemLink.getLinks(url,innerLinkClass,innerLinkAttr);
             for(int i = 0; i < linkList.size(); i++)
             {
                 Data item = new Data();
                 itemLink.setLink(linkList.get(i));
                 Document doc = Jsoup.connect(itemLink.getLink()).ignoreHttpErrors(true).get();
-                item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
+                item.setData(itemLink.getLink(), itemLink.getLink(), itemLink.getTitle(doc), itemLink.getType(doc), 
+                itemLink.getSummary(doc), itemLink.getContent(doc), itemLink.getCategory(doc), itemLink.getDateTimeCreation(doc), 
+                itemLink.getTag(doc), itemLink.getAuthor(doc),itemLink.getLinkImage(doc));
                 if(item.isDataFormat(item))   
                     this.dataList.add(item);                 
             }
